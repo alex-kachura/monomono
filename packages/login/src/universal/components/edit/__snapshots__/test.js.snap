@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component: EditPage] should render correctly 1`] = `
+<SideEffect(DocumentTitle)
+  title="pages.landing.title"
+>
+  <div>
+    <PageTitle
+      margin={true}
+      tagName="h1"
+    >
+      pages.edit.title
+    </PageTitle>
+    <styled.div>
+      <form
+        autoComplete="off"
+        method="POST"
+        noValidate={true}
+        onSubmit={[Function]}
+      >
+        <Styled(FormGroup)
+          error={false}
+          errorMessage=""
+          id="sample1"
+          key="pages.edit.fields.sample1.label"
+          labelText="pages.edit.fields.sample1.label"
+          required={true}
+        >
+          <Input
+            disabled={false}
+            domRef={[Function]}
+            error={false}
+            id="sample1-input"
+            name="sample1"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+        </Styled(FormGroup)>
+        <input
+          name="_csrf"
+          type="hidden"
+          value="mock-csrf"
+        />
+        <Styled(WithProps(Button))
+          type="submit"
+        >
+          pages.edit.submit-btn
+        </Styled(WithProps(Button))>
+      </form>
+    </styled.div>
+  </div>
+</SideEffect(DocumentTitle)>
+`;

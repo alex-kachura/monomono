@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component not waiting should render correctly 1`] = `
+<DefaultThemeProvider
+  globalScripts={Object {}}
+  globalStyles={
+    Object {
+      "fonts": Object {
+        "fileFormats": Array [
+          "eot",
+          "woff2",
+          "woff",
+          "ttf",
+          "svg",
+        ],
+        "filePath": "/account/login/fonts",
+        "styleNames": Array [
+          "bold",
+          "regular",
+          "regularItalic",
+        ],
+      },
+      "normalize": true,
+    }
+  }
+  overrides={Object {}}
+>
+  <Styled(base-components__RootElement)>
+    <GlobalStyleComponent />
+    <Connect(Header) />
+    <Grid
+      center={true}
+      fixed="md"
+    >
+      <Row>
+        <Column
+          centered={false}
+          hidden={false}
+          size={24}
+        >
+          <Connect(Breadcrumb) />
+        </Column>
+      </Row>
+    </Grid>
+    <Styled(Grid)
+      fixed="md"
+    >
+      <Row>
+        <Column
+          centered={true}
+          hidden={false}
+          lg={15}
+          md={18}
+          size={24}
+          sm={18}
+          xl={12}
+        />
+      </Row>
+    </Styled(Grid)>
+    <Connect(Footer) />
+  </Styled(base-components__RootElement)>
+</DefaultThemeProvider>
+`;
+
+exports[`App component waiting should render correctly 1`] = `
+<DefaultThemeProvider
+  globalScripts={Object {}}
+  globalStyles={
+    Object {
+      "fonts": Object {
+        "fileFormats": Array [
+          "eot",
+          "woff2",
+          "woff",
+          "ttf",
+          "svg",
+        ],
+        "filePath": "/account/login/fonts",
+        "styleNames": Array [
+          "bold",
+          "regular",
+          "regularItalic",
+        ],
+      },
+      "normalize": true,
+    }
+  }
+  overrides={Object {}}
+>
+  <Styled(base-components__RootElement)>
+    <GlobalStyleComponent />
+    <Connect(Header) />
+    <Grid
+      center={true}
+      fixed="md"
+    >
+      <Row>
+        <Column
+          centered={false}
+          hidden={false}
+          size={24}
+        >
+          <Connect(Breadcrumb) />
+        </Column>
+      </Row>
+    </Grid>
+    <Styled(Grid)
+      fixed="md"
+    >
+      <Row>
+        <Column
+          centered={true}
+          hidden={false}
+          lg={15}
+          md={18}
+          size={24}
+          sm={18}
+          xl={12}
+        >
+          <Spinner />
+        </Column>
+      </Row>
+    </Styled(Grid)>
+    <Connect(Footer) />
+  </Styled(base-components__RootElement)>
+</DefaultThemeProvider>
+`;

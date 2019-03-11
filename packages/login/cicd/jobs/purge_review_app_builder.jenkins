@@ -1,0 +1,35 @@
+#!/usr/bin/env groovy
+
+pipelineJob('login_purge_review_app') {
+	definition {
+		displayName('[login] Purge Review App')
+		logRotator {
+			numToKeep(10)
+			daysToKeep(30)
+			artifactDaysToKeep(7)
+			artifactNumToKeep(1)
+		}
+		cpsScm {
+			scm {
+				git {
+					remote {
+            github('oneaccount/login', 'ssh', 'github.dev.global.tesco.org')
+            refspec('+refs/pull/${GITHUB_PR_NUMBER}/head:refs/remotes/origin-pull/pull/${GITHUB_PR_NUMBER}/head')
+						credentials('login-deploy-key')
+					}
+          branch('origin-pull/pull/${GITHUB_PR_NUMBER}/head')
+				}
+			}
+			scriptPath('cicd/pipelines/purge_review_app.groovy')
+		}
+	}
+  triggers {
+      onPullRequest {
+          cron('* * * * *')
+          events {
+            labelAdded("ready for manual review")
+            closed()
+          }
+      }
+  }
+}

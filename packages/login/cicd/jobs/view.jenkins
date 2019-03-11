@@ -1,0 +1,19 @@
+#!/usr/bin/env groovy
+
+listView('login') {
+   description('All login jobs')
+   filterBuildQueue()
+   filterExecutors()
+   jobs {
+       regex(/login_.*/)
+   }
+   columns {
+       status()
+       weather()
+       name()
+       lastSuccess()
+       lastFailure()
+       lastDuration()
+       buildButton()
+   }
+}

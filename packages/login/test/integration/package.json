@@ -1,0 +1,67 @@
+{
+  "name": "login-tests",
+  "private": true,
+  "description": "login Integration and End to End tests",
+  "version": "0.1.0",
+  "author": "Tesco",
+  "repository": {
+    "type": "git",
+    "url": "https://github.dev.global.tesco.org/oneaccount/login"
+  },
+  "scripts": {
+    "lint": "lint-staged && eslint .",
+    "integration:dev": "NODE_CONFIG_ENV=dev jest --passWithNoTests ./specs/*.js",
+    "integration:proxy": "NODE_CONFIG_ENV=proxy --passWithNoTests jest specs/*.js",
+    "integration:ppe": "NODE_CONFIG_ENV=ppe jest --passWithNoTests ./specs/*.js",
+    "integration:prod": "NODE_CONFIG_ENV=production jest --passWithNoTests ./specs/*.js",
+    "screenshots:dev": "concurrently \"NODE_CONFIG_ENV=dev npm run screenshots:desktop\" \"NODE_CONFIG_ENV=dev npm run screenshots:mobile\"",
+    "screenshots:dev:all": "NODE_CONFIG_ENV=dev npm run screenshots:desktop && NODE_CONFIG_ENV=dev npm run screenshots:mobile",
+    "screenshots:ppe": "concurrently \"NODE_CONFIG_ENV=ppe npm run screenshots:desktop\" \"NODE_CONFIG_ENV=ppe npm run screenshots:mobile\"",
+    "screenshots:ppe:all": "NODE_CONFIG_ENV=ppe npm run screenshots:desktop && NODE_CONFIG_ENV=ppe npm run screenshots:mobile",
+    "screenshots:mobile": "INLINE_MODE=false IS_MOBILE=true HEADLESS=true jest ./screenshots/screenshots*.test.js",
+    "screenshots:desktop": "INLINE_MODE=false IS_MOBILE=false HEADLESS=true jest ./screenshots/screenshots*.test.js",
+    "start": "wait-on -d 5000 -i 1000 $BASE_URL/login/_status && jest --maxWorkers=1"
+  },
+  "engines": {
+    "node": "8.9.4"
+  },
+  "dependencies": {
+    "@oneaccount/test-common": "2.4.0",
+    "@web-foundations/eslint-config-base": "^1.1.3",
+    "@web-foundations/eslint-config-react": "^1.1.3",
+    "babel-cli": "6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "babel-register": "6.26.0",
+    "cheerio": "1.0.0-rc.2",
+    "concurrently": "^3.5.1",
+    "config": "^1.30.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-react": "^7.8.2",
+    "husky": "^1.0.0-rc.14",
+    "jest": "^23.0.1",
+    "jest-image-snapshot": "^2.4.1",
+    "jsdom": "^11.10.0",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.12.1",
+    "puppeteer": "^1.4.0",
+    "request": "^2.87.0",
+    "wait-on": "^2.1.0"
+  },
+  "jest": {
+    "setupFiles": [
+      "./jest.init.js"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

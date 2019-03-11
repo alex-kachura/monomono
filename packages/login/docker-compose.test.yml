@@ -1,0 +1,42 @@
+version: "3.0"
+
+services:
+  app:
+    image: login
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+      args:
+        - NPM_AUTH_TOKEN
+    environment:
+      - NODE_CONFIG_ENV
+
+  nginx:
+    image: login:nginx
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    depends_on:
+      - app
+    expose:
+      - "443"
+    networks:
+      default:
+        aliases:
+          - www-local.tesco.com
+
+  tests:
+    image: login:test
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+      args:
+        - NPM_AUTH_TOKEN
+    command: 'npm run integration:dev'
+    depends_on:
+      - nginx
+    links:
+      - nginx:www-local.tesco.com
+    environment:
+      - NODE_CONFIG_ENV
+

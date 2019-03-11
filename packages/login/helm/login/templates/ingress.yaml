@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .app.name }}-ingress
+  namespace: {{ .app.namespace }}
+  labels:
+    app: {{ .app.name }}
+    heritage: {{ "{{ .Release.Service }}" }}
+    release: {{ "{{ .Release.Name }}" }}
+    chart: {{ "{{ .Chart.Name }}-{{ .Chart.Version }}" }}
+  annotations:
+    traefik.frontend.rule.type: PathPrefix
+    ingress.kubernetes.io/custom-response-headers: {{ .app.dcHeader }}:{{ .app.dc }}
+    ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /{{ .app.name }}
+        backend:
+          serviceName: {{ .app.name }}
+          servicePort: http

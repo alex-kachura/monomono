@@ -1,0 +1,57 @@
+FROM node:8.9 AS build
+
+ARG NPM_AUTH_TOKEN
+
+ENV NPM_CONFIG_PREFIX=/root/.npm-global \
+    NPM_CONFIG_LOGLEVEL=warn \
+    NPM_AUTH_TOKEN=${NPM_AUTH_TOKEN} \
+    NPMRC_PATH=./.npmrc \
+    NPM_VERSION=5.5 \
+    NODE_ENV=production
+
+WORKDIR /root/app
+
+RUN npm i -g npm@$NPM_VERSION
+
+# Copy files necessary for installing dependencies. We want this to happen as
+# early as possible because it's a slow process which can result in a cached
+# layer that doesn't often have to be rebuilt.
+COPY [".", "./"]
+
+# If an npm auth token is present in the env we need to write it to the .npmrc
+# file within the container.
+RUN ./bin/npmrc
+
+# Install all dependencies. We need development dependencies at this point so we
+# can actually compile the app. Since the NODE_ENV can be set to production it
+# helps to be explicit here. In production we would prune the dev dependencies
+# after the build but in development we use some of them to enhance developer
+# experience.
+RUN npm install --production=false
+
+RUN npm run test
+
+RUN npm run lint
+
+RUN npm run build:prod
+
+RUN npm prune --production
+
+FROM node:8.9 as run
+
+ENV NODE_ENV=production
+
+WORKDIR /home/node/app
+
+COPY --from=build --chown=node:node ["/root/app/bin", "./bin"]
+COPY --from=build --chown=node:node ["/root/app/dist", "./dist"]
+COPY --from=build --chown=node:node ["/root/app/node_modules", "./node_modules"]
+COPY --from=build --chown=node:node ["/root/app/package.json", "./"]
+
+USER node
+
+RUN mkdir -p /home/node/log
+
+CMD ["npm", "start"]
+
+EXPOSE 8087

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component: Breadcrumb] should render correctly 1`] = `
+<Styled(base-components__RootElement)>
+  <WithTheme(Breadcrumb)
+    altLink={[Function]}
+    home={
+      Object {
+        "href": "https://www.testco.com",
+      }
+    }
+    links={
+      Array [
+        Object {
+          "href": "www.testco.com",
+          "text": "Test page",
+        },
+        Object {
+          "text": "Test page2",
+        },
+      ]
+    }
+  />
+</Styled(base-components__RootElement)>
+`;

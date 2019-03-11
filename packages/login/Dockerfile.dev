@@ -1,0 +1,38 @@
+FROM node:8.9
+
+ARG NPM_AUTH_TOKEN
+ARG NODE_ENV=development
+
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global \
+    NPM_CONFIG_LOGLEVEL=warn \
+    NPM_AUTH_TOKEN=${NPM_AUTH_TOKEN} \
+    NODE_ENV=${NODE_ENV} \
+    NPMRC_PATH=/home/node/.npmrc \
+    NPM_VERSION=5.5
+
+WORKDIR /home/node/
+
+RUN npm i -g npm@$NPM_VERSION
+
+# Copy files necessary for installing dependencies. We want this to happen as
+# early as possible because it's a slow process which can result in a cached
+# layer that doesn't often have to be rebuilt.
+COPY --chown=node:node [".", "./"]
+
+USER node
+
+# If an npm auth token is present in the env we need to write it to the .npmrc
+# file within the container.
+RUN ./bin/npmrc
+
+# Install all dependencies. We need development dependencies at this point so we
+# can actually compile the app. Since the NODE_ENV can be set to production it
+# helps to be explicit here. In production we would prune the dev dependencies
+# after the build but in development we use some of them to enhance developer
+# experience.
+RUN npm install --production=false
+RUN $(npm bin)/webpack
+
+CMD ["npm", "start"]
+
+EXPOSE 8087

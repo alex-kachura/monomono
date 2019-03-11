@@ -1,0 +1,94 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .app.name }}
+  namespace: {{ .app.namespace }}
+  labels:
+    app: {{ .app.name }}
+    heritage: {{ "{{ .Release.Service }}" }}
+    release: {{ "{{ .Release.Name }}" }}
+    chart: {{ "{{ .Chart.Name }}-{{ .Chart.Version }}" }}
+spec:
+  replicas: {{ .app.replicas }}
+  template:
+    metadata:
+      name: {{ .app.name }}
+      labels:
+        app: {{ .app.name }}
+      annotations:
+        branch: "{{ .app.branch }}"
+        buildJob: {{ .app.buildJob }}
+        buildTimestamp: "{{ .app.buildTimestamp }}"
+        deployJob: {{ .app.deployJob }}
+        deployTimestamp: "{{ .app.deployTimestamp }}"
+        environment: {{ .app.nodeConfigEnvironment }}
+        sha: "{{ .app.sha }}"
+    spec:
+      hostAliases:
+      - ip: "127.0.0.1"
+        hostnames:
+        - "app"
+      containers:
+      - name: {{ .app.name }}
+        image: "{{ .app.image.repository }}:{{ .app.image.apptag }}"
+        imagePullPolicy: {{ .app.imagePullPolicy }}
+        livenessProbe:
+          httpGet:
+            path: /login/_status
+            port: {{ .app.appContainerPort }}
+            scheme: HTTP
+          initialDelaySeconds: 3
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /login/_status
+            port: {{ .app.appContainerPort }}
+            scheme: HTTP
+          initialDelaySeconds: 3
+          periodSeconds: 5
+        resources:
+          requests:
+            cpu: {{ .app.resources.app.requests.cpu }}
+            memory: {{ .app.resources.app.requests.memory }}
+          limits:
+            cpu: {{ .app.resources.app.limits.cpu }}
+            memory: {{ .app.resources.app.limits.memory }}
+        ports:
+          - name: 'default-port'
+            containerPort: {{ .app.appContainerPort }}
+        env:
+          - name: NODE_CONFIG_ENV
+            value: {{ .app.nodeConfigEnvironment }}
+          - name: AKAMAI_PASSTHROUGH
+            value: {{ b64dec .app.secrets.akamaiPassthrough | gUnzip | decrypt "default" "eu-west-1" }}
+          - name: IDENTITY_CLIENT_ID
+            value: {{ b64dec .app.secrets.identityClientId | gUnzip | decrypt "default" "eu-west-1" }}
+          - name: IDENTITY_USERNAME
+            value: {{ b64dec .app.secrets.identityUsername | gUnzip | decrypt "default" "eu-west-1" }}
+          - name: IDENTITY_PASSWORD
+            value: {{ b64dec .app.secrets.identityPassword | gUnzip | decrypt "default" "eu-west-1" }}
+          - name: LOGS_ENCRYPTION_KEY
+            value: {{ b64dec .app.secrets.logsEncryptionKey | gUnzip | decrypt "default" "eu-west-1" }}
+      - name: {{ .app.name }}-nginx
+        image: "{{ .app.image.repository }}:{{ .app.image.nginxtag }}"
+        imagePullPolicy: {{ .app.imagePullPolicy }}
+        livenessProbe:
+          tcpSocket:
+            port: {{ .app.nginxContainerPort }}
+          initialDelaySeconds: 3
+          periodSeconds: 5
+        readinessProbe:
+          tcpSocket:
+            port: {{ .app.nginxContainerPort }}
+          initialDelaySeconds: 3
+          periodSeconds: 5
+        resources:
+          requests:
+            cpu: {{ .app.resources.nginx.requests.cpu }}
+            memory: {{ .app.resources.nginx.requests.memory }}
+          limits:
+            cpu: {{ .app.resources.nginx.limits.cpu }}
+            memory: {{ .app.resources.nginx.limits.memory }}
+        ports:
+          - name: 'default-port'
+            containerPort: {{ .app.nginxContainerPort }}

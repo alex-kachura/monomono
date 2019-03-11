@@ -1,0 +1,27 @@
+#!/usr/bin/env groovy
+
+
+pipelineJob('login_prod_rollback') {
+	definition {
+		displayName('[login] Rollback prod to previous')
+		logRotator {
+			numToKeep(10)
+			daysToKeep(30)
+			artifactDaysToKeep(7)
+			artifactNumToKeep(1)
+		}
+		cpsScm {
+			scm {
+				git {
+					remote {
+						name('origin')
+						url('git@github.dev.global.tesco.org:oneaccount/login.git')
+						credentials('login-deploy-key')
+					}
+					branch('master')
+				}
+			}
+			scriptPath('cicd/pipelines/rollback.groovy')
+		}
+	}
+}

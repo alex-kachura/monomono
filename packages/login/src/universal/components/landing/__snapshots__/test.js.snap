@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component: LandingPage] should render correctly 1`] = `
+<SideEffect(DocumentTitle)
+  title="pages.landing.title"
+>
+  <div>
+    <PageTitle
+      margin={true}
+      tagName="h1"
+    >
+      pages.landing.title
+    </PageTitle>
+    <Styled(WithProps(Link))
+      altLink={[Function]}
+      href="/mock/math/edit"
+      variant="textButton"
+    >
+      pages.landing.sample-form-btn
+    </Styled(WithProps(Link))>
+  </div>
+</SideEffect(DocumentTitle)>
+`;

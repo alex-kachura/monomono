@@ -1,0 +1,51 @@
+{
+  "env": {
+    "test": {
+      "plugins": [
+        "istanbul"
+      ],
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ],
+        "react",
+        "stage-0"
+      ]
+    },
+    "browser": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": [
+                "ie 9"
+              ]
+            }
+          }
+        ],
+        "react",
+        "stage-0"
+      ]
+    },
+    "node": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ],
+        "react",
+        "stage-0"
+      ]
+    }
+  }
+}

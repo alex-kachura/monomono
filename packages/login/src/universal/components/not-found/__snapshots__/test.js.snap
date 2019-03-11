@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound component should render correctly 1`] = `
+<SideEffect(DocumentTitle)
+  title="pages.not-found.title"
+>
+  <div>
+    <PageTitle
+      margin={true}
+      tagName="h1"
+    >
+      pages.not-found.heading
+    </PageTitle>
+    <BodyText
+      emphasized={false}
+      margin={true}
+      tagName="p"
+    >
+      pages.not-found.paragraphs.0
+    </BodyText>
+    <BodyText
+      emphasized={false}
+      margin={true}
+      tagName="p"
+    >
+      pages.not-found.paragraphs.1
+    </BodyText>
+    <Styled(WithProps(Link))
+      href="mock-homepage"
+      variant="textButton"
+    >
+      pages.not-found.home
+    </Styled(WithProps(Link))>
+  </div>
+</SideEffect(DocumentTitle)>
+`;
