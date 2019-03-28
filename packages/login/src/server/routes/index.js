@@ -2,11 +2,10 @@ import express from 'express';
 import config from 'config';
 import csrf from 'csurf';
 import isAuthenticatedFactory from '@web-foundations/express-identity-validate';
-import handleUnauthenticated from '../middleware/handle-unauthenticated';
+import handleAuthenticated from '../middleware/handle-authenticated';
 import setResponseData from '../middleware/response-data';
 import identity from '../services/identity';
-import { getLandingPage } from './landing';
-import { getEditPage, postEditPage } from './edit';
+import { getVerifyPage } from './verify';
 
 const { name: csrfCookieName, ...csrfCookieOptions } = config.get('cookie.CSRF');
 
@@ -31,8 +30,8 @@ baseRouter.use(
   (req, res) => res.redirect(301, `/${BASE_PATH}/${APP_PATH}/${req.lang}/`),
 );
 
-// All routes are only accessible to logged in users.
-appRouter.use(isAuthenticated, handleUnauthenticated);
+// Check if user is authenticated on all routes and handle this.
+appRouter.use(isAuthenticated, handleAuthenticated);
 
 appRouter.use(
   csrf({
@@ -45,10 +44,7 @@ appRouter.use(
 
 appRouter.use(setResponseData);
 
-appRouter.get('/', getLandingPage);
-appRouter.get('/edit', getEditPage);
-appRouter.post('/edit', postEditPage);
-
+appRouter.get('/verify', getVerifyPage);
 baseRouter.use(`/${BASE_PATH}/${APP_PATH}/:locale`, appRouter);
 
 export default baseRouter;

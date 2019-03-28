@@ -1,16 +1,16 @@
 import React from 'react';
-import { LandingPage } from './';
+import { VerifyPage } from './';
+import { shallow } from 'enzyme';
 
-describe('[Component: LandingPage]', () => {
+describe('[Component: VerifyPage]', () => {
   let component;
 
   const mockProps = {
     getLocalePhrase: (key) => key,
-    rootPath: '/mock/math',
   };
 
   beforeEach(() => {
-    component = global.contextualShallow(<LandingPage {...mockProps} />);
+    component = shallow(<VerifyPage {...mockProps} />);
   });
 
   it('should render correctly', () => {

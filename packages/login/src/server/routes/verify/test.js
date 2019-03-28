@@ -1,27 +1,27 @@
 import { fromJS } from 'immutable';
 import * as matchers from 'jest-immutable-matchers';
+import config from 'config';
 
-describe('[Route: /]', () => {
+describe('[Route: /verify]', () => {
   jest.addMatchers(matchers);
 
   describe('[GET]', () => {
-    let getLandingPage;
+    let getVerifyPage;
     const mockTracer = 'mock-tracer';
     const mockSend = jest.fn();
     let responseType;
     const mockUpdated = 'mock-updated';
-    const mockLocale = 'mock-locale';
+    const mockLang = 'mock-lang';
+    const mockRegion = 'GB';
+    const mockAccessToken = 'mock-token';
     const req = {
       sessionId: mockTracer,
-      locale: {
-        type: mockLocale,
-      },
       query: {
         updated: mockUpdated,
       },
       getLocalePhrase: (key) => key,
-      region: 'mock-region',
-      lang: 'mock-lang'
+      lang: mockLang,
+      region: mockRegion,
     };
     const res = {
       format: (f) => f[responseType](),
@@ -30,20 +30,30 @@ describe('[Route: /]', () => {
     };
     const next = jest.fn();
     let mockLogger;
+    let mockControllerFactory;
     let mockGetPhraseFactory;
+    let mockHandshake;
     let mockGetLocalePhrase;
+    let mockGetClaims;
 
     function mockGetImports() {
       jest.doMock('../../logger', () => ({ logOutcome: mockLogger }));
       jest.doMock('../../utils/i18n', () => ({
         getPhraseFactory: mockGetPhraseFactory,
       }));
+      jest.doMock('../../controllers', () => mockControllerFactory);
     }
 
     beforeEach(() => {
+      mockHandshake = jest.fn();
+      mockControllerFactory = jest.fn(() => ({
+        handshake: mockHandshake,
+      }));
       mockGetLocalePhrase = jest.fn((key) => key);
       mockGetPhraseFactory = jest.fn(() => mockGetLocalePhrase);
       mockLogger = jest.fn();
+      mockGetClaims = jest.fn(() => ({ accessToken: mockAccessToken }));
+      req.getClaims = mockGetClaims;
     });
 
     afterEach(() => {
@@ -63,13 +73,33 @@ describe('[Route: /]', () => {
         beforeEach(async () => {
           mockGetImports();
 
-          getLandingPage = require('./').getLandingPage;
+          getVerifyPage = require('./').getVerifyPage;
 
-          await getLandingPage(req, res, next);
+          await getVerifyPage(req, res, next);
+        });
+
+        it('should call getPhraseFactory with request lang', () => {
+          expect(mockGetPhraseFactory).toHaveBeenCalledWith(mockLang);
+        });
+
+        it('should call controllerFactory correctly', () => {
+          expect(mockControllerFactory).toHaveBeenCalledWith('verify', mockRegion);
+        });
+
+        it('should call getClaims', () => {
+          expect(mockGetClaims).toHaveBeenCalledWith();
+        });
+
+        it('should call handshake', () => {
+          expect(mockHandshake).toHaveBeenCalledWith({
+            tracer: mockTracer,
+            accessToken: mockAccessToken,
+            context: req,
+          });
         });
 
         it('should log correctly', () => {
-          expect(mockLogger).toHaveBeenCalledWith('landing', 'successful', req);
+          expect(mockLogger).toHaveBeenCalledWith('verify', 'successful', req);
         });
 
         it('should set the correct response data', () => {
@@ -79,15 +109,26 @@ describe('[Route: /]', () => {
                 breadcrumb: [
                   {
                     text: 'pages.landing.title',
+                    href: `/${config.basePath}/${config.appPath}/${mockLang}`,
+                    useAltLink: true,
+                  },
+                  {
+                    text: 'pages.edit.title',
                   },
                 ],
+                form: {
+                  fields: [],
+                  focusFieldId: undefined,
+                  isFormValid: true,
+                  formSubmitted: false,
+                },
                 banner: {
                   bannerType: '',
                   title: '',
                   errorType: '',
                 },
               },
-            }),
+            })
           );
         });
 
@@ -106,9 +147,9 @@ describe('[Route: /]', () => {
         beforeEach(async () => {
           mockGetImports();
 
-          getLandingPage = require('./').getLandingPage;
+          getVerifyPage = require('./').getVerifyPage;
 
-          await getLandingPage(req, res, next);
+          await getVerifyPage(req, res, next);
         });
 
         it('should set the correct response data', () => {
@@ -117,8 +158,19 @@ describe('[Route: /]', () => {
               breadcrumb: [
                 {
                   text: 'pages.landing.title',
+                  href: `/${config.basePath}/${config.appPath}/${mockLang}`,
+                  useAltLink: true,
+                },
+                {
+                  text: 'pages.edit.title',
                 },
               ],
+              form: {
+                fields: [],
+                focusFieldId: undefined,
+                isFormValid: true,
+                formSubmitted: false,
+              },
               banner: {
                 bannerType: '',
                 title: '',

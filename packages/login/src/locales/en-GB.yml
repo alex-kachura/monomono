@@ -61,7 +61,7 @@ help: "Help"
 # P
 pages:
   landing:
-    title: "login"
+    title: "Login"
     sample-form-btn: "Sample form"
 
   edit:

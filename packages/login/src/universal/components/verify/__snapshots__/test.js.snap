@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component: LandingPage] should render correctly 1`] = `undefined`;
+
+exports[`[Component: VerifyPage] should render correctly 1`] = `
+<SideEffect(DocumentTitle)
+  title="pages.landing.title"
+>
+  <div>
+    Verify
+  </div>
+</SideEffect(DocumentTitle)>
+`;

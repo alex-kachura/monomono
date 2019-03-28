@@ -9,6 +9,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Local config overrides
+src/config/local.*
 test/integration/config/local.*
 
 # Runtime data

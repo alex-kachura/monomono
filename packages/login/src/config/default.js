@@ -1,17 +1,11 @@
 module.exports = {
   // Import regional specific development environment config
   GB: require('./regional/default.gb'), // eslint-disable-line global-require
-  PL: require('./regional/default.pl'), // eslint-disable-line global-require
   locales: [
     {
       hostname: 'www-local.tesco.com',
       region: 'GB',
       languages: ['en-GB'],
-    },
-    {
-      hostname: 'www-local.tesco.pl',
-      region: 'PL',
-      languages: ['pl-PL'],
     },
   ],
   clientConfigWhitelist: [

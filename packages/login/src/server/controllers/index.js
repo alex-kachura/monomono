@@ -1,10 +1,9 @@
 // Import all controllers
-import editExample from './edit-example';
+import * as verify from './verify';
 
 // Define the controller name + region mappings
 export const Controllers = {
-  'editExample.default': editExample.default, // Default version of controller
-  'editExample.PL': editExample.PL, // PL only specific version of controller
+  'verify.default': verify, // Default version of controller
 };
 
 export default (name, region) => {

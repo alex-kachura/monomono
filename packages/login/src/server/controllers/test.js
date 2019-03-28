@@ -1,13 +1,15 @@
 describe('Controller factory', () => {
-  const mockDefault = 'mock-default';
-  const mockPL = 'mock-pl';
   let factory;
+  let mockHandshake;
+  let mockController;
 
   beforeEach(() => {
-    jest.doMock('./edit-example', () => ({
-      default: mockDefault,
-      PL: mockPL,
-    }));
+    mockHandshake = jest.fn();
+    mockController = {
+      handshake: mockHandshake,
+    };
+
+    jest.doMock('./verify', () => mockController);
 
     factory = require('./').default;
   });
@@ -34,13 +36,10 @@ describe('Controller factory', () => {
 
   describe('provide valid name and invalid region', () => {
     it('should return default controller', () => {
-      expect(factory('editExample', 'blah')).toEqual(mockDefault);
-    });
-  });
-
-  describe('provide valid name and valid region', () => {
-    it('should return PL controller', () => {
-      expect(factory('editExample', 'PL')).toEqual(mockPL);
+      expect(factory('verify', 'blah')).toEqual({
+        default: mockController,
+        handshake: mockHandshake,
+      });
     });
   });
 });

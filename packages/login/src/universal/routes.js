@@ -1,6 +1,5 @@
 import App from './components/app';
-import LandingPage from './components/landing';
-import EditPage from './components/edit';
+import VerifyPage from './components/verify';
 import NotFound from './components/not-found';
 
 export default function routesFactory(config, lang) {
@@ -8,13 +7,8 @@ export default function routesFactory(config, lang) {
   const routes = [];
 
   routes.push({
-    path: `${appPath}/edit`,
-    component: EditPage,
-    exact: true,
-  },
-  {
-    path: appPath,
-    component: LandingPage,
+    path: `${appPath}/verify`,
+    component: VerifyPage,
     exact: true,
   },
   {
