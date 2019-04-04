@@ -1,5 +1,3 @@
-import Immutable from 'immutable';
-
 describe('Referrer middleware', () => {
   let middleware;
   let mockReq;
@@ -11,7 +9,7 @@ describe('Referrer middleware', () => {
   beforeEach(() => {
     mockReq = {};
     mockRes = {
-      data: new Immutable.Map(),
+      data: {},
     };
 
     mockConfig = {
@@ -46,7 +44,7 @@ describe('Referrer middleware', () => {
     it('should set the referrer within response data', () => {
       middleware(mockReq, mockRes, mockNext);
 
-      expect(mockRes.data.toJS().referrer).toEqual({
+      expect(mockRes.data.referrer).toEqual({
         link: 'https://www.tesco.com/direct',
         label: 'back-to.direct',
       });
@@ -77,7 +75,7 @@ describe('Referrer middleware', () => {
     it('should set the referrer within response data', () => {
       middleware(mockReq, mockRes, mockNext);
 
-      expect(mockRes.data.toJS().referrer).toEqual({
+      expect(mockRes.data.referrer).toEqual({
         link: 'https://www.tesco.com/groceries',
         label: 'back-to.groceries',
       });

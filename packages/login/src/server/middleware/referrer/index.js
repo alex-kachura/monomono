@@ -1,6 +1,5 @@
 import url from 'url';
 import config from 'config';
-import Immutable from 'immutable';
 
 const backToWhitelist = config.get('backToWhitelist');
 
@@ -73,26 +72,26 @@ export default function referrerMiddleware(req, res, next) {
   if (isValidReferrer(backToWhitelist, referrer, req.lang)) {
     const label = getReferrerLabel(backToWhitelist, referrer, req.lang);
 
-    res.data = res.data.set(
-      'referrer',
-      Immutable.fromJS({
+    res.data = {
+      ...res.data,
+      referrer: {
         link: referrer,
         label,
-      }),
-    );
+      },
+    };
 
     // Read referrer from url query to preserve original referrer
   } else if (req.query.referrer) {
     if (isValidReferrer(backToWhitelist, req.query.referrer, req.lang)) {
       const label = getReferrerLabel(backToWhitelist, req.query.referrer, req.lang);
 
-      res.data = res.data.set(
-        'referrer',
-        Immutable.fromJS({
+      res.data = {
+        ...res.data,
+        referrer: {
           link: decodeURIComponent(req.query.referrer),
           label,
-        }),
-      );
+        },
+      };
     }
   }
 

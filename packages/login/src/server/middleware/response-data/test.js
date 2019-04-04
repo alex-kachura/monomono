@@ -1,10 +1,6 @@
-import { fromJS } from 'immutable';
 import setResponseData from './';
-import * as matchers from 'jest-immutable-matchers';
 
 describe('Set response data middleware', () => {
-  jest.addMatchers(matchers);
-
   const mockToken = 'mock-token';
   const mockAuth = 'mock-is-auth';
   const mockGetToken = jest.fn();
@@ -13,9 +9,9 @@ describe('Set response data middleware', () => {
     isAuthenticated: mockAuth,
   };
   const res = {
-    data: fromJS({
+    data: {
       foo: 'bar',
-    }),
+    },
   };
   const next = jest.fn();
 
@@ -28,13 +24,11 @@ describe('Set response data middleware', () => {
   });
 
   it('should set the correct response data', () => {
-    expect(res.data).toEqualImmutable(
-      fromJS({
-        foo: 'bar',
-        isAuthenticated: mockAuth,
-        csrf: mockToken,
-      }),
-    );
+    expect(res.data).toEqual({
+      foo: 'bar',
+      isAuthenticated: mockAuth,
+      csrf: mockToken,
+    });
   });
 
   it('should call next', () => {

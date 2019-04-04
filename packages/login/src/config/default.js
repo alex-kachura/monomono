@@ -53,6 +53,7 @@ module.exports = {
       options: {
         secure: false,
         maxAge: 31536000000,
+        domain: '.tesco.com',
       },
     },
     CSRF: {
@@ -63,32 +64,45 @@ module.exports = {
     UUID: {
       name: 'UUID',
       expires: '0',
+      domain: '.tesco.com',
       httpOnly: false,
       secure: false,
     },
     userAccessToken: {
       name: 'OAuth.AccessToken',
       expires: '3600000',
+      domain: '.tesco.com',
       httpOnly: true,
       secure: false,
     },
     userRefreshToken: {
       name: 'OAuth.RefreshToken',
       expires: '86400000',
+      domain: 'secure.tesco.com',
       httpOnly: true,
       secure: false,
     },
     OAuthTokensExpiryTime: {
       name: 'OAuth.TokensExpiryTime',
       expires: '86400000',
+      domain: '.tesco.com',
       httpOnly: true,
       secure: false,
     },
     consumerid: {
       name: 'consumerid',
+      domain: 'secure.tesco.com',
       httpOnly: true,
       secure: false,
     },
+    onwardLocation: {
+      name: 'mytesco_from',
+      options: {
+        domain: '.tesco.com',
+        httpOnly: true,
+        secure: false
+      }
+    }
   },
   csp: {
     defaultSrc: ["'self'"],
@@ -163,5 +177,8 @@ module.exports = {
       timeout: 20000,
     },
   },
-
+  referrerDomainWhitelist: [
+    '^https?://([A-Za-z0-9.-]*\\.)?tesco\\.com(|/.*)$',
+    '^https?://([A-Za-z0-9\\.-]*)?tesco\\.com(\\:[0-9]*)?(|.*)$',
+  ],
 };

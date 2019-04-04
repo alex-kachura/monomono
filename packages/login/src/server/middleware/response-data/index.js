@@ -1,13 +1,19 @@
 import { flowRight } from 'lodash';
 
 function setCSRFToken(req, data) {
-  return data.set('csrf', req.csrfToken());
+  return {
+    ...data,
+    csrf: req.csrfToken()
+  };
 }
 
 // Set in app data whether or not user is authenticated so React components
 // can do any required conditional rendering
 function setIsAuth(req, data) {
-  return data.set('isAuthenticated', req.isAuthenticated);
+  return {
+    ...data,
+    isAuthenticated: req.isAuthenticated,
+  };
 }
 
 export default function setResponseData(req, res, next) {

@@ -29,13 +29,13 @@ Breadcrumb.propTypes = {
 /* eslint-enable react/no-unused-prop-types */
 
 function mapStateToProps(state) {
-  const payload = state.get('payload');
+  const payload = state.payload;
 
   return {
-    links: payload.get('breadcrumb').toJS(),
-    region: state.get('region'),
-    config: state.get('config').toJS(),
-    getLocalePhrase: state.get('getLocalePhrase'),
+    links: payload.breadcrumb,
+    region: state.region,
+    config: state.config,
+    getLocalePhrase: state.getLocalePhrase,
   };
 }
 

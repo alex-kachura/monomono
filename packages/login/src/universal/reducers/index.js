@@ -1,6 +1,5 @@
 import { fromJS } from 'immutable';
-import { combineReducers } from 'redux-immutable';
-import fetch from './fetch';
+import { combineReducers } from 'redux';
 import payload from './payload';
 
 function defaultReducerFactory(defaultState) {
@@ -9,7 +8,6 @@ function defaultReducerFactory(defaultState) {
 
 const reducers = combineReducers({
   payload,
-  fetch,
   isAuthenticated: defaultReducerFactory(false),
   host: defaultReducerFactory(''),
   rootPath: defaultReducerFactory(''),

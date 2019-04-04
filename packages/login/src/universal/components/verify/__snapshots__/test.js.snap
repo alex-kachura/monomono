@@ -1,13 +1,232 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[Component: LandingPage] should render correctly 1`] = `undefined`;
-
-exports[`[Component: VerifyPage] should render correctly 1`] = `
+exports[`[Component: VerifyPage] account locked should render correctly 1`] = `
 <SideEffect(DocumentTitle)
-  title="pages.landing.title"
+  title="pages.verify.title"
 >
   <div>
-    Verify
+    <PageTitle
+      margin={true}
+      tagName="h1"
+    >
+      pages.verify.title
+    </PageTitle>
+    <BodyText
+      emphasized={false}
+      margin={true}
+      tagName="p"
+    >
+      pages.verify.sub-title
+    </BodyText>
+    <Banner />
+    <styled.div>
+      <BodyText
+        emphasized={false}
+        margin={false}
+        tagName="p"
+      >
+        pages.verify.digits-prompt
+      </BodyText>
+      <form
+        autoComplete="off"
+        method="POST"
+        noValidate={true}
+      >
+        <styled.div
+          key="mock-name"
+        >
+          <FormGroup
+            disabled={false}
+            error={false}
+            errorMessage=""
+            fieldset={false}
+            helpLinkProps={Object {}}
+            hideLabel={false}
+            id="mock-id"
+            labelProps={Object {}}
+            labelText="mock label"
+            required={true}
+          >
+            <Styled(Input)
+              id="mock-id-input"
+              name="mock-name"
+              value=""
+            />
+          </FormGroup>
+        </styled.div>
+        <input
+          defaultValue="state-token"
+          id="state"
+          name="state"
+          type="hidden"
+        />
+        <input
+          name="_csrf"
+          type="hidden"
+          value="csrf-token"
+        />
+        <Styled(WithProps(Button))
+          type="submit"
+          variant="primary"
+        >
+          pages.verify.buttons.submit
+        </Styled(WithProps(Button))>
+      </form>
+    </styled.div>
+  </div>
+</SideEffect(DocumentTitle)>
+`;
+
+exports[`[Component: VerifyPage] account not locked fields should render correctly 1`] = `
+<SideEffect(DocumentTitle)
+  title="pages.verify.title"
+>
+  <div>
+    <PageTitle
+      margin={true}
+      tagName="h1"
+    >
+      pages.verify.title
+    </PageTitle>
+    <BodyText
+      emphasized={false}
+      margin={true}
+      tagName="p"
+    >
+      pages.verify.sub-title
+    </BodyText>
+    <Banner />
+    <styled.div>
+      <BodyText
+        emphasized={false}
+        margin={false}
+        tagName="p"
+      >
+        pages.verify.digits-prompt
+      </BodyText>
+      <form
+        autoComplete="off"
+        method="POST"
+        noValidate={true}
+      >
+        <styled.div
+          key="mock-name"
+        >
+          <FormGroup
+            disabled={false}
+            error={false}
+            errorMessage=""
+            fieldset={false}
+            helpLinkProps={Object {}}
+            hideLabel={false}
+            id="mock-id"
+            labelProps={Object {}}
+            labelText="mock label"
+            required={true}
+          >
+            <Styled(Input)
+              id="mock-id-input"
+              name="mock-name"
+              value=""
+            />
+          </FormGroup>
+        </styled.div>
+        <input
+          defaultValue="state-token"
+          id="state"
+          name="state"
+          type="hidden"
+        />
+        <input
+          name="_csrf"
+          type="hidden"
+          value="csrf-token"
+        />
+        <Styled(WithProps(Button))
+          type="submit"
+          variant="primary"
+        >
+          pages.verify.buttons.submit
+        </Styled(WithProps(Button))>
+      </form>
+    </styled.div>
+  </div>
+</SideEffect(DocumentTitle)>
+`;
+
+exports[`[Component: VerifyPage] account not locked no fields should render correctly 1`] = `
+<SideEffect(DocumentTitle)
+  title="pages.verify.title"
+>
+  <div>
+    <PageTitle
+      margin={true}
+      tagName="h1"
+    >
+      pages.verify.title
+    </PageTitle>
+    <BodyText
+      emphasized={false}
+      margin={true}
+      tagName="p"
+    >
+      pages.verify.sub-title
+    </BodyText>
+    <Banner />
+    <styled.div>
+      <BodyText
+        emphasized={false}
+        margin={false}
+        tagName="p"
+      >
+        pages.verify.digits-prompt
+      </BodyText>
+      <form
+        autoComplete="off"
+        method="POST"
+        noValidate={true}
+      >
+        <styled.div
+          key="mock-name"
+        >
+          <FormGroup
+            disabled={false}
+            error={false}
+            errorMessage=""
+            fieldset={false}
+            helpLinkProps={Object {}}
+            hideLabel={false}
+            id="mock-id"
+            labelProps={Object {}}
+            labelText="mock label"
+            required={true}
+          >
+            <Styled(Input)
+              id="mock-id-input"
+              name="mock-name"
+              value=""
+            />
+          </FormGroup>
+        </styled.div>
+        <input
+          defaultValue="state-token"
+          id="state"
+          name="state"
+          type="hidden"
+        />
+        <input
+          name="_csrf"
+          type="hidden"
+          value="csrf-token"
+        />
+        <Styled(WithProps(Button))
+          type="submit"
+          variant="primary"
+        >
+          pages.verify.buttons.submit
+        </Styled(WithProps(Button))>
+      </form>
+    </styled.div>
   </div>
 </SideEffect(DocumentTitle)>
 `;

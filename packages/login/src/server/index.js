@@ -11,6 +11,7 @@ import routes from './routes';
 import errorHandler from './middleware/error-handler';
 import referrerMiddleware from './middleware/referrer';
 import localeMiddlewareFactory from '@web-foundations/express-locale-middleware';
+import onwardLocation from './middleware/from';
 import './middleware/claims';
 
 export default () => {
@@ -55,6 +56,7 @@ export default () => {
     });
     next();
   });
+  app.use(onwardLocation);
   app.use(referrerMiddleware);
   app.use(routes);
   app.use(reactRouterRenderMiddleware());

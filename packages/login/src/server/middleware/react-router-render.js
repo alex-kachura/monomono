@@ -1,5 +1,4 @@
 import config from 'config';
-import { fromJS } from 'immutable';
 import DocumentTitle from 'react-document-title';
 import serialize from 'serialize-javascript';
 import { matchRoutes } from 'react-router-config';
@@ -16,7 +15,7 @@ export default function reactRouterRenderMiddlewareFactory() {
   return function reactRouterRenderMiddleware(req, res) {
     const { lang } = req;
     const context = {
-      csrfToken: res.data.get('csrf'),
+      csrfToken: res.data.csrf,
     };
     const history = createHistory({
       initialEntries: [req.originalUrl],
@@ -39,14 +38,15 @@ export default function reactRouterRenderMiddlewareFactory() {
     // access method consistent between server and client.
     clientConfig[req.region] = clientRegionalConfig;
 
-    const initialState = fromJS({
-      ...res.data.toJS(),
+    const initialState = {
+      ...res.data,
       config: clientConfig,
       lang,
+      region: req.region,
       host: `${config.protocol}${req.hostname}`,
       rootPath: `/${config.basePath}/${config.appPath}/${lang}`,
       getLocalePhrase: getPhraseFactory(lang),
-    });
+    };
 
     const store = configureStore(initialState, history);
     const routes = routesFactory(config, lang);

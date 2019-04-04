@@ -91,11 +91,11 @@ class Header extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    config: state.get('config').toJS(),
-    locale: state.get('locale'),
-    region: state.get('region'),
-    isAuthenticated: state.get('isAuthenticated'),
-    getLocalePhrase: state.get('getLocalePhrase'),
+    config: state.config,
+    locale: state.locale,
+    region: state.region,
+    isAuthenticated: state.isAuthenticated,
+    getLocalePhrase: state.getLocalePhrase,
   };
 }
 

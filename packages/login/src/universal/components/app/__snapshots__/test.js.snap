@@ -116,9 +116,7 @@ exports[`App component waiting should render correctly 1`] = `
           size={24}
           sm={18}
           xl={12}
-        >
-          <Spinner />
-        </Column>
+        />
       </Row>
     </Styled(Grid)>
     <Connect(Footer) />

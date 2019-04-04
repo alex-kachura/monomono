@@ -5,7 +5,7 @@ import isAuthenticatedFactory from '@web-foundations/express-identity-validate';
 import handleAuthenticated from '../middleware/handle-authenticated';
 import setResponseData from '../middleware/response-data';
 import identity from '../services/identity';
-import { getVerifyPage } from './verify';
+import { getVerifyPage, postVerifyPage } from './verify';
 
 const { name: csrfCookieName, ...csrfCookieOptions } = config.get('cookie.CSRF');
 
@@ -45,6 +45,7 @@ appRouter.use(
 appRouter.use(setResponseData);
 
 appRouter.get('/verify', getVerifyPage);
+appRouter.post('/verify', postVerifyPage);
 baseRouter.use(`/${BASE_PATH}/${APP_PATH}/:locale`, appRouter);
 
 export default baseRouter;

@@ -36,9 +36,9 @@ NotFoundPage.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    config: state.get('config').toJS(),
-    region: state.get('region'),
-    getLocalePhrase: state.get('getLocalePhrase'),
+    config: state.config,
+    region: state.region,
+    getLocalePhrase: state.getLocalePhrase,
   };
 }
 

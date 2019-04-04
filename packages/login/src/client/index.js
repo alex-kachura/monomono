@@ -2,7 +2,6 @@ import '../public/styles/opinionlab.css';
 
 import 'babel-polyfill';
 import Polyglot from 'node-polyglot';
-import Immutable from 'immutable';
 import { createBrowserHistory } from 'history';
 import dataFetchMiddleware from '../universal/middleware/fetch-data';
 import handleAuthMiddleware from '../universal/middleware/handle-unauthenticated';
@@ -21,10 +20,10 @@ const dictionary = new Polyglot({
   locale: lang,
 });
 
-const state = Immutable.fromJS({
+const state = {
   ...initialState,
   getLocalePhrase: (key, variables) => dictionary.t(key, variables),
-});
+};
 
 const history = createBrowserHistory();
 const store = configureStore(state, history, dataFetchMiddleware, handleAuthMiddleware, analyticsMiddleware);

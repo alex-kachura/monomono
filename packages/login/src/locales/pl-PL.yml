@@ -63,13 +63,11 @@ pages:
   verify:
     title: "Account verification"
     sub-title: "Your online security is important to us."
-    digits-prompt: "Please enter the digits requested."
-    digits-ordinal: "th"
+    digits-prompt: "Please enter the digits requested from any Clubcard, Tesco credit card or privilidge card on your account."
+    digits-label: "th digit"
     contact-us: "For further help, contact Customer services on 0800 591 688* or 0330 123 1688**"
     calls-info1: "Calls are free from a BT landline number, lines are open Monday - Friday 8am to 8pm, Saturday 8am - 6pm."
     calls-info2: "Calls from mobiles will be charged at local rate. Lines are open Monday - Friday 8am to 8pm, Saturday 8am - 6pm."
-    buttons:
-      submit: "Submit"
 
   not-found:
     title: "Page not found"

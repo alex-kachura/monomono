@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 import Footer from '../common/footer';
 import Header from '../common/header';
 import { DefaultThemeProvider } from '@beans/theme';
 import { Grid, Column, Row } from '@beans/grid';
 import Breadcrumb from '../common/breadcrumb';
-import Spinner from '../common/spinner';
+// import Spinner from '../common/spinner';
 import { GlobalStyle, AppContainer, GridStyled } from './styled.js';
 
 const globalStyles = {
@@ -22,7 +22,6 @@ const globalStyles = {
 export class App extends React.Component {
   static propTypes = {
     route: PropTypes.object,
-    waiting: PropTypes.bool.isRequired,
   };
 
   shouldComponentUpdate() {
@@ -45,7 +44,7 @@ export class App extends React.Component {
           <GridStyled fixed="md">
             <Row>
               <Column size={24} sm={18} md={18} lg={15} xl={12} centered>
-                {this.props.waiting ? <Spinner /> : renderRoutes(this.props.route.routes)}
+                {renderRoutes(this.props.route.routes)}
               </Column>
             </Row>
           </GridStyled>
@@ -56,10 +55,10 @@ export class App extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    waiting: state.getIn(['fetch', 'waiting']),
-  };
-}
+// function mapStateToProps(state) {
+//   return {
+//     waiting: state.fetch.waiting,
+//   };
+// }
 
-export default connect(mapStateToProps)(App);
+export default App;
