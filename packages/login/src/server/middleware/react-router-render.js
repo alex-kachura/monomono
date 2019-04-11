@@ -8,7 +8,6 @@ import { getPageName } from '../../utils/analytics';
 import createHistory from 'history/createMemoryHistory';
 import { renderServer } from '../../renderer';
 import routesFactory from '../../universal/routes';
-import { configureStore } from '../../universal/store';
 import { getDictionary, getPhraseFactory } from '../utils/i18n';
 
 export default function reactRouterRenderMiddlewareFactory() {
@@ -38,20 +37,18 @@ export default function reactRouterRenderMiddlewareFactory() {
     // access method consistent between server and client.
     clientConfig[req.region] = clientRegionalConfig;
 
-    const initialState = {
+    const initialData = {
       ...res.data,
       config: clientConfig,
       lang,
-      region: req.region,
       host: `${config.protocol}${req.hostname}`,
       rootPath: `/${config.basePath}/${config.appPath}/${lang}`,
       getLocalePhrase: getPhraseFactory(lang),
     };
 
-    const store = configureStore(initialState, history);
     const routes = routesFactory(config, lang);
     const sheet = new ServerStyleSheet();
-    const html = renderServer(store, history, routes, context, sheet, req.originalUrl);
+    const html = renderServer(initialData, history, routes, context, sheet, req.originalUrl);
     const styles = sheet.getStyleTags();
     const branch = matchRoutes(routes, req.path);
     const isNotFound = branch.find((b) => b.route.key === 'NotFound');
@@ -92,7 +89,7 @@ export default function reactRouterRenderMiddlewareFactory() {
       }
 
       // Generate the response markup and send it to the client.
-      res.send(layout(data, html, store.getState(), assets, styles));
+      res.send(layout(data, html, initialData, assets, styles));
     }
   };
 }

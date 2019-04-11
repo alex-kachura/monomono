@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { configure, shallow, mount, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+
 // import ThemeProvider from '@ddl/react-theme-provider';
 
 configure({ adapter: new Adapter() });

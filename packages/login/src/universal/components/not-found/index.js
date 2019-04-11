@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { Link } from '../common/styled-components';
 import DocumentTitle from 'react-document-title';
 import { PageTitle, BodyText } from '@beans/typography';
+import { useAppConfig } from '@oneaccount/react-foundations';
 
 const LOCALE_ROOT = 'pages.not-found';
 
-export function NotFoundPage({ config, region, getLocalePhrase }) {
+export function NotFoundPage() {
+  const { getLocalePhrase, config, region } = useAppConfig();
   const { tescoHomepage } = config[region].externalApps;
 
   return (
@@ -28,18 +29,4 @@ NotFoundPage.contextTypes = {
   theme: PropTypes.object,
 };
 
-NotFoundPage.propTypes = {
-  config: PropTypes.object.isRequired,
-  region: PropTypes.string.isRequired,
-  getLocalePhrase: PropTypes.func.isRequired,
-};
-
-function mapStateToProps(state) {
-  return {
-    config: state.config,
-    region: state.region,
-    getLocalePhrase: state.getLocalePhrase,
-  };
-}
-
-export default connect(mapStateToProps)(NotFoundPage);
+export default NotFoundPage;

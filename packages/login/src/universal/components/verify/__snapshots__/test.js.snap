@@ -1,232 +1,185 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[Component: VerifyPage] account locked should render correctly 1`] = `
-<SideEffect(DocumentTitle)
-  title="pages.verify.title"
->
+exports[`VerifyPage component account locked should render correctly 1`] = `
+<DocumentFragment>
   <div>
-    <PageTitle
-      margin={true}
-      tagName="h1"
+    <h1
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 bISoeZ"
     >
       pages.verify.title
-    </PageTitle>
-    <BodyText
-      emphasized={false}
-      margin={true}
-      tagName="p"
+    </h1>
+    <p
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fAWPzW"
     >
       pages.verify.sub-title
-    </BodyText>
-    <Banner />
-    <styled.div>
-      <BodyText
-        emphasized={false}
-        margin={false}
-        tagName="p"
-      >
-        pages.verify.digits-prompt
-      </BodyText>
-      <form
-        autoComplete="off"
-        method="POST"
-        noValidate={true}
-      >
-        <styled.div
-          key="mock-name"
-        >
-          <FormGroup
-            disabled={false}
-            error={false}
-            errorMessage=""
-            fieldset={false}
-            helpLinkProps={Object {}}
-            hideLabel={false}
-            id="mock-id"
-            labelProps={Object {}}
-            labelText="mock label"
-            required={true}
-          >
-            <Styled(Input)
-              id="mock-id-input"
-              name="mock-name"
-              value=""
-            />
-          </FormGroup>
-        </styled.div>
-        <input
-          defaultValue="state-token"
-          id="state"
-          name="state"
-          type="hidden"
-        />
-        <input
-          name="_csrf"
-          type="hidden"
-          value="csrf-token"
-        />
-        <Styled(WithProps(Button))
-          type="submit"
-          variant="primary"
-        >
-          pages.verify.buttons.submit
-        </Styled(WithProps(Button))>
-      </form>
-    </styled.div>
+    </p>
   </div>
-</SideEffect(DocumentTitle)>
+</DocumentFragment>
 `;
 
-exports[`[Component: VerifyPage] account not locked fields should render correctly 1`] = `
-<SideEffect(DocumentTitle)
-  title="pages.verify.title"
->
+exports[`VerifyPage component account not locked should render correctly 1`] = `
+<DocumentFragment>
   <div>
-    <PageTitle
-      margin={true}
-      tagName="h1"
+    <h1
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 bISoeZ"
     >
       pages.verify.title
-    </PageTitle>
-    <BodyText
-      emphasized={false}
-      margin={true}
-      tagName="p"
+    </h1>
+    <p
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fAWPzW"
     >
       pages.verify.sub-title
-    </BodyText>
-    <Banner />
-    <styled.div>
-      <BodyText
-        emphasized={false}
-        margin={false}
-        tagName="p"
-      >
-        pages.verify.digits-prompt
-      </BodyText>
+    </p>
+    <div
+      class="sc-VigVT ajhGp"
+    >
       <form
-        autoComplete="off"
+        autocomplete="off"
         method="POST"
-        noValidate={true}
+        novalidate=""
       >
-        <styled.div
-          key="mock-name"
+        <fieldset
+          class="base-components__RootElement-sc-150tvch-1 sc-ifAKCX kZiBxq styled__FormGroupContainer-wt4ift-1 hVjJdM"
         >
-          <FormGroup
-            disabled={false}
-            error={false}
-            errorMessage=""
-            fieldset={false}
-            helpLinkProps={Object {}}
-            hideLabel={false}
-            id="mock-id"
-            labelProps={Object {}}
-            labelText="mock label"
-            required={true}
+          <div
+            class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-wt4ift-3 iYRfeQ"
           >
-            <Styled(Input)
-              id="mock-id-input"
-              name="mock-name"
-              value=""
+            <legend
+              class="base-components__BaseElement-sc-150tvch-0 styled__Legend-wt4ift-2 isVbKl"
+            >
+              pages.verify.digits-prompt 
+            </legend>
+          </div>
+          <div
+            class="beans-form-group__children"
+          >
+            <div
+              class="sc-EHOje jLXrNP"
+              id="clubcard-form-group"
+              required=""
             />
-          </FormGroup>
-        </styled.div>
+          </div>
+        </fieldset>
         <input
-          defaultValue="state-token"
-          id="state"
           name="state"
           type="hidden"
+          value="mock-token"
         />
         <input
           name="_csrf"
           type="hidden"
-          value="csrf-token"
+          value="mock-csrf"
         />
-        <Styled(WithProps(Button))
+        <button
+          aria-disabled="false"
+          class="styled__BaseButton-sc-3mnirm-0 sc-gZMcBi cNSVJD styled__PrimaryButton-sc-3mnirm-2 evotEg"
+          role="button"
           type="submit"
-          variant="primary"
         >
-          pages.verify.buttons.submit
-        </Styled(WithProps(Button))>
+          <span
+            class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 lnNmDn"
+          >
+            <span
+              class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__PrimarySpan-sc-3mnirm-5 hrUcvf"
+            >
+              pages.verify.buttons.submit
+            </span>
+          </span>
+        </button>
       </form>
-    </styled.div>
+    </div>
   </div>
-</SideEffect(DocumentTitle)>
+</DocumentFragment>
 `;
 
-exports[`[Component: VerifyPage] account not locked no fields should render correctly 1`] = `
-<SideEffect(DocumentTitle)
-  title="pages.verify.title"
->
+exports[`VerifyPage component account not locked should render correctly 2`] = `
+<DocumentFragment>
   <div>
-    <PageTitle
-      margin={true}
-      tagName="h1"
+    <h1
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 bISoeZ"
     >
       pages.verify.title
-    </PageTitle>
-    <BodyText
-      emphasized={false}
-      margin={true}
-      tagName="p"
+    </h1>
+    <p
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fAWPzW"
     >
       pages.verify.sub-title
-    </BodyText>
-    <Banner />
-    <styled.div>
-      <BodyText
-        emphasized={false}
-        margin={false}
-        tagName="p"
-      >
-        pages.verify.digits-prompt
-      </BodyText>
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`VerifyPage component should render correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <h1
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 bISoeZ"
+    >
+      pages.verify.title
+    </h1>
+    <p
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fAWPzW"
+    >
+      pages.verify.sub-title
+    </p>
+    <div
+      class="sc-VigVT ajhGp"
+    >
       <form
-        autoComplete="off"
+        autocomplete="off"
         method="POST"
-        noValidate={true}
+        novalidate=""
       >
-        <styled.div
-          key="mock-name"
+        <fieldset
+          class="base-components__RootElement-sc-150tvch-1 sc-ifAKCX kZiBxq styled__FormGroupContainer-wt4ift-1 hVjJdM"
         >
-          <FormGroup
-            disabled={false}
-            error={false}
-            errorMessage=""
-            fieldset={false}
-            helpLinkProps={Object {}}
-            hideLabel={false}
-            id="mock-id"
-            labelProps={Object {}}
-            labelText="mock label"
-            required={true}
+          <div
+            class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-wt4ift-3 iYRfeQ"
           >
-            <Styled(Input)
-              id="mock-id-input"
-              name="mock-name"
-              value=""
+            <legend
+              class="base-components__BaseElement-sc-150tvch-0 styled__Legend-wt4ift-2 isVbKl"
+            >
+              pages.verify.digits-prompt 
+            </legend>
+          </div>
+          <div
+            class="beans-form-group__children"
+          >
+            <div
+              class="sc-EHOje jLXrNP"
+              id="clubcard-form-group"
+              required=""
             />
-          </FormGroup>
-        </styled.div>
+          </div>
+        </fieldset>
         <input
-          defaultValue="state-token"
-          id="state"
           name="state"
           type="hidden"
+          value="mock-token"
         />
         <input
           name="_csrf"
           type="hidden"
-          value="csrf-token"
+          value="mock-csrf"
         />
-        <Styled(WithProps(Button))
+        <button
+          aria-disabled="false"
+          class="styled__BaseButton-sc-3mnirm-0 sc-gZMcBi cNSVJD styled__PrimaryButton-sc-3mnirm-2 evotEg"
+          role="button"
           type="submit"
-          variant="primary"
         >
-          pages.verify.buttons.submit
-        </Styled(WithProps(Button))>
+          <span
+            class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 lnNmDn"
+          >
+            <span
+              class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__PrimarySpan-sc-3mnirm-5 hrUcvf"
+            >
+              pages.verify.buttons.submit
+            </span>
+          </span>
+        </button>
       </form>
-    </styled.div>
+    </div>
   </div>
-</SideEffect(DocumentTitle)>
+</DocumentFragment>
 `;

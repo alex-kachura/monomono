@@ -20,10 +20,13 @@ function renderBody(children, text) {
   return null;
 }
 
-export default function Banner({ bannerType, title, text, children }) {
-  return bannerType ? (
+export default function Banner({ type, title, text, children }) {
+  return type ? (
     <Container>
-      <Notification title={title} variant={bannerType}>
+      <Notification
+        title={title}
+        variant={type}
+      >
         {renderBody(children, text)}
       </Notification>
     </Container>
@@ -31,7 +34,7 @@ export default function Banner({ bannerType, title, text, children }) {
 }
 
 Banner.propTypes = {
-  bannerType: PropTypes.string,
+  type: PropTypes.string,
   title: PropTypes.string,
   text: PropTypes.string,
   children: PropTypes.node,

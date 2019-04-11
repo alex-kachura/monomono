@@ -1,64 +1,39 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 import Footer from '../common/footer';
 import Header from '../common/header';
-import { DefaultThemeProvider } from '@beans/theme';
 import { Grid, Column, Row } from '@beans/grid';
+import { RootElement } from '@beans/foundation';
 import Breadcrumb from '../common/breadcrumb';
-// import Spinner from '../common/spinner';
-import { GlobalStyle, AppContainer, GridStyled } from './styled.js';
+import { GlobalStyle, GridStyled } from './styled.js';
 
-const globalStyles = {
-  fonts: {
-    fileFormats: ['eot', 'woff2', 'woff', 'ttf', 'svg'],
-    filePath: '/account/login/fonts',
-    styleNames: ['bold', 'regular', 'regularItalic'],
-  },
-  normalize: true,
-};
-
-export class App extends React.Component {
-  static propTypes = {
-    route: PropTypes.object,
-  };
-
-  shouldComponentUpdate() {
-    return true;
-  }
-
-  render() {
-    return (
-      <DefaultThemeProvider globalStyles={globalStyles}>
-        <AppContainer>
-          <GlobalStyle />
-          <Header />
-          <Grid fixed="md">
-            <Row>
-              <Column size={24}>
-                <Breadcrumb />
-              </Column>
-            </Row>
-          </Grid>
-          <GridStyled fixed="md">
-            <Row>
-              <Column size={24} sm={18} md={18} lg={15} xl={12} centered>
-                {renderRoutes(this.props.route.routes)}
-              </Column>
-            </Row>
-          </GridStyled>
-          <Footer />
-        </AppContainer>
-      </DefaultThemeProvider>
-    );
-  }
+export function App(props) {
+  return (
+    <RootElement>
+      <GlobalStyle />
+      <Header />
+      <Grid fixed="md">
+        <Row>
+          <Column size={24}>
+            <Breadcrumb />
+          </Column>
+        </Row>
+      </Grid>
+      <GridStyled fixed="sm">
+        <Row>
+          <Column size={24} sm={24} md={18} lg={14.4} xl={12} centered>
+            {renderRoutes(props.route.routes)}
+          </Column>
+        </Row>
+      </GridStyled>
+      <Footer />
+    </RootElement>
+  );
 }
 
-// function mapStateToProps(state) {
-//   return {
-//     waiting: state.fetch.waiting,
-//   };
-// }
+App.propTypes = {
+  route: PropTypes.object,
+};
 
-export default App;
+export default memo(App);

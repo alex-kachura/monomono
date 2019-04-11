@@ -63,13 +63,37 @@ pages:
   verify:
     title: "Account verification"
     sub-title: "Your online security is important to us."
-    digits-prompt: "Please enter the digits requested."
+    digits-prompt: "Enter the requested Clubcard digits"
     digits-ordinal: "th"
-    contact-us: "For further help, contact Customer services on 0800 591 688* or 0330 123 1688**"
-    calls-info1: "Calls are free from a BT landline number, lines are open Monday - Friday 8am to 8pm, Saturday 8am - 6pm."
-    calls-info2: "Calls from mobiles will be charged at local rate. Lines are open Monday - Friday 8am to 8pm, Saturday 8am - 6pm."
+    error-msg: "Please enter the requested digit"
     buttons:
       submit: "Submit"
+    clubcard-info:
+      heading: "Where can I find my Clubcard number?"
+      sub-heading-1: "Tesco Clubcard"
+      copy-1: "You can find your Clubcard number digits on the front of your Tesco Clubcard."
+      sub-heading-2: "Tesco Bank Credit Card?"
+      copy-2: "You can find your Clubcard number digits on the back of your Tesco Bank card, beneath the signature strip."
+    order-clubcard:
+      heading: "Can’t find your Clubcard?"
+      copy: "We can send you a new one by post, in 7-10 days."
+      button: "Order a new one"
+    contact-info:
+      heading: "Contact information"
+      contact-us:
+        part-1: "For further help, contact Customer services on "
+        part-2: "* or "
+        part-3: "**"
+      phone-number-1: "0800 591 688"
+      phone-number-2: "0330 123 1688"
+      calls-info1: "Calls are free from a BT landline number, lines are open Monday - Friday 8am to 8pm, Saturday 8am - 6pm."
+      calls-info2: "Calls from mobiles will be charged at local rate. Lines are open Monday - Friday 8am to 8pm, Saturday 8am - 6pm."
+    banners:
+      incorrect-digits:
+        title: "Please try again"
+        text: "The details you have entered do not match an active Clubcard for this account."
+      account-locked:
+        title: "Your account is locked after too many fail attempts. To unlock your account please contact Customer Services*"
 
   not-found:
     title: "Page not found"

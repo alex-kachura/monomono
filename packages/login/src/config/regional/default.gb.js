@@ -1,7 +1,7 @@
 module.exports = {
   externalApps: {
     tescoHomepage: 'https://www-local.tesco.com',
-    tescoSecure: 'https://secure-local.tesco.com',
+    tescoSecure: 'https://secure-ppe.tesco.com',
     login: 'https://www-local.tesco.com/account/en-GB/login',
     logout: 'https://www-local.tesco.com/account/en-GB/logout',
   },
@@ -164,44 +164,39 @@ module.exports = {
     },
     selectedMenuItemID: 'utility-tesco',
   },
-  fields: [
-    {
-      id: 'sample1',
-      name: 'sample1',
-      label: 'pages.edit.fields.sample1.label',
-      isValid: true,
-      value: '',
-      type: 'input',
-      constraints: [
-        {
-          type: 'mandatory',
-          text: 'pages.edit.fields.sample1.errors.empty',
-          validator: true,
-          isValid: true,
-        },
-      ],
+  schema: {
+    type: 'object',
+    required: [],
+    properties: {
+      digit11: {
+        type: 'integer',
+        maxLength: 1,
+        errorMessage: 'Please enter the requested digit',
+      },
+      digit12: {
+        type: 'integer',
+        maxLength: 1,
+        errorMessage: 'Please enter the requested digit',
+      },
+      digit13: {
+        type: 'integer',
+        maxLength: 1,
+        errorMessage: 'Please enter the requested digit',
+      },
+      digit14: {
+        type: 'integer',
+        maxLength: 1,
+        errorMessage: 'Please enter the requested digit',
+      },
     },
-    {
-      id: 'sample2',
-      name: 'sample2',
-      label: 'pages.edit.fields.sample2.label',
-      isValid: true,
-      value: '',
-      type: 'input',
-      constraints: [
-        {
-          type: 'mandatory',
-          text: 'pages.edit.fields.sample2.errors.empty',
-          validator: true,
-          isValid: true,
-        },
-        {
-          type: 'regex',
-          text: 'pages.edit.fields.sample2.errors.invalid',
-          validationRegex: '^\\d+$',
-          isValid: true,
-        },
-      ],
+    additionalProperties: false,
+    errorMessage: {
+      required: {
+        digit11: 'Please enter the requested digit',
+        digit12: 'Please enter the requested digit',
+        digit13: 'Please enter the requested digit',
+        digit14: 'Please enter the requested digit',
+      },
     },
-  ],
+  },
 };

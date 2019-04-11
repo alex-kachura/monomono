@@ -1,68 +1,66 @@
 import React from 'react';
-import { VerifyPage } from './';
-import { shallow } from 'enzyme';
+import VerifyPage from '.';
+import { render, cleanup } from 'react-testing-library';
+import { Root } from '@oneaccount/react-foundations';
+import { DefaultThemeProvider } from '@beans/theme';
 
-describe('[Component: VerifyPage]', () => {
-  let component;
+const globalStyles = {
+  fonts: {
+    fileFormats: ['eot', 'woff2', 'woff', 'ttf', 'svg'],
+    filePath: '/account/login/fonts',
+    styleNames: ['bold', 'regular', 'regularItalic'],
+  },
+  normalize: true,
+};
 
-  const mockFields = [
-    {
-      name: 'mock-name',
-      id: 'mock-id',
-      label: 'mock label',
-      isValid: true,
-      value: '',
-      type: 'input',
-      constraints: [
-        {
-          type: 'mandatory',
-          text: 'mock label',
-          validator: true,
-          isValid: true,
+function renderVerifyPage({ accountLocked }) {
+  return render(
+    <Root
+      initialData={{
+        banner: {
+          bannerType: '',
+          title: '',
+          text: '',
         },
-        {
-          type: 'regex',
-          text: 'mock label',
-          validationRegex: '^.{1,1}$',
-          isValid: true,
-        },
-      ],
-    }
-  ];
+        accountLocked,
+        stateToken: 'mock-token',
+        values: {},
+        errors: {},
+        schema: {},
+        fields: [],
+      }}
+      appConfig={{
+        getLocalePhrase: (key) => key,
+        csrf: 'mock-csrf',
+      }}
+      loadingFallback={<div>Looading...</div>}
+      errorFallback={<div>Error</div>}
+    >
+      <DefaultThemeProvider globalStyles={globalStyles}>
+        <VerifyPage />
+      </DefaultThemeProvider>
+    </Root>
+  );
+}
 
-  let mockProps = {
-    fields: [],
-    banner: {},
-    stateToken: 'state-token',
-    csrf: 'csrf-token',
-    getLocalePhrase: (key) => key,
-  };
+describe('VerifyPage component', () => {
+  afterEach(cleanup);
 
   describe('account not locked', () => {
-    describe('fields', () => {
-      it('should render correctly', () => {
-        mockProps = {
-          ...mockProps,
-          fields: mockFields,
-        };
-        component = shallow(<VerifyPage {...mockProps} />);
+    it('should render correctly', () => {
+      const { asFragment } = renderVerifyPage({ accountLocked: false });
+      const fragment = asFragment();
 
-        expect(component).toMatchSnapshot();
-      });
-    });
-
-    describe('no fields', () => {
-      it('should render correctly', () => {
-        component = shallow(<VerifyPage {...mockProps} />);
-
-        expect(component).toMatchSnapshot();
-      });
+      expect(fragment).toMatchSnapshot();
     });
   });
 
   describe('account locked', () => {
     it('should render correctly', () => {
-      expect(component).toMatchSnapshot();
+      const { asFragment } = renderVerifyPage({ accountLocked: true });
+      const fragment = asFragment();
+
+      expect(fragment).toMatchSnapshot();
     });
   });
 });

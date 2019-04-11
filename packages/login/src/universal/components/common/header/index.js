@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import AppBar from '@beans/appbar';
 import Masthead from '@beans/masthead';
 import MainMenu from '@beans/primary-navigation';
 import { HeaderContainer, HeaderStyled } from './styled';
+import { connectApp } from '@oneaccount/react-foundations';
 
-class Header extends React.Component {
+class Header extends React.PureComponent {
   static propTypes = {
-    config: PropTypes.object.isRequired,
-    region: PropTypes.string.isRequired,
-    isAuthenticated: PropTypes.bool.isRequired,
-    getLocalePhrase: PropTypes.func.isRequired,
+    appConfig: PropTypes.shape({
+      config: PropTypes.object.isRequired,
+      region: PropTypes.string.isRequired,
+      isAuthenticated: PropTypes.bool.isRequired,
+      getLocalePhrase: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
   constructor(props) {
@@ -21,16 +23,12 @@ class Header extends React.Component {
     this.getMobileMenuItem = this.getMobileMenuItem.bind(this);
   }
 
-  shouldComponentUpdate() {
-    return true;
-  }
-
   handleOnChange({ selectedMenu, selectedMenuItemID }) {
     this.setState({ selectedMenu, selectedMenuItemID });
   }
 
   getMenuLinks() {
-    const { config, region, getLocalePhrase, isAuthenticated } = this.props;
+    const { config, region, getLocalePhrase, isAuthenticated } = this.props.appConfig;
     const loginUrl = config[region].externalApps.login;
     const links = config[region].header.menu.map((link) => ({
       ...link,
@@ -54,7 +52,7 @@ class Header extends React.Component {
   }
 
   getMobileMenuItem() {
-    const { config, region, getLocalePhrase } = this.props;
+    const { config, region, getLocalePhrase } = this.props.appConfig;
     const { mobileMenuItem } = config[region].header;
 
     return {
@@ -64,7 +62,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { config, region } = this.props;
+    const { config, region } = this.props.appConfig;
     const menuLinks = this.getMenuLinks();
 
     return (
@@ -89,14 +87,4 @@ class Header extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    config: state.config,
-    locale: state.locale,
-    region: state.region,
-    isAuthenticated: state.isAuthenticated,
-    getLocalePhrase: state.getLocalePhrase,
-  };
-}
-
-export default connect(mapStateToProps)(Header);
+export default connectApp(Header);

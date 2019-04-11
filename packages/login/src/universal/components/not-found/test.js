@@ -14,14 +14,6 @@ describe('NotFound component', () => {
     getLocalePhrase: (key) => key,
     host: 'mock-host',
     rootPath: '/mock-path',
-    region: 'GB',
-    config: {
-      GB: {
-        externalApps: {
-          tescoHomepage: 'mock-homepage',
-        },
-      },
-    },
   };
 
   let component;

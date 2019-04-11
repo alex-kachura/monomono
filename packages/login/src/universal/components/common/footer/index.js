@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import BeansFooter from '@beans/footer';
+import { connectApp } from '@oneaccount/react-foundations';
 
 const CLOSE = 'close';
 const ALL = 'all';
 
-export class Footer extends React.Component {
+export class Footer extends React.PureComponent {
   static propTypes = {
-    config: PropTypes.object.isRequired,
-    region: PropTypes.string.isRequired,
-    getLocalePhrase: PropTypes.func.isRequired,
+    appConfig: PropTypes.shape({
+      config: PropTypes.object.isRequired,
+      region: PropTypes.string.isRequired,
+      getLocalePhrase: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
   constructor(props) {
@@ -25,16 +27,12 @@ export class Footer extends React.Component {
     this.getFooterLinks = this.getFooterLinks.bind(this);
   }
 
-  shouldComponentUpdate() {
-    return true;
-  }
-
   handleAccordionOnChange({ action, id }) {
     this.setState({ activeAccordion: { action, id } });
   }
 
   renderCopyright() {
-    const { getLocalePhrase } = this.props;
+    const { getLocalePhrase } = this.props.appConfig;
     const copyright = getLocalePhrase('footer.copyright', {
       year: new Date().getFullYear(),
     });
@@ -43,19 +41,19 @@ export class Footer extends React.Component {
   }
 
   getFooterLinks() {
-    const { config, region, getLocalePhrase } = this.props;
+    const { config, region, getLocalePhrase } = this.props.appConfig;
 
     return config[region].footerLinks.map((section, i) => ({
-      header: getLocalePhrase(`footer.links.header${i+1}.title`),
+      header: getLocalePhrase(`footer.links.header${i + 1}.title`),
       links: section.links.map((link, j) => ({
         ...link,
-        text: getLocalePhrase(`footer.links.header${i+1}.link${j+1}`),
-      }))
+        text: getLocalePhrase(`footer.links.header${i + 1}.link${j + 1}`),
+      })),
     }));
   }
 
   render() {
-    const { config, region } = this.props;
+    const { config, region, getLocalePhrase } = this.props.appConfig;
 
     return (
       <BeansFooter
@@ -63,19 +61,22 @@ export class Footer extends React.Component {
         contentLinks={this.getFooterLinks()}
         onChange={this.handleAccordionOnChange}
         socialLinks={config[region].socialLinks}
-        followUsText={this.props.getLocalePhrase('footer.social-bar.label')}
+        followUsText={getLocalePhrase('footer.social-bar.label')}
         copyrightText={this.renderCopyright()}
       />
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    config: state.config,
-    region: state.region,
-    getLocalePhrase: state.getLocalePhrase,
-  };
-}
+// const footerSelector = createSelector(
+//   (state) => state.get('config'),
+//   (state) => state.get('region'),
+//   (state) => state.get('getLocalePhrase'),
+//   (config, region, getLocalePhrase) => ({
+//     config: config.toJS(),
+//     region,
+//     getLocalePhrase,
+//   }),
+// );
 
-export default connect(mapStateToProps)(Footer);
+export default connectApp(Footer);

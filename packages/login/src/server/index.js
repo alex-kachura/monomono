@@ -2,9 +2,9 @@ import path from 'path';
 import express from 'express';
 import config from 'config';
 import helmet from 'helmet';
-import { fromJS } from 'immutable';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import MobileDetect from 'mobile-detect';
 import traceidMiddlewareFactory from '@web-foundations/express-traceid';
 import reactRouterRenderMiddleware from './middleware/react-router-render';
 import routes from './routes';
@@ -50,10 +50,14 @@ export default () => {
   app.use(localeMiddlewareFactory({ locales: config.locales }));
   app.use((req, res, next) => {
     // Set up the initial state object.
-    res.data = fromJS({
+    res.data = {
       region: req.region,
       lang: req.lang,
-    });
+    };
+
+    res.device = new MobileDetect(req.headers['user-agent']);
+    res.isMobile = Boolean(res.device.phone() || res.device.tablet());
+
     next();
   });
   app.use(onwardLocation);

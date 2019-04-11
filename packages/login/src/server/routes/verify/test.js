@@ -2,16 +2,18 @@ import config from 'config';
 
 describe('[Route: /verify]', () => {
   let result;
+  const mockFormikErrors = 'mock-formik-errors';
+  const mockError = 'mock-error';
   const mockTracer = 'mock-tracer';
-  const mockSend = jest.fn();
-  let responseType;
   const mockUpdated = 'mock-updated';
   const mockLang = 'mock-lang';
   const mockRegion = 'GB';
   const mockAccessToken = 'mock-token';
-  const mockError = 'mock-error';
   const mockStateToken = 'mock-state-token';
+  const { schema } = config[mockRegion];
+  let mockRedirect = jest.fn();
   const mockBody = {
+    digit11: '3',
     state: mockStateToken,
   };
   const req = {
@@ -24,11 +26,7 @@ describe('[Route: /verify]', () => {
     region: mockRegion,
     body: mockBody,
   };
-  const res = {
-    format: (f) => f[responseType](),
-    send: mockSend,
-    data: {},
-  };
+  let res;
   let next;
   let mockLogger;
   let mockControllerFactory;
@@ -36,31 +34,52 @@ describe('[Route: /verify]', () => {
   const mockAuthenticated = 'mock-authenticated';
   const mockResponse = 'mock-response';
   const mockFields = 'mock-fields';
+  const mockFieldsToRender = [
+    {
+      name: 'digit11',
+    },
+    {
+      name: 'digit12',
+    },
+  ];
+  const mockRequiredFields = ['digit11', 'digit12'];
   let mockMapPayloadToFields;
   let mockMapValuesToPayload;
-  let mockSendToLogin;
+  let mockSetAuthCookies;
+  let mockConvertAJVErrorsToFormik;
+  const mockValidator = jest.fn();
+  let mockCompile;
+  let mockAjv;
 
-  function mockGetImports() {
+  function mockImports() {
     next = jest.fn(() => mockResponse);
-    mockMapPayloadToFields = jest.fn((fields) => fields);
+    mockMapPayloadToFields = jest.fn(() => mockFieldsToRender);
     mockMapValuesToPayload = jest.fn(() => mockFields);
-    mockSendToLogin = jest.fn(() => mockResponse);
+    mockSetAuthCookies = jest.fn(() => mockResponse);
+    mockCompile = jest.fn(() => mockValidator);
+    mockAjv = {
+      compile: mockCompile,
+    };
+    mockConvertAJVErrorsToFormik = jest.fn(() => mockFormikErrors);
 
     jest.doMock('../../logger', () => ({ logOutcome: mockLogger }));
     jest.doMock('./utils', () => ({
       mapPayloadToFields: mockMapPayloadToFields,
       mapValuesToPayload: mockMapValuesToPayload,
-      sendToLogin: mockSendToLogin,
+      setAuthCookies: mockSetAuthCookies,
+      ajv: mockAjv,
     }));
     jest.doMock('../../controllers', () => mockControllerFactory);
+    jest.doMock('@oneaccount/react-foundations', () => ({
+      convertAJVErrorsToFormik: mockConvertAJVErrorsToFormik,
+    }));
   }
 
   afterEach(() => {
     next.mockClear();
-    mockSend.mockClear();
     mockLogger.mockClear();
+    mockRedirect.mockClear();
     jest.resetModules();
-    res.data = {};
   });
 
   describe('[GET]', () => {
@@ -68,6 +87,7 @@ describe('[Route: /verify]', () => {
     let mockHandshake;
 
     beforeEach(() => {
+      mockRedirect = jest.fn(() => mockResponse);
       mockHandshake = jest.fn();
       mockControllerFactory = jest.fn(() => ({
         handshake: mockHandshake,
@@ -75,175 +95,135 @@ describe('[Route: /verify]', () => {
       mockLogger = jest.fn();
       mockGetClaims = jest.fn(() => ({ accessToken: mockAccessToken }));
       req.getClaims = mockGetClaims;
+      res = {
+        data: {
+          foo: 'bar',
+        },
+        redirect: mockRedirect,
+      };
     });
 
-    describe('[Content-Type: html]', () => {
-      beforeEach(() => {
-        responseType = 'html';
+    describe('authenticated', () => {
+      beforeEach(async () => {
+        mockImports();
+
+        mockHandshake.mockReturnValue(
+          Promise.resolve({
+            authenticated: mockAuthenticated,
+          })
+        );
+
+        getVerifyPage = require('./').getVerifyPage;
+
+        result = await getVerifyPage(req, res, next);
       });
 
-      describe('authenticated', () => {
-        beforeEach(async () => {
-          mockGetImports();
+      it('should call controllerFactory correctly', () => {
+        expect(mockControllerFactory).toHaveBeenCalledWith('verify', mockRegion);
+      });
 
-          mockHandshake.mockReturnValue(
-            Promise.resolve({
-              authenticated: mockAuthenticated,
-            })
-          );
+      it('should call getClaims', () => {
+        expect(mockGetClaims).toHaveBeenCalledWith();
+      });
 
-          getVerifyPage = require('./').getVerifyPage;
-
-          result = await getVerifyPage(req, res, next);
-        });
-
-        it('should call controllerFactory correctly', () => {
-          expect(mockControllerFactory).toHaveBeenCalledWith('verify', mockRegion);
-        });
-
-        it('should call getClaims', () => {
-          expect(mockGetClaims).toHaveBeenCalledWith();
-        });
-
-        it('should call handshake', () => {
-          expect(mockHandshake).toHaveBeenCalledWith({
-            accessToken: mockAccessToken,
-            context: req,
-            tracer: mockTracer,
-          });
-        });
-
-        it('should log the outcome', () => {
-          expect(mockLogger).toHaveBeenCalledWith('get:verify', 'successful-user-already-16', req);
-        });
-
-        it('should call sendToLogin utility', () => {
-          expect(mockSendToLogin).toHaveBeenCalledWith(
-            req, res, mockAuthenticated
-          );
-        });
-
-        it('should return result of sendToLogin', () => {
-          expect(result).toEqual(mockResponse);
+      it('should call handshake', () => {
+        expect(mockHandshake).toHaveBeenCalledWith({
+          accessToken: mockAccessToken,
+          context: req,
+          tracer: mockTracer,
         });
       });
 
-      describe('challenge', () => {
-        beforeEach(async () => {
-          mockGetImports();
+      it('should log the outcome', () => {
+        expect(mockLogger).toHaveBeenCalledWith('verify:get', 'successful-user-already-16', req);
+      });
 
-          mockHandshake.mockReturnValue(
-            Promise.resolve({
-              challenge: {
-                fields: mockFields,
-                stateToken: mockStateToken,
-              },
-            })
-          );
+      it('should call setAuthCookies utility', () => {
+        expect(mockSetAuthCookies).toHaveBeenCalledWith(req, res, mockAuthenticated);
+      });
 
-          getVerifyPage = require('./').getVerifyPage;
+      it('should redirect to login', () => {
+        expect(mockRedirect).toHaveBeenCalledWith(config[mockRegion].externalApps.login);
+      });
 
-          result = await getVerifyPage(req, res, next);
-        });
+      it('should return redirect', () => {
+        expect(result).toEqual(mockResponse);
+      });
+    });
 
-        it('should call mapPayloadToFields', () => {
-          expect(mockMapPayloadToFields).toHaveBeenCalledWith(mockFields, mockLang);
-        });
+    describe('challenge', () => {
+      beforeEach(async () => {
+        mockImports();
 
-        it('should log the outcome', () => {
-          expect(mockLogger).toHaveBeenCalledWith('get:verify', 'successful-page-load', req);
-        });
-
-        it('should set response data', () => {
-          expect(res.data).toEqual({
-            payload: {
-              breadcrumb: [],
-              banner: {
-                bannerType: '',
-                title: '',
-                errorType: '',
-              },
-              form: {
-                fields: mockFields,
-                focusFieldId: undefined,
-                isFormValid: true,
-                formSubmitted: false,
-              },
+        mockHandshake.mockReturnValue(
+          Promise.resolve({
+            challenge: {
+              fields: mockFields,
               stateToken: mockStateToken,
-            }
-          });
-        });
+            },
+          })
+        );
+
+        getVerifyPage = require('./').getVerifyPage;
+
+        result = await getVerifyPage(req, res, next);
       });
 
-      describe('error', () => {
-        beforeEach(async () => {
-          mockGetImports();
+      it('should call mapPayloadToFields', () => {
+        expect(mockMapPayloadToFields).toHaveBeenCalledWith(mockFields, mockLang);
+      });
 
-          mockHandshake.mockReturnValue(
-            Promise.resolve({
-              error: mockError,
-            })
-          );
+      it('should log the outcome', () => {
+        expect(mockLogger).toHaveBeenCalledWith('verify:get', 'successful-page-load', req);
+      });
 
-          getVerifyPage = require('./').getVerifyPage;
-
-          result = await getVerifyPage(req, res, next);
-        });
-
-        it('should log the outcome', () => {
-          expect(mockLogger).toHaveBeenCalledWith('get:verify', 'error', req);
-        });
-
-        it('should call next', () => {
-          expect(next).toHaveBeenCalledWith(mockError);
-        });
-
-        it('expect next to be returned', () => {
-          expect(result).toEqual(mockResponse);
+      it('should set response data', () => {
+        expect(res.data).toEqual({
+          foo: 'bar',
+          payload: {
+            values: {
+              digit11: '',
+              digit12: '',
+              digit13: '',
+              digit14: '',
+            },
+            errors: {},
+            fields: mockFieldsToRender,
+            schema: {
+              ...schema,
+              required: mockRequiredFields,
+            },
+            stateToken: mockStateToken,
+          }
         });
       });
     });
 
-    describe('[Content-Type: json]', () => {
-      describe('challenge', () => {
-        beforeEach(async () => {
-          responseType = 'json';
+    describe('error', () => {
+      beforeEach(async () => {
+        mockImports();
 
-          mockGetImports();
+        mockHandshake.mockReturnValue(
+          Promise.resolve({
+            error: mockError,
+          })
+        );
 
-          mockHandshake.mockReturnValue(
-            Promise.resolve({
-              challenge: {
-                fields: mockFields,
-                stateToken: mockStateToken,
-              },
-            })
-          );
+        getVerifyPage = require('./').getVerifyPage;
 
-          getVerifyPage = require('./').getVerifyPage;
+        result = await getVerifyPage(req, res, next);
+      });
 
-          result = await getVerifyPage(req, res, next);
-        });
+      it('should log the outcome', () => {
+        expect(mockLogger).toHaveBeenCalledWith('verify:get', 'error', req);
+      });
 
-        it('should send the response', () => {
-          expect(mockSend).toHaveBeenCalledWith({
-            payload: {
-              breadcrumb: [],
-              banner: {
-                bannerType: '',
-                title: '',
-                errorType: '',
-              },
-              form: {
-                fields: mockFields,
-                focusFieldId: undefined,
-                isFormValid: true,
-                formSubmitted: false,
-              },
-              stateToken: mockStateToken,
-            }
-          });
-        });
+      it('should call next', () => {
+        expect(next).toHaveBeenCalledWith(mockError);
+      });
+
+      it('expect next to be returned', () => {
+        expect(result).toEqual(mockResponse);
       });
     });
   });
@@ -260,166 +240,144 @@ describe('[Route: /verify]', () => {
       mockLogger = jest.fn();
       mockGetClaims = jest.fn(() => ({ accessToken: mockAccessToken }));
       req.getClaims = mockGetClaims;
+
+      mockImports();
     });
 
-    describe('[Content-Type: html]', () => {
-      beforeEach(() => {
-        responseType = 'html';
+    describe('invalid form', () => {
+      beforeEach(async () => {
+        mockValidator.mockReturnValue(false);
+        mockValidator.errors = mockFormikErrors;
+        mockElevateToken.mockReturnValue(
+          Promise.resolve({
+            authenticated: mockAuthenticated,
+          })
+        );
+
+        postVerifyPage = require('./').postVerifyPage;
+
+        result = await postVerifyPage(req, res, next);
       });
 
-      describe('authenticated', () => {
-        beforeEach(async () => {
-          mockGetImports();
+      it('should call controllerFactory correctly', () => {
+        expect(mockControllerFactory).toHaveBeenCalledWith('verify', mockRegion);
+      });
 
-          mockElevateToken.mockReturnValue(
-            Promise.resolve({
-              authenticated: mockAuthenticated,
-            })
-          );
+      it('should compile validation schema', () => {
+        expect(mockCompile).toHaveBeenCalledWith(schema);
+      });
 
-          postVerifyPage = require('./').postVerifyPage;
+      it('should validate form', () => {
+        expect(mockValidator).toHaveBeenCalledWith({ digit11: '3' });
+      });
 
-          result = await postVerifyPage(req, res, next);
-        });
+      it('should log invalid form outcome', () => {
+        expect(mockLogger).toHaveBeenCalledWith('verify:post', 'invalid-form-posted', req);
+      });
 
-        it('should call controllerFactory correctly', () => {
-          expect(mockControllerFactory).toHaveBeenCalledWith('verify', mockRegion);
-        });
+      it('should convert ajv errors to formik errors', () => {
+        expect(mockConvertAJVErrorsToFormik).toHaveBeenCalledWith(mockFormikErrors, schema);
+      });
 
-        it('should call mapValuesToPayload', () => {
-          expect(mockMapValuesToPayload).toHaveBeenCalledWith(mockBody);
-        });
+      it('should call mapPayloadToFields correctly', () => {
+        expect(mockMapPayloadToFields).toHaveBeenCalledWith([
+          {
+            id: 'digit11',
+            value: '3',
+          }
+        ], mockLang)
+      });
 
-        it('should call elevateToken', () => {
-          expect(mockElevateToken).toHaveBeenCalledWith({
-            fields: mockFields,
+      it('should set response data correctly', () => {
+        expect(res.data).toEqual({
+          foo: 'bar',
+          payload: {
+            values: {
+              digit11: '3',
+              digit12: undefined,
+              digit13: undefined,
+              digit14: undefined,
+            },
+            errors: mockFormikErrors,
+            fields: mockFieldsToRender,
+            schema: {
+              ...schema,
+              required: mockRequiredFields,
+            },
             stateToken: mockStateToken,
-            lang: mockLang,
-            context: req,
-            tracer: mockTracer,
-          });
-        });
+          }
+        })
+      });
 
-        it('should log the outcome', () => {
-          expect(mockLogger).toHaveBeenCalledWith('post:verify', 'successful-token-upgrade', req);
-        });
+      it('should call next', () => {
+        expect(next).toHaveBeenCalledWith();
+      });
+    });
 
-        it('should call sendToLogin utility', () => {
-          expect(mockSendToLogin).toHaveBeenCalledWith(
-            req, res, mockAuthenticated
-          );
-        });
+    describe('authenticated', () => {
+      beforeEach(async () => {
+        mockValidator.mockReturnValue(true);
+        mockValidator.errors = mockFormikErrors;
 
-        it('should return result of sendToLogin', () => {
-          expect(result).toEqual(mockResponse);
+        mockImports();
+
+        mockElevateToken.mockReturnValue(
+          Promise.resolve({
+            authenticated: mockAuthenticated,
+          })
+        );
+
+        postVerifyPage = require('./').postVerifyPage;
+
+        result = await postVerifyPage(req, res, next);
+      });
+
+      it('should call controllerFactory correctly', () => {
+        expect(mockControllerFactory).toHaveBeenCalledWith('verify', mockRegion);
+      });
+
+      it('should call mapValuesToPayload', () => {
+        expect(mockMapValuesToPayload).toHaveBeenCalledWith(mockBody);
+      });
+
+      it('should call elevateToken', () => {
+        expect(mockElevateToken).toHaveBeenCalledWith({
+          fields: mockFields,
+          stateToken: mockStateToken,
+          lang: mockLang,
+          context: req,
+          tracer: mockTracer,
         });
       });
 
-      describe('challenge', () => {
-        describe('account not locked', () => {
-          beforeEach(async () => {
-            mockGetImports();
-
-            mockElevateToken.mockReturnValue(
-              Promise.resolve({
-                challenge: {
-                  fields: mockFields,
-                  stateToken: mockStateToken,
-                },
-              })
-            );
-
-            postVerifyPage = require('./').postVerifyPage;
-
-            result = await postVerifyPage(req, res, next);
-          });
-
-          it('should log the outcome', () => {
-            expect(mockLogger).toHaveBeenCalledWith('post:verify', 'error-incorrect-digits-entered', req);
-          });
-
-          it('should call mapPayloadToFields', () => {
-            expect(mockMapPayloadToFields).toHaveBeenCalledWith(mockFields, mockLang);
-          });
-
-          it('should set response data', () => {
-            expect(res.data).toEqual({
-              payload: {
-                breadcrumb: [],
-                banner: {
-                  bannerType: 'error',
-                  title: 'Wrong, please try again',
-                  errorType: '',
-                },
-                form: {
-                  fields: mockFields,
-                  focusFieldId: undefined,
-                  isFormValid: true,
-                  formSubmitted: false,
-                },
-                stateToken: mockStateToken,
-              }
-            });
-          });
-        });
-
-        describe('account locked', () => {
-          beforeEach(async () => {
-            mockGetImports();
-
-            mockElevateToken.mockReturnValue(
-              Promise.resolve({
-                challenge: {
-                  fields: mockFields,
-                  stateToken: mockStateToken,
-                },
-                accountLocked: true,
-              })
-            );
-
-            postVerifyPage = require('./').postVerifyPage;
-
-            result = await postVerifyPage(req, res, next);
-          });
-
-          it('should log the outcome', () => {
-            expect(mockLogger).toHaveBeenCalledWith('post:verify', 'error-max-attempts-reached', req);
-          });
-
-          it('should not call mapPayloadToFields', () => {
-            expect(mockMapPayloadToFields).not.toHaveBeenCalled();
-          });
-
-          it('should set response data', () => {
-            expect(res.data).toEqual({
-              payload: {
-                breadcrumb: [],
-                banner: {
-                  bannerType: 'error',
-                  title: 'Too many failures, locked out',
-                  errorType: '',
-                },
-                form: {
-                  fields: [],
-                  focusFieldId: undefined,
-                  isFormValid: true,
-                  formSubmitted: false,
-                },
-                stateToken: undefined,
-                accountLocked: true,
-              }
-            });
-          });
-        });
+      it('should log the outcome', () => {
+        expect(mockLogger).toHaveBeenCalledWith('verify:post', 'successful-token-upgrade', req);
       });
 
-      describe('error', () => {
+      it('should call mockSetAuthCookies utility', () => {
+        expect(mockSetAuthCookies).toHaveBeenCalledWith(req, res, mockAuthenticated);
+      });
+
+      it('should redirect to login', () => {
+        expect(mockRedirect).toHaveBeenCalledWith(config[mockRegion].externalApps.login);
+      });
+
+      it('should return redirect', () => {
+        expect(result).toEqual(mockResponse);
+      });
+    });
+
+    describe('challenge', () => {
+      describe('account not locked', () => {
         beforeEach(async () => {
-          mockGetImports();
+          mockImports();
 
           mockElevateToken.mockReturnValue(
             Promise.resolve({
-              error: mockError,
+              challenge: {
+                fields: mockFields,
+                stateToken: mockStateToken,
+              },
             })
           );
 
@@ -429,16 +387,122 @@ describe('[Route: /verify]', () => {
         });
 
         it('should log the outcome', () => {
-          expect(mockLogger).toHaveBeenCalledWith('post:verify', 'error', req);
+          expect(mockLogger).toHaveBeenCalledWith('verify:post', 'error-incorrect-digits-entered', req);
         });
 
-        it('should call next', () => {
-          expect(next).toHaveBeenCalledWith(mockError);
+        it('should call mapPayloadToFields', () => {
+          expect(mockMapPayloadToFields).toHaveBeenCalledWith(mockFields, mockLang);
         });
 
-        it('expect next to be returned', () => {
-          expect(result).toEqual(mockResponse);
+        it('should set response data', () => {
+          expect(res.data).toEqual({
+            foo: 'bar',
+            payload: {
+              banner: {
+                bannerType: 'error',
+                title: 'Wrong, please try again',
+                errorType: '',
+              },
+              values: {
+                digit11: '',
+                digit12: '',
+                digit13: '',
+                digit14: '',
+              },
+              errors: {},
+              fields: mockFieldsToRender,
+              schema: {
+                ...schema,
+                required: mockRequiredFields,
+              },
+              stateToken: mockStateToken,
+              accountLocked: undefined,
+            }
+          });
         });
+      });
+
+      describe('account locked', () => {
+        beforeEach(async () => {
+          mockImports();
+
+          mockElevateToken.mockReturnValue(
+            Promise.resolve({
+              challenge: {
+                fields: mockFields,
+                stateToken: mockStateToken,
+              },
+              accountLocked: true,
+            })
+          );
+
+          postVerifyPage = require('./').postVerifyPage;
+
+          result = await postVerifyPage(req, res, next);
+        });
+
+        it('should log the outcome', () => {
+          expect(mockLogger).toHaveBeenCalledWith('verify:post', 'error-max-attempts-reached', req);
+        });
+
+        it('should not call mapPayloadToFields', () => {
+          expect(mockMapPayloadToFields).not.toHaveBeenCalled();
+        });
+
+        it('should set response data', () => {
+          expect(res.data).toEqual({
+            foo: 'bar',
+            payload: {
+              banner: {
+                bannerType: 'error',
+                title: 'Too many failures, locked out',
+                errorType: '',
+              },
+              values: {
+                digit11: '',
+                digit12: '',
+                digit13: '',
+                digit14: '',
+              },
+              errors: {},
+              fields: [],
+              schema: {
+                ...schema,
+                required: [],
+              },
+              stateToken: undefined,
+              accountLocked: true,
+            }
+          });
+        });
+      });
+    });
+
+    describe('error', () => {
+      beforeEach(async () => {
+        mockImports();
+
+        mockElevateToken.mockReturnValue(
+          Promise.resolve({
+            error: mockError,
+          })
+        );
+
+        postVerifyPage = require('./').postVerifyPage;
+
+        result = await postVerifyPage(req, res, next);
+      });
+
+      it('should log the outcome', () => {
+        expect(mockLogger).toHaveBeenCalledWith('verify:post', 'error', req);
+      });
+
+      it('should call next', () => {
+        expect(next).toHaveBeenCalledWith(mockError);
+      });
+
+      it('expect next to be returned', () => {
+        expect(result).toEqual(mockResponse);
       });
     });
   });

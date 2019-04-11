@@ -23,6 +23,7 @@ export const InputStyled = styled(Input)`
 
 export const ButtonStyled = styled(Button)`
   width: 100%;
+  margin-top: 24px;
 
   ${media.aboveMobileLarge`
     width: auto;

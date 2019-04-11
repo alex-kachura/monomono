@@ -1,42 +1,39 @@
-import config from 'config';
+import AJV from 'ajv';
+import ajvErrors from 'ajv-errors';
 import { getPhraseFactory } from '../../../utils/i18n';
 import { setCookies } from '../../../utils/cookies';
 
-function getField(field, getLocalePhrase) {
+export const ajv = ajvErrors(
+  new AJV({
+    allErrors: true,
+    jsonPointers: true,
+    $data: true,
+    coerceTypes: true,
+  }),
+  {
+    allErrors: true,
+  }
+);
+
+function getField(field, getLocalePhrase, isMobile) {
   // Identity returns the id as 'digitNN', e.g. 'digit11'
   // So we need to extract the number for our label :-(
   const digit = field.id.split('digit')[1];
 
   return {
+    type: isMobile ? 'number' : 'text',
     name: field.id,
     id: field.id,
     label: `${digit}${getLocalePhrase('pages.verify.digits-ordinal')}`,
-    isValid: true,
-    value: '',
-    type: 'input',
-    constraints: [
-      {
-        type: 'mandatory',
-        text: getLocalePhrase('pages.verify.fields.digit.empty'),
-        validator: true,
-        isValid: true,
-      },
-      {
-        type: 'regex',
-        text: getLocalePhrase('pages.verify.fields.digit.errors.max-length'),
-        validationRegex: '^.{1,1}$',
-        isValid: true,
-      },
-    ],
   };
 }
 
 // Map fields returned by Identity (payload) to UI fields
 // that will be used to render on the client-side
-export function mapPayloadToFields(payload, lang) {
+export function mapPayloadToFields(payload, lang, isMobile) {
   const getLocalePhrase = getPhraseFactory(lang);
 
-  return payload.map((digit) => getField(digit, getLocalePhrase));
+  return payload.map((digit) => getField(digit, getLocalePhrase, isMobile));
 }
 
 // Map posted values to fields array that is understood by Identity
@@ -50,7 +47,7 @@ export function mapValuesToPayload(values) {
 }
 
 // Redirect a user to the login page after saving cookies
-export function sendToLogin(req, res, { accessToken, refreshToken, claims, expires }) {
+export function setAuthCookies(req, res, { accessToken, refreshToken, claims, expires }) {
   const uuid = claims.find(
     (c) => c.claimType === 'http://schemas.tesco.com/ws/2011/12/identity/claims/userkey'
   ).value;
@@ -62,8 +59,4 @@ export function sendToLogin(req, res, { accessToken, refreshToken, claims, expir
     oauthTokensExpiryTime: Date.now() + (expires * 1000),
     uuid: decodeURIComponent(uuid),
   });
-
-  const loginUrl = config[req.region].externalApps.login;
-
-  return res.redirect(loginUrl);
 }
