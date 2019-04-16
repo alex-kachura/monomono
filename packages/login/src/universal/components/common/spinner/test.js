@@ -1,19 +1,20 @@
 import React from 'react';
-import Spinner from './';
+import { render } from 'react-testing-library';
+import { DefaultThemeProvider } from '@beans/theme';
+import Spinner from '.';
 
 describe('[Component: Spinner]', () => {
-  let component;
-
-  const mockProps = {
-    mobileStyles: 'mobile-styles',
-    desktopStyles: 'desktop-styles',
-  };
-
-  beforeEach(() => {
-    component = global.contextualShallow(<Spinner {...mockProps} />);
-  });
-
   it('should render correctly', () => {
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(
+      <DefaultThemeProvider>
+        <Spinner
+          mobileStyles="mobile-styles"
+          desktopStyles="desktop-styles"
+        />
+      </DefaultThemeProvider>
+    );
+    const fragment = asFragment();
+
+    expect(fragment).toMatchSnapshot();
   });
 });

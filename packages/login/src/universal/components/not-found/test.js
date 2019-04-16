@@ -1,26 +1,38 @@
 import React from 'react';
-import { NotFoundPage } from './';
+import NotFoundPage from '.';
+import { render, cleanup } from 'react-testing-library';
+import { AppProvider } from '@oneaccount/react-foundations';
+import { DefaultThemeProvider } from '@beans/theme';
 
 describe('NotFound component', () => {
-  const mockProps = {
-    config: {
-      GB: {
-        externalApps: {
-          tescoHomepage: '/mock-path',
-        },
-      },
-    },
-    region:'GB',
-    getLocalePhrase: (key) => key,
-    host: 'mock-host',
-    rootPath: '/mock-path',
-  };
+  afterEach(cleanup);
 
-  let component;
+  function renderComponent() {
+    return render(
+      <AppProvider
+        appConfig={{
+          getLocalePhrase: (key) => key,
+          config: {
+            GB: {
+              externalApps: {
+                tescoHomepage: '/mock-path',
+              },
+            },
+          },
+          region:'GB',
+        }}
+      >
+        <DefaultThemeProvider>
+          <NotFoundPage />
+        </DefaultThemeProvider>
+      </AppProvider>
+    );
+  }
 
   it('should render correctly', () => {
-    component = global.contextualShallow(<NotFoundPage {...mockProps} />);
+    const { asFragment } = renderComponent();
+    const fragment = asFragment();
 
-    expect(component).toMatchSnapshot();
+    expect(fragment).toMatchSnapshot();
   });
 });

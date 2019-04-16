@@ -1,10 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[Component: Spinner] should render correctly 1`] = `
-<styled.div>
-  <styled.div
-    desktopStyles="desktop-styles"
-    mobileStyles="mobile-styles"
-  />
-</styled.div>
+<DocumentFragment>
+  <div
+    class="sc-bxivhb eITGtG"
+  >
+    <div
+      class="sc-ifAKCX lmnbV"
+    />
+  </div>
+</DocumentFragment>
 `;

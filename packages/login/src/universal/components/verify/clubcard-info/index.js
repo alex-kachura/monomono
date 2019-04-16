@@ -1,11 +1,11 @@
 import React from 'react';
 import { Heading, Signpost, BodyText } from '@beans/typography';
-import { connectPage, useAppConfig } from '@oneaccount/react-foundations';
+import { useAppConfig } from '@oneaccount/react-foundations';
 import { SectionStyled } from '../styled';
 import Clubcard from './svg/clubcard';
 import CreditCard from './svg/credit-card';
 
-export function ClubcardInfo() {
+export default function ClubcardInfo() {
   const { getLocalePhrase } = useAppConfig();
 
   return (
@@ -34,5 +34,3 @@ export function ClubcardInfo() {
     </SectionStyled>
   );
 }
-
-export default connectPage({ noData: true })(ClubcardInfo);

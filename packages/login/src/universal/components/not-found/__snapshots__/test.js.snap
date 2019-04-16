@@ -1,36 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotFound component should render correctly 1`] = `
-<SideEffect(DocumentTitle)
-  title="pages.not-found.title"
->
+<DocumentFragment>
   <div>
-    <PageTitle
-      margin={true}
-      tagName="h1"
+    <h1
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 bISoeZ"
     >
       pages.not-found.heading
-    </PageTitle>
-    <BodyText
-      emphasized={false}
-      margin={true}
-      tagName="p"
+    </h1>
+    <p
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fAWPzW"
     >
       pages.not-found.paragraphs.0
-    </BodyText>
-    <BodyText
-      emphasized={false}
-      margin={true}
-      tagName="p"
+    </p>
+    <p
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fAWPzW"
     >
       pages.not-found.paragraphs.1
-    </BodyText>
-    <Styled(WithProps(Link))
-      href="mock-homepage"
-      variant="textButton"
+    </p>
+    <a
+      class="sc-bxivhb jgNeLy styled__TextButtonLink-ipdqot-0 kBKptb"
+      href="/mock-path"
     >
-      pages.not-found.home
-    </Styled(WithProps(Link))>
+      <span
+        class="beans-link__text styled__TextSpan-ipdqot-3 eddlHt"
+      >
+        pages.not-found.home
+      </span>
+    </a>
   </div>
-</SideEffect(DocumentTitle)>
+</DocumentFragment>
 `;

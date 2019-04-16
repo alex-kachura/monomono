@@ -1,86 +1,67 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
-import { Footer } from './';
+import { render, fireEvent } from 'react-testing-library';
 import { DefaultThemeProvider } from '@beans/theme';
+import { AppProvider } from '@oneaccount/react-foundations';
+import Footer from '.';
 
-describe('Footer', () => {
-  const mockProps = {
-    config: {
-      GB: {
-        footerLinks: [
-          {
-            header: 'Section header',
-            links: [
+function renderFooter() {
+  return render(
+    <AppProvider
+      appConfig={{
+        getLocalePhrase: (key) => key,
+        config: {
+          GB: {
+            footerLinks: [
               {
-                text: 'Footer Link 1',
-                href: 'https://www-ppe.tesco.com/help/',
+                header: 'Section header',
+                links: [
+                  {
+                    text: 'Footer Link 1',
+                    href: 'https://www-ppe.tesco.com/help/',
+                  },
+                  {
+                    text: 'Footer Link 2',
+                    href: 'https://www-ppe.tesco.com/help/contact/',
+                  },
+                ],
               },
+            ],
+            socialLinks: [
               {
-                text: 'Footer Link 2',
-                href: 'https://www-ppe.tesco.com/help/contact/',
+                graphic: 'facebook',
+                href: 'https://www.facebook.com/tesco/',
               },
             ],
           },
-        ],
-        socialLinks: [
-          {
-            graphic: 'facebook',
-            href: 'https://www.facebook.com/tesco/',
-          },
-        ],
-      },
-    },
-    region: 'GB',
-    getLocalePhrase: (key) => key,
-  };
-
-  it('renders correctly', () => {
-    const wrapper = shallow(
+        },
+        region:'GB',
+      }}
+    >
       <DefaultThemeProvider>
-        <Footer {...mockProps} />
-      </DefaultThemeProvider>,
-    );
+        <Footer />
+      </DefaultThemeProvider>
+    </AppProvider>
+  );
+}
 
-    expect(toJson(wrapper)).toMatchSnapshot();
+describe('Footer', () => {
+  it('renders correctly', () => {
+    const { asFragment } = renderFooter();
+    const component = asFragment();
+
+    expect(component).toMatchSnapshot();
   });
 
   it('should open/close closed accordion on click of header', () => {
-    const wrapper = mount(
-      <DefaultThemeProvider>
-        <Footer {...mockProps} />
-      </DefaultThemeProvider>,
-    );
+    const { container } = renderFooter();
+    const header = container.querySelector('[aria-controls="footer-accordion-0"]');
 
-    expect(
-      wrapper
-        .find('[aria-controls="footer-accordion-0"]')
-        .first()
-        .prop('aria-expanded'),
-    ).toBe(false);
+    expect(header.getAttribute('aria-expanded')).toEqual('false');
 
-    wrapper
-      .find('.beans-accordion__heading')
-      .first()
-      .simulate('click');
+    fireEvent.click(header);
+    expect(header.getAttribute('aria-expanded')).toEqual('true');
 
-    expect(
-      wrapper
-        .find('[aria-controls="footer-accordion-0"]')
-        .first()
-        .prop('aria-expanded'),
-    ).toBe(true);
-
-    wrapper
-      .find('.beans-accordion__heading')
-      .first()
-      .simulate('click');
-
-    expect(
-      wrapper
-        .find('[aria-controls="footer-accordion-0"]')
-        .first()
-        .prop('aria-expanded'),
-    ).toBe(false);
+    fireEvent.click(header);
+    expect(header.getAttribute('aria-expanded')).toEqual('false');
   });
 });

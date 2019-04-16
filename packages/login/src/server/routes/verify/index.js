@@ -121,7 +121,7 @@ function getInvalidFormPayload({ req, postedValues, validator, schema }) {
 }
 
 // Get payload for user entered incorrect values or max tries exceeded (account locked).
-function getElevationFailurePayload({ req, challenge, accountLocked, schema }) {
+function getElevationFailurePayload({ req, res, challenge, accountLocked, schema }) {
   let stateToken;
   let bannerTitle;
   let bannerText;
@@ -140,7 +140,7 @@ function getElevationFailurePayload({ req, challenge, accountLocked, schema }) {
     stateToken = challenge.stateToken;
 
     // Get field objects needed by the UI to render for requested clubcard digits
-    fieldsToRender = mapPayloadToFields(challenge.fields, req.lang);
+    fieldsToRender = mapPayloadToFields(challenge.fields, req.lang, res.isMobile);
   }
 
   return {
@@ -227,7 +227,7 @@ export async function postVerifyPage(req, res, next) {
   // If max attempts reached, their account is locked for an hour.
 
   const payload = getElevationFailurePayload({
-    req, challenge, accountLocked, schema
+    req, res, challenge, accountLocked, schema
   });
 
   res.data = { ...res.data, payload };

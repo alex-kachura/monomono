@@ -1,1116 +1,272 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer renders correctly 1`] = `
-<Fragment>
-  <GlobalStyleComponent />
-  <ThemeProvider
-    theme={
-      Object {
-        "_type": "default",
-        "base": Object {
-          "fontFamily": "\\"TESCO Modern\\", Arial, sans-serif",
-          "fontSize": "16px",
-          "lineHeight": "1.2",
-          "logo": "default",
-          "outline": "none",
-          "tapHighlightColor": "transparent",
-          "transitionDuration": "0.3s",
-        },
-        "breakpoints": Object {
-          "desktop": 1260,
-          "desktopLarge": 1512,
-          "mobile": 320,
-          "mobileLarge": 504,
-          "tablet": 756,
-          "tabletLarge": 1008,
-        },
-        "buttons": Object {
-          "size": Object {
-            "md": "40px",
-            "sm": "32px",
-            "xs": "24px",
-          },
-        },
-        "colors": Object {
-          "active": "#007eb3",
-          "background": Object {
-            "base": "#ffffff",
-            "dark": "#f6f6f6",
-            "darkest": "#e5e5e5",
-            "error": "#F8E6E6",
-            "info": "#E0EFF5",
-            "success": "#E0F0E0",
-            "warning": "#FFF2E0",
-          },
-          "base": "#333333",
-          "black": "#000000",
-          "disabled": Object {
-            "base": "#cccccc",
-            "withBackground": "#999999",
-          },
-          "error": "#cc3333",
-          "grayscale": "#666666",
-          "heading": "#333333",
-          "info": "#007eb3",
-          "inverse": "#ffffff",
-          "lines": Object {
-            "base": "#cccccc",
-            "light": "#e5e5e5",
-          },
-          "lotusGreen": "#01845A",
-          "primary": "#00539f",
-          "promo": "#fcd700",
-          "ratings": "#fec52e",
-          "secondary": "#ee1c2e",
-          "success": "#008800",
-          "tescoBlue": "#00539f",
-          "tescoRed": "#ee1c2e",
-          "text": Object {
-            "base": "#666666",
-            "dark": "#333333",
-          },
-          "utils": "#00294f",
-          "warning": "#ff9900",
-          "white": "#ffffff",
-        },
-        "fontFamily": Object {
-          "heading": "\\"TESCO Modern\\", Arial, sans-serif",
-          "text": "\\"TESCO Modern\\", Arial, sans-serif",
-        },
-        "fontSize": Object {
-          "lg": "28px",
-          "md": "24px",
-          "sm": "20px",
-          "xl": "32px",
-          "xs": "16px",
-          "xx": "14px",
-          "xxl": "36px",
-          "xxx": "12px",
-          "xxxl": "40px",
-        },
-        "icons": Object {
-          "backgroundSizes": Object {
-            "sm": "40px",
-            "xl": "70px",
-            "xs": "24px",
-            "xxxl": "120px",
-          },
-          "graphics": Object {
-            "account": Object {
-              "paths": Array [
-                Object {
-                  "d": "M13.5 5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0zM1.5 18.5c1.018-4.091 4.576-7 8.5-7 3.924 0 7.482 2.909
-            8.5 7h-17z",
-                },
-              ],
-              "viewBox": "0 0 20 20",
-            },
-            "actions": Object {
-              "circles": Array [
-                Object {
-                  "cx": "2",
-                  "cy": "2",
-                  "fill": true,
-                  "r": "2",
-                },
-                Object {
-                  "cx": "9",
-                  "cy": "2",
-                  "fill": true,
-                  "r": "2",
-                },
-                Object {
-                  "cx": "16",
-                  "cy": "2",
-                  "fill": true,
-                  "r": "2",
-                },
-              ],
-              "viewBox": "0 0 18 4",
-            },
-            "add": Object {
-              "paths": Array [
-                Object {
-                  "d": "M0 9h18M9 0v18",
-                },
-              ],
-              "viewBox": "0 0 18 18",
-            },
-            "backwardLink": Object {
-              "paths": Array [
-                Object {
-                  "d": "M10.688 18.652L1.723 10l8.964-8.644",
-                },
-              ],
-              "viewBox": "1 0 12 20",
-            },
-            "basket": Object {
-              "paths": Array [
-                Object {
-                  "d": "M20 20.5H4l-2.5-11h21zM12 12v6M16 12v6M8 12v6M12 9.5L18 1",
-                },
-              ],
-              "viewBox": "0 1 24 22",
-            },
-            "benefits": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1 8l6 6L20 1",
-                },
-              ],
-              "viewBox": "0 1 21 15",
-            },
-            "calculator": Object {
-              "paths": Array [
-                Object {
-                  "d": "M6.5 13a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM10.5 13a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14.5 13a.5.5 0 1 1-1 0 .5.5
-        0 0 1 1 0zM6.5 17a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM10.5 17a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14.5 17a.5.5
-        0 1 1-1 0 .5.5 0 0 1 1 0z",
-                },
-                Object {
-                  "d": "M1.5 20.5h17v-19h-17z",
-                },
-                Object {
-                  "d": "M4.5 8.5h11v-4h-11z",
-                },
-              ],
-              "viewBox": "0 0 20 22",
-            },
-            "camera": Object {
-              "paths": Array [
-                Object {
-                  "d": "M14.5 11.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z",
-                },
-                Object {
-                  "d": "M1.5 18.5h19v-14h-6l-1-3h-5l-1 3h-6z",
-                },
-              ],
-              "viewBox": "0 1 22 20",
-            },
-            "checkmark": Object {
-              "paths": Array [
-                Object {
-                  "d": "M19.79 2.25L17.75.21a.72.72 0 0 0-1.02.002l-9.944 9.943L3.27 6.64a.72.72 0 0 0-1.02 0L.21 8.68A.721.721 0 0
-            0 .212 9.7l5.805 5.804c.209.208.479.483.755.483s.575-.275.784-.483L19.789 3.27a.721.721 0 0 0 0-1.02",
-                  "fill": true,
-                },
-              ],
-              "viewBox": "0 1 20 16",
-            },
-            "clear": Object {
-              "paths": Array [
-                Object {
-                  "d": "M6.257 14.5L1.5 8l4.757-6.5H20.5v13zM10.7 5.7l4.6 4.6M15.3 5.7l-4.6 4.6",
-                },
-              ],
-              "viewBox": "1 0 22 16",
-            },
-            "close": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1 1l14 14M15 1L1 15",
-                },
-              ],
-              "viewBox": "0 0 16 16",
-            },
-            "comments": Object {
-              "paths": Array [
-                Object {
-                  "d": "M19 11.5h3.5v-10h-15V5",
-                },
-                Object {
-                  "d": "M5.5 17.5h-4v-10h15v10H8.472l-.098.375C8.017 19.256 6.871 20.301 5.5 20.5v-3z",
-                },
-              ],
-              "viewBox": "0 -1 24 22",
-            },
-            "contract": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.348 10.688L10 1.724l8.644 8.964",
-                },
-              ],
-              "viewBox": "0 0 20 12",
-            },
-            "coupons": Object {
-              "paths": Array [
-                Object {
-                  "d": "M9 7.5h4.1M7 10.5h8M17.8 9c0-1.9 1.4-3.4 3.2-3.6V1.5H1v3.9c1.8.3 3.2 1.8 3.2 3.6S2.8 12.4 1
-        12.6v3.9h20v-3.9c-1.8-.2-3.2-1.7-3.2-3.6z",
-                },
-              ],
-              "viewBox": "0 0 22 18",
-            },
-            "cz": Object {
-              "border": "#cccccc",
-              "paths": Array [
-                Object {
-                  "d": "M0 0h28v16H0z",
-                  "fill": "#E80000",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M0 0h28v16H0z",
-                  "fill": "#E80000",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M0 0h28v8H0z",
-                  "fill": "#FFF",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M0 0l13.953 7.99L0 15.97z",
-                  "fill": "#00006F",
-                  "stroke": false,
-                },
-              ],
-              "viewBox": "0 0 28 16",
-            },
-            "datePicker": Object {
-              "paths": Array [
-                Object {
-                  "d": "M20.5 19.45l-19 .05v-17h19zM2 7.5h18M6.5 0v5M15.5 0v5",
-                },
-              ],
-              "viewBox": "0 1 22 21",
-            },
-            "deliverySlot": Object {
-              "paths": Array [
-                Object {
-                  "d": "M14 13.5H1.5v-12h13V6M14.5 13.5V5.149c4.966 2.454 5.853 6.86 6 8.351h-6zM5.5 20.5c-1.104 0-2-.897-2-2s.896-2
-        2-2 2 .897 2 2-.896 2-2 2zM15.5 20.5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z",
-                },
-              ],
-              "viewBox": "-1 -1 22 22",
-            },
-            "download": Object {
-              "paths": Array [
-                Object {
-                  "d": "M0 17.5h18M4 8l5 5 5-5M9 13V0",
-                },
-              ],
-              "viewBox": "0 0 18 19",
-            },
-            "email": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.5 14.5h19v-13h-19z",
-                },
-                Object {
-                  "d": "M2 2l9 8 9-8",
-                },
-              ],
-              "viewBox": "0 0 22 16",
-            },
-            "error": Object {
-              "paths": Array [
-                Object {
-                  "d": "M10 15V1.5c2.623 0 4.184.43 6.311 2.106M3.5 11.5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zM16.5
-        11.5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zM16.742 20.5c-2.037-1.173-4.609-2-6.742-2-1.879
-        0-4.104.638-6 1.591-.257.129-.5.269-.743.409",
-                },
-              ],
-              "viewBox": "0 0 20 21",
-            },
-            "expand": Object {
-              "paths": Array [
-                Object {
-                  "d": "M18.652 1.312L10 10.276 1.356 1.312",
-                },
-              ],
-              "viewBox": "0 -1 20 12",
-            },
-            "externalLink": Object {
-              "paths": Array [
-                Object {
-                  "d": "M18.5 8V1.5H12M18.192 1.808L9 11M15.5 11v7.5h-14v-14H9",
-                },
-              ],
-              "viewBox": "0 0 20 20",
-            },
-            "fastForward": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.5 2L9 8l-7.5 6zM12.5 2L20 8l-7.5 6z",
-                },
-              ],
-              "viewBox": "-1 0 21 16",
-            },
-            "favourites": Object {
-              "paths": Array [
-                Object {
-                  "d": "M9.5 16.3a30.39 30.39 0 0 0 4.902-3.742c2.53-2.4 3.998-4.815 3.998-7.084C18.4 2.675 16.468.6 13.902.6c-1.466
-        0-2.374.416-3.621 1.674l-.781.788-.426-.43-.355-.358C7.472 1.016 6.564.6 5.098.6 2.521.6.6 2.688.6 5.567c0
-        2.227 1.467 4.618 3.997 7.003A30.77 30.77 0 0 0 9.5 16.3z",
-                },
-              ],
-              "viewBox": "0 -1 19 17",
-            },
-            "feedback": Object {
-              "paths": Array [
-                Object {
-                  "d": "M6 6.5h10M6 11.5h10M1.5 1.5v15h5v4c2.247-.252 4-2 4-4h10v-15h-19z",
-                },
-              ],
-              "viewBox": "0 -1 22 22",
-            },
-            "forwardLink": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.312 1.348L10.276 10l-8.964 8.644",
-                },
-              ],
-              "viewBox": "-1 0 12 20",
-            },
-            "gb": Object {
-              "border": "#cccccc",
-              "paths": Array [
-                Object {
-                  "d": "M-2 0h32v16H-2z",
-                  "fill": "#006",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M-2 0v1.788L26.422 16H30v-1.787L1.578 0H-2zm32 0v1.788L1.578 16H-2v-1.787L26.422 0H30z",
-                  "fill": "#FFF",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M11.334 0v16h5.332V0h-5.332zM-2 5.334v5.332h32V5.334H-2z",
-                  "fill": "#FFF",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M-2 6.4v3.2h32V6.4H-2zM12.4 0v16h3.2V0h-3.2zM-2 16l10.666-5.334h2.387L.384 16H-2zm0-16L8.666
-            5.334H6.28L-2 1.194V0zm18.95 5.334L27.616 0H30L19.334 5.334H16.95zM30 16l-10.666-5.334h2.385L30 14.806V16z",
-                  "fill": "#C00",
-                  "stroke": false,
-                },
-              ],
-              "viewBox": "0 0 28 16",
-            },
-            "gridView": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.5 7.5h6v-6h-6zM12.5 7.5h6v-6h-6zM1.5 18.5h6v-6h-6zM12.5 18.5h6v-6h-6z",
-                },
-              ],
-              "viewBox": "0 0 20 20",
-            },
-            "guides": Object {
-              "paths": Array [
-                Object {
-                  "d": "M5 2.5H1.5v18h15v-18H13",
-                },
-                Object {
-                  "d": "M5.5 5.5h7v-4h-7z",
-                },
-              ],
-              "viewBox": "0 1 18 22",
-            },
-            "help": Object {
-              "paths": Array [
-                Object {
-                  "d": "M22.5 12c0 5.799-4.701 10.5-10.5 10.5S1.5 17.799 1.5 12 6.201 1.5 12 1.5 22.5 6.201 22.5 12z",
-                },
-                Object {
-                  "d": "M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0zM15 15l4.5 4.5M4.5 4.5L9 9M19.5 4.5L15 9M9 15l-4.5 4.5",
-                },
-              ],
-              "viewBox": "0 0 24 24",
-            },
-            "home": Object {
-              "paths": Array [
-                Object {
-                  "d": "M10 1.5L1.5 8.25V20.5h6v-8h5v8h6V8.25z",
-                },
-              ],
-              "viewBox": "0 1 20 22",
-            },
-            "hu": Object {
-              "border": "#cccccc",
-              "paths": Array [
-                Object {
-                  "d": "M28 16H0V0h28z",
-                  "fill": "#FFF",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M28 16H0v-5.333h28z",
-                  "fill": "#388D00",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M28 5.337H0V.003h28z",
-                  "fill": "#D43516",
-                  "stroke": false,
-                },
-              ],
-              "viewBox": "0 0 28 16",
-            },
-            "ie": Object {
-              "border": "#cccccc",
-              "paths": Array [
-                Object {
-                  "d": "M0 0h28v16H0z\\"",
-                  "fill": "#FFF",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M0 0h9.332v16H0z",
-                  "fill": "#009A49",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M18.668 0H28v16h-9.332z",
-                  "fill": "#FF7900",
-                  "stroke": false,
-                },
-              ],
-              "viewBox": "0 0 28 16",
-            },
-            "indicator": Object {
-              "circles": Array [
-                Object {
-                  "cx": "8",
-                  "cy": "8",
-                  "fill": true,
-                  "r": "8",
-                },
-              ],
-              "viewBox": "0 0 16 16",
-            },
-            "info": Object {
-              "paths": Array [
-                Object {
-                  "d": "M5.5 3a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM1 8.5h3V21M0 21.5h8",
-                },
-              ],
-              "viewBox": "0 0 8 23",
-            },
-            "listView": Object {
-              "paths": Array [
-                Object {
-                  "d": "M8 3h13M8 17h13M8 10h13M1.5 4.5h3v-3h-3zM1.5 11.5h3v-3h-3zM1.5 18.5h3v-3h-3z",
-                },
-              ],
-              "viewBox": "0 0 21 20",
-            },
-            "lists": Object {
-              "paths": Array [
-                Object {
-                  "d": "M9 5.5h7M9 16.5h7M6 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM6 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM6
-        16.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM9 11h7",
-                },
-                Object {
-                  "d": "M1.5 20.5h17v-19h-17z",
-                },
-              ],
-              "viewBox": "0 0 20 22",
-            },
-            "location": Object {
-              "paths": Array [
-                Object {
-                  "d": "M18.5 10a8.5 8.5 0 1 1-17.001-.001A8.5 8.5 0 0 1 18.5 10zM10 0v5M10 15v5M20 10h-5M5 10H0",
-                },
-              ],
-              "viewBox": "0 0 20 20",
-            },
-            "maximise": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.5 6V1.5H6M2 2l5 5M18.5 6V1.5H14M18 2l-5 5M1.5 14v4.5H6M2 18l5-5M18.5 14v4.5H14M18 18l-5-5",
-                },
-              ],
-              "viewBox": "0 0 20 20",
-            },
-            "menu": Object {
-              "paths": Array [
-                Object {
-                  "d": "M0 1.5h16M0 14.5h16M0 8h16",
-                },
-              ],
-              "viewBox": "0 0 16 16",
-            },
-            "mic": Object {
-              "paths": Array [
-                Object {
-                  "d": "M3 21.5h8M7 21v-4.5M4 7h6M4 11h6M7 16.5c-3.025 0-5.5-2.475-5.5-5.5V7c0-3.025 2.475-5.5 5.5-5.5s5.5 2.475 5.5
-        5.5v4c0 3.025-2.475 5.5-5.5 5.5z",
-                },
-              ],
-              "viewBox": "0 0 14 23",
-            },
-            "minimise": Object {
-              "paths": Array [
-                Object {
-                  "d": "M5.5 1v4.5H1M5 5L.5.5M12.5 1v4.5H17M13 5L17.5.5M5.5 17v-4.5H1M5 13L.5 17.5M12.5 17v-4.5H17M13 13l4.5 4.5",
-                },
-              ],
-              "viewBox": "0 0 18 18",
-            },
-            "mobile": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.5 23V3c0-.832.668-1.5 1.5-1.5h12c.832 0 1.5.668 1.5 1.5v20c0 .832-.668 1.5-1.5 1.5H3c-.832
-        0-1.5-.668-1.5-1.5z",
-                },
-                Object {
-                  "d": "M10.5 20a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM6 4.5h6",
-                },
-              ],
-              "viewBox": "0 0 18 26",
-            },
-            "mute": Object {
-              "paths": Array [
-                Object {
-                  "d": "M12 18c-3.387-.152-6.122-1.861-7.553-4.724L4.309 13H1V6.01l3.31-.011.137-.275C5.878 2.861 8.613 1.152 12
-        1v17zM15 7l5 5M20 7l-5 5",
-                },
-              ],
-              "viewBox": "0 0 21 19",
-            },
-            "offers": Object {
-              "circles": Array [
-                Object {
-                  "cx": "16",
-                  "cy": "8",
-                  "fill": true,
-                  "r": "1",
-                },
-              ],
-              "paths": Array [
-                Object {
-                  "d": "M0 .5h13c4.1 0 7.5 3.3 7.5 7.5 0 4.1-3.3 7.5-7.5 7.5H0V.5z",
-                },
-                Object {
-                  "d": "M6 6.5h4.1M4 9.5h8",
-                },
-              ],
-              "viewBox": "-2 -1 23 18",
-            },
-            "openingHours": Object {
-              "paths": Array [
-                Object {
-                  "d": "M20.5 11a9.5 9.5 0 0 1-9.5 9.5A9.5 9.5 0 0 1 1.5 11 9.5 9.5 0 0 1 11 1.5a9.5 9.5 0 0 1 9.5 9.5z",
-                },
-                Object {
-                  "d": "M11 4.5v7H6",
-                },
-              ],
-              "viewBox": "0 0 22 22",
-            },
-            "orders": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.5 20.5h17v-14h-17z",
-                },
-                Object {
-                  "d": "M5.5 11V6c0-2.481 2.019-4.5 4.5-4.5s4.5 2.019 4.5 4.5v5",
-                },
-              ],
-              "viewBox": "0 2 20 22",
-            },
-            "pause": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.5 14.5h5v-13h-5zM11.5 14.5h5v-13h-5z",
-                },
-              ],
-              "viewBox": "0 0 18 16",
-            },
-            "phone": Object {
-              "paths": Array [
-                Object {
-                  "d": "M16 9.5h4.5V4.614C18.379 2.91 13.735 1.5 11.002 1.5 8.271 1.5 3.621 2.906 1.5 4.611V9.5H6",
-                },
-                Object {
-                  "d": "M15 7.5l4.5 9.001V20.5h-17v-3.999L7 7.5z",
-                },
-                Object {
-                  "d": "M13.5 14a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z",
-                },
-              ],
-              "viewBox": "0 1 22 22",
-            },
-            "pl": Object {
-              "border": "#cccccc",
-              "paths": Array [
-                Object {
-                  "d": "M28 16H0V0h28",
-                  "fill": "#FFF",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M28 16H0V8h28z",
-                  "fill": "#DC143C",
-                  "stroke": false,
-                },
-              ],
-              "viewBox": "0 0 28 16",
-            },
-            "play": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.5 1L14 8 1.5 15z",
-                },
-              ],
-              "viewBox": "-2 0 16 16",
-            },
-            "points": Object {
-              "paths": Array [
-                Object {
-                  "d": "M15.8 16.5H1v-15h20v15z",
-                },
-                Object {
-                  "d": "M13 5.7h4v4M17 5.6s-3.5 6.2-12 6.9",
-                },
-              ],
-              "viewBox": "0 0 22 18",
-            },
-            "print": Object {
-              "paths": Array [
-                Object {
-                  "d": "M6.5 5V1.5h9V5M5.5 20.5h11v-9h-11zM8 14.5h6M8 17.5h6",
-                },
-                Object {
-                  "d": "M5 15.5H2.627A1.126 1.126 0 0 1 1.5 14.373V6.627c0-.623.504-1.127 1.127-1.127h16.746c.623 0 1.127.504 1.127
-        1.127v7.746c0 .623-.504 1.127-1.127 1.127H17",
-                },
-              ],
-              "viewBox": "0 0 22 22",
-            },
-            "question": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.5 6.981c.437-4.85 4.363-5.48 5.539-5.48 3.42 0 5.461 1.908 5.461 4.88 0 2.43-1.61 3.753-2.923 4.463C8.042
-        11.651 7 12.574 7 14.826V16M8.5 21a1.5 1.5 0 1 1-3.001-.001A1.5 1.5 0 0 1 8.5 21z",
-                },
-              ],
-              "viewBox": "0 0 14 24",
-            },
-            "radioSelect": Object {
-              "paths": Array [
-                Object {
-                  "d": "M 4, 4 m -3, 0 a 3,3 0 1,0 6,0 a 3,3 0 1,0 -6,0",
-                  "fill": true,
-                },
-              ],
-              "viewBox": "0 0 8 8",
-            },
-            "ratings": Object {
-              "linearGradients": Array [
-                Object {
-                  "id": "half-full",
-                  "stops": Array [
-                    Object {
-                      "color": "currentColor",
-                      "offset": "0%",
-                    },
-                    Object {
-                      "color": "currentColor",
-                      "offset": "50%",
-                    },
-                    Object {
-                      "color": "transparent",
-                      "offset": "50%",
-                    },
-                    Object {
-                      "color": "transparent",
-                      "offset": "100%",
-                    },
-                  ],
-                },
-              ],
-              "paths": Array [
-                Object {
-                  "d": "M11 17.05l-5.544 3.07 1.06-6.51L2 8.975l6.237-.955L11 2.12l2.763 5.898L20 8.974l-4.516 4.637 1.06 6.51z",
-                  "fill": true,
-                },
-              ],
-              "viewBox": "0 1 22 22",
-            },
-            "remove": Object {
-              "paths": Array [
-                Object {
-                  "d": "M0 1h18",
-                },
-              ],
-              "viewBox": "0 0 18 2",
-            },
-            "rewards": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.5 5.5h19v14h-19zM11 19.5V5.6M7 1l3.9 4.3L15 1M2 12.6h18.5",
-                },
-              ],
-              "viewBox": "0 1 22 21",
-            },
-            "rewind": Object {
-              "paths": Array [
-                Object {
-                  "d": "M12 8l7.5-6v12zM1 8l7.5-6v12z",
-                },
-              ],
-              "viewBox": "1 0 21 16",
-            },
-            "scan": Object {
-              "paths": Array [
-                Object {
-                  "d": "M5.5 13V5M9.833 6v6M14.167 13V5M18.5 6v6M6 16.5H1.5v-15H6M18 1.5h4.5v15H18",
-                },
-              ],
-              "viewBox": "0 0 24 18",
-            },
-            "search": Object {
-              "paths": Array [
-                Object {
-                  "d": "M14.5 8a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0zM12.469 12.469l8.03 8.03",
-                },
-              ],
-              "viewBox": "0 0 21 21",
-            },
-            "searchHistory": Object {
-              "paths": Array [
-                Object {
-                  "d": "M22.5 12c0-5.799-4.701-10.5-10.5-10.5S1.5 6.201 1.5 12 6.201 22.5 12 22.5M15 15l4 4",
-                },
-                Object {
-                  "d": "M11.5 19.5l3.293 3.002L11.5 25.5M12 22.5h3M12 16.5A4.505 4.505 0 0 1 7.5 12c0-2.481 2.019-4.5 4.5-4.5s4.5
-        2.019 4.5 4.5-2.019 4.5-4.5 4.5z",
-                },
-              ],
-              "viewBox": "0 -1 24 26",
-            },
-            "secure": Object {
-              "paths": Array [
-                Object {
-                  "d": "M1.5 20.5h17v-13h-17zM5.5 7V6c0-2.481 2.019-4.5 4.5-4.5s4.5 2.019 4.5 4.5v1",
-                },
-                Object {
-                  "d": "M10 16.5A2.502 2.502 0 0 1 7.5 14c0-1.378 1.121-2.5 2.5-2.5s2.5 1.122 2.5 2.5c0 1.379-1.121 2.5-2.5 2.5z",
-                },
-              ],
-              "viewBox": "0 1 20 22",
-            },
-            "security": Object {
-              "paths": Array [
-                Object {
-                  "d": "M10 1.5C7 3.9 4.977 5 1.5 5.5V12c0 4 2.5 6 5.497 7.8l3.004 1.7 3.002-1.7C16 18 18.5
-        16 18.5 12V5.5C15 5 13 3.9 10 1.5z",
-                },
-                Object {
-                  "d": "M6.692 11.692L9 14l5-5",
-                },
-              ],
-              "viewBox": "0 0 20 23",
-            },
-            "settings": Object {
-              "paths": Array [
-                Object {
-                  "d": "M14.5 11a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z",
-                },
-                Object {
-                  "d": "M8.875 20.5a3.577 3.577 0 0 0-3.582-3.252c-.516 0-1.025.11-1.493.32l-2.111-3.641A3.61 3.61 0 0 0 3.198
-        11a3.569 3.569 0 0 0-1.521-2.918l2.128-3.664c.475.216.989.33 1.513.33a3.578 3.578 0 0 0
-        3.557-3.244l4.25-.004a3.575 3.575 0 0 0 1.777 2.772 3.631 3.631 0 0 0 3.298.16l2.111 3.641a3.613 3.613 0 0
-        0-1.509 2.928 3.569 3.569 0 0 0 1.52 2.917l-2.127 3.664a3.65 3.65 0 0 0-1.513-.33 3.576 3.576 0 0 0-3.556
-        3.244l-4.251.004z",
-                },
-              ],
-              "viewBox": "0 0 22 22",
-            },
-            "share": Object {
-              "paths": Array [
-                Object {
-                  "d": "M13.597 6.129L9 1.499 4.404 6.13M9 2v13.063M5 9.5H1.5v12h15v-12H13",
-                },
-              ],
-              "viewBox": "0 2 18 23",
-            },
-            "sk": Object {
-              "border": "#cccccc",
-              "paths": Array [
-                Object {
-                  "d": "M0 0h28v16H0z",
-                  "fill": "#EE1C25",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M0 0h28v10.667H0z",
-                  "fill": "#0B4EA2",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M0 0h28v5.333H0z",
-                  "fill": "#FFF",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M7.767 12.36c-1.434-.69-3.487-2.063-3.487-4.773 0-2.714.133-3.947.133-3.947h6.71s.13 1.233.13 3.947c0
-            2.713-2.053 4.08-3.486 4.773z",
-                  "fill": "#FFF",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M7.767 12c-1.317-.633-3.2-1.893-3.2-4.38S4.687 4 4.687 4h6.16s.116 1.133.116 3.62c.004 2.49-1.88
-      3.747-3.196  4.38z",
-                  "fill": "#EE1C25",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M8.047 6.967c.356.006 1.053.02 1.67-.187 0 0-.014.223-.014.48s.017.48.017.48c-.567-.19-1.27-.193-1
-            .673-.19v1.373h-.56V7.55c-.4-.003-1.104 0-1.67.19 0 0 .016-.223.016-.48 0-.26-.016-.48-.016-.48.616.207
-            1.313.193 1.666.187v-.864c-.323 0-.79.014-1.32.19 0 0 .017-.22.017-.48 0-.256-.017-.48-.017-.48.53.177.997
-            .194 1.32.19-.016-.546-.176-1.233-.176-1.233s.33.023.46.023c.133 0 .46-.023.46-.023s-.16.687-.177 1.233c
-            .323.004.79-.013 1.32-.19 0 0-.017.224-.017.48 0 .26.017.48.017.48a3.967 3.967 0 0 0-1.323-.19v.867-.003z",
-                  "fill": "#FFF",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M7.767 8.777c-.664 0-1.017.916-1.017.916s-.2-.433-.74-.433c-.367 0-.633.323-.807.627.667 1.056 1.73 1.71
-            2.564 2.113.833-.4 1.9-1.057 2.563-2.113-.173-.3-.44-.627-.807-.627-.54 0-.74.433-.74.433s-.35-
-            .916-1.016-.916z",
-                  "fill": "#0B4EA2",
-                  "stroke": false,
-                },
-              ],
-              "viewBox": "0 0 28 16",
-            },
-            "sms": Object {
-              "paths": Array [
-                Object {
-                  "d": "M11 1.5A9.5 9.5 0 0 0 1.5 11a9.461 9.461 0 0 0 3 6.915V21.5a4.798 4.798 0 0 0 3.078-1.646A9.442 9.442 0 0 0
-            11 20.5a9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 11 1.5zM6 8.5h10M6 13.5h10",
-                },
-              ],
-              "viewBox": "0 0 22 23",
-            },
-            "storeLocator": Object {
-              "paths": Array [
-                Object {
-                  "d": "M13.5 10a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z",
-                },
-                Object {
-                  "d": "M4.144 16.152C2 14 1.5 12.335 1.5 10c0-4.687 3.813-8.5 8.5-8.5 4.688 0 8.5 3.813 8.5 8.5 0 2.337-.5 4-2.631
-        6.14L9.998 22l-5.855-5.848z",
-                },
-              ],
-              "viewBox": "0 1 20 23",
-            },
-            "success": Object {
-              "paths": Array [
-                Object {
-                  "d": "M10 15V1.5c2.624 0 4.183.43 6.311 2.106M1.685 17.386C3.807 19.09 7.268 20.5 10 20.5c2.732 0 6.197-1.405
-        8.318-3.11M3.5 11.5c-1.103 0-2-.896-2-2s.897-2 2-2 2 .896 2 2-.897 2-2 2zM16.5 11.5c-1.103 0-2-.896-2-2s.897-2
-        2-2 2 .896 2 2-.897 2-2 2z",
-                },
-              ],
-              "viewBox": "0 0 20 22",
-            },
-            "th": Object {
-              "border": "#cccccc",
-              "paths": Array [
-                Object {
-                  "d": "M0 0h28v16H0z",
-                  "fill": "#F4F5F8",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M0 5.417h28v5.333H0z",
-                  "fill": "#2D2A4A",
-                  "stroke": false,
-                },
-                Object {
-                  "d": "M0 0h28v2.75H0V0zm0 13.333h28V16H0v-2.667z",
-                  "fill": "#A51931",
-                  "stroke": false,
-                },
-              ],
-              "viewBox": "0 0 28 16",
-            },
-            "timeoutError": Object {
-              "paths": Array [
-                Object {
-                  "d": "M0 1.5h16M0 18.5h16M7.992 10c-5.759 1.816-5.498 6.223-5.498 6.223V18M7.992 10c5.76-1.816 5.498-6.223
-        5.498-6.223V2M7.992 10C2.233 8.184 2.494 3.777 2.494 3.777V2M7.992 10c5.76 1.816 5.498 6.223 5.498 6.223V18",
-                },
-              ],
-              "viewBox": "0 0 16 20",
-            },
-            "tools": Object {
-              "paths": Array [
-                Object {
-                  "d": "M6.244 14.424L1.6 19.069l3.332 3.33 4.644-4.643c2.378-2.378 5.956-2.221 5.956-2.221a7.067 7.067 0 0 0
-        6.275-10.313l-4.76 4.76-3.029-3.03 4.76-4.758a7.025 7.025 0 0 0-3.246-.794 7.067 7.067 0 0 0-7.067
-        7.067s.152 3.584-2.22 5.957z",
-                },
-              ],
-              "viewBox": "0 0 24 24",
-            },
-            "tooltipPointer": Object {
-              "paths": Array [
-                Object {
-                  "d": "M12 11.5L23.5 0H.5z",
-                  "fill": true,
-                },
-              ],
-              "viewBox": "0 1 24 12",
-            },
-            "trolley": Object {
-              "paths": Array [
-                Object {
-                  "d": "M9.5 18.5a2 2 0 1 1-4.001-.001A2 2 0 0 1 9.5 18.5zM19.5 18.5a2 2 0 1 1-4.001-.001 2 2 0 0 1 4.001.001zM0
-        1.5h3l2.4 12h14.2l1.9-9H4M12.5 7v4M16.5 7v4M8.5 7v4",
-                },
-              ],
-              "viewBox": "1 -1 23 22",
-            },
-            "upload": Object {
-              "paths": Array [
-                Object {
-                  "d": "M18 1.5H0M14 11L9 6l-5 5M9 6v13",
-                },
-              ],
-              "viewBox": "0 0 18 19",
-            },
-            "volume": Object {
-              "paths": Array [
-                Object {
-                  "d": "M12.5 18.5c-3.387-.152-6.122-1.861-7.553-4.724l-.138-.276H1.5V6.51l3.31-.011.137-.275C6.378 3.361 9.113
-        1.652 12.5 1.5v17zM17.5 15.472a6.488 6.488 0 0 0 0-10.943",
-                },
-              ],
-              "viewBox": "0 0 22 20",
-            },
-            "vouchers": Object {
-              "paths": Array [
-                Object {
-                  "d": "M2.5 13.8L.7 11.59s-.1-.084 0-.21L2.5 9 .7 6.647c-.081-.075-.11-.171 0-.278L2.5 4.2.7
-        1.7c-.1-.1 0-.2.1-.2H21v15H.8c-.164 0-.2-.1-.1-.2l1.8-2.5zM9 7.5h4.1M7 10.5h8",
-                },
-              ],
-              "viewBox": "0 0 22 18",
-            },
-            "warning": Object {
-              "paths": Array [
-                Object {
-                  "d": "M10 15V1.5c2.624 0 4.183.43 6.311 2.106M3.5 11.5c-1.103 0-2-.896-2-2s.897-2 2-2 2 .896 2 2-.897 2-2 2zM10
-        22.5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zM16.5 11.5c-1.103 0-2-.896-2-2s.897-2 2-2 2 .896
-        2 2-.897 2-2 2z",
-                },
-              ],
-              "viewBox": "0 -1 20 24",
-            },
-            "zoomIn": Object {
-              "paths": Array [
-                Object {
-                  "d": "M14.5 8a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0zM12.469 12.469l8.03 8.03M5 8h6M8 5v6",
-                },
-              ],
-              "viewBox": "0 0 21 21",
-            },
-            "zoomOut": Object {
-              "paths": Array [
-                Object {
-                  "d": "M14.5 8a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0zM12.469 12.469l8.03 8.03M5 8h6",
-                },
-              ],
-              "viewBox": "0 0 21 21",
-            },
-          },
-          "sizes": Object {
-            "base": "22px",
-            "sm": 1,
-            "xl": 1.85,
-            "xs": 0.666666667,
-            "xxxl": 3.65,
-          },
-        },
-        "lineHeight": Object {
-          "heading": Object {
-            "lg": "1.14",
-            "md": "1.17",
-            "sm": "1.2",
-            "xl": "1.13",
-            "xs": "1.25",
-          },
-          "text": Object {
-            "sm": "1.4",
-            "xs": "1.5",
-            "xx": "1.57",
-          },
-        },
-        "overrides": Object {},
-        "spacing": Object {
-          "lg": "20px",
-          "md": "16px",
-          "sm": "12px",
-          "xl": "24px",
-          "xs": "8px",
-          "xx": "4px",
-          "xxl": "28px",
-          "xxxl": "32px",
-        },
-        "valueTile": Object {
-          "horizontal": Object {
-            "lg": "20px",
-            "sm": "16px",
-          },
-          "square": Object {
-            "lg": "36px",
-            "md": "32px",
-            "sm": "20px",
-            "xl": "40px",
-            "xs": "18px",
-            "xx": "14px",
-            "xxl": "48px",
-          },
-          "squareLarge": Object {
-            "lg": "40px",
-            "md": "36px",
-            "sm": "24px",
-            "xl": "48px",
-            "xs": "20px",
-            "xx": "16px",
-            "xxl": "52px",
-          },
-        },
-      }
-    }
+<DocumentFragment>
+  <footer
+    class="base-components__RootElement-sc-150tvch-1 cCmuza"
   >
-    <Footer
-      config={
-        Object {
-          "GB": Object {
-            "footerLinks": Array [
-              Object {
-                "header": "Section header",
-                "links": Array [
-                  Object {
-                    "href": "https://www-ppe.tesco.com/help/",
-                    "text": "Footer Link 1",
-                  },
-                  Object {
-                    "href": "https://www-ppe.tesco.com/help/contact/",
-                    "text": "Footer Link 2",
-                  },
-                ],
-              },
-            ],
-            "socialLinks": Array [
-              Object {
-                "graphic": "facebook",
-                "href": "https://www.facebook.com/tesco/",
-              },
-            ],
-          },
-        }
-      }
-      getLocalePhrase={[Function]}
-      region="GB"
-    />
-  </ThemeProvider>
-</Fragment>
+    <div
+      class="base-components__BaseElement-sc-150tvch-0 styled__LinksContainer-sc-6mv3y9-0 jEjCfu"
+    >
+      <div
+        class="styled-sc-140lqfg-0 jzEHNh"
+      >
+        <div
+          class="styled__ContentLinksRow-sc-6mv3y9-2 hzjFwl styled-cgoahb-0 fFoLXC"
+        >
+          <div
+            class="styled-tbp4qh-0 fxRCHK"
+          >
+            <section>
+              <p
+                class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 cboYhH"
+              >
+                footer.links.header1.title
+              </p>
+              <ul
+                class="base-components__BaseList-sc-150tvch-3 styled__LinkList-sc-6mv3y9-4 chGOT"
+              >
+                <li
+                  class="styled__LinkListItem-sc-6mv3y9-5 gelICI"
+                >
+                  <a
+                    class="styled__StyledLink-sc-6mv3y9-6 jKtPIn styled__StandaloneLink-sc-1xizymv-0 lmAQly"
+                    href="https://www-ppe.tesco.com/help/"
+                  >
+                    <span
+                      class="beans-link__text styled__TextSpan-sc-1xizymv-3 cXoGaR"
+                    >
+                      footer.links.header1.link1
+                    </span>
+                  </a>
+                </li>
+                <li
+                  class="styled__LinkListItem-sc-6mv3y9-5 gelICI"
+                >
+                  <a
+                    class="styled__StyledLink-sc-6mv3y9-6 jKtPIn styled__StandaloneLink-sc-1xizymv-0 lmAQly"
+                    href="https://www-ppe.tesco.com/help/contact/"
+                  >
+                    <span
+                      class="beans-link__text styled__TextSpan-sc-1xizymv-3 cXoGaR"
+                    >
+                      footer.links.header1.link2
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+        <div
+          class="styled__AccordionsRow-sc-6mv3y9-1 VdkwB styled-cgoahb-0 fFoLXC"
+        >
+          <div
+            class="styled-tbp4qh-0 fauaRP"
+          >
+            <div
+              class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1ifdouk-0 jVgBhl"
+            >
+              <div
+                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 iEzYgt"
+              >
+                <div
+                  aria-controls="footer-accordion-0"
+                  aria-expanded="false"
+                  aria-label="footer.links.header1.title"
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 bOFZhy"
+                  role="button"
+                  tabindex="0"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 kOiLeh"
+                  >
+                    <a
+                      class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 kbXwpd styled__InlineLink-y3p06c-0 gYivyO"
+                      role="presentation"
+                      tabindex="-1"
+                    >
+                      footer.links.header1.title
+                    </a>
+                  </div>
+                  <button
+                    aria-disabled="false"
+                    class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 eyiDCl"
+                    role="presentation"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span
+                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 cQpCTk"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="styled__StyledSVG-sc-1nulmu6-1 flhEYZ"
+                        color="currentColor"
+                        focusable="false"
+                        height="8"
+                        preserveAspectRatio="xMinYMax meet"
+                        viewBox="0 -1 20 12"
+                        width="13.33"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18.652 1.312L10 10.276 1.356 1.312"
+                          fill="none"
+                          stroke="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 gPHpac"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 DUqMA"
+                    id="footer-accordion-0"
+                    role="region"
+                    tabindex="-1"
+                  >
+                    <li
+                      class="styled__LinkListItem-sc-6mv3y9-5 gelICI"
+                    >
+                      <a
+                        class="styled__StyledLink-sc-6mv3y9-6 hmWKkN styled__StandaloneLinkWithIcon-sc-1gtmq4p-0 jSEUsV"
+                        href="https://www-ppe.tesco.com/help/"
+                      >
+                        <span
+                          class="beans-link__text styled__TextSpan-sc-1gtmq4p-3 lgqoNo"
+                        >
+                          footer.links.header1.link1
+                        </span>
+                        <span
+                          class="beans-link__icon styled__IconSpan-sc-1gtmq4p-4 gjpGdo"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="styled__StyledSVG-sc-1nulmu6-1 flhEYZ"
+                            color="currentColor"
+                            height="20"
+                            preserveAspectRatio="xMinYMax meet"
+                            viewBox="-1 0 12 20"
+                            width="12"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1.312 1.348L10.276 10l-8.964 8.644"
+                              fill="none"
+                              stroke="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </li>
+                    <li
+                      class="styled__LinkListItem-sc-6mv3y9-5 gelICI"
+                    >
+                      <a
+                        class="styled__StyledLink-sc-6mv3y9-6 hmWKkN styled__StandaloneLinkWithIcon-sc-1gtmq4p-0 jSEUsV"
+                        href="https://www-ppe.tesco.com/help/contact/"
+                      >
+                        <span
+                          class="beans-link__text styled__TextSpan-sc-1gtmq4p-3 lgqoNo"
+                        >
+                          footer.links.header1.link2
+                        </span>
+                        <span
+                          class="beans-link__icon styled__IconSpan-sc-1gtmq4p-4 gjpGdo"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="styled__StyledSVG-sc-1nulmu6-1 flhEYZ"
+                            color="currentColor"
+                            height="20"
+                            preserveAspectRatio="xMinYMax meet"
+                            viewBox="-1 0 12 20"
+                            width="12"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1.312 1.348L10.276 10l-8.964 8.644"
+                              fill="none"
+                              stroke="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="styled-cgoahb-0 fFoLXC"
+        >
+          <div
+            class="styled-tbp4qh-0 fauaRP"
+          >
+            <div
+              class="base-components__BaseElement-sc-150tvch-0 styled__SocialLinksContainer-sc-6mv3y9-7 bTgBlD"
+            >
+              <p
+                class="base-components__BaseElement-sc-150tvch-0 styled__SocialLinksCTA-sc-6mv3y9-8 bdWYQo typography___styledElement-sc-186l0ce-0 eOArlu"
+              >
+                footer.social-bar.label
+              </p>
+              <ul
+                class="base-components__BaseList-sc-150tvch-3 styled__SocialLinksList-sc-6mv3y9-9 jDltrn"
+              >
+                <li
+                  class="styled__SocialLinkItem-sc-6mv3y9-10 hETbMH"
+                >
+                  <a
+                    class="styled__StyledLink-sc-17uhr13-0 ktPBHk"
+                    href="https://www.facebook.com/tesco/"
+                    target="_blank"
+                  >
+                    <svg
+                      class="styled__StyledSVG-sc-17uhr13-1 kPyGjK"
+                      focusable="false"
+                      height="24"
+                      preserveAspectRatio="xMinYMax meet"
+                      viewBox="15 8 11 24"
+                      width="11"
+                    >
+                      <title>
+                        Facebook
+                      </title>
+                      <path
+                        d="M16.4650625,31.5425 L21.1138125,31.5425 L21.1138125,19.90125 L24.3569375,19.90125 L24.7025625,16.004375 L21.1138125,16.004375 L21.1138125,13.784375 C21.1138125,12.865625 21.2988125,12.501875 22.1869375,12.501875 L24.7025625,12.501875 L24.7025625,8.4575 L21.4838125,8.4575 C18.0244375,8.4575 16.4650625,9.980625 16.4650625,12.896875 L16.4650625,16.004375 L14.0475625,16.004375 L14.0475625,19.950625 L16.4650625,19.950625 L16.4650625,31.5425 Z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="styled-sc-140lqfg-0 jzEHNh"
+    >
+      <div
+        class="styled-cgoahb-0 fFoLXC"
+      >
+        <div
+          class="styled__CopyrightColumn-sc-6mv3y9-11 fulVqn styled-tbp4qh-0 ZIHPV"
+        >
+          <p
+            class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 eOArlu"
+          >
+            © tesco-site footer.copyright
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</DocumentFragment>
 `;

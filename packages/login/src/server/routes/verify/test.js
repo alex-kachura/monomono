@@ -50,6 +50,8 @@ describe('[Route: /verify]', () => {
   const mockValidator = jest.fn();
   let mockCompile;
   let mockAjv;
+  let mockGetPhraseFactory;
+  let mockGetLocalePhrase;
 
   function mockImports() {
     next = jest.fn(() => mockResponse);
@@ -61,6 +63,8 @@ describe('[Route: /verify]', () => {
       compile: mockCompile,
     };
     mockConvertAJVErrorsToFormik = jest.fn(() => mockFormikErrors);
+    mockGetLocalePhrase = jest.fn((key) => key);
+    mockGetPhraseFactory = jest.fn(() => mockGetLocalePhrase);
 
     jest.doMock('../../logger', () => ({ logOutcome: mockLogger }));
     jest.doMock('./utils', () => ({
@@ -72,6 +76,9 @@ describe('[Route: /verify]', () => {
     jest.doMock('../../controllers', () => mockControllerFactory);
     jest.doMock('@oneaccount/react-foundations', () => ({
       convertAJVErrorsToFormik: mockConvertAJVErrorsToFormik,
+    }));
+    jest.doMock('../../utils/i18n', () => ({
+      getPhraseFactory: mockGetPhraseFactory,
     }));
   }
 
@@ -100,6 +107,7 @@ describe('[Route: /verify]', () => {
           foo: 'bar',
         },
         redirect: mockRedirect,
+        isMobile: false,
       };
     });
 
@@ -170,7 +178,7 @@ describe('[Route: /verify]', () => {
       });
 
       it('should call mapPayloadToFields', () => {
-        expect(mockMapPayloadToFields).toHaveBeenCalledWith(mockFields, mockLang);
+        expect(mockMapPayloadToFields).toHaveBeenCalledWith(mockFields, mockLang, res.isMobile);
       });
 
       it('should log the outcome', () => {
@@ -240,6 +248,13 @@ describe('[Route: /verify]', () => {
       mockLogger = jest.fn();
       mockGetClaims = jest.fn(() => ({ accessToken: mockAccessToken }));
       req.getClaims = mockGetClaims;
+      res = {
+        data: {
+          foo: 'bar',
+        },
+        redirect: mockRedirect,
+        isMobile: false,
+      };
 
       mockImports();
     });
@@ -391,7 +406,7 @@ describe('[Route: /verify]', () => {
         });
 
         it('should call mapPayloadToFields', () => {
-          expect(mockMapPayloadToFields).toHaveBeenCalledWith(mockFields, mockLang);
+          expect(mockMapPayloadToFields).toHaveBeenCalledWith(mockFields, mockLang, res.isMobile);
         });
 
         it('should set response data', () => {
@@ -399,9 +414,9 @@ describe('[Route: /verify]', () => {
             foo: 'bar',
             payload: {
               banner: {
-                bannerType: 'error',
-                title: 'Wrong, please try again',
-                errorType: '',
+                type: 'error',
+                title: 'pages.verify.banners.incorrect-digits.title',
+                text: 'pages.verify.banners.incorrect-digits.text',
               },
               values: {
                 digit11: '',
@@ -454,9 +469,9 @@ describe('[Route: /verify]', () => {
             foo: 'bar',
             payload: {
               banner: {
-                bannerType: 'error',
-                title: 'Too many failures, locked out',
-                errorType: '',
+                type: 'error',
+                title: 'pages.verify.banners.account-locked.title',
+                text: undefined,
               },
               values: {
                 digit11: '',

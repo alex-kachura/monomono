@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 import { PageTitle } from '@beans/typography';
@@ -11,8 +11,6 @@ import Banner from '../common/banner';
 import { FormSection, MainCopy } from './styled';
 
 export function VerifyPage({ initialData }) {
-  const submitRef = useRef();
-
   const { getLocalePhrase, csrf } = useAppConfig();
 
   const {
@@ -47,7 +45,6 @@ export function VerifyPage({ initialData }) {
                   fields={fields}
                   stateToken={stateToken}
                   csrf={csrf}
-                  submitRef={submitRef}
                   getLocalePhrase={getLocalePhrase}
                 />
               </Formik>

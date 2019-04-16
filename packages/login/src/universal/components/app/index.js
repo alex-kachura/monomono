@@ -8,7 +8,7 @@ import { RootElement } from '@beans/foundation';
 import Breadcrumb from '../common/breadcrumb';
 import { GlobalStyle, GridStyled } from './styled.js';
 
-export function App(props) {
+function App(props) {
   return (
     <RootElement>
       <GlobalStyle />

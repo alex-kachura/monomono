@@ -16,9 +16,9 @@ const globalStyles = {
 function renderVerifyPage({ accountLocked }) {
   return render(
     <Root
-      initialData={{
+      initialPageData={{
         banner: {
-          bannerType: '',
+          type: '',
           title: '',
           text: '',
         },
@@ -32,6 +32,14 @@ function renderVerifyPage({ accountLocked }) {
       appConfig={{
         getLocalePhrase: (key) => key,
         csrf: 'mock-csrf',
+        region: 'GB',
+        config: {
+          GB: {
+            externalApps: {
+              tescoSecure: 'mock-tesco-secure',
+            },
+          },
+        },
       }}
       loadingFallback={<div>Looading...</div>}
       errorFallback={<div>Error</div>}

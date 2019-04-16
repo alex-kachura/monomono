@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'formik';
 import ClubcardDigits from './clubcard-digits';
@@ -7,12 +7,12 @@ import { FormContainer } from './styled';
 
 export function VerifyForm({
   fields,
-  submitRef,
   stateToken,
   csrf,
   formik,
   getLocalePhrase,
 }) {
+  const submitRef = useRef();
   const { handleNativeSubmit, formRef, isSubmitting } = formik;
 
   return (
@@ -43,7 +43,6 @@ export function VerifyForm({
 VerifyForm.propTypes = {
   formik: PropTypes.object.isRequired,
   fields: PropTypes.array.isRequired,
-  submitRef: PropTypes.object,
   stateToken: PropTypes.string,
   csrf: PropTypes.string.isRequired,
   getLocalePhrase: PropTypes.func.isRequired,

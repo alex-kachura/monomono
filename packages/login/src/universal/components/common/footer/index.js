@@ -68,15 +68,4 @@ export class Footer extends React.PureComponent {
   }
 }
 
-// const footerSelector = createSelector(
-//   (state) => state.get('config'),
-//   (state) => state.get('region'),
-//   (state) => state.get('getLocalePhrase'),
-//   (config, region, getLocalePhrase) => ({
-//     config: config.toJS(),
-//     region,
-//     getLocalePhrase,
-//   }),
-// );
-
 export default connectApp(Footer);

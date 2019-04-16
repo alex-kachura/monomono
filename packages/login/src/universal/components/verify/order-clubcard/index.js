@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heading, BodyText } from '@beans/typography';
-import { connectPage, useAppConfig } from '@oneaccount/react-foundations';
+import { useAppConfig } from '@oneaccount/react-foundations';
 import { SectionStyled } from '../styled';
 import { LinkStyled } from './styled';
 
@@ -27,4 +27,4 @@ export function OrderClubcard() {
   );
 }
 
-export default connectPage({ noData: true })(OrderClubcard);
+export default OrderClubcard;

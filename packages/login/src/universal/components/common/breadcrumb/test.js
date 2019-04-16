@@ -1,27 +1,56 @@
 import React from 'react';
-import { Breadcrumb } from './';
+import { render, cleanup } from 'react-testing-library';
+import { Root } from '@oneaccount/react-foundations';
+import { DefaultThemeProvider } from '@beans/theme';
+import Breadcrumb from '.';
 
-describe('[Component: Breadcrumb]', () => {
-  let component;
+function renderBreadcrumb(breadcrumb) {
+  return render(
+    <Root
+      breadcrumb={breadcrumb}
+      initialData={{}}
+      appConfig={{
+        region: 'GB',
+        config: {
+          GB: {
+            externalApps: {
+              tescoHomepage: 'mock-url',
+            },
+          },
+        }
+      }}
+      errorFallback={<div>Error Please refresh the page</div>}
+    >
+      <DefaultThemeProvider>
+        <Breadcrumb />
+      </DefaultThemeProvider>
+    </Root>
+  );
+}
 
-  const mockProps = {
-    links: [{ href: 'www.testco.com', text: 'Test page' }, { text: 'Test page2' }],
-    config: {
-      GB: {
-        externalApps: {
-          tescoHomepage: 'https://www.testco.com',
+describe('Breadcrumb component', () => {
+  afterEach(cleanup);
+
+  describe('has breadcrumb', () => {
+    it('should render correctly', () => {
+      const { asFragment } = renderBreadcrumb([
+        {
+          href: 'mock-url',
+          text: 'mock-text',
         },
-      },
-    },
-    region: 'GB',
-    getLocalePhrase: (key) => key,
-  };
+      ]);
+      const fragment = asFragment();
 
-  beforeEach(() => {
-    component = global.contextualShallow(<Breadcrumb {...mockProps} />);
+      expect(fragment).toMatchSnapshot();
+    });
   });
 
-  it('should render correctly', () => {
-    expect(component).toMatchSnapshot();
+  describe('no breadcrumb', () => {
+    it('should render correctly', () => {
+      const { asFragment } = renderBreadcrumb([]);
+      const fragment = asFragment();
+
+      expect(fragment).toMatchSnapshot();
+    });
   });
 });

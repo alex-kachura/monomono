@@ -23,7 +23,7 @@ export const renderServer = (inititalData, history, routes, context, sheet, url)
   return ReactDOMServer.renderToString(
     sheet.collectStyles(
       <Root
-        initialData={payload || {}}
+        initialPageData={payload || {}}
         appConfig={appConfig}
         loadingFallback={<Spinner />}
         errorFallback={<div>Error Please refresh the page</div>}
@@ -43,7 +43,7 @@ export const renderClient = (inititalData, routes, history) => {
 
   ReactDOM.hydrate(
     <Root
-      initialData={payload || {}}
+      initialPageData={payload || {}}
       appConfig={appConfig}
       loadingFallback={<Spinner />}
       errorFallback={<div>Error Please refresh the page</div>}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { connectPage, useAppConfig } from '@oneaccount/react-foundations';
+import { useAppConfig } from '@oneaccount/react-foundations';
 import {
   SectionStyled,
   TitleHidden,
@@ -52,4 +52,4 @@ export function ContactInfo() {
   );
 }
 
-export default connectPage({ noData: true })(ContactInfo);
+export default ContactInfo;

@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import BreadcrumbContainer from '@beans/breadcrumb';
 import { BreadcrumbBarview } from './styled';
 import AltLink from '../alt-link';
-import { connectApp, BreadcrumbContext } from '@oneaccount/react-foundations';
+import { useAppConfig, BreadcrumbContext } from '@oneaccount/react-foundations';
 
-export function Breadcrumb({ appConfig: { config, region } }) {
+export function Breadcrumb() {
+  const { config, region } = useAppConfig();
   const { breadcrumb } = useContext(BreadcrumbContext);
 
   return breadcrumb && breadcrumb.length > 0 ? (
@@ -28,4 +29,4 @@ Breadcrumb.propTypes = {
   }),
 };
 
-export default connectApp(Breadcrumb);
+export default Breadcrumb;

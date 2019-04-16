@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VerifyForm component has initial errors should render error state of form 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -12,11 +12,11 @@
+        >
+          <div
+            class=\\"base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-wt4ift-3 iYRfeQ\\"
+          >
+            <legend
+-             class=\\"base-components__BaseElement-sc-150tvch-0 styled__Legend-wt4ift-2 isVbKl\\"
++             class=\\"base-components__BaseElement-sc-150tvch-0 styled__Legend-wt4ift-2 gsqUaM\\"
+            >
+              pages.verify.digits-prompt 
+            </legend>
+          </div>
+          <div
+@@ -28,17 +28,17 @@
+            >
+              <div
+                class=\\"sc-bZQynM bOvGzn\\"
+              >
+                <label
+-                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
+                  for=\\"digit11\\"
+                >
+                  11th
+                </label>
+                <input
+-                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
++                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
+                  id=\\"digit11\\"
+                  maxlength=\\"1\\"
+                  name=\\"digit11\\"
+                  required=\\"\\"
+                  type=\\"text\\"
+@@ -47,17 +47,17 @@
+              </div>
+              <div
+                class=\\"sc-bZQynM bOvGzn\\"
+              >
+                <label
+-                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
+                  for=\\"digit12\\"
+                >
+                  12th
+                </label>
+                <input
+-                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
++                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
+                  id=\\"digit12\\"
+                  maxlength=\\"1\\"
+                  name=\\"digit12\\"
+                  required=\\"\\"
+                  type=\\"text\\"
+@@ -66,27 +66,32 @@
+              </div>
+              <div
+                class=\\"sc-bZQynM bOvGzn\\"
+              >
+                <label
+-                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
+                  for=\\"digit13\\"
+                >
+                  13th
+                </label>
+                <input
+-                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
++                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
+                  id=\\"digit13\\"
+                  maxlength=\\"1\\"
+                  name=\\"digit13\\"
+                  required=\\"\\"
+                  type=\\"text\\"
+                  value=\\"\\"
+                />
+              </div>
+            </div>
+          </div>
++         <p
++           class=\\"base-components__BaseElement-sc-150tvch-0 beans-form-group__error-message typography___styledElement-sc-186l0ce-0 hFMOIf\\"
++         >
++           server side error message
++         </p>
+        </fieldset>
+        <input
+          name=\\"state\\"
+          type=\\"hidden\\"
+          value=\\"mock-state-token\\""
+`;
+
+exports[`VerifyForm component no initial errors should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gZMcBi lkBHuO"
+  >
+    <form
+      autocomplete="off"
+      method="POST"
+      novalidate=""
+    >
+      <fieldset
+        class="base-components__RootElement-sc-150tvch-1 sc-ifAKCX bYuqtW styled__FormGroupContainer-wt4ift-1 hVjJdM"
+      >
+        <div
+          class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-wt4ift-3 iYRfeQ"
+        >
+          <legend
+            class="base-components__BaseElement-sc-150tvch-0 styled__Legend-wt4ift-2 isVbKl"
+          >
+            pages.verify.digits-prompt 
+          </legend>
+        </div>
+        <div
+          class="beans-form-group__children"
+        >
+          <div
+            id="clubcard-form-group"
+            required=""
+          >
+            <div
+              class="sc-bZQynM bOvGzn"
+            >
+              <label
+                class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
+                for="digit11"
+              >
+                11th
+              </label>
+              <input
+                class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
+                id="digit11"
+                maxlength="1"
+                name="digit11"
+                required=""
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-bZQynM bOvGzn"
+            >
+              <label
+                class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
+                for="digit12"
+              >
+                12th
+              </label>
+              <input
+                class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
+                id="digit12"
+                maxlength="1"
+                name="digit12"
+                required=""
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-bZQynM bOvGzn"
+            >
+              <label
+                class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
+                for="digit13"
+              >
+                13th
+              </label>
+              <input
+                class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
+                id="digit13"
+                maxlength="1"
+                name="digit13"
+                required=""
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <input
+        name="state"
+        type="hidden"
+        value="mock-state-token"
+      />
+      <input
+        name="_csrf"
+        type="hidden"
+        value="mock-csrf"
+      />
+      <button
+        aria-disabled="false"
+        class="styled__BaseButton-sc-3mnirm-0 sc-iwsKbI hJtNCa styled__PrimaryButton-sc-3mnirm-2 evotEg"
+        role="button"
+        type="submit"
+      >
+        <span
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 lnNmDn"
+        >
+          <span
+            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__PrimarySpan-sc-3mnirm-5 hrUcvf"
+          >
+            pages.verify.buttons.submit
+          </span>
+        </span>
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

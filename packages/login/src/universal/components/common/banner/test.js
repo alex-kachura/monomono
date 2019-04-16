@@ -1,18 +1,21 @@
 import React from 'react';
-import Banner from './';
+import { render } from 'react-testing-library';
+import { DefaultThemeProvider } from '@beans/theme';
+import Banner from '.';
 
 describe('[Component: Banner]', () => {
-  let component;
-
-  const mockProps = {
-    getLocalePhrase: (key) => key,
-  };
-
-  beforeEach(() => {
-    component = global.contextualShallow(<Banner {...mockProps} />);
-  });
-
   it('should render correctly', () => {
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(
+      <DefaultThemeProvider>
+        <Banner
+          type="error"
+          title="Banner title"
+          text="Banner text"
+        />
+      </DefaultThemeProvider>
+    );
+    const fragment = asFragment();
+
+    expect(fragment).toMatchSnapshot();
   });
 });
