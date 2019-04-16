@@ -1,27 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { media } from '@beans/foundation';
-import FormGroup from '@beans/form-group';
 import Label from '@beans/label';
 import Input from '@beans/input';
 
-export const InputStyled = styled(Input)`
-  width: 40px;
-`;
-
-export const FormGroupStyled = styled(FormGroup)`
-  padding: 0 12px !important;
-
-  ${media.aboveMobileLarge`
-    padding: 0 !important;
-  `}
-
-  legend {
-    margin: 0 0 21px -12px !important;
+export const formGroupStyles = css`
+  .beans-form-group__children,
+  .beans-form-group__error-message {
+    padding: 0 12px;
 
     ${media.aboveMobileLarge`
-      margin: 0 0 21px 0 !important;
+      padding: 0;
     `}
   }
+`;
+
+export const InputStyled = styled(Input)`
+  width: 40px;
 `;
 
 export const LabelStyled = styled(Label)`
@@ -30,6 +24,8 @@ export const LabelStyled = styled(Label)`
 `;
 
 export const InputGroupStyled = styled.div`
-  display: inline-block;
-  margin-right: 24px;
+  && {
+    display: inline-block;
+    margin: 0 24px 0 0;
+  }
 `;

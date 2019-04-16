@@ -20,12 +20,12 @@ exports[`VerifyForm component has initial errors should render error state of fo
           <div
 @@ -25,17 +25,17 @@
             <div
-              class=\\"sc-bZQynM bOvGzn\\"
+              class=\\"sc-EHOje kdKQiq\\"
               name=\\"clubcard-form-group\\"
             >
               <label
--               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
-+               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
+-               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 felILI\\"
                 for=\\"digit11\\"
               >
                 11th
@@ -40,12 +40,12 @@ exports[`VerifyForm component has initial errors should render error state of fo
                 type=\\"text\\"
 @@ -45,17 +45,17 @@
             <div
-              class=\\"sc-bZQynM bOvGzn\\"
+              class=\\"sc-EHOje kdKQiq\\"
               name=\\"clubcard-form-group\\"
             >
               <label
--               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
-+               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
+-               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 felILI\\"
                 for=\\"digit12\\"
               >
                 12th
@@ -60,12 +60,12 @@ exports[`VerifyForm component has initial errors should render error state of fo
                 type=\\"text\\"
 @@ -65,26 +65,31 @@
             <div
-              class=\\"sc-bZQynM bOvGzn\\"
+              class=\\"sc-EHOje kdKQiq\\"
               name=\\"clubcard-form-group\\"
             >
               <label
--               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
-+               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
+-               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 felILI\\"
                 for=\\"digit13\\"
               >
                 13th
@@ -97,7 +97,7 @@ exports[`VerifyForm component has initial errors should render error state of fo
 exports[`VerifyForm component no initial errors should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-gZMcBi lkBHuO"
+    class="sc-iwsKbI igoYVT"
   >
     <form
       autocomplete="off"
@@ -105,7 +105,7 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
       novalidate=""
     >
       <fieldset
-        class="base-components__RootElement-sc-150tvch-1 sc-ifAKCX gINTaY styled__FormGroupContainer-wt4ift-1 hVjJdM"
+        class="base-components__RootElement-sc-150tvch-1 styled__FormGroupContainer-wt4ift-1 dImxlC"
       >
         <div
           class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-wt4ift-3 iYRfeQ"
@@ -120,11 +120,11 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
           class="beans-form-group__children"
         >
           <div
-            class="sc-bZQynM bOvGzn"
+            class="sc-EHOje kdKQiq"
             name="clubcard-form-group"
           >
             <label
-              class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
+              class="sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy"
               for="digit11"
             >
               11th
@@ -140,11 +140,11 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
             />
           </div>
           <div
-            class="sc-bZQynM bOvGzn"
+            class="sc-EHOje kdKQiq"
             name="clubcard-form-group"
           >
             <label
-              class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
+              class="sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy"
               for="digit12"
             >
               12th
@@ -160,11 +160,11 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
             />
           </div>
           <div
-            class="sc-bZQynM bOvGzn"
+            class="sc-EHOje kdKQiq"
             name="clubcard-form-group"
           >
             <label
-              class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
+              class="sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy"
               for="digit13"
             >
               13th
@@ -193,7 +193,7 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
       />
       <button
         aria-disabled="false"
-        class="styled__BaseButton-sc-3mnirm-0 sc-iwsKbI grgHcm styled__PrimaryButton-sc-3mnirm-2 evotEg"
+        class="styled__BaseButton-sc-3mnirm-0 sc-dnqmqq cDuauq styled__PrimaryButton-sc-3mnirm-2 evotEg"
         role="button"
         type="submit"
       >

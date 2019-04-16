@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'formik';
+import FormGroup from '@beans/form-group';
 import { useAppConfig } from '@oneaccount/react-foundations';
-import { InputGroupStyled, InputStyled, FormGroupStyled, LabelStyled } from './styled';
+import { InputGroupStyled, InputStyled, LabelStyled, formGroupStyles } from './styled';
 import { useFieldLogic, getNumberProps, getFormErrorMsg } from './helpers';
 
 export function ClubcardDigits({ fields, submitRef, formik }) {
@@ -14,7 +15,7 @@ export function ClubcardDigits({ fields, submitRef, formik }) {
   const errorMsg = getFormErrorMsg(formik);
 
   return (
-    <FormGroupStyled
+    <FormGroup
       id="clubcard-form-group"
       required
       labelText={getLocalePhrase('pages.verify.digits-prompt')}
@@ -22,6 +23,7 @@ export function ClubcardDigits({ fields, submitRef, formik }) {
       errorMessage={errorMsg}
       labelProps={{ emphasized: false }}
       fieldset
+      styles={formGroupStyles}
     >
       {fields.map(({ name, id, label, type, ref }, index) =>
         <InputGroupStyled key={id}>
@@ -50,7 +52,7 @@ export function ClubcardDigits({ fields, submitRef, formik }) {
           />
         </InputGroupStyled>
       )}
-    </FormGroupStyled>
+    </FormGroup>
   );
 }
 
