@@ -23,35 +23,33 @@ export function ClubcardDigits({ fields, submitRef, formik }) {
       labelProps={{ emphasized: false }}
       fieldset
     >
-      <div>
-        {fields.map(({ name, id, label, type, ref }, index) =>
-          <InputGroupStyled key={id}>
-            <LabelStyled
-              htmlFor={id}
-              error={Boolean(formik.errors[name])}
-            >
-              {label}
-            </LabelStyled>
-            <InputStyled
-              required
-              domRef={ref}
-              autoFocus={index === 0}
-              error={formik.errors[name] ? Boolean(formik.errors[name]) : false}
-              labelText={label}
-              type={type}
-              name={name}
-              id={id}
-              value={formik.values[name]}
-              onBlur={formik.handleBlur}
-              onChange={handleChange}
-              onKeyDown={handleKeyDown}
-              maxLength="1"
-              // Additional html attributes for mobile devices
-              {...getNumberProps(type)}
-            />
-          </InputGroupStyled>
-        )}
-      </div>
+      {fields.map(({ name, id, label, type, ref }, index) =>
+        <InputGroupStyled key={id}>
+          <LabelStyled
+            htmlFor={id}
+            error={Boolean(formik.errors[name])}
+          >
+            {label}
+          </LabelStyled>
+          <InputStyled
+            required
+            domRef={ref}
+            autoFocus={index === 0}
+            error={formik.errors[name] ? Boolean(formik.errors[name]) : false}
+            labelText={label}
+            type={type}
+            name={name}
+            id={id}
+            value={formik.values[name]}
+            onBlur={formik.handleBlur}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            maxLength="1"
+            // Additional html attributes for mobile devices
+            {...getNumberProps(type)}
+          />
+        </InputGroupStyled>
+      )}
     </FormGroupStyled>
   );
 }

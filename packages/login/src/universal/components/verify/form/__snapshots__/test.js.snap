@@ -18,69 +18,68 @@ exports[`VerifyForm component has initial errors should render error state of fo
             </legend>
           </div>
           <div
-@@ -28,17 +28,17 @@
+@@ -25,17 +25,17 @@
+            <div
+              class=\\"sc-bZQynM bOvGzn\\"
+              name=\\"clubcard-form-group\\"
             >
-              <div
-                class=\\"sc-bZQynM bOvGzn\\"
+              <label
+-               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
+                for=\\"digit11\\"
               >
-                <label
--                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
-+                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
-                  for=\\"digit11\\"
-                >
-                  11th
-                </label>
-                <input
--                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
-+                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
-                  id=\\"digit11\\"
-                  maxlength=\\"1\\"
-                  name=\\"digit11\\"
-                  required=\\"\\"
-                  type=\\"text\\"
-@@ -47,17 +47,17 @@
-              </div>
-              <div
-                class=\\"sc-bZQynM bOvGzn\\"
+                11th
+              </label>
+              <input
+-               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
++               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
+                id=\\"digit11\\"
+                maxlength=\\"1\\"
+                name=\\"digit11\\"
+                required=\\"\\"
+                type=\\"text\\"
+@@ -45,17 +45,17 @@
+            <div
+              class=\\"sc-bZQynM bOvGzn\\"
+              name=\\"clubcard-form-group\\"
+            >
+              <label
+-               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
+                for=\\"digit12\\"
               >
-                <label
--                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
-+                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
-                  for=\\"digit12\\"
-                >
-                  12th
-                </label>
-                <input
--                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
-+                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
-                  id=\\"digit12\\"
-                  maxlength=\\"1\\"
-                  name=\\"digit12\\"
-                  required=\\"\\"
-                  type=\\"text\\"
-@@ -66,27 +66,32 @@
-              </div>
-              <div
-                class=\\"sc-bZQynM bOvGzn\\"
+                12th
+              </label>
+              <input
+-               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
++               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
+                id=\\"digit12\\"
+                maxlength=\\"1\\"
+                name=\\"digit12\\"
+                required=\\"\\"
+                type=\\"text\\"
+@@ -65,26 +65,31 @@
+            <div
+              class=\\"sc-bZQynM bOvGzn\\"
+              name=\\"clubcard-form-group\\"
+            >
+              <label
+-               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++               class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
+                for=\\"digit13\\"
               >
-                <label
--                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
-+                 class=\\"sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 felILI\\"
-                  for=\\"digit13\\"
-                >
-                  13th
-                </label>
-                <input
--                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
-+                 class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
-                  id=\\"digit13\\"
-                  maxlength=\\"1\\"
-                  name=\\"digit13\\"
-                  required=\\"\\"
-                  type=\\"text\\"
-                  value=\\"\\"
-                />
-              </div>
+                13th
+              </label>
+              <input
+-               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
++               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
+                id=\\"digit13\\"
+                maxlength=\\"1\\"
+                name=\\"digit13\\"
+                required=\\"\\"
+                type=\\"text\\"
+                value=\\"\\"
+              />
             </div>
           </div>
 +         <p
@@ -106,7 +105,7 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
       novalidate=""
     >
       <fieldset
-        class="base-components__RootElement-sc-150tvch-1 sc-ifAKCX bYuqtW styled__FormGroupContainer-wt4ift-1 hVjJdM"
+        class="base-components__RootElement-sc-150tvch-1 sc-ifAKCX gINTaY styled__FormGroupContainer-wt4ift-1 hVjJdM"
       >
         <div
           class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-wt4ift-3 iYRfeQ"
@@ -121,66 +120,64 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
           class="beans-form-group__children"
         >
           <div
-            id="clubcard-form-group"
-            required=""
+            class="sc-bZQynM bOvGzn"
+            name="clubcard-form-group"
           >
-            <div
-              class="sc-bZQynM bOvGzn"
+            <label
+              class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
+              for="digit11"
             >
-              <label
-                class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
-                for="digit11"
-              >
-                11th
-              </label>
-              <input
-                class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
-                id="digit11"
-                maxlength="1"
-                name="digit11"
-                required=""
-                type="text"
-                value=""
-              />
-            </div>
-            <div
-              class="sc-bZQynM bOvGzn"
+              11th
+            </label>
+            <input
+              class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
+              id="digit11"
+              maxlength="1"
+              name="digit11"
+              required=""
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="sc-bZQynM bOvGzn"
+            name="clubcard-form-group"
+          >
+            <label
+              class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
+              for="digit12"
             >
-              <label
-                class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
-                for="digit12"
-              >
-                12th
-              </label>
-              <input
-                class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
-                id="digit12"
-                maxlength="1"
-                name="digit12"
-                required=""
-                type="text"
-                value=""
-              />
-            </div>
-            <div
-              class="sc-bZQynM bOvGzn"
+              12th
+            </label>
+            <input
+              class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
+              id="digit12"
+              maxlength="1"
+              name="digit12"
+              required=""
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="sc-bZQynM bOvGzn"
+            name="clubcard-form-group"
+          >
+            <label
+              class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
+              for="digit13"
             >
-              <label
-                class="sc-EHOje cOEebv styled__StyledLabel-sc-28yvb4-0 gToxYy"
-                for="digit13"
-              >
-                13th
-              </label>
-              <input
-                class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
-                id="digit13"
-                maxlength="1"
-                name="digit13"
-                required=""
-                type="text"
-                value=""
-              />
-            </div>
+              13th
+            </label>
+            <input
+              class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
+              id="digit13"
+              maxlength="1"
+              name="digit13"
+              required=""
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </fieldset>
@@ -196,7 +193,7 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
       />
       <button
         aria-disabled="false"
-        class="styled__BaseButton-sc-3mnirm-0 sc-iwsKbI hJtNCa styled__PrimaryButton-sc-3mnirm-2 evotEg"
+        class="styled__BaseButton-sc-3mnirm-0 sc-iwsKbI grgHcm styled__PrimaryButton-sc-3mnirm-2 evotEg"
         role="button"
         type="submit"
       >

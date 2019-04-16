@@ -1,7 +1,7 @@
 import React from 'react';
-import { Heading, Signpost, BodyText } from '@beans/typography';
+import { Heading, Signpost } from '@beans/typography';
 import { useAppConfig } from '@oneaccount/react-foundations';
-import { SectionStyled } from '../styled';
+import { SectionStyled, TextStyled } from '../styled';
 import Clubcard from './svg/clubcard';
 import CreditCard from './svg/credit-card';
 
@@ -17,18 +17,18 @@ export default function ClubcardInfo() {
         <Signpost as="h3" margin>
           {getLocalePhrase('pages.verify.clubcard-info.sub-heading-1')}
         </Signpost>
-        <BodyText margin>
+        <TextStyled>
           {getLocalePhrase('pages.verify.clubcard-info.copy-1')}
-        </BodyText>
+        </TextStyled>
         <Clubcard />
       </section>
       <section>
         <Signpost as="h3" margin>
           {getLocalePhrase('pages.verify.clubcard-info.sub-heading-2')}
         </Signpost>
-        <BodyText margin>
+        <TextStyled>
           {getLocalePhrase('pages.verify.clubcard-info.copy-2')}
-        </BodyText>
+        </TextStyled>
         <CreditCard />
       </section>
     </SectionStyled>

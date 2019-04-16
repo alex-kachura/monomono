@@ -108,7 +108,7 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
           novalidate=""
         >
           <fieldset
-            class="base-components__RootElement-sc-150tvch-1 sc-ifAKCX bYuqtW styled__FormGroupContainer-wt4ift-1 hVjJdM"
+            class="base-components__RootElement-sc-150tvch-1 sc-ifAKCX gINTaY styled__FormGroupContainer-wt4ift-1 hVjJdM"
           >
             <div
               class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-wt4ift-3 iYRfeQ"
@@ -121,12 +121,7 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
             </div>
             <div
               class="beans-form-group__children"
-            >
-              <div
-                id="clubcard-form-group"
-                required=""
-              />
-            </div>
+            />
           </fieldset>
           <input
             name="state"
@@ -140,7 +135,7 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
           />
           <button
             aria-disabled="false"
-            class="styled__BaseButton-sc-3mnirm-0 sc-iwsKbI hJtNCa styled__PrimaryButton-sc-3mnirm-2 evotEg"
+            class="styled__BaseButton-sc-3mnirm-0 sc-iwsKbI grgHcm styled__PrimaryButton-sc-3mnirm-2 evotEg"
             role="button"
             type="submit"
           >
@@ -172,7 +167,7 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
           pages.verify.clubcard-info.sub-heading-1
         </h3>
         <p
-          class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fAWPzW"
+          class="base-components__BaseElement-sc-150tvch-0 sc-kAzzGY gjTIzz typography___styledElement-sc-186l0ce-0 kSJIks"
         >
           pages.verify.clubcard-info.copy-1
         </p>
@@ -234,7 +229,7 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
           pages.verify.clubcard-info.sub-heading-2
         </h3>
         <p
-          class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fAWPzW"
+          class="base-components__BaseElement-sc-150tvch-0 sc-kAzzGY gjTIzz typography___styledElement-sc-186l0ce-0 kSJIks"
         >
           pages.verify.clubcard-info.copy-2
         </p>
