@@ -64,7 +64,7 @@ export async function getVerifyPage(req, res, next) {
         required: fieldsToRender.map((field) => field.name),
       },
       stateToken: challenge.stateToken,
-    }
+    },
   };
 
   return next();

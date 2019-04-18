@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Notification from '@beans/notification';
+import { BodyText } from '@beans/typography';
 import { Container } from './styled';
 
 export default function Banner({ type, title, text }) {
@@ -10,7 +11,9 @@ export default function Banner({ type, title, text }) {
         title={title}
         variant={type}
       >
-        {text}
+        <BodyText>
+          {text}
+        </BodyText>
       </Notification>
     </Container>
   ) : null;

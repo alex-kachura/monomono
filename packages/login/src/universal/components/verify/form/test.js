@@ -225,10 +225,4 @@ describe('VerifyForm component', () => {
       });
     });
   });
-
-
-
-
 });
-
-
