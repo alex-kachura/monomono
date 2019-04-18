@@ -1,0 +1,8 @@
+dist
+coverage
+package.json
+package-lock.json
+src/webpack-assets.json
+src/public/**/*.*
+src/vendor/**/*.*
+helm/**/*.yaml

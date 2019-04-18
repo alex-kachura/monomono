@@ -1,0 +1,34 @@
+aurora:
+  domainName: aurora.tescocloud.com
+app:
+  name: address book
+  description: address book
+  namespaceGroup: oneaccount
+  version: 0.0.1
+  repositoryUrl: git@github.dev.global.tesco.org:oneaccount/address-book.git
+  image:
+    repository: 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book
+    apptag: latest
+    nginxtag: nginx-latest
+  replicas: 3
+  protocol: TCP
+  port: 80
+  appContainerPort: 8088
+  nginxContainerPort: 80
+  imagePullPolicy: Always
+  restartPolicy: Never
+  resources:
+    app:
+      requests:
+        cpu: 1
+        memory: 1Gi
+      limits:
+        cpu: 2
+        memory: 2Gi
+    nginx:
+      requests:
+        cpu: 500m
+        memory: 512Mi
+      limits:
+        cpu: 1
+        memory: 1Gi

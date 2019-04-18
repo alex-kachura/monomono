@@ -1,0 +1,22 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:ms:20170412':
+    - express > debug > ms:
+        patched: '2017-09-18T12:01:29.484Z'
+    - express > send > debug > ms:
+        patched: '2017-09-18T12:01:29.484Z'
+    - express > serve-static > send > ms:
+        patched: '2017-09-18T12:01:29.484Z'
+    - express > serve-static > send > debug > ms:
+        patched: '2017-09-18T12:01:29.484Z'
+    - express > send > ms:
+        patched: '2017-09-18T12:01:29.484Z'
+    - helmet > connect > finalhandler > debug > ms:
+        patched: '2017-09-18T12:01:29.484Z'
+    - helmet > connect > debug > ms:
+        patched: '2017-09-18T12:01:29.484Z'
+    - body-parser > debug > ms:
+        patched: '2017-09-18T12:01:29.484Z'

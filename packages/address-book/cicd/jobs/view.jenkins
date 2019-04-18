@@ -1,0 +1,19 @@
+#!/usr/bin/env groovy
+
+listView('address-book') {
+   description('All address-book jobs')
+   filterBuildQueue()
+   filterExecutors()
+   jobs {
+       regex(/address-book_.*/)
+   }
+   columns {
+       status()
+       weather()
+       name()
+       lastSuccess()
+       lastFailure()
+       lastDuration()
+       buildButton()
+   }
+}

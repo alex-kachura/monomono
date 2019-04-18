@@ -1,0 +1,97 @@
+# A
+app:
+  logo:
+    alt: "Tesco"
+  menu:
+    close-text: "Close"
+
+# B
+banners:
+  error:
+    load:
+      title: "Sorry, we weren't able to load your details."
+      copy-1: "Please"
+      copy-2: "refresh this page"
+    update:
+      title: "Sorry, we weren't able to save your details."
+      copy-1: "Please save again."
+
+# C
+contact-us: "Contact us"
+
+# F
+feedback: "Feedback"
+footer:
+  copyright: "%{year} All rights reserved."
+  social-bar:
+    label: "Follow us:"
+  links:
+    header1:
+      title: "Here to help"
+      link1: "Help and FAQs"
+      link2: "Contact us"
+    header2:
+      title: "About this website"
+      link1: "Terms & conditions"
+      link2: "Privacy & cookies"
+      link3: "Accessibility"
+      link4: "Privacy centre"
+      link5: "Website feedback"
+    header3:
+      title: "Useful links"
+      link1: "Store locator"
+      link2: "My account"
+      link3: "Product recall"
+      link4: "Sitemap"
+    header4:
+      title: "About Tesco"
+      link1: "Work for Tesco"
+      link2: "Tesco PLC"
+
+# H
+header:
+  menu:
+    title: "Menu"
+    link1: "Tesco.com"
+    link2: "Contact us"
+    link3: "Help"
+    link4: "Feedback"
+help: "Help"
+
+# P
+pages:
+  landing:
+    title: "address book"
+    sample-form-btn: "Sample form"
+
+  edit:
+    title: "Edit"
+    server-error: "Error message from a service"
+    fields:
+      sample1:
+        label: "Sample field 1"
+        placeholder: ""
+        errors:
+          empty: "Please enter a value"
+      sample2:
+        label: "Sample field 2"
+        placeholder: ""
+        errors:
+          empty: "Please enter a value"
+          invalid: "Please enter only numbers"
+    submit-btn: "Submit"
+
+  not-found:
+    title: "Page not found"
+    heading: "Oops!...we couldn't find the page you requested."
+    home: "Go to homepage"
+    paragraphs:
+      - "If you typed the address in, please check that it's correct and try again. It's also possible that you clicked on an outdated link."
+      - "Our homepage may be able to help you find the feature or store you're looking for."
+
+# S
+sign-in: "Sign in"
+sign-out: "Sign out"
+
+# T
+tesco-site: "Tesco.com"

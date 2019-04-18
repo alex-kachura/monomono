@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component: Banner] should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa iYbLuh"
+  >
+    <div
+      aria-live="polite"
+      class="styled__Container-sc-1bf1p22-0 lmQQYD"
+      role="status"
+    >
+      <div
+        class="styled__PositionedIcon-kcflkd-0 ktuKJx styled__Container-sc-1bf1p22-0 fRWwDM"
+      >
+        <svg
+          aria-hidden="true"
+          class="styled__StyledSVG-sc-1nulmu6-0 fnQPMZ"
+          color="currentColor"
+          height="21"
+          preserveAspectRatio="xMinYMax meet"
+          viewBox="0 0 20 21"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10 15V1.5c2.623 0 4.184.43 6.311 2.106M3.5 11.5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zM16.5
+        11.5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zM16.742 20.5c-2.037-1.173-4.609-2-6.742-2-1.879
+        0-4.104.638-6 1.591-.257.129-.5.269-.743.409"
+            fill="none"
+            stroke="#ffffff"
+          />
+        </svg>
+      </div>
+      <div
+        class="base-components__BaseElement-sc-150tvch-0 FTmRK"
+      >
+        <p
+          class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 bBDtsg"
+        >
+          Banner title
+        </p>
+        Banner text
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

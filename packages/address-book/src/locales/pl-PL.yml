@@ -1,0 +1,91 @@
+# A
+app:
+  logo:
+    alt: "Tesco"
+  menu:
+    close-text: "Blisko"
+
+# B
+banners:
+  error:
+    load:
+      title: "Niestety, nie udało nam się wczytać Twoich danych."
+      copy-1: "Proszę"
+      copy-2: "odśwież tę stronę"
+    update:
+      title: "Niestety, nie udało nam się zapisać Twoich danych."
+      copy-1: "Proszę zapisz ponownie"
+
+# C
+contact-us: "Skontaktuj się z nami"
+
+# F
+feedback: "Sprzężenie zwrotne"
+footer:
+  copyright: "%{year} Wszelkie prawa zastrzeżone."
+  social-bar:
+    label: "Podążaj za nami:"
+  links:
+    header1:
+      title: "Tutaj do pomocy"
+      link1: "Pomoc i często zadawane pytania"
+      link2: "Skontaktuj się z nami"
+    header2:
+      title: "O tej stronie"
+      link1: "Zasady i Warunki"
+      link2: "Prywatność i pliki cookie"
+      link3: "Dostępność"
+      link4: "Centrum ochrony prywatności"
+      link5: "Informacja o stronie internetowej"
+    header3:
+      title: "Przydatne linki"
+      link1: "Znajdź sklep"
+      link2: "Moje konto"
+      link3: "Wycofanie produktu"
+      link4: "Mapa witryny"
+    header4:
+      title: "O Tesco"
+      link1: "Pracuj dla Tesco"
+      link2: "Tesco PLC"
+
+# H
+header:
+  menu:
+    title: "Menu"
+    link1: "Tesco.pl"
+    link2: "Skontaktuj się z nami"
+    link3: "Wsparcie"
+    link4: "Sprzężenie zwrotne"
+help: "Help PL"
+
+# P
+pages:
+  landing:
+    title: "address book"
+    sample-form-btn: "Przykładowa forma"
+
+  edit:
+    title: "Edytować"
+    server-error: "Komunikat o błędzie z usługi"
+    fields:
+      sample1:
+        label: "Pole próbki 1"
+        placeholder: ""
+        errors:
+          empty: "Proszę wprowadzić wartość"
+    submit-btn: "Zatwierdź"
+
+  not-found:
+    title: "Strona nie znaleziona"
+    heading: "Ups! ... nie mogliśmy znaleźć żądanej strony."
+    home: "Wróć do strony głównej"
+    paragraphs:
+      - "Jeśli wpisałeś adres, sprawdź, czy jest poprawny i spróbuj ponownie. Możliwe też, że kliknąłeś na nieaktualny link."
+      - "Nasza strona główna może pomóc Ci znaleźć szukaną funkcję lub sklep."
+
+# S
+sign-in: "Zaloguj"
+sign-out: "Wyloguj się"
+
+# T
+tesco-site: "Tesco.pl"

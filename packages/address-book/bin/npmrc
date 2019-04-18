@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Conditionally setup auth token if required
+if [ ! -z $NPM_AUTH_TOKEN ]; then
+  if [ -z $NPMRC_PATH ]; then
+    echo 'Ensure $NPMRC_PATH is set.'
+    exit 1
+  fi
+
+  echo "//nexus.ourtesco.com/repository/tesco-npm/:_authToken=\${NPM_AUTH_TOKEN}" >> $NPMRC_PATH
+  echo "//nexus.ourtesco.com/repository/online-web-group/:_authToken=\${NPM_AUTH_TOKEN}" >> $NPMRC_PATH
+fi

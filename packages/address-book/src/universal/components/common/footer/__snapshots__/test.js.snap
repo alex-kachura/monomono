@@ -1,0 +1,272 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<DocumentFragment>
+  <footer
+    class="base-components__RootElement-sc-150tvch-1 cCmuza"
+  >
+    <div
+      class="base-components__BaseElement-sc-150tvch-0 styled__LinksContainer-sc-6mv3y9-0 jEjCfu"
+    >
+      <div
+        class="styled-sc-140lqfg-0 jzEHNh"
+      >
+        <div
+          class="styled__ContentLinksRow-sc-6mv3y9-2 hzjFwl styled-cgoahb-0 fFoLXC"
+        >
+          <div
+            class="styled-tbp4qh-0 fxRCHK"
+          >
+            <section>
+              <p
+                class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 cboYhH"
+              >
+                footer.links.header1.title
+              </p>
+              <ul
+                class="base-components__BaseList-sc-150tvch-3 styled__LinkList-sc-6mv3y9-4 chGOT"
+              >
+                <li
+                  class="styled__LinkListItem-sc-6mv3y9-5 gelICI"
+                >
+                  <a
+                    class="styled__StyledLink-sc-6mv3y9-6 jKtPIn styled__StandaloneLink-sc-1xizymv-0 lmAQly"
+                    href="https://www-ppe.tesco.com/help/"
+                  >
+                    <span
+                      class="beans-link__text styled__TextSpan-sc-1xizymv-3 cXoGaR"
+                    >
+                      footer.links.header1.link1
+                    </span>
+                  </a>
+                </li>
+                <li
+                  class="styled__LinkListItem-sc-6mv3y9-5 gelICI"
+                >
+                  <a
+                    class="styled__StyledLink-sc-6mv3y9-6 jKtPIn styled__StandaloneLink-sc-1xizymv-0 lmAQly"
+                    href="https://www-ppe.tesco.com/help/contact/"
+                  >
+                    <span
+                      class="beans-link__text styled__TextSpan-sc-1xizymv-3 cXoGaR"
+                    >
+                      footer.links.header1.link2
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+        <div
+          class="styled__AccordionsRow-sc-6mv3y9-1 VdkwB styled-cgoahb-0 fFoLXC"
+        >
+          <div
+            class="styled-tbp4qh-0 fauaRP"
+          >
+            <div
+              class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1ifdouk-0 jVgBhl"
+            >
+              <div
+                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 iEzYgt"
+              >
+                <div
+                  aria-controls="footer-accordion-0"
+                  aria-expanded="false"
+                  aria-label="footer.links.header1.title"
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 bOFZhy"
+                  role="button"
+                  tabindex="0"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 kOiLeh"
+                  >
+                    <a
+                      class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 kbXwpd styled__InlineLink-y3p06c-0 gYivyO"
+                      role="presentation"
+                      tabindex="-1"
+                    >
+                      footer.links.header1.title
+                    </a>
+                  </div>
+                  <button
+                    aria-disabled="false"
+                    class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 eyiDCl"
+                    role="presentation"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span
+                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 cQpCTk"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="styled__Container-sc-1bf1p22-0 gJOjrx"
+                        color="currentColor"
+                        focusable="false"
+                        height="8"
+                        preserveAspectRatio="xMinYMax meet"
+                        viewBox="0 -1 20 12"
+                        width="13.33"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18.652 1.312L10 10.276 1.356 1.312"
+                          fill="none"
+                          stroke="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 gPHpac"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 DUqMA"
+                    id="footer-accordion-0"
+                    role="region"
+                    tabindex="-1"
+                  >
+                    <li
+                      class="styled__LinkListItem-sc-6mv3y9-5 gelICI"
+                    >
+                      <a
+                        class="styled__StyledLink-sc-6mv3y9-6 hmWKkN styled__StandaloneLinkWithIcon-sc-1gtmq4p-0 jSEUsV"
+                        href="https://www-ppe.tesco.com/help/"
+                      >
+                        <span
+                          class="beans-link__text styled__TextSpan-sc-1gtmq4p-3 lgqoNo"
+                        >
+                          footer.links.header1.link1
+                        </span>
+                        <span
+                          class="beans-link__icon styled__IconSpan-sc-1gtmq4p-4 gjpGdo"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="styled__Container-sc-1bf1p22-0 gJOjrx"
+                            color="currentColor"
+                            height="20"
+                            preserveAspectRatio="xMinYMax meet"
+                            viewBox="-1 0 12 20"
+                            width="12"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1.312 1.348L10.276 10l-8.964 8.644"
+                              fill="none"
+                              stroke="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </li>
+                    <li
+                      class="styled__LinkListItem-sc-6mv3y9-5 gelICI"
+                    >
+                      <a
+                        class="styled__StyledLink-sc-6mv3y9-6 hmWKkN styled__StandaloneLinkWithIcon-sc-1gtmq4p-0 jSEUsV"
+                        href="https://www-ppe.tesco.com/help/contact/"
+                      >
+                        <span
+                          class="beans-link__text styled__TextSpan-sc-1gtmq4p-3 lgqoNo"
+                        >
+                          footer.links.header1.link2
+                        </span>
+                        <span
+                          class="beans-link__icon styled__IconSpan-sc-1gtmq4p-4 gjpGdo"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="styled__Container-sc-1bf1p22-0 gJOjrx"
+                            color="currentColor"
+                            height="20"
+                            preserveAspectRatio="xMinYMax meet"
+                            viewBox="-1 0 12 20"
+                            width="12"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1.312 1.348L10.276 10l-8.964 8.644"
+                              fill="none"
+                              stroke="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </a>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="styled-cgoahb-0 fFoLXC"
+        >
+          <div
+            class="styled-tbp4qh-0 fauaRP"
+          >
+            <div
+              class="base-components__BaseElement-sc-150tvch-0 styled__SocialLinksContainer-sc-6mv3y9-7 bTgBlD"
+            >
+              <p
+                class="base-components__BaseElement-sc-150tvch-0 styled__SocialLinksCTA-sc-6mv3y9-8 bdWYQo typography___styledElement-sc-186l0ce-0 eOArlu"
+              >
+                footer.social-bar.label
+              </p>
+              <ul
+                class="base-components__BaseList-sc-150tvch-3 styled__SocialLinksList-sc-6mv3y9-9 jDltrn"
+              >
+                <li
+                  class="styled__SocialLinkItem-sc-6mv3y9-10 hETbMH"
+                >
+                  <a
+                    class="styled__StyledLink-sc-17uhr13-0 ktPBHk"
+                    href="https://www.facebook.com/tesco/"
+                    target="_blank"
+                  >
+                    <svg
+                      class="styled__StyledSVG-sc-17uhr13-1 kPyGjK"
+                      focusable="false"
+                      height="24"
+                      preserveAspectRatio="xMinYMax meet"
+                      viewBox="15 8 11 24"
+                      width="11"
+                    >
+                      <title>
+                        Facebook
+                      </title>
+                      <path
+                        d="M16.4650625,31.5425 L21.1138125,31.5425 L21.1138125,19.90125 L24.3569375,19.90125 L24.7025625,16.004375 L21.1138125,16.004375 L21.1138125,13.784375 C21.1138125,12.865625 21.2988125,12.501875 22.1869375,12.501875 L24.7025625,12.501875 L24.7025625,8.4575 L21.4838125,8.4575 C18.0244375,8.4575 16.4650625,9.980625 16.4650625,12.896875 L16.4650625,16.004375 L14.0475625,16.004375 L14.0475625,19.950625 L16.4650625,19.950625 L16.4650625,31.5425 Z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="styled-sc-140lqfg-0 jzEHNh"
+    >
+      <div
+        class="styled-cgoahb-0 fFoLXC"
+      >
+        <div
+          class="styled__CopyrightColumn-sc-6mv3y9-11 fulVqn styled-tbp4qh-0 ZIHPV"
+        >
+          <p
+            class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 eOArlu"
+          >
+            © tesco-site footer.copyright
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

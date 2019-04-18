@@ -1,0 +1,15 @@
+app:
+  namespace: oneaccount-ppe
+  nodeConfigEnvironment: ppe
+  dcHeader: DCOAPPE
+  secrets:
+    akamaiPassthrough: |
+      H4sIAAAAAAAA/2JkYmKoSP6WGaF1ScXFaQnziseL0n4tfLg9s93buFFfQUK78ZDLK0YpxZncR77UrnRJudfYc+XwOwYGhlaDxiY2Tq02j7bvvIzsbAtKDYqZGBkM8hBijAZybJwJbR6MqcwsjHoGgiw8X6vUNzBI5l6vOJHjyMQo0OB4vHTW2uNHZ91vKhfz9dQ+t0ZFIP10yrWthu7n55yWZ7qZysC3m1ObW1bh/7nMT5bOz35/tb31VCDkz/2VEiKBYXGH3x8DAAAA//8BAAD//1ixhLW/AAAA
+    logsEncryptionKey: |
+      H4sIAAAAAAAA/2JkYmKoSP6WGaF1ScXFaQnziseL0n4tfLg9s93buFFfQUK78ZDLK8Znle4vyvfEaZ8RS+o1P9/9j4GBodmgsYGNU6vNo+07LyM724Jig0ImRgaDHIQYo4EcG2dCmwdjKjMLo56BIAuP2POJvZvXTmNQ2/+gnIlRoMG+LS90plnQzrNSFlNuz1/27PPBOUHml0JuHNz1eJW3RsCp66faLjTZ2Yi4LCt4Ljv5Wy5b9M+yx+uvpy+ctOpMReuqrQAAAAD//wEAAP//ZPzhQL0AAAA=
+    identityClientId: |
+      H4sIAAAAAAAA/2JkYmKoSP6WGaF1ScXFaQnziseL0n4tfLg9s93buFFfQUK78ZDLK8bkKzGdWuHb+bkmsxtd0+KcwcDAsNOgcRsbp1abR9t3XkZ2tgWNKwwalzIxMhg0zkcIMxrIsXEmtHkwpjKzMOoZCLLwpHLbCb26f7l1E+tkKSZGgYYiiaknnu+sV9rKMaN1wgcnD68453/u/IFBphs2Bh668cszWJ9bc8eFgFuHvhx49/50jAkL4xymX603Tor+W1WtcHHmJMZ9J3fdirKcXDU7YW7b7pV8prtCPp84cH+74b/vul/fer0XEbDXvK30bvW7AIHYw/+LwvqOuAIAAAD//wEAAP//G8FUVvMAAAA=
+    identityUsername: |
+      H4sIAAAAAAAA/2JkYmKoSP6WGaF1ScXFaQnziseL0n4tfLg9s93buFFfQUK78ZDLK8aMHvFkppzukssRx/4oMXFfZmBgyDHIYuPUavNo+87LyM62INYgmomRwSAMIcZoIMfGmdDmwZjKzMKoZyDIwtM0mfl+qrXtqx8nJlsxMQo0aB7QsRZvuxlyabKa7y/X0M2T7yu9W7vB6ntlnpJBtGfF/s3tX610fWy4zgsCAAAA//8BAAD//8AdvlimAAAA
+    identityPassword: |
+      H4sIAAAAAAAA/2JkYmKoSP6WGaF1ScXFaQnziseL0n4tfLg9s93buFFfQUK78ZDLK8az7YEnnzd28bTMOPa018HBgYGBIcMgjY1Tq82j7TsvIzvbgkiDcCZGBoMghBijgRwbZ0KbB2MqMwujnoEgC49WbE6Z7icLu+kVglJMjAINqlODp21UX84f8WtjQey3MOUX9xdNFN0bceVEwbao5G8+G6uK5f4EKAAAAAD//wEAAP//bDtWjaIAAAA=

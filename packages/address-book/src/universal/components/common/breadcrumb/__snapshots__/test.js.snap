@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb component has breadcrumb should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="base-components__RootElement-sc-150tvch-1 sc-bdVaJa dtezkJ"
+  >
+    <nav
+      aria-label="breadcrumb"
+      class="base-components__RootElement-sc-150tvch-1 styled__NavContainer-sc-1fzx5su-0 icyACH"
+    >
+      <ol
+        class="base-components__BaseList-sc-150tvch-3 styled__OrderedList-sc-1fzx5su-2 bfBxih"
+      >
+        <li
+          class="styled__ListItem-sc-1fzx5su-3 kDICdn"
+        >
+          <div
+            class="styled__Item-sc-1fzx5su-4 epQOWE"
+          >
+            <a
+              aria-label="home"
+              class="styled__IconLink-sc-117kvua-0 kZAYfa"
+              href="mock-url"
+            >
+              <svg
+                aria-hidden="true"
+                class="styled__Container-sc-1bf1p22-0 gJOjrx"
+                color="currentColor"
+                height="22"
+                preserveAspectRatio="xMinYMax meet"
+                viewBox="0 1 20 22"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 1.5L1.5 8.25V20.5h6v-8h5v8h6V8.25z"
+                  fill="none"
+                  stroke="currentColor"
+                />
+              </svg>
+            </a>
+          </div>
+        </li>
+        <li
+          class="styled__ListItem-sc-1fzx5su-3 kDICdn"
+        >
+          <div
+            class="styled__Item-sc-1fzx5su-4 epQOWE"
+          >
+            <svg
+              aria-hidden="true"
+              class="styled__Separator-sc-1fzx5su-5 kaoddq styled__Container-sc-1bf1p22-0 gJOjrx"
+              color="currentColor"
+              height="20"
+              preserveAspectRatio="xMinYMax meet"
+              stroke="#666666"
+              viewBox="-1 0 12 20"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.312 1.348L10.276 10l-8.964 8.644"
+                fill="none"
+                stroke="#666666"
+              />
+            </svg>
+            <a
+              class="styled__StandaloneLink-sc-1xizymv-0 Eargh"
+              href="mock-url"
+            >
+              <span
+                class="beans-link__text styled__TextSpan-sc-1xizymv-3 cXNAEo"
+              >
+                mock-text
+              </span>
+            </a>
+          </div>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Breadcrumb component no breadcrumb should render correctly 1`] = `<DocumentFragment />`;

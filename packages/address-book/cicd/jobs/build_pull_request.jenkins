@@ -1,0 +1,35 @@
+pipelineJob('address-book_build_pull_request') {
+	definition {
+		displayName('[address book] Build pull request')
+		logRotator {
+			numToKeep(10)
+			daysToKeep(30)
+			artifactDaysToKeep(7)
+			artifactNumToKeep(1)
+		}
+		cpsScm {
+			scm {
+				git {
+					remote {
+            github('oneaccount/address-book', 'ssh', 'github.dev.global.tesco.org')
+            refspec('+refs/pull/${GITHUB_PR_NUMBER}/head:refs/remotes/origin-pull/pull/${GITHUB_PR_NUMBER}/head')
+						credentials('address-book-deploy-key')
+					}
+          branch('origin-pull/pull/${GITHUB_PR_NUMBER}/head')
+				}
+			}
+			scriptPath('cicd/pipelines/build_pull_request.groovy')
+		}
+	}
+  triggers {
+    onPullRequest {
+      cancelQueued()
+      setPreStatus()
+      cron('* * * * *')
+      events {
+        opened()
+        commit()
+      }
+    }
+  }
+}

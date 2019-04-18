@@ -1,0 +1,29 @@
+#!/usr/bin/env groovy
+
+pipelineJob('address-book_nonprod_deploy') {
+	definition {
+		displayName('[address book] Deploy to nonprod')
+		logRotator {
+			numToKeep(10)
+			daysToKeep(30)
+			artifactDaysToKeep(7)
+			artifactNumToKeep(1)
+		}
+		cpsScm {
+			scm {
+				git {
+					remote {
+						name('origin')
+						url('git@github.dev.global.tesco.org:oneaccount/address-book.git')
+						credentials('address-book-deploy-key')
+					}
+					branch('master')
+				}
+			}
+			scriptPath('cicd/pipelines/build_deploy.groovy')
+		}
+	}
+  triggers {
+    scm('* * * * *')
+  }
+}
