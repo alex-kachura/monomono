@@ -33,7 +33,37 @@ exports[`App component should render correctly 1`] = `
                   >
                     <div
                       class="styled__StyledColumn-zuw78m-3 exJEgK styled-tbp4qh-0 fauaRP"
-                    />
+                    >
+                      <ul
+                        aria-orientation="horizontal"
+                        class="base-components__BaseList-sc-150tvch-3 styled__UnorderedList-wyo7rg-0 crQnIg"
+                        direction="leftToRight"
+                        orientation="horizontal"
+                        role="menubar"
+                        tabindex="-1"
+                      >
+                        <li
+                          class="styled__ListItem-sc-1pj7ufq-0 eWDWRf"
+                          data-tracking="sign-out"
+                          orientation="horizontal"
+                          role="menuitem"
+                        >
+                          <a
+                            aria-haspopup="false"
+                            class="styled__StandaloneLink-sc-1xizymv-0 etakMk"
+                            data-tracking="sign-out"
+                            id="sign-out"
+                            role="button"
+                          >
+                            <span
+                              class="beans-link__text styled__TextSpan-sc-1xizymv-3 cXNAEo"
+                            >
+                              sign-out
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </nav>
@@ -221,7 +251,62 @@ exports[`App component should render correctly 1`] = `
                         >
                           <div
                             class="styled-tbp4qh-0 fauaRP"
-                          />
+                          >
+                            <ul
+                              aria-orientation="horizontal"
+                              class="base-components__BaseList-sc-150tvch-3 styled__UnorderedList-wyo7rg-0 bYfZga"
+                              direction="leftToRight"
+                              orientation="horizontal"
+                              role="menubar"
+                              tabindex="-1"
+                            >
+                              <li
+                                class="styled__ListItem-sc-1pj7ufq-0 jfhOeH"
+                                href="/"
+                                orientation="horizontal"
+                                role="menuitem"
+                              >
+                                <a
+                                  aria-controls="beans-main-menu__slidedown-modal"
+                                  aria-expanded="false"
+                                  aria-haspopup="true"
+                                  class="styled__StandaloneLinkWithIcon-sc-1gtmq4p-0 kVERwj"
+                                  href="/"
+                                  id="beans-main-menu__mobile-link"
+                                  role="button"
+                                >
+                                  <span
+                                    class="beans-link__text styled__TextSpan-sc-1gtmq4p-3 fXWOwT"
+                                  >
+                                    header.menu.title
+                                  </span>
+                                  <span
+                                    class="beans-link__icon styled__IconSpan-sc-1gtmq4p-4 gjpGdo"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      class="styled__Container-sc-1bf1p22-0 gJOjrx"
+                                      color="currentColor"
+                                      height="12"
+                                      preserveAspectRatio="xMinYMax meet"
+                                      viewBox="0 -1 20 12"
+                                      width="20"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M18.652 1.312L10 10.276 1.356 1.312"
+                                        fill="none"
+                                        stroke="currentColor"
+                                      />
+                                    </svg>
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                            <div
+                              class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-13qoh1s-0 krDoXx"
+                            />
+                          </div>
                         </div>
                       </div>
                     </nav>

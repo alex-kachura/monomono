@@ -43,13 +43,12 @@ function Header() {
     selectedMenu: undefined,
     selectedMenuItemID: undefined,
   });
-  const menuLinks = useMemo(() => {
-    getMenuLinks({ config, region, getLocalePhrase, isAuthenticated });
-  }, []);
+  const menuLinks = useMemo(
+    () => getMenuLinks({ config, region, getLocalePhrase, isAuthenticated }),
+    [],
+  );
 
-  const mobileMenuItem = useMemo(() => {
-    getMobileMenuItem({ config, region, getLocalePhrase });
-  });
+  const mobileMenuItem = useMemo(() => getMobileMenuItem({ config, region, getLocalePhrase }), []);
 
   return (
     <HeaderContainer>
