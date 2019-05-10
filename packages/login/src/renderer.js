@@ -6,7 +6,7 @@ import { StaticRouter } from 'react-router';
 import { Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { DefaultThemeProvider } from '@beans/theme';
-import Spinner from '../src/universal/components/common/spinner';
+import Spinner from './universal/components/common/spinner';
 
 const globalStyles = {
   fonts: {
