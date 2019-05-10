@@ -1,7 +1,6 @@
 module.exports = {
   // Import regional specific ppe environment config
   GB: require('./regional/ppe.gb'), // eslint-disable-line global-require
-  PL: require('./regional/ppe.pl'), // eslint-disable-line global-require
   locales: [
     {
       hostname: 'www-ppe.tesco.com',

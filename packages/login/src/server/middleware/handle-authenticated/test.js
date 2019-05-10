@@ -1,3 +1,4 @@
+import config from 'config';
 import handleAuthenticated from './';
 
 describe('#handleAuthenticated', () => {
@@ -33,7 +34,7 @@ describe('#handleAuthenticated', () => {
         handleAuthenticated(req, res, next);
 
         expect(mockRedirect).toHaveBeenCalledWith(
-          'https://www-local.tesco.com/account/en-GB/login?from=https%3A%2F%2Fmock-hostname%2Fmock-base-url%2Fmock-url'
+          `${config[req.region].externalApps.login}?from=https%3A%2F%2Fmock-hostname%2Fmock-base-url%2Fmock-url`
         );
       });
     });
