@@ -34,14 +34,14 @@ spec:
         imagePullPolicy: {{ .app.imagePullPolicy }}
         livenessProbe:
           httpGet:
-            path: /login/_status
+            path: /account/login/_status
             port: {{ .app.appContainerPort }}
             scheme: HTTP
           initialDelaySeconds: 3
           periodSeconds: 5
         readinessProbe:
           httpGet:
-            path: /login/_status
+            path: /account/login/_status
             port: {{ .app.appContainerPort }}
             scheme: HTTP
           initialDelaySeconds: 3
