@@ -3,7 +3,7 @@ module.exports = {
     tescoHomepage: 'https://www-ppe.tesco.com',
     tescoSecure: 'https://secure-ppe.tesco.com',
     login: 'https://secure-ppe.tesco.com/account/en-GB/login',
-    logout: 'https://sercure-ppe.tesco.com/account/en-GB/logout',
+    logout: 'https://secure-ppe.tesco.com/account/en-GB/logout',
   },
   supportLinks: [
     {
