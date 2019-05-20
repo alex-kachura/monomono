@@ -6,7 +6,10 @@ import handleUnauthenticated from '../middleware/handle-unauthenticated';
 import setResponseData from '../middleware/response-data';
 import identity from '../services/identity';
 import { getLandingPage } from './landing';
-import { getEditPage, postEditPage } from './edit';
+import { getAddDeliveryAddressPage, postAddDeliveryAddressPage } from './add-delivery-address';
+import { getEditDeliveryAddressPage, postEditDeliveryAddressPage } from './edit-delivery-address';
+import { getClubcardAddressPage, postClubcardAddressPage } from './clubcard-address';
+import { postDeleteAddressRoute } from './delete-delivery-address';
 
 const { name: csrfCookieName, ...csrfCookieOptions } = config.get('cookie.CSRF');
 
@@ -46,8 +49,13 @@ appRouter.use(
 appRouter.use(setResponseData);
 
 appRouter.get('/', getLandingPage);
-appRouter.get('/edit', getEditPage);
-appRouter.post('/edit', postEditPage);
+appRouter.post('/', postDeleteAddressRoute);
+appRouter.get('/add-delivery-address', getAddDeliveryAddressPage);
+appRouter.post('/add-delivery-address', postAddDeliveryAddressPage);
+appRouter.get('/edit-delivery-address', getEditDeliveryAddressPage);
+appRouter.post('/edit-delivery-address', postEditDeliveryAddressPage);
+appRouter.get('/edit-clubcard-address', getClubcardAddressPage);
+appRouter.post('/edit-clubcard-address', postClubcardAddressPage);
 
 baseRouter.use(`/${BASE_PATH}/${APP_PATH}/:locale`, appRouter);
 

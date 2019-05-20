@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Page: ClubcardAddressPage] [State: Default] should render correctly 1`] = `
+<DocumentFragment>
+  <h1
+    class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs krCBJg typography___styledElement-sc-186l0ce-0 hmbiuS"
+  >
+    pages.clubcard-address.edit.title
+  </h1>
+  <div
+    class="sc-bdVaJa hDWEwk"
+  >
+    <form
+      autocomplete="off"
+      method="POST"
+      novalidate=""
+    >
+      <input
+        name="_csrf"
+        type="hidden"
+        value="super-secure-token"
+      />
+      <button
+        aria-disabled="false"
+        class="styled__BaseButton-sc-3mnirm-0 styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+        role="button"
+        type="submit"
+      >
+        <span
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+        >
+          <span
+            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+          >
+            pages.clubcard-address.edit.submit-button
+          </span>
+        </span>
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

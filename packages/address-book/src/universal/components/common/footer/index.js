@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import BeansFooter from '@beans/footer';
 import { useAppConfig } from '@oneaccount/react-foundations/lib/app-config';
 
@@ -41,4 +41,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default memo(Footer);

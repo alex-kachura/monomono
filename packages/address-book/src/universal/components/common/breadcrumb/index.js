@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import BreadcrumbContainer from '@beans/breadcrumb';
 import { BreadcrumbBarview } from './styled';
 import AltLink from '../alt-link';
@@ -8,9 +8,14 @@ export function Breadcrumb() {
   const { config, region } = useAppConfig();
   const { breadcrumb } = useBreadcrumb();
 
+  if (!breadcrumb || breadcrumb.length === 0) {
+    return null;
+  }
+
   return breadcrumb && breadcrumb.length > 0 ? (
     <BreadcrumbBarview>
       <BreadcrumbContainer
+        backToText={'Back to'}
         home={{
           href: config[region].externalApps.tescoHomepage,
         }}
@@ -21,4 +26,4 @@ export function Breadcrumb() {
   ) : null;
 }
 
-export default Breadcrumb;
+export default memo(Breadcrumb);

@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { DefaultThemeProvider } from '@beans/theme';
 import { LandingPage } from './';
 
-describe('[Component: LandingPage]', () => {
+describe.skip('[Component: LandingPage]', () => {
   let component;
 
   beforeEach(() => {

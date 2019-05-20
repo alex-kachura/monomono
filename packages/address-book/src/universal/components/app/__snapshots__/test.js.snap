@@ -3,703 +3,720 @@
 exports[`App component should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="base-components__RootElement-sc-150tvch-1 cCmuza"
+    class="sc-bdVaJa byVKAQ"
   >
-    <div
-      class="sc-bdVaJa byVKAQ"
-    >
-      <header
-        class="base-components__RootElement-sc-150tvch-1 sc-bwzfXH KWSuy styled__RootContainer-sc-1jruf7q-0 bVilUy"
-      >
-        <div
-          class="styled-sc-140lqfg-0 hKAvLp"
-        >
-          <div
-            class="styled-cgoahb-0 fFoLXC"
-          >
-            <div
-              class="styled-tbp4qh-0 fauaRP"
-            >
-              <nav
-                aria-label="Toolbar menu"
-                class="base-components__RootElement-sc-150tvch-1 styled__NavContainer-zuw78m-0 kXRZfA"
-                role="toolbar"
-              >
-                <div
-                  class="styled__StyledGrid-zuw78m-1 fdiczq styled-sc-140lqfg-0 GcEyY"
-                >
-                  <div
-                    class="styled__StyledRow-zuw78m-2 jPyAzg styled-cgoahb-0 fFoLXC"
-                  >
-                    <div
-                      class="styled__StyledColumn-zuw78m-3 exJEgK styled-tbp4qh-0 fauaRP"
-                    >
-                      <ul
-                        aria-orientation="horizontal"
-                        class="base-components__BaseList-sc-150tvch-3 styled__UnorderedList-wyo7rg-0 crQnIg"
-                        direction="leftToRight"
-                        orientation="horizontal"
-                        role="menubar"
-                        tabindex="-1"
-                      >
-                        <li
-                          class="styled__ListItem-sc-1pj7ufq-0 eWDWRf"
-                          data-tracking="sign-out"
-                          orientation="horizontal"
-                          role="menuitem"
-                        >
-                          <a
-                            aria-haspopup="false"
-                            class="styled__StandaloneLink-sc-1xizymv-0 etakMk"
-                            data-tracking="sign-out"
-                            id="sign-out"
-                            role="button"
-                          >
-                            <span
-                              class="beans-link__text styled__TextSpan-sc-1xizymv-3 cXNAEo"
-                            >
-                              sign-out
-                            </span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-            </div>
-          </div>
-          <div
-            class="styled-cgoahb-0 fFoLXC"
-          >
-            <div
-              class="styled-tbp4qh-0 fauaRP"
-            >
-              <div
-                class="styled-sc-140lqfg-0 GcEyY"
-              >
-                <div
-                  class="styled-cgoahb-0 fFoLXC"
-                >
-                  <div
-                    class="styled-tbp4qh-0 fauaRP"
-                  >
-                    <div
-                      class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1xcz8or-0 csCmxN"
-                    >
-                      <div
-                        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-1xcz8or-1 jaAJoB"
-                      >
-                        <a
-                          class="styled__StandaloneLink-sc-1xizymv-0 QtrNQ"
-                          href="https://tesco.com"
-                        >
-                          <span
-                            class="beans-link__text styled__TextSpan-sc-1xizymv-3 cXNAEo"
-                          >
-                            <svg
-                              class="styled__ScaledDynamicLogo-sc-1xcz8or-3 irqoDM"
-                              preserveAspectRatio="xMinYMax meet"
-                              viewBox="0 0 121 35"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <title>
-                                Tesco logo
-                              </title>
-                              <defs>
-                                <path
-                                  d="M.218 6.389h23.973V.366H.218v6.023z"
-                                  id="tesco-logo-a"
-                                />
-                                <path
-                                  d="M.376 6.389h23.973V.366H.376z"
-                                  id="tesco-logo-c"
-                                />
-                                <path
-                                  d="M.11 6.389h23.972V.366H.11v6.023z"
-                                  id="tesco-logo-e"
-                                />
-                                <path
-                                  d="M.267 6.389H24.24V.366H.267v6.023z"
-                                  id="tesco-logo-g"
-                                />
-                                <path
-                                  d="M0 6.389h23.973V.366H0v6.023z"
-                                  id="tesco-logo-i"
-                                />
-                              </defs>
-                              <g
-                                fill="none"
-                                fill-rule="evenodd"
-                              >
-                                <path
-                                  d="M84.647 0c2.538 0 4.735.31 6.5.777v5.405c-1.734-1.77-3.776-2.889-6.47-2.889-4.92 0-8.201 3.449-8.201 8.047 0 4.598 3.28 8.046 8.202 8.046 2.693 0 4.735-1.118 6.469-2.889v5.406c-1.765.466-3.962.807-6.5.807-8.512 0-14.671-4.256-14.671-11.37 0-7.115 6.16-11.34 14.67-11.34zM60.474 8.823c4.24.59 7.768 2.082 7.768 6.71 0 5.438-5.138 7.177-10.678 7.147-3.869-.032-7.15-.404-9.564-1.368v-4.877c3.436 2.237 6.964 2.951 9.564 2.951 2.693 0 5.17-.652 5.17-2.702s-2.291-2.548-6.996-3.263C51.683 12.8 48 11.06 47.968 7.052 47.939 1.647 53.046 0 57.936 0c3.158 0 6.222.373 9.038 1.305v5.25c-2.352-2.081-5.85-3.262-9.285-3.262-2.322 0-4.52.746-4.52 2.486 0 2.174 3.25 2.485 7.306 3.044zM37.136 18.92c2.507 0 6.685-.59 8.326-2.05v5.343H27.665c.866-1.025 1.02-1.709 1.02-3.79V4.256c0-2.081-.154-2.765-1.02-3.79h16.868V5.81c-1.64-1.46-5.819-2.05-8.326-2.05h-1.98v5.778h1.454c1.424 0 3.621-.062 5.076-.59v4.287c-1.455-.528-3.652-.59-5.076-.59h-1.455v6.275h2.91zM.984.466h24.42V5.81c-1.733-1.46-5.416-2.05-9.346-2.05v14.57c0 2.175.185 2.765 1.021 3.883h-7.77c.837-1.118 1.022-1.709 1.022-3.883V3.76c-3.93 0-7.614.59-9.347 2.05V.466zM106.48 19.386c-4.426 0-7.304-3.666-7.304-8.046 0-4.412 2.878-8.047 7.305-8.047 4.425 0 7.304 3.635 7.304 8.047 0 4.38-2.879 8.046-7.304 8.046m0-19.386C97.69 0 92.676 5.126 92.676 11.34c0 6.182 5.014 11.34 13.805 11.34 8.79 0 13.804-5.158 13.804-11.34 0-6.214-5.014-11.34-13.804-11.34"
-                                  fill="#ee1c2e"
-                                />
-                                <g
-                                  transform="translate(95.9 27.755)"
-                                >
-                                  <mask
-                                    fill="#fff"
-                                    id="tesco-logo-b"
-                                  >
-                                    <use
-                                      xlink:href="#tesco-logo-a"
-                                    />
-                                  </mask>
-                                  <path
-                                    d="M9.37.366h14.747a.08.08 0 0 1 .04.01l.004.001a.055.055 0 0 1 .01.008c.028.028.03.085-.013.126a.153.153 0 0 1-.037.025l-.026.012c-1.713.784-4.008 3.173-4.008 3.173-1.715 1.636-3.001 2.668-5.744 2.668H.283C.24 6.39.22 6.35.217 6.31c0 0 0 .002 0 0a.09.09 0 0 1 .03-.066.422.422 0 0 1 .044-.032C1.835 5.346 4.14 2.948 4.14 2.948 5.084 1.828 6.969.366 9.37.366"
-                                    fill="#00539f"
-                                    mask="url(#tesco-logo-b)"
-                                  />
-                                </g>
-                                <g
-                                  transform="translate(71.713 27.755)"
-                                >
-                                  <mask
-                                    fill="#fff"
-                                    id="tesco-logo-d"
-                                  >
-                                    <use
-                                      xlink:href="#tesco-logo-c"
-                                    />
-                                  </mask>
-                                  <path
-                                    d="M9.527.366h14.748a.08.08 0 0 1 .04.01l.003.001a.055.055 0 0 1 .01.008c.029.028.031.085-.013.126a.153.153 0 0 1-.036.025l-.026.012c-1.714.784-4.008 3.173-4.008 3.173C18.529 5.357 17.244 6.39 14.5 6.39H.44c-.04 0-.062-.039-.064-.08 0 0 0 .002 0 0a.09.09 0 0 1 .03-.066.422.422 0 0 1 .044-.032c1.543-.865 3.847-3.263 3.847-3.263.944-1.12 2.83-2.582 5.23-2.582"
-                                    fill="#00539f"
-                                    mask="url(#tesco-logo-d)"
-                                  />
-                                </g>
-                                <g
-                                  transform="translate(47.95 27.755)"
-                                >
-                                  <mask
-                                    fill="#fff"
-                                    id="tesco-logo-f"
-                                  >
-                                    <use
-                                      xlink:href="#tesco-logo-e"
-                                    />
-                                  </mask>
-                                  <path
-                                    d="M9.26.366h14.748a.08.08 0 0 1 .04.01l.004.001a.055.055 0 0 1 .01.008c.028.028.03.085-.013.126a.153.153 0 0 1-.036.025l-.027.012c-1.713.784-4.008 3.173-4.008 3.173-1.715 1.636-3.001 2.668-5.744 2.668H.174c-.042 0-.063-.039-.065-.08 0 0 0 .002 0 0a.09.09 0 0 1 .03-.066.471.471 0 0 1 .044-.032c1.543-.865 3.848-3.263 3.848-3.263C4.975 1.828 6.86.366 9.261.366"
-                                    fill="#00539f"
-                                    mask="url(#tesco-logo-f)"
-                                  />
-                                </g>
-                                <g
-                                  transform="translate(23.763 27.755)"
-                                >
-                                  <mask
-                                    fill="#fff"
-                                    id="tesco-logo-h"
-                                  >
-                                    <use
-                                      xlink:href="#tesco-logo-g"
-                                    />
-                                  </mask>
-                                  <path
-                                    d="M9.418.366h14.747a.08.08 0 0 1 .04.01l.004.001a.055.055 0 0 1 .01.008c.029.028.031.085-.013.126a.153.153 0 0 1-.036.025l-.026.012c-1.714.784-4.008 3.173-4.008 3.173-1.716 1.636-3.002 2.668-5.745 2.668H.331c-.04 0-.062-.039-.064-.08 0 0 0 .002 0 0a.09.09 0 0 1 .03-.066.422.422 0 0 1 .044-.032c1.543-.865 3.847-3.263 3.847-3.263.944-1.12 2.83-2.582 5.23-2.582"
-                                    fill="#00539f"
-                                    mask="url(#tesco-logo-h)"
-                                  />
-                                </g>
-                                <g
-                                  transform="translate(0 27.755)"
-                                >
-                                  <mask
-                                    fill="#fff"
-                                    id="tesco-logo-j"
-                                  >
-                                    <use
-                                      xlink:href="#tesco-logo-i"
-                                    />
-                                  </mask>
-                                  <path
-                                    d="M9.152.366h14.747a.08.08 0 0 1 .04.01l.004.001a.055.055 0 0 1 .01.008c.028.028.03.085-.013.126a.153.153 0 0 1-.036.025l-.027.012c-1.713.784-4.008 3.173-4.008 3.173-1.715 1.636-3.001 2.668-5.744 2.668H.065C.022 6.39.001 6.35 0 6.31c0 0 0 .002 0 0a.09.09 0 0 1 .03-.066.422.422 0 0 1 .044-.032c1.543-.865 3.848-3.263 3.848-3.263C4.866 1.828 6.75.366 9.152.366"
-                                    fill="#00539f"
-                                    mask="url(#tesco-logo-j)"
-                                  />
-                                </g>
-                              </g>
-                            </svg>
-                          </span>
-                        </a>
-                        <div
-                          class="base-components__BaseElement-sc-150tvch-0 styled__ContentContainer-sc-1xcz8or-4 beukGu"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="styled-cgoahb-0 fFoLXC"
-                >
-                  <div
-                    class="styled-tbp4qh-0 fauaRP"
-                  >
-                    <nav
-                      aria-label="Primary navigation"
-                      class="base-components__RootElement-sc-150tvch-1 huyOav"
-                      role="navigation"
-                    >
-                      <div
-                        class="styled-sc-140lqfg-0 kvkqBS"
-                      >
-                        <div
-                          class="styled-cgoahb-0 fFoLXC"
-                        >
-                          <div
-                            class="styled-tbp4qh-0 fauaRP"
-                          >
-                            <ul
-                              aria-orientation="horizontal"
-                              class="base-components__BaseList-sc-150tvch-3 styled__UnorderedList-wyo7rg-0 bYfZga"
-                              direction="leftToRight"
-                              orientation="horizontal"
-                              role="menubar"
-                              tabindex="-1"
-                            >
-                              <li
-                                class="styled__ListItem-sc-1pj7ufq-0 jfhOeH"
-                                href="/"
-                                orientation="horizontal"
-                                role="menuitem"
-                              >
-                                <a
-                                  aria-controls="beans-main-menu__slidedown-modal"
-                                  aria-expanded="false"
-                                  aria-haspopup="true"
-                                  class="styled__StandaloneLinkWithIcon-sc-1gtmq4p-0 kVERwj"
-                                  href="/"
-                                  id="beans-main-menu__mobile-link"
-                                  role="button"
-                                >
-                                  <span
-                                    class="beans-link__text styled__TextSpan-sc-1gtmq4p-3 fXWOwT"
-                                  >
-                                    header.menu.title
-                                  </span>
-                                  <span
-                                    class="beans-link__icon styled__IconSpan-sc-1gtmq4p-4 gjpGdo"
-                                  >
-                                    <svg
-                                      aria-hidden="true"
-                                      class="styled__Container-sc-1bf1p22-0 gJOjrx"
-                                      color="currentColor"
-                                      height="12"
-                                      preserveAspectRatio="xMinYMax meet"
-                                      viewBox="0 -1 20 12"
-                                      width="20"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M18.652 1.312L10 10.276 1.356 1.312"
-                                        fill="none"
-                                        stroke="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
-                                </a>
-                              </li>
-                            </ul>
-                            <div
-                              class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-13qoh1s-0 krDoXx"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </nav>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    </div>
-    <div
-      class="styled-sc-140lqfg-0 GcEyY"
+    <header
+      class="base-components__RootElement-sc-150tvch-1 sc-bwzfXH KWSuy styled__RootContainer-sc-1jruf7q-0 bVilUy"
     >
       <div
-        class="styled-cgoahb-0 fFoLXC"
-      >
-        <div
-          class="styled-tbp4qh-0 ZIHPV"
-        />
-      </div>
-    </div>
-    <div
-      class="sc-bxivhb kdCJdu styled-sc-140lqfg-0 GcEyY"
-    >
-      <div
-        class="styled-cgoahb-0 fFoLXC"
-      >
-        <div
-          class="styled-tbp4qh-0 dpmxxL"
-        />
-      </div>
-    </div>
-    <footer
-      class="base-components__RootElement-sc-150tvch-1 cCmuza"
-    >
-      <div
-        class="base-components__BaseElement-sc-150tvch-0 styled__LinksContainer-sc-6mv3y9-0 jEjCfu"
-      >
-        <div
-          class="styled-sc-140lqfg-0 jzEHNh"
-        >
-          <div
-            class="styled__ContentLinksRow-sc-6mv3y9-2 hzjFwl styled-cgoahb-0 fFoLXC"
-          >
-            <div
-              class="styled-tbp4qh-0 fxRCHK"
-            >
-              <section>
-                <p
-                  class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 cboYhH"
-                >
-                  footer.links.header1.title
-                </p>
-                <ul
-                  class="base-components__BaseList-sc-150tvch-3 styled__LinkList-sc-6mv3y9-4 chGOT"
-                />
-              </section>
-            </div>
-            <div
-              class="styled-tbp4qh-0 fxRCHK"
-            >
-              <section>
-                <p
-                  class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 cboYhH"
-                >
-                  footer.links.header2.title
-                </p>
-                <ul
-                  class="base-components__BaseList-sc-150tvch-3 styled__LinkList-sc-6mv3y9-4 chGOT"
-                />
-              </section>
-            </div>
-            <div
-              class="styled-tbp4qh-0 fxRCHK"
-            >
-              <section>
-                <p
-                  class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 cboYhH"
-                >
-                  footer.links.header3.title
-                </p>
-                <ul
-                  class="base-components__BaseList-sc-150tvch-3 styled__LinkList-sc-6mv3y9-4 chGOT"
-                />
-              </section>
-            </div>
-            <div
-              class="styled-tbp4qh-0 fxRCHK"
-            >
-              <section>
-                <p
-                  class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 cboYhH"
-                >
-                  footer.links.header4.title
-                </p>
-                <ul
-                  class="base-components__BaseList-sc-150tvch-3 styled__LinkList-sc-6mv3y9-4 chGOT"
-                />
-              </section>
-            </div>
-          </div>
-          <div
-            class="styled__AccordionsRow-sc-6mv3y9-1 VdkwB styled-cgoahb-0 fFoLXC"
-          >
-            <div
-              class="styled-tbp4qh-0 fauaRP"
-            >
-              <div
-                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1ifdouk-0 jVgBhl"
-              >
-                <div
-                  class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 iEzYgt"
-                >
-                  <div
-                    aria-controls="footer-accordion-0"
-                    aria-expanded="false"
-                    aria-label="footer.links.header1.title"
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 bOFZhy"
-                    role="button"
-                    tabindex="0"
-                  >
-                    <div
-                      class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 kOiLeh"
-                    >
-                      <a
-                        class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 kbXwpd styled__InlineLink-y3p06c-0 gYivyO"
-                        role="presentation"
-                        tabindex="-1"
-                      >
-                        footer.links.header1.title
-                      </a>
-                    </div>
-                    <button
-                      aria-disabled="false"
-                      class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 eyiDCl"
-                      role="presentation"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      <span
-                        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 cQpCTk"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="styled__Container-sc-1bf1p22-0 gJOjrx"
-                          color="currentColor"
-                          focusable="false"
-                          height="8"
-                          preserveAspectRatio="xMinYMax meet"
-                          viewBox="0 -1 20 12"
-                          width="13.33"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M18.652 1.312L10 10.276 1.356 1.312"
-                            fill="none"
-                            stroke="currentColor"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 gPHpac"
-                  >
-                    <div
-                      class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 DUqMA"
-                      id="footer-accordion-0"
-                      role="region"
-                      tabindex="-1"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 iEzYgt"
-                >
-                  <div
-                    aria-controls="footer-accordion-1"
-                    aria-expanded="false"
-                    aria-label="footer.links.header2.title"
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 bOFZhy"
-                    role="button"
-                    tabindex="0"
-                  >
-                    <div
-                      class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 kOiLeh"
-                    >
-                      <a
-                        class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 kbXwpd styled__InlineLink-y3p06c-0 gYivyO"
-                        role="presentation"
-                        tabindex="-1"
-                      >
-                        footer.links.header2.title
-                      </a>
-                    </div>
-                    <button
-                      aria-disabled="false"
-                      class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 eyiDCl"
-                      role="presentation"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      <span
-                        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 cQpCTk"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="styled__Container-sc-1bf1p22-0 gJOjrx"
-                          color="currentColor"
-                          focusable="false"
-                          height="8"
-                          preserveAspectRatio="xMinYMax meet"
-                          viewBox="0 -1 20 12"
-                          width="13.33"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M18.652 1.312L10 10.276 1.356 1.312"
-                            fill="none"
-                            stroke="currentColor"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 gPHpac"
-                  >
-                    <div
-                      class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 DUqMA"
-                      id="footer-accordion-1"
-                      role="region"
-                      tabindex="-1"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 iEzYgt"
-                >
-                  <div
-                    aria-controls="footer-accordion-2"
-                    aria-expanded="false"
-                    aria-label="footer.links.header3.title"
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 bOFZhy"
-                    role="button"
-                    tabindex="0"
-                  >
-                    <div
-                      class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 kOiLeh"
-                    >
-                      <a
-                        class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 kbXwpd styled__InlineLink-y3p06c-0 gYivyO"
-                        role="presentation"
-                        tabindex="-1"
-                      >
-                        footer.links.header3.title
-                      </a>
-                    </div>
-                    <button
-                      aria-disabled="false"
-                      class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 eyiDCl"
-                      role="presentation"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      <span
-                        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 cQpCTk"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="styled__Container-sc-1bf1p22-0 gJOjrx"
-                          color="currentColor"
-                          focusable="false"
-                          height="8"
-                          preserveAspectRatio="xMinYMax meet"
-                          viewBox="0 -1 20 12"
-                          width="13.33"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M18.652 1.312L10 10.276 1.356 1.312"
-                            fill="none"
-                            stroke="currentColor"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 gPHpac"
-                  >
-                    <div
-                      class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 DUqMA"
-                      id="footer-accordion-2"
-                      role="region"
-                      tabindex="-1"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 iEzYgt"
-                >
-                  <div
-                    aria-controls="footer-accordion-3"
-                    aria-expanded="false"
-                    aria-label="footer.links.header4.title"
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 bOFZhy"
-                    role="button"
-                    tabindex="0"
-                  >
-                    <div
-                      class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 kOiLeh"
-                    >
-                      <a
-                        class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 kbXwpd styled__InlineLink-y3p06c-0 gYivyO"
-                        role="presentation"
-                        tabindex="-1"
-                      >
-                        footer.links.header4.title
-                      </a>
-                    </div>
-                    <button
-                      aria-disabled="false"
-                      class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 eyiDCl"
-                      role="presentation"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      <span
-                        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 cQpCTk"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="styled__Container-sc-1bf1p22-0 gJOjrx"
-                          color="currentColor"
-                          focusable="false"
-                          height="8"
-                          preserveAspectRatio="xMinYMax meet"
-                          viewBox="0 -1 20 12"
-                          width="13.33"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M18.652 1.312L10 10.276 1.356 1.312"
-                            fill="none"
-                            stroke="currentColor"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 gPHpac"
-                  >
-                    <div
-                      class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 DUqMA"
-                      id="footer-accordion-3"
-                      role="region"
-                      tabindex="-1"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="styled-cgoahb-0 fFoLXC"
-          >
-            <div
-              class="styled-tbp4qh-0 fauaRP"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="styled-sc-140lqfg-0 jzEHNh"
+        class="styled-sc-140lqfg-0 hKAvLp"
       >
         <div
           class="styled-cgoahb-0 fFoLXC"
         >
           <div
-            class="styled__CopyrightColumn-sc-6mv3y9-11 fulVqn styled-tbp4qh-0 ZIHPV"
+            class="styled-tbp4qh-0 fauaRP"
           >
-            <p
-              class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 eOArlu"
+            <nav
+              aria-hidden="true"
+              aria-label="Toolbar menu"
+              class="styled__Container-sc-1bf1p22-0 fPpFpJ"
+              role="toolbar"
             >
-              © tesco-site footer.copyright
-            </p>
+              <div
+                class="styled__StyledGrid-zuw78m-0 kCKBYS styled-sc-140lqfg-0 jjHJYZ"
+              >
+                <div
+                  class="styled__StyledRow-zuw78m-1 vsBWF styled-cgoahb-0 fFoLXC"
+                >
+                  <div
+                    class="styled__StyledColumn-zuw78m-2 dxdEMN styled-tbp4qh-0 fauaRP"
+                  >
+                    <ul
+                      aria-orientation="horizontal"
+                      class="base-components__BaseList-sc-150tvch-2 styled__UnorderedList-wyo7rg-0 crQnIg"
+                      direction="leftToRight"
+                      orientation="horizontal"
+                      role="menubar"
+                      tabindex="-1"
+                    >
+                      <li
+                        class="styled__ListItem-sc-1pj7ufq-0 eWDWRf"
+                        data-tracking="sign-out"
+                        orientation="horizontal"
+                        role="menuitem"
+                      >
+                        <a
+                          aria-haspopup="false"
+                          class="styled__StandaloneLink-sc-1xizymv-0 hgTDBB"
+                          data-tracking="sign-out"
+                          id="sign-out"
+                          role="button"
+                        >
+                          <span
+                            class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                          >
+                            sign-out
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div
+          class="styled-cgoahb-0 fFoLXC"
+        >
+          <div
+            class="styled-tbp4qh-0 fauaRP"
+          >
+            <div
+              class="styled-sc-140lqfg-0 jjHJYZ"
+            >
+              <div
+                class="styled-cgoahb-0 fFoLXC"
+              >
+                <div
+                  class="styled-tbp4qh-0 fauaRP"
+                >
+                  <div
+                    class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1xcz8or-0 csCmxN"
+                  >
+                    <div
+                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-1xcz8or-1 gyjrSV"
+                    >
+                      <a
+                        class="styled__StandaloneLink-sc-1xizymv-0 kXDmej"
+                        href="https://tesco.com"
+                      >
+                        <span
+                          class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                        >
+                          <svg
+                            class="styled__ScaledDynamicLogo-sc-1xcz8or-3 irqoDM"
+                            preserveAspectRatio="xMinYMax meet"
+                            viewBox="0 0 121 35"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <title>
+                              Tesco logo
+                            </title>
+                            <defs>
+                              <path
+                                d="M.218 6.389h23.973V.366H.218v6.023z"
+                                id="tesco-logo-a"
+                              />
+                              <path
+                                d="M.376 6.389h23.973V.366H.376z"
+                                id="tesco-logo-c"
+                              />
+                              <path
+                                d="M.11 6.389h23.972V.366H.11v6.023z"
+                                id="tesco-logo-e"
+                              />
+                              <path
+                                d="M.267 6.389H24.24V.366H.267v6.023z"
+                                id="tesco-logo-g"
+                              />
+                              <path
+                                d="M0 6.389h23.973V.366H0v6.023z"
+                                id="tesco-logo-i"
+                              />
+                            </defs>
+                            <g
+                              fill="none"
+                              fill-rule="evenodd"
+                            >
+                              <path
+                                d="M84.647 0c2.538 0 4.735.31 6.5.777v5.405c-1.734-1.77-3.776-2.889-6.47-2.889-4.92 0-8.201 3.449-8.201 8.047 0 4.598 3.28 8.046 8.202 8.046 2.693 0 4.735-1.118 6.469-2.889v5.406c-1.765.466-3.962.807-6.5.807-8.512 0-14.671-4.256-14.671-11.37 0-7.115 6.16-11.34 14.67-11.34zM60.474 8.823c4.24.59 7.768 2.082 7.768 6.71 0 5.438-5.138 7.177-10.678 7.147-3.869-.032-7.15-.404-9.564-1.368v-4.877c3.436 2.237 6.964 2.951 9.564 2.951 2.693 0 5.17-.652 5.17-2.702s-2.291-2.548-6.996-3.263C51.683 12.8 48 11.06 47.968 7.052 47.939 1.647 53.046 0 57.936 0c3.158 0 6.222.373 9.038 1.305v5.25c-2.352-2.081-5.85-3.262-9.285-3.262-2.322 0-4.52.746-4.52 2.486 0 2.174 3.25 2.485 7.306 3.044zM37.136 18.92c2.507 0 6.685-.59 8.326-2.05v5.343H27.665c.866-1.025 1.02-1.709 1.02-3.79V4.256c0-2.081-.154-2.765-1.02-3.79h16.868V5.81c-1.64-1.46-5.819-2.05-8.326-2.05h-1.98v5.778h1.454c1.424 0 3.621-.062 5.076-.59v4.287c-1.455-.528-3.652-.59-5.076-.59h-1.455v6.275h2.91zM.984.466h24.42V5.81c-1.733-1.46-5.416-2.05-9.346-2.05v14.57c0 2.175.185 2.765 1.021 3.883h-7.77c.837-1.118 1.022-1.709 1.022-3.883V3.76c-3.93 0-7.614.59-9.347 2.05V.466zM106.48 19.386c-4.426 0-7.304-3.666-7.304-8.046 0-4.412 2.878-8.047 7.305-8.047 4.425 0 7.304 3.635 7.304 8.047 0 4.38-2.879 8.046-7.304 8.046m0-19.386C97.69 0 92.676 5.126 92.676 11.34c0 6.182 5.014 11.34 13.805 11.34 8.79 0 13.804-5.158 13.804-11.34 0-6.214-5.014-11.34-13.804-11.34"
+                                fill="#ee1c2e"
+                              />
+                              <g
+                                transform="translate(95.9 27.755)"
+                              >
+                                <mask
+                                  fill="#fff"
+                                  id="tesco-logo-b"
+                                >
+                                  <use
+                                    xlink:href="#tesco-logo-a"
+                                  />
+                                </mask>
+                                <path
+                                  d="M9.37.366h14.747a.08.08 0 0 1 .04.01l.004.001a.055.055 0 0 1 .01.008c.028.028.03.085-.013.126a.153.153 0 0 1-.037.025l-.026.012c-1.713.784-4.008 3.173-4.008 3.173-1.715 1.636-3.001 2.668-5.744 2.668H.283C.24 6.39.22 6.35.217 6.31c0 0 0 .002 0 0a.09.09 0 0 1 .03-.066.422.422 0 0 1 .044-.032C1.835 5.346 4.14 2.948 4.14 2.948 5.084 1.828 6.969.366 9.37.366"
+                                  fill="#00539f"
+                                  mask="url(#tesco-logo-b)"
+                                />
+                              </g>
+                              <g
+                                transform="translate(71.713 27.755)"
+                              >
+                                <mask
+                                  fill="#fff"
+                                  id="tesco-logo-d"
+                                >
+                                  <use
+                                    xlink:href="#tesco-logo-c"
+                                  />
+                                </mask>
+                                <path
+                                  d="M9.527.366h14.748a.08.08 0 0 1 .04.01l.003.001a.055.055 0 0 1 .01.008c.029.028.031.085-.013.126a.153.153 0 0 1-.036.025l-.026.012c-1.714.784-4.008 3.173-4.008 3.173C18.529 5.357 17.244 6.39 14.5 6.39H.44c-.04 0-.062-.039-.064-.08 0 0 0 .002 0 0a.09.09 0 0 1 .03-.066.422.422 0 0 1 .044-.032c1.543-.865 3.847-3.263 3.847-3.263.944-1.12 2.83-2.582 5.23-2.582"
+                                  fill="#00539f"
+                                  mask="url(#tesco-logo-d)"
+                                />
+                              </g>
+                              <g
+                                transform="translate(47.95 27.755)"
+                              >
+                                <mask
+                                  fill="#fff"
+                                  id="tesco-logo-f"
+                                >
+                                  <use
+                                    xlink:href="#tesco-logo-e"
+                                  />
+                                </mask>
+                                <path
+                                  d="M9.26.366h14.748a.08.08 0 0 1 .04.01l.004.001a.055.055 0 0 1 .01.008c.028.028.03.085-.013.126a.153.153 0 0 1-.036.025l-.027.012c-1.713.784-4.008 3.173-4.008 3.173-1.715 1.636-3.001 2.668-5.744 2.668H.174c-.042 0-.063-.039-.065-.08 0 0 0 .002 0 0a.09.09 0 0 1 .03-.066.471.471 0 0 1 .044-.032c1.543-.865 3.848-3.263 3.848-3.263C4.975 1.828 6.86.366 9.261.366"
+                                  fill="#00539f"
+                                  mask="url(#tesco-logo-f)"
+                                />
+                              </g>
+                              <g
+                                transform="translate(23.763 27.755)"
+                              >
+                                <mask
+                                  fill="#fff"
+                                  id="tesco-logo-h"
+                                >
+                                  <use
+                                    xlink:href="#tesco-logo-g"
+                                  />
+                                </mask>
+                                <path
+                                  d="M9.418.366h14.747a.08.08 0 0 1 .04.01l.004.001a.055.055 0 0 1 .01.008c.029.028.031.085-.013.126a.153.153 0 0 1-.036.025l-.026.012c-1.714.784-4.008 3.173-4.008 3.173-1.716 1.636-3.002 2.668-5.745 2.668H.331c-.04 0-.062-.039-.064-.08 0 0 0 .002 0 0a.09.09 0 0 1 .03-.066.422.422 0 0 1 .044-.032c1.543-.865 3.847-3.263 3.847-3.263.944-1.12 2.83-2.582 5.23-2.582"
+                                  fill="#00539f"
+                                  mask="url(#tesco-logo-h)"
+                                />
+                              </g>
+                              <g
+                                transform="translate(0 27.755)"
+                              >
+                                <mask
+                                  fill="#fff"
+                                  id="tesco-logo-j"
+                                >
+                                  <use
+                                    xlink:href="#tesco-logo-i"
+                                  />
+                                </mask>
+                                <path
+                                  d="M9.152.366h14.747a.08.08 0 0 1 .04.01l.004.001a.055.055 0 0 1 .01.008c.028.028.03.085-.013.126a.153.153 0 0 1-.036.025l-.027.012c-1.713.784-4.008 3.173-4.008 3.173-1.715 1.636-3.001 2.668-5.744 2.668H.065C.022 6.39.001 6.35 0 6.31c0 0 0 .002 0 0a.09.09 0 0 1 .03-.066.422.422 0 0 1 .044-.032c1.543-.865 3.848-3.263 3.848-3.263C4.866 1.828 6.75.366 9.152.366"
+                                  fill="#00539f"
+                                  mask="url(#tesco-logo-j)"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                        </span>
+                      </a>
+                      <div
+                        class="base-components__BaseElement-sc-150tvch-0 styled__ContentContainer-sc-1xcz8or-4 fmbvcg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="styled-cgoahb-0 fFoLXC"
+              >
+                <div
+                  class="styled-tbp4qh-0 fauaRP"
+                >
+                  <nav
+                    aria-label="Primary navigation"
+                    class="base-components__RootElement-sc-150tvch-1 huyOav"
+                    role="navigation"
+                  >
+                    <div
+                      class="styled-sc-140lqfg-0 kvkqBS"
+                    >
+                      <div
+                        class="styled-cgoahb-0 fFoLXC"
+                      >
+                        <div
+                          class="styled-tbp4qh-0 fauaRP"
+                        >
+                          <ul
+                            aria-orientation="horizontal"
+                            class="base-components__BaseList-sc-150tvch-2 styled__UnorderedList-wyo7rg-0 bYfZga"
+                            direction="leftToRight"
+                            orientation="horizontal"
+                            role="menubar"
+                            tabindex="-1"
+                          >
+                            <li
+                              class="styled__ListItem-sc-1pj7ufq-0 fCmUyX"
+                              href="/"
+                              orientation="horizontal"
+                              role="menuitem"
+                            >
+                              <div
+                                class="base-components__BaseElement-sc-150tvch-0 beans-menu-item__popup-icon styled__PopupIconContainer-sc-1pj7ufq-2 ekeYAo"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="styled__Container-sc-1bf1p22-0 cinnRP"
+                                  color="currentColor"
+                                  height="12"
+                                  preserveAspectRatio="xMinYMax meet"
+                                  viewBox="0 -1 20 12"
+                                  width="20"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M18.652 1.312L10 10.276 1.356 1.312"
+                                    fill="none"
+                                    stroke="#00539f"
+                                  />
+                                </svg>
+                              </div>
+                              <a
+                                aria-controls="beans-main-menu__slidedown-modal"
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                class="styled__StandaloneLink-sc-1xizymv-0 ewUDic"
+                                href="/"
+                                id="beans-main-menu__mobile-link"
+                                role="button"
+                              >
+                                <span
+                                  class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                                >
+                                  header.menu.title
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                          <div
+                            class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-13qoh1s-0 krDoXx"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
+    </header>
   </div>
+  <div
+    class="styled-sc-140lqfg-0 jjHJYZ"
+  >
+    <div
+      class="styled-cgoahb-0 fFoLXC"
+    >
+      <div
+        class="styled-tbp4qh-0 ZIHPV"
+      />
+    </div>
+  </div>
+  <div
+    class="sc-bxivhb kVKMTh styled-sc-140lqfg-0 jjHJYZ"
+  >
+    <div
+      class="styled-cgoahb-0 fFoLXC"
+    >
+      <div
+        class="styled-tbp4qh-0 hoOrpN"
+      />
+    </div>
+  </div>
+  <footer
+    class="base-components__RootElement-sc-150tvch-1 irJAMC"
+  >
+    <div
+      class="base-components__BaseElement-sc-150tvch-0 styled__LinksContainer-sc-6mv3y9-0 fvhWhk"
+    >
+      <div
+        class="styled-sc-140lqfg-0 jzEHNh"
+      >
+        <div
+          class="styled__ContentLinksRow-sc-6mv3y9-2 hzjFwl styled-cgoahb-0 fFoLXC"
+        >
+          <div
+            class="styled-tbp4qh-0 fxRCHK"
+          >
+            <section>
+              <p
+                class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
+              >
+                footer.links.header1.title
+              </p>
+              <ul
+                class="base-components__BaseList-sc-150tvch-2 styled__LinkList-sc-6mv3y9-4 chGOT"
+              />
+            </section>
+          </div>
+          <div
+            class="styled-tbp4qh-0 fxRCHK"
+          >
+            <section>
+              <p
+                class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
+              >
+                footer.links.header2.title
+              </p>
+              <ul
+                class="base-components__BaseList-sc-150tvch-2 styled__LinkList-sc-6mv3y9-4 chGOT"
+              />
+            </section>
+          </div>
+          <div
+            class="styled-tbp4qh-0 fxRCHK"
+          >
+            <section>
+              <p
+                class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
+              >
+                footer.links.header3.title
+              </p>
+              <ul
+                class="base-components__BaseList-sc-150tvch-2 styled__LinkList-sc-6mv3y9-4 chGOT"
+              />
+            </section>
+          </div>
+          <div
+            class="styled-tbp4qh-0 fxRCHK"
+          >
+            <section>
+              <p
+                class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
+              >
+                footer.links.header4.title
+              </p>
+              <ul
+                class="base-components__BaseList-sc-150tvch-2 styled__LinkList-sc-6mv3y9-4 chGOT"
+              />
+            </section>
+          </div>
+        </div>
+        <div
+          class="styled__AccordionsRow-sc-6mv3y9-1 VdkwB styled-cgoahb-0 fFoLXC"
+        >
+          <div
+            class="styled-tbp4qh-0 fauaRP"
+          >
+            <div
+              class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1ifdouk-0 krOkLW"
+            >
+              <div
+                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
+              >
+                <div
+                  aria-controls="footer-accordion-0"
+                  aria-expanded="false"
+                  aria-label="footer.links.header1.title"
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
+                  role="button"
+                  tabindex="0"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
+                  >
+                    <a
+                      class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 dDsMKJ styled__StandaloneLink-sc-1xizymv-0 eMAWHs"
+                      role="presentation"
+                      tabindex="-1"
+                    >
+                      <span
+                        class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                      >
+                        footer.links.header1.title
+                      </span>
+                    </a>
+                  </div>
+                  <button
+                    aria-disabled="false"
+                    aria-hidden="true"
+                    class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
+                    role="presentation"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span
+                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fzVDJ"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="styled__Container-sc-1bf1p22-0 gJOjrx"
+                        color="currentColor"
+                        focusable="false"
+                        height="8"
+                        preserveAspectRatio="xMinYMax meet"
+                        viewBox="0 -1 20 12"
+                        width="13.33"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18.652 1.312L10 10.276 1.356 1.312"
+                          fill="none"
+                          stroke="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
+                    id="footer-accordion-0"
+                    role="region"
+                    tabindex="-1"
+                  />
+                </div>
+              </div>
+              <div
+                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
+              >
+                <div
+                  aria-controls="footer-accordion-1"
+                  aria-expanded="false"
+                  aria-label="footer.links.header2.title"
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
+                  role="button"
+                  tabindex="0"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
+                  >
+                    <a
+                      class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 dDsMKJ styled__StandaloneLink-sc-1xizymv-0 eMAWHs"
+                      role="presentation"
+                      tabindex="-1"
+                    >
+                      <span
+                        class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                      >
+                        footer.links.header2.title
+                      </span>
+                    </a>
+                  </div>
+                  <button
+                    aria-disabled="false"
+                    aria-hidden="true"
+                    class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
+                    role="presentation"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span
+                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fzVDJ"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="styled__Container-sc-1bf1p22-0 gJOjrx"
+                        color="currentColor"
+                        focusable="false"
+                        height="8"
+                        preserveAspectRatio="xMinYMax meet"
+                        viewBox="0 -1 20 12"
+                        width="13.33"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18.652 1.312L10 10.276 1.356 1.312"
+                          fill="none"
+                          stroke="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
+                    id="footer-accordion-1"
+                    role="region"
+                    tabindex="-1"
+                  />
+                </div>
+              </div>
+              <div
+                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
+              >
+                <div
+                  aria-controls="footer-accordion-2"
+                  aria-expanded="false"
+                  aria-label="footer.links.header3.title"
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
+                  role="button"
+                  tabindex="0"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
+                  >
+                    <a
+                      class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 dDsMKJ styled__StandaloneLink-sc-1xizymv-0 eMAWHs"
+                      role="presentation"
+                      tabindex="-1"
+                    >
+                      <span
+                        class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                      >
+                        footer.links.header3.title
+                      </span>
+                    </a>
+                  </div>
+                  <button
+                    aria-disabled="false"
+                    aria-hidden="true"
+                    class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
+                    role="presentation"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span
+                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fzVDJ"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="styled__Container-sc-1bf1p22-0 gJOjrx"
+                        color="currentColor"
+                        focusable="false"
+                        height="8"
+                        preserveAspectRatio="xMinYMax meet"
+                        viewBox="0 -1 20 12"
+                        width="13.33"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18.652 1.312L10 10.276 1.356 1.312"
+                          fill="none"
+                          stroke="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
+                    id="footer-accordion-2"
+                    role="region"
+                    tabindex="-1"
+                  />
+                </div>
+              </div>
+              <div
+                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
+              >
+                <div
+                  aria-controls="footer-accordion-3"
+                  aria-expanded="false"
+                  aria-label="footer.links.header4.title"
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
+                  role="button"
+                  tabindex="0"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
+                  >
+                    <a
+                      class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 dDsMKJ styled__StandaloneLink-sc-1xizymv-0 eMAWHs"
+                      role="presentation"
+                      tabindex="-1"
+                    >
+                      <span
+                        class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                      >
+                        footer.links.header4.title
+                      </span>
+                    </a>
+                  </div>
+                  <button
+                    aria-disabled="false"
+                    aria-hidden="true"
+                    class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
+                    role="presentation"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span
+                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fzVDJ"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="styled__Container-sc-1bf1p22-0 gJOjrx"
+                        color="currentColor"
+                        focusable="false"
+                        height="8"
+                        preserveAspectRatio="xMinYMax meet"
+                        viewBox="0 -1 20 12"
+                        width="13.33"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M18.652 1.312L10 10.276 1.356 1.312"
+                          fill="none"
+                          stroke="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
+                >
+                  <div
+                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
+                    id="footer-accordion-3"
+                    role="region"
+                    tabindex="-1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="styled-cgoahb-0 fFoLXC"
+        >
+          <div
+            class="styled-tbp4qh-0 fauaRP"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="styled-sc-140lqfg-0 jzEHNh"
+    >
+      <div
+        class="styled-cgoahb-0 fFoLXC"
+      >
+        <div
+          class="styled__CopyrightColumn-sc-6mv3y9-11 fulVqn styled-tbp4qh-0 ZIHPV"
+        >
+          <p
+            class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 TmeCA"
+          >
+            © tesco-site footer.copyright
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </DocumentFragment>
 `;

@@ -31,6 +31,8 @@ export default (data, html, state, assets, styles) => `<!DOCTYPE html>
   <head>
     <title>${data.title}</title>
     <script>document.documentElement.className = "js"</script>
+    <link rel="preload" href="${assets.bundle.js}" as="script">
+    <link rel="preload" href="${assets.vendor.js}" as="script">
     <link rel=styleSheet href="${assets.bundle.css}" type="text/css" />
     <link rel="shortcut icon" href="/account/address-book/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1">

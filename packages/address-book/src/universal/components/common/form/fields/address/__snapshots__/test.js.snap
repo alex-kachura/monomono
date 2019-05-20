@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component: Address] [Find Address] should call fetch and render address list 1`] = `
+<DocumentFragment>
+  <div
+    class="address is-find-address"
+  >
+    <div
+      class="address-field postcode sc-ifAKCX eKJWeb styled__Container-sc-1bf1p22-0 hTDNaU"
+    >
+      <label
+        class="styled__StyledLabel-sc-28yvb4-0 bPkari"
+        for="postcode"
+      >
+        Postcode 
+      </label>
+      <div
+        class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+      >
+        <input
+          aria-disabled="false"
+          class="styled__Container-sc-1bf1p22-0 eZwXEO"
+          id="postcode"
+          name="postcode"
+          placeholder="e.g. EC1R 2NT"
+          type="text"
+          value="NE1 4PQ"
+        />
+        <button
+          aria-disabled="false"
+          class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+          role="button"
+          type="button"
+        >
+          <span
+            class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+          >
+            <span
+              class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+            >
+              address.find-address
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="address-dropdown styled__Container-sc-1bf1p22-0 fGXsaT"
+    >
+      <select
+        aria-disabled="false"
+        class="beans-dropdown__select styled__HiddenSelect-sc-1amjgdg-2 kZoLLQ"
+        role="listbox"
+      >
+        <option
+          value="-1"
+        >
+          address.select-address
+        </option>
+        <option
+          value="trn:tesco:address:address:uuid:7634e35e-70d1-4a2e-a3a3-020a3bb8b37e"
+        >
+          Barker & Stonehouse Ltd, Strawberry Buildings, Leazes Park Road
+        </option>
+      </select>
+      <span
+        class="beans-dropdown__select-span styled__SelectSpan-sc-1amjgdg-1 iWDBSD"
+      >
+        address.select-address
+      </span>
+      <svg
+        aria-hidden="true"
+        class="beans-dropdown__select-icon styled__AlignedIcon-sc-1amjgdg-0 hkwswh styled__Container-sc-1bf1p22-0 gJOjrx"
+        color="currentColor"
+        height="12"
+        preserveAspectRatio="xMinYMax meet"
+        viewBox="0 -1 20 12"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18.652 1.312L10 10.276 1.356 1.312"
+          fill="none"
+          stroke="#666666"
+        />
+      </svg>
+    </div>
+    <button
+      aria-disabled="false"
+      class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+      role="button"
+      type="button"
+    >
+      <span
+        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+      >
+        <span
+          class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+        >
+          address.address-manually
+        </span>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`[Component: Address] [State: Default] should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="address is-find-address"
+  >
+    <div
+      class="address-field postcode sc-ifAKCX eKJWeb styled__Container-sc-1bf1p22-0 hTDNaU"
+    >
+      <label
+        class="styled__StyledLabel-sc-28yvb4-0 bPkari"
+        for="postcode"
+      >
+        Postcode 
+      </label>
+      <div
+        class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+      >
+        <input
+          aria-disabled="false"
+          class="styled__Container-sc-1bf1p22-0 eZwXEO"
+          id="postcode"
+          name="postcode"
+          placeholder="e.g. EC1R 2NT"
+          type="text"
+          value=""
+        />
+        <button
+          aria-disabled="false"
+          class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+          role="button"
+          type="button"
+        >
+          <span
+            class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+          >
+            <span
+              class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+            >
+              address.find-address
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <button
+      aria-disabled="false"
+      class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+      role="button"
+      type="button"
+    >
+      <span
+        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+      >
+        <span
+          class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+        >
+          address.address-manually
+        </span>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`[Component: Address] [State: Initial Values] should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="address"
+  >
+    <div
+      class="address-field postcode sc-ifAKCX eKJWeb styled__Container-sc-1bf1p22-0 hTDNaU"
+    >
+      <label
+        class="styled__StyledLabel-sc-28yvb4-0 bPkari"
+        for="postcode"
+      >
+        Postcode 
+      </label>
+      <div
+        class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+      >
+        <input
+          aria-disabled="false"
+          class="styled__Container-sc-1bf1p22-0 eZwXEO"
+          id="postcode"
+          name="postcode"
+          placeholder="e.g. EC1R 2NT"
+          type="text"
+          value="EC1R 2NT"
+        />
+        <button
+          aria-disabled="false"
+          class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+          role="button"
+          type="button"
+        >
+          <span
+            class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+          >
+            <span
+              class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+            >
+              address.find-address
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <button
+      aria-disabled="false"
+      class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+      role="button"
+      type="button"
+    >
+      <span
+        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+      >
+        <span
+          class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+        >
+          address.address-manually
+        </span>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`[Component: Address] [State: Initial Values] should render correctly 2`] = `
+<DocumentFragment>
+  <div
+    class="address is-find-address"
+  >
+    <div
+      class="address-field postcode sc-ifAKCX eKJWeb styled__Container-sc-1bf1p22-0 hTDNaU"
+    >
+      <label
+        class="styled__StyledLabel-sc-28yvb4-0 bPkari"
+        for="postcode"
+      >
+        Postcode 
+      </label>
+      <div
+        class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+      >
+        <input
+          aria-disabled="false"
+          class="styled__Container-sc-1bf1p22-0 eZwXEO"
+          id="postcode"
+          name="postcode"
+          placeholder="e.g. EC1R 2NT"
+          type="text"
+          value=""
+        />
+        <button
+          aria-disabled="false"
+          class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+          role="button"
+          type="button"
+        >
+          <span
+            class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+          >
+            <span
+              class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+            >
+              address.find-address
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <button
+      aria-disabled="false"
+      class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+      role="button"
+      type="button"
+    >
+      <span
+        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+      >
+        <span
+          class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+        >
+          address.address-manually
+        </span>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;

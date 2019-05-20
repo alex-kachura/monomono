@@ -11,6 +11,7 @@
 !package.json
 !package-lock.json
 !src
+!test/jest.framework.setup.js
 !test/jest.config.js
 !test/integration/.babelrc
 !test/integration/.npmrc

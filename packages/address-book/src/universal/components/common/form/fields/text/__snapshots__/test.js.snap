@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component: Text] [State: Default] should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa cZgcHL styled__Container-sc-1bf1p22-0 hTDNaU"
+  >
+    <label
+      class="styled__StyledLabel-sc-28yvb4-0 bPkari"
+      for="test"
+    >
+      Test 
+    </label>
+    <div
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+    >
+      <input
+        aria-disabled="false"
+        class="styled__Container-sc-1bf1p22-0 eZwXEO"
+        id="test"
+        name="test"
+        placeholder="Test"
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`[Component: Text] [State: Error] should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa cZgcHL styled__Container-sc-1bf1p22-0 hTDNaU"
+  >
+    <label
+      class="styled__StyledLabel-sc-28yvb4-0 BlFly"
+      for="test"
+    >
+      Test 
+    </label>
+    <div
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+    >
+      <input
+        aria-describedby="test-error"
+        aria-disabled="false"
+        class="styled__Container-sc-1bf1p22-0 hIxSdw"
+        id="test"
+        name="test"
+        placeholder="Test"
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+    <p
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__message beans-form-group__error-message styled__Message-wt4ift-3 jcJuKh typography___styledElement-sc-186l0ce-0 dmJyuB"
+      id="test-error"
+    >
+      Error on field
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`[Component: Text] [State: Initial Value] should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa cZgcHL styled__Container-sc-1bf1p22-0 hTDNaU"
+  >
+    <label
+      class="styled__StyledLabel-sc-28yvb4-0 bPkari"
+      for="test"
+    >
+      Test 
+    </label>
+    <div
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+    >
+      <input
+        aria-disabled="false"
+        class="styled__Container-sc-1bf1p22-0 eZwXEO"
+        id="test"
+        name="test"
+        placeholder="Test"
+        required=""
+        type="text"
+        value="Some content"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

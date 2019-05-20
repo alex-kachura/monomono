@@ -1,97 +1,210 @@
 # A
 app:
   logo:
-    alt: "Tesco"
+    alt: 'Tesco'
   menu:
-    close-text: "Close"
+    close-text: 'Close'
+
+address:
+  select-address: 'Please select your address'
+  address-manually: 'Enter address manually'
+  find-address: 'Find Address'
+  fields:
+    address-id:
+      label: ''
+      placeholder: ''
+      error: ''
+    postcode:
+      label: 'Postcode'
+      placeholder: 'e.g EC1R 2NT'
+      error: 'Please enter a valid postcode'
+    address-line1:
+      label: 'Address Line 1'
+      placeholder: ''
+      error: 'Please enter a valid address line'
+    address-line2:
+      label: 'Address Line 2'
+      placeholder: ''
+      error: 'Please enter a valid address line'
+    address-line3:
+      label: 'Address Line 3'
+      placeholder: ''
+      error: 'Please enter a valid address line'
+    town:
+      label: 'Town/City'
+      placeholder: ''
+      error: 'Please enter a town'
 
 # B
 banners:
   error:
     load:
       title: "Sorry, we weren't able to load your details."
-      copy-1: "Please"
-      copy-2: "refresh this page"
+      copy-1: 'Please'
+      copy-2: 'refresh this page'
     update:
       title: "Sorry, we weren't able to save your details."
-      copy-1: "Please save again."
+      copy-1: 'Please save again.'
 
 # C
-contact-us: "Contact us"
+contact-us: 'Contact us'
 
 # F
-feedback: "Feedback"
+feedback: 'Feedback'
 footer:
-  copyright: "%{year} All rights reserved."
+  copyright: '%{year} All rights reserved.'
   social-bar:
-    label: "Follow us:"
+    label: 'Follow us:'
   links:
     header1:
-      title: "Here to help"
-      link1: "Help and FAQs"
-      link2: "Contact us"
+      title: 'Here to help'
+      link1: 'Help and FAQs'
+      link2: 'Contact us'
     header2:
-      title: "About this website"
-      link1: "Terms & conditions"
-      link2: "Privacy & cookies"
-      link3: "Accessibility"
-      link4: "Privacy centre"
-      link5: "Website feedback"
+      title: 'About this website'
+      link1: 'Terms & conditions'
+      link2: 'Privacy & cookies'
+      link3: 'Accessibility'
+      link4: 'Privacy centre'
+      link5: 'Website feedback'
     header3:
-      title: "Useful links"
-      link1: "Store locator"
-      link2: "My account"
-      link3: "Product recall"
-      link4: "Sitemap"
+      title: 'Useful links'
+      link1: 'Store locator'
+      link2: 'My account'
+      link3: 'Product recall'
+      link4: 'Sitemap'
     header4:
-      title: "About Tesco"
-      link1: "Work for Tesco"
-      link2: "Tesco PLC"
+      title: 'About Tesco'
+      link1: 'Work for Tesco'
+      link2: 'Tesco PLC'
 
 # H
 header:
   menu:
-    title: "Menu"
-    link1: "Tesco.com"
-    link2: "Contact us"
-    link3: "Help"
-    link4: "Feedback"
-help: "Help"
+    title: 'Menu'
+    link1: 'Tesco.com'
+    link2: 'Contact us'
+    link3: 'Help'
+    link4: 'Feedback'
+help: 'Help'
 
 # P
 pages:
+  account:
+    title: 'My account'
   landing:
-    title: "address book"
-    sample-form-btn: "Sample form"
-
+    title: 'My address book'
+    sample-form-btn: 'Sample form'
+    edit-btn: 'Edit'
+    delete-btn: 'Delete'
+    back-to-link: 'Back to'
+    missing-address:
+      clubcard: 'A Clubard has not been registered to this account.'
+      delivery: 'No delivery addresses found for this account.'
+    banner-messages:
+      added: "We've added your address."
+      changed-alternate: 'Good news. Your Tesco address book has been updated'
+      changed-default: 'Good news. Your Tesco address book has been updated'
+      clubcard-updated: "We've successfully updated your Clubcard."
+      combine-addresses: '<br />We can combine your main grocery address and Clubcard into the same address.<br />Give us a call on 12345678902 if you would like to do this.'
+      deleted: 'Address successfully deleted.'
+      multiple-addresses: "We've noticed you have multiple addresses"
+      update-clubcard-account: 'Your Clubcard and groceries delivery address are not the same. Would you like to <a href="%{baseHostSecure}/edit-clubcard-address?id=%{id}" data-tracking="clubcard account" target="_blank" role="link" aria-label="link opens the edit clubcard address page">edit</a> your Clubcard?'
+      update-primary-delivery-account: 'Your Clubcard and groceries delivery address are not the same. Would you like to <a href="%{baseHostSecure}/edit-delivery-address?id=%{id}" data-tracking="primary delivery account" role="link" aria-label="link opens the edit primary delivery address page">edit</a> this?'
+      updated: 'Delivery address successfully updated.'
+    delete:
+      confirmation-message: 'Are you sure you want to permanently delete the address?'
+      cancel: 'Cancel'
+      confirm: 'Confirm'
+    primary-address:
+      label: 'Home address'
+      header:
+        clubcard: 'Clubcard'
+        grocery: 'Online Grocery Shopping'
+        grocery-default: 'Default'
+      additional:
+        clubcard: 'This is where you recieve Clubcard vouchers and letters from Tesco.'
+        grocery: 'This is the default delivery address for you online Grocery shopping.'
+    other-addresses:
+      label: 'Other addresses'
+    telephone:
+      day: 'Daytime Number'
+      evening: 'Evening Number'
+      mobile: 'Mobile Number'
+  delivery-address:
+    add:
+      title: 'Add Delivery Address'
+      submit-button: 'Add Delivery Address'
+    edit:
+      title: 'Edit Delivery Address'
+      submit-button: 'Save changes'
+    error:
+      unexpected:
+        title: 'Unexpected Error'
+        text: 'An unexpected error occurred, Please try again'
+      service:
+        address:
+          unexpected:
+            title: 'Unexpected Error'
+            text: 'An unexpected error occurred, Please try again'
+        contact:
+          unexpected:
+            title: 'Unexpected Error'
+            text: 'An unexpected error occurred, Please try again'
+    fields:
+      day-number:
+        label: 'Daytime phone number'
+        placeholder: 'e.g. 0201231232'
+        error: 'Please enter a valid phone number'
+      evening-number:
+        label: 'Evening phone number'
+        placeholder: 'e.g. 0201231232'
+        error: 'Please enter a valid phone number'
+      mobile-number:
+        label: 'Mobile number'
+        placeholder: 'e.g. 07123243212'
+        error: 'Please enter a valid phone number'
+      address-nickname:
+        label: 'Address nickname'
+        placeholder: 'e.g. London home'
+        error: 'Please enter a Address nickname'
+        tooltip: 'Help me'
+  clubcard-address:
+    edit:
+      title: 'Edit Clubcard Address'
+      submit-button: 'Save changes'
+    fields:
+      phone-number:
+        label: 'Phone number'
+        placeholder: 'e.g. 0201231232'
+        error: 'Please enter a valid phone number'
   edit:
-    title: "Edit"
-    server-error: "Error message from a service"
+    title: 'Edit'
+    server-error: 'Error message from a service'
     fields:
       sample1:
-        label: "Sample field 1"
-        placeholder: ""
+        label: 'Sample field 1'
+        placeholder: ''
         errors:
-          empty: "Please enter a value"
+          empty: 'Please enter a value'
       sample2:
-        label: "Sample field 2"
-        placeholder: ""
+        label: 'Sample field 2'
+        placeholder: ''
         errors:
-          empty: "Please enter a value"
-          invalid: "Please enter only numbers"
-    submit-btn: "Submit"
-
+          empty: 'Please enter a value'
+          invalid: 'Please enter only numbers'
+    submit-btn: 'Submit'
   not-found:
-    title: "Page not found"
+    title: 'Page not found'
     heading: "Oops!...we couldn't find the page you requested."
-    home: "Go to homepage"
+    home: 'Go to homepage'
     paragraphs:
       - "If you typed the address in, please check that it's correct and try again. It's also possible that you clicked on an outdated link."
       - "Our homepage may be able to help you find the feature or store you're looking for."
 
 # S
-sign-in: "Sign in"
-sign-out: "Sign out"
+sign-in: 'Sign in'
+sign-out: 'Sign out'
 
 # T
-tesco-site: "Tesco.com"
+tesco-site: 'Tesco.com'

@@ -3,7 +3,7 @@
 exports[`[Component: Banner] should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdVaJa iYbLuh"
+    class="sc-bdVaJa rUxNA"
   >
     <div
       aria-live="polite"
@@ -33,10 +33,10 @@ exports[`[Component: Banner] should render correctly 1`] = `
         </svg>
       </div>
       <div
-        class="base-components__BaseElement-sc-150tvch-0 FTmRK"
+        class="base-components__BaseElement-sc-150tvch-0 edjZlZ"
       >
         <p
-          class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 bBDtsg"
+          class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 cvZwhD"
         >
           Banner title
         </p>

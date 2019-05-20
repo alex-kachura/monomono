@@ -1,10 +1,11 @@
 // Import all controllers
-import editExample from './edit-example';
+import deliveryAddress from './delivery-address';
+import clubcardAddress from './clubcard-address';
 
 // Define the controller name + region mappings
 export const Controllers = {
-  'editExample.default': editExample.default, // Default version of controller
-  'editExample.PL': editExample.PL, // PL only specific version of controller
+  'deliveryAddress.default': deliveryAddress.default, // Default version of controller
+  'clubcardAddress.default': clubcardAddress.default,
 };
 
 export default (name, region) => {

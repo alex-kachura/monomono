@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { RootElement, media } from '@beans/foundation';
+import { BaseElement, media } from '@beans/foundation';
 
-export const BreadcrumbBarview = styled(RootElement)`
-  padding: 24px 0 8px 0;
-  background-color: $bg-grey;
+export const BreadcrumbBarview = styled(BaseElement)`
+  padding: 12px 0 8px 0;
   background-clip: content-box;
 
   @include screen-xs {

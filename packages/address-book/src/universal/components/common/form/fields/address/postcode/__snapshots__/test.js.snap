@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component: Postcode] [State: Default] should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-htpNat fhaZgK styled__Container-sc-1bf1p22-0 hTDNaU"
+  >
+    <label
+      class="styled__StyledLabel-sc-28yvb4-0 bPkari"
+      for="postcode"
+    >
+      Postcode 
+    </label>
+    <div
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+    >
+      <input
+        aria-disabled="false"
+        class="styled__Container-sc-1bf1p22-0 eZwXEO"
+        id="postcode"
+        name="postcode"
+        placeholder="e.g. EC1R 2NT"
+        type="text"
+        value=""
+      />
+      <button
+        aria-disabled="false"
+        class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+        role="button"
+        type="button"
+      >
+        <span
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+        >
+          <span
+            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+          >
+            address.find-address
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`[Component: Postcode] [State: Error] should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-htpNat fhaZgK styled__Container-sc-1bf1p22-0 hTDNaU"
+  >
+    <label
+      class="styled__StyledLabel-sc-28yvb4-0 BlFly"
+      for="postcode"
+    >
+      Postcode 
+    </label>
+    <div
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+    >
+      <input
+        aria-describedby="postcode-error"
+        aria-disabled="false"
+        class="styled__Container-sc-1bf1p22-0 hIxSdw"
+        id="postcode"
+        name="postcode"
+        placeholder="e.g. EC1R 2NT"
+        type="text"
+        value="EC1R 2NT"
+      />
+      <button
+        aria-disabled="false"
+        class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 eQEoWE"
+        role="button"
+        type="button"
+      >
+        <span
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+        >
+          <span
+            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+          >
+            address.find-address
+          </span>
+        </span>
+      </button>
+    </div>
+    <p
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__message beans-form-group__error-message styled__Message-wt4ift-3 jcJuKh typography___styledElement-sc-186l0ce-0 dmJyuB"
+      id="postcode-error"
+    >
+      Error on field
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`[Component: Postcode] [State: Initial Value] should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-htpNat fhaZgK styled__Container-sc-1bf1p22-0 hTDNaU"
+  >
+    <label
+      class="styled__StyledLabel-sc-28yvb4-0 bPkari"
+      for="postcode"
+    >
+      Postcode 
+    </label>
+    <div
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+    >
+      <input
+        aria-disabled="false"
+        class="styled__Container-sc-1bf1p22-0 eZwXEO"
+        id="postcode"
+        name="postcode"
+        placeholder="e.g. EC1R 2NT"
+        type="text"
+        value="EC1R 2NT"
+      />
+      <button
+        aria-disabled="false"
+        class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+        role="button"
+        type="button"
+      >
+        <span
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+        >
+          <span
+            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+          >
+            address.find-address
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

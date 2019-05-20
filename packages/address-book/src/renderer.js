@@ -6,12 +6,29 @@ import { StaticRouter } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { DefaultThemeProvider } from '@beans/theme';
-import Spinner from '../src/universal/components/common/spinner';
+import { bold, regular, italic as regularItalic } from '@beans/tesco-modern';
+import { RootElement } from '@beans/foundation';
+import { createGlobalStyle } from 'styled-components';
+import Spinner from './universal/components/common/spinner';
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    min-width: 320px;
+    position: relative;
+  }
+
+  #main {
+    overflow-x: hidden;
+  }
+`;
 
 const globalStyles = {
-  fonts: {
-    fileFormats: ['eot', 'woff2', 'woff', 'ttf', 'svg'],
-    filePath: '/account/address-book/fonts',
+  tescoModern: {
+    inlineFontData: {
+      bold,
+      regular,
+      regularItalic,
+    },
     styleNames: ['bold', 'regular', 'regularItalic'],
   },
   normalize: true,
@@ -33,9 +50,12 @@ export const renderServer = (inititalData, routes, context, sheet, url) => {
         errorFallback={<div>Error Please refresh the page</div>}
       >
         <DefaultThemeProvider globalStyles={globalStyles}>
-          <StaticRouter location={url} context={context}>
-            {renderRoutes(routes)}
-          </StaticRouter>
+          <RootElement>
+            <GlobalStyle />
+            <StaticRouter location={url} context={context}>
+              {renderRoutes(routes)}
+            </StaticRouter>
+          </RootElement>
         </DefaultThemeProvider>
       </Root>,
     ),
@@ -57,7 +77,10 @@ export const renderClient = (inititalData, routes) => {
       errorFallback={<div>Error Please refresh the page</div>}
     >
       <DefaultThemeProvider globalStyles={globalStyles}>
-        <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+        <RootElement>
+          <GlobalStyle />
+          <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>
+        </RootElement>
       </DefaultThemeProvider>
     </Root>,
     document.getElementById('main'),

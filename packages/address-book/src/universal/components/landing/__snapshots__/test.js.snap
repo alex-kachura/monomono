@@ -2,27 +2,8 @@
 
 exports[`[Component: LandingPage] should render correctly 1`] = `
 <DocumentFragment>
-  <h1
-    class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 bISoeZ"
-  >
-    pages.landing.title
-  </h1>
-  <span
-    class="sc-bdVaJa kaUEvY styled__TextButtonContainer-ipdqot-2 fyzwOe"
-  >
-    <a
-      href="/mock/math/edit"
-    >
-      <span
-        class="styled__TextButtonSpan-ipdqot-1 fMKwfV"
-      >
-        <span
-          class="beans-link__text styled__TextSpan-ipdqot-3 eddlHt"
-        >
-          pages.landing.sample-form-btn
-        </span>
-      </span>
-    </a>
-  </span>
+  <div>
+    Error
+  </div>
 </DocumentFragment>
 `;

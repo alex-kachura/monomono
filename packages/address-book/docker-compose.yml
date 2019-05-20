@@ -1,4 +1,4 @@
-version: "3.0"
+version: '3.0'
 
 services:
   app:
@@ -12,17 +12,16 @@ services:
       - 8088:8088
     volumes:
       - ./src:/home/node/src
-
 # Uncomment the following when developing integration tests
-  # tests:
-  #   image: address-book:test
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.test
-  #     args:
-  #       - NPM_AUTH_TOKEN
-  #   environment:
-  #     - NODE_CONFIG_ENV
-  #   command: npm run integration:local -- --watchAll
-  #   volumes:
-  #     - ./test/integration:/home/node/test/integration
+# tests:
+#   image: address-book:test
+#   build:
+#     context: .
+#     dockerfile: Dockerfile.test
+#     args:
+#       - NPM_AUTH_TOKEN
+#   environment:
+#     - NODE_CONFIG_ENV
+#   command: npm run integration:local -- --watchAll
+#   volumes:
+#     - ./test/integration:/home/node/test/integration

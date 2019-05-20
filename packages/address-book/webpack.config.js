@@ -12,6 +12,11 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        use: ['source-map-loader'],
+        enforce: 'pre',
+      },
+      {
+        test: /\.js$/,
         include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
         use: [
@@ -93,7 +98,7 @@ module.exports = {
       {
         from: path.join(__dirname, 'src/public/500.html'),
         to: path.join(__dirname, 'dist/public'),
-      }
+      },
     ]),
   ],
 };

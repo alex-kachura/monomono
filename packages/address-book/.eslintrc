@@ -1,5 +1,12 @@
 {
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
   "extends": [
     "@web-foundations/eslint-config-base",
     "@web-foundations/eslint-config-react",
@@ -8,6 +15,7 @@
   ],
   "plugins": ["prettier"],
   "globals": {
+    "Promise": true,
     "describe": false,
     "context": false,
     "it": false,

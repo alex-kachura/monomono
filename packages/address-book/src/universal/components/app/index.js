@@ -4,31 +4,29 @@ import { renderRoutes } from 'react-router-config';
 import Footer from '../common/footer';
 import Header from '../common/header';
 import { Grid, Column, Row } from '@beans/grid';
-import { RootElement } from '@beans/foundation';
 import Breadcrumb from '../common/breadcrumb';
-import { GlobalStyle, GridStyled } from './styled.js';
+import { GridStyled } from './styled';
 
 function App(props) {
   return (
-    <RootElement>
-      <GlobalStyle />
+    <React.Fragment>
       <Header />
-      <Grid fixed="md">
+      <Grid fixed="xl">
         <Row>
           <Column size={24}>
             <Breadcrumb />
           </Column>
         </Row>
       </Grid>
-      <GridStyled fixed="md">
+      <GridStyled fixed="xl">
         <Row>
-          <Column size={24} sm={18} md={18} lg={15} xl={12} centered>
+          <Column size={24} centered>
             {renderRoutes(props.route.routes)}
           </Column>
         </Row>
       </GridStyled>
       <Footer />
-    </RootElement>
+    </React.Fragment>
   );
 }
 

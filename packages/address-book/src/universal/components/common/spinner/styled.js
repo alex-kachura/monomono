@@ -19,7 +19,8 @@ export const SpinnerIcon = styled.div`
   height: 40px;
   align-self: center;
 
-  ${({ mobileStyles }) => mobileStyles} ${media.aboveMobileLarge`
+  ${({ mobileStyles }) => mobileStyles}
+  ${media.aboveMobileLarge`
     ${({ desktopStyles }) => desktopStyles}
   `};
 

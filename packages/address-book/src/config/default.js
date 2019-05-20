@@ -112,7 +112,7 @@ module.exports = {
     connectSrc: ["'self'", '*.eum-appdynamics.com'],
     styleSrc: ["'self'", "'unsafe-inline'", '*.tesco.com'],
     imgSrc: ["'self'", 'data:', '*.tesco.com'],
-    fontSrc: ["'self'"],
+    fontSrc: ["'self'", 'data:'],
     objectSrc: ["'none'"],
     mediaSrc: ["'self'"],
     childSrc: ["'self'"],
@@ -157,17 +157,16 @@ module.exports = {
       timeout: 20000,
     },
     contact: {
-      host: 'api-ppe.tesco.com',
-      port: '',
-      protocol: 'https',
+      host: 'docker.for.mac.localhost',
+      port: '8100',
+      protocol: 'http',
       timeout: 20000,
     },
     address: {
-      host: 'api-ppe.tesco.com',
-      port: '',
-      protocol: 'https',
+      host: 'docker.for.mac.localhost',
+      port: '8100',
+      protocol: 'http',
       timeout: 20000,
     },
   },
-
 };

@@ -28,7 +28,7 @@ describe('Claims middleware', () => {
 
   afterEach(() => {
     jest.resetModules();
-    Reflect.deleteProperty(require.cache, require.resolve('./'));
+    Reflect.deleteProperty(require.cache, require.resolve('./')); // eslint-disable-line
   });
 
   it('should add a "getClaims" method to the response object', () => {

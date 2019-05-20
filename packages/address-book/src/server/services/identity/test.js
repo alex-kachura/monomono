@@ -17,7 +17,8 @@ describe('[Utility: Identity service]', () => {
       async getClaims() {
         return Promise.resolve({ access_token: '1234-5678' }); // eslint-disable-line
       }
-      on = jest.fn();
+      on = jest.fn(); // eslint-disable-line
+      // eslint-disable-next-line
       static OAuthTokenScopes = {
         SERVICE: 'service',
       };

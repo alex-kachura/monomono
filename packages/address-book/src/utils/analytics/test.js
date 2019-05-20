@@ -105,7 +105,7 @@ describe('Analytics utilities', () => {
     const payload = { foo: 'bar' };
 
     afterEach(() => {
-      Reflect.deleteProperty(global, 'window');
+      Reflect.deleteProperty(global, 'window'); // eslint-disable-line
     });
 
     it('should payload to dataLayer', () => {
@@ -132,7 +132,7 @@ describe('Analytics utilities', () => {
     });
 
     afterEach(() => {
-      Reflect.deleteProperty(global, 'window');
+      Reflect.deleteProperty(global, 'window'); // eslint-disable-line
       trackMock.mockClear();
     });
 
