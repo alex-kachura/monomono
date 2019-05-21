@@ -254,6 +254,7 @@ describe('[Route: /verify]', () => {
         },
         redirect: mockRedirect,
         isMobile: false,
+        status: jest.fn(),
       };
 
       mockImports();
@@ -322,6 +323,10 @@ describe('[Route: /verify]', () => {
             stateToken: mockStateToken,
           }
         })
+      });
+
+      it('should set 400 status', () => {
+        expect(res.status).toHaveBeenCalledWith(400);
       });
 
       it('should call next', () => {
@@ -435,6 +440,14 @@ describe('[Route: /verify]', () => {
             }
           });
         });
+
+        it('should set 400 status', () => {
+          expect(res.status).toHaveBeenCalledWith(400);
+        });
+
+        it('should call next', () => {
+          expect(next).toHaveBeenCalledWith();
+        });
       });
 
       describe('account locked', () => {
@@ -489,6 +502,14 @@ describe('[Route: /verify]', () => {
               accountLocked: true,
             }
           });
+        });
+
+        it('should set 400 status', () => {
+          expect(res.status).toHaveBeenCalledWith(400);
+        });
+
+        it('should call next', () => {
+          expect(next).toHaveBeenCalledWith();
         });
       });
     });

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "lint": "lint-staged && eslint .",
-    "integration:dev": "NODE_CONFIG_ENV=dev jest --passWithNoTests ./specs/*.js",
+    "integration:dev": "NODE_CONFIG_ENV=dev jest --runInBand --passWithNoTests ./specs/*.js",
     "integration:proxy": "NODE_CONFIG_ENV=proxy --passWithNoTests jest specs/*.js",
     "integration:ppe": "NODE_CONFIG_ENV=ppe jest --passWithNoTests ./specs/*.js",
     "integration:prod": "NODE_CONFIG_ENV=production jest --passWithNoTests ./specs/*.js",

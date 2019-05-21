@@ -181,6 +181,8 @@ export async function postVerifyPage(req, res, next) {
 
     res.data = { ...res.data, payload };
 
+    res.status(400);
+
     return next();
   }
 
@@ -231,6 +233,8 @@ export async function postVerifyPage(req, res, next) {
   });
 
   res.data = { ...res.data, payload };
+
+  res.status(400);
 
   return next();
 }

@@ -4,6 +4,8 @@ module.exports = {
     tescoSecure: 'https://secure-ppe.tesco.com',
     login: 'https://secure-ppe.tesco.com/account/en-GB/login',
     logout: 'https://secure-ppe.tesco.com/account/en-GB/logout',
+    register: 'https://secure-ppe.tesco.com/account/en-GB/register',
+    myaccount: 'https://secure-ppe.tesco.com/account/en-GB/manage',
   },
   supportLinks: [
     {
