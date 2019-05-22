@@ -36,4 +36,25 @@ module.exports = {
     headerScript:
       '//assets.adobedtm.com/07f4803ba7577af91bd0d0bb989cce05e8f2a5c8/satelliteLib-f251c1b62e792f8a7591e302ce0f7780f6605d98.js',
   },
+  segmentation: {
+    cookiePrefix: 'login_segment_',
+    tests: [
+      {
+        name: 'verify',
+        segments: [
+          {
+            name: 'disabled',
+            weighting: 100,
+          },
+          {
+            name: 'enabled',
+            weighting: 0,
+          }
+        ],
+        cookieOptions: {
+          maxAge: 2629746000,
+        },
+      },
+    ],
+  },
 };

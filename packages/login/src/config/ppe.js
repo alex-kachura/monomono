@@ -19,4 +19,25 @@ module.exports = {
   thirdParties: {
     active: true,
   },
+  segmentation: {
+    cookiePrefix: 'login_segment_',
+    tests: [
+      {
+        name: 'verify',
+        segments: [
+          {
+            name: 'disabled',
+            weighting: 0,
+          },
+          {
+            name: 'enabled',
+            weighting: 100,
+          }
+        ],
+        cookieOptions: {
+          maxAge: 2629746000,
+        },
+      },
+    ],
+  },
 };

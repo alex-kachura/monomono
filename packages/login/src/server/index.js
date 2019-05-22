@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import MobileDetect from 'mobile-detect';
 import traceidMiddlewareFactory from '@web-foundations/express-traceid';
+import segmentation from '@web-foundations/express-user-segmentation';
 import reactRouterRenderMiddleware from './middleware/react-router-render';
 import routes from './routes';
 import errorHandler from './middleware/error-handler';
@@ -62,6 +63,7 @@ export default () => {
   });
   app.use(onwardLocation);
   app.use(referrerMiddleware);
+  app.use(segmentation(config.get('segmentation')));
   app.use(routes);
   app.use(reactRouterRenderMiddleware());
   app.use(errorHandler);

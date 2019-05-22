@@ -181,4 +181,25 @@ module.exports = {
     '^https?://([A-Za-z0-9.-]*\\.)?tesco\\.com(|/.*)$',
     '^https?://([A-Za-z0-9\\.-]*)?tesco\\.com(\\:[0-9]*)?(|.*)$',
   ],
+  segmentation: {
+    cookiePrefix: 'login_segment_',
+    tests: [
+      {
+        name: 'verify',
+        segments: [
+          {
+            name: 'disabled',
+            weighting: 0,
+          },
+          {
+            name: 'enabled',
+            weighting: 100,
+          }
+        ],
+        cookieOptions: {
+          maxAge: 2629746000,
+        },
+      },
+    ],
+  },
 };

@@ -44,9 +44,10 @@ export default function reactRouterRenderMiddlewareFactory() {
       host: `${config.protocol}${req.hostname}`,
       rootPath: `/${config.basePath}/${config.appPath}/${lang}`,
       getLocalePhrase: getPhraseFactory(lang),
+      tests: res.tests,
     };
 
-    const routes = routesFactory(config, lang);
+    const routes = routesFactory(config, lang, res.tests);
     const sheet = new ServerStyleSheet();
     const html = renderServer(initialData, history, routes, context, sheet, req.originalUrl);
     const styles = sheet.getStyleTags();

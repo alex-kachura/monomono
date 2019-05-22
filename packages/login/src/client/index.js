@@ -18,7 +18,7 @@ const dictionary = new Polyglot({
   locale: lang,
 });
 
-const routes = routesFactory(config, lang);
+const routes = routesFactory(config, lang, initialState.tests);
 
 renderClient(
   {
