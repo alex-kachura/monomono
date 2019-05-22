@@ -51,16 +51,16 @@ try {
 			stage('Build login docker image and push it to ECR') {
 				container('docker') {
           // Pull images
-          sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:latest"
-          sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:nginx-latest"
+          // sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:latest"
+          // sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:nginx-latest"
           sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:app-${commitSha}"
           sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:nginx-${commitSha}"
 
           // Retag old latest to previous
-					sh "docker tag 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:latest 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:previous"
-					sh "docker tag 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:nginx-latest 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:nginx-previous"
-					sh "docker push 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:previous"
-					sh "docker push 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:nginx-previous"
+					// sh "docker tag 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:latest 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:previous"
+					// sh "docker tag 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:nginx-latest 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:nginx-previous"
+					// sh "docker push 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:previous"
+					// sh "docker push 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:nginx-previous"
 
           // Tag new latest
 					sh "docker tag 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:app-${commitSha} 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/login:latest"
