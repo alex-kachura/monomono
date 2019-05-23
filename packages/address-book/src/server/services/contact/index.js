@@ -1,5 +1,9 @@
 import ContactService from '@web-foundations/service-contact';
 import config from 'config';
+import log from '../../logger';
+
+const onContactRequestStart = log.makeOnRequestEventHandler('Contact Service Request');
+const onContactRequestEnd = log.makeOnRequestEventHandler('Contact Service Response');
 
 export function extractPhoneNumber(data, { isClubcard = false } = {}) {
   return ['day', 'evening', 'mobile'].reduce((result, numberType) => {
@@ -70,7 +74,7 @@ export function mapPhoneNumbersToFormValues(phoneNumbers, { isClubcard = false }
   return result;
 }
 
-export default function contactServiceClientFactory(accessToken) {
+export default function getContactClient(accessToken) {
   const contact = new ContactService({
     accessToken,
     akamaiAuthToken: config.get('services.akamaiAuthToken'),
@@ -82,6 +86,9 @@ export default function contactServiceClientFactory(accessToken) {
       port: config.get('services.contact.port'),
     },
   });
+
+  contact.on('requestStart', onContactRequestStart);
+  contact.on('requestEnd', onContactRequestEnd);
 
   return contact;
 }

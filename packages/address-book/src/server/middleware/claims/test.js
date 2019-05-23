@@ -1,6 +1,6 @@
 describe('Claims middleware', () => {
-  let mockExpress;
-  let mockReq;
+  const request = { region: 'gb' };
+  const mockExpress = { request };
   const mockConfig = {
     cookie: {
       userAccessToken: {
@@ -13,13 +13,6 @@ describe('Claims middleware', () => {
   };
 
   beforeEach(() => {
-    mockReq = {
-      region: 'gb',
-    };
-    mockExpress = {
-      request: mockReq,
-    };
-
     jest.doMock('express', () => mockExpress);
     jest.doMock('config', () => mockConfig);
 
@@ -28,33 +21,24 @@ describe('Claims middleware', () => {
 
   afterEach(() => {
     jest.resetModules();
-    Reflect.deleteProperty(require.cache, require.resolve('./')); // eslint-disable-line
   });
 
   it('should add a "getClaims" method to the response object', () => {
-    expect(mockReq).toHaveProperty('getClaims');
-    expect(typeof mockReq.getClaims).toBe('function');
+    expect(request).toHaveProperty('getClaims');
+    expect(typeof request.getClaims).toBe('function');
   });
 
   describe('getClaims', () => {
-    it('should return an object with an access token', () => {
+    it('should return an object with an access token and UUID', () => {
       const accessToken = 'test';
-
-      mockReq.cookies = {
-        accessToken,
-      };
-
-      expect(mockReq.getClaims()).toHaveProperty('accessToken', accessToken);
-    });
-
-    it('should return an object with a UUID', () => {
       const uuid = 'uuid';
 
-      mockReq.cookies = {
+      request.cookies = {
+        accessToken,
         uuid,
       };
 
-      expect(mockReq.getClaims()).toHaveProperty('uuid', uuid);
+      expect(request.getClaims()).toMatchSnapshot();
     });
   });
 });

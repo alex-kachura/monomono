@@ -4,7 +4,7 @@ import csrf from 'csurf';
 import isAuthenticatedFactory from '@web-foundations/express-identity-validate';
 import handleUnauthenticated from '../middleware/handle-unauthenticated';
 import setResponseData from '../middleware/response-data';
-import identity from '../services/identity';
+import getIdentityClient from '../services/identity';
 import { getLandingPage } from './landing';
 import { getAddDeliveryAddressPage, postAddDeliveryAddressPage } from './add-delivery-address';
 import { getEditDeliveryAddressPage, postEditDeliveryAddressPage } from './edit-delivery-address';
@@ -19,7 +19,7 @@ const APP_PATH = config.get('appPath');
 const baseRouter = express.Router(); // eslint-disable-line new-cap
 const appRouter = express.Router(); // eslint-disable-line new-cap
 const isAuthenticated = isAuthenticatedFactory({
-  service: identity,
+  service: getIdentityClient(),
   getTracer: (req) => req.cookies[config.cookie.tracer.name] || req.sessionId,
 });
 

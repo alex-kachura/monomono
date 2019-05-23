@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Route: /] [GET] [Content-Type: html] success should set the correct response data 1`] = `
+Object {
+  "payload": Object {
+    "addresses": Object {
+      "other-addresses": Array [],
+      "primary-addresses": Object {
+        "clubcard": Object {
+          "addressLines": Array [
+            Object {
+              "label": "Lever building",
+              "lineNumber": 1,
+            },
+          ],
+          "label": "HOME",
+          "postTown": "London",
+          "postcode": "EC1R 5AR",
+          "tags": Array [
+            "primaryLoyalty",
+          ],
+          "telephoneNumbers": Array [
+            Object {
+              "label": "Day",
+              "value": "07429049112",
+            },
+          ],
+        },
+        "grocery": Object {
+          "addressLines": Array [
+            Object {
+              "label": "Lever building",
+              "lineNumber": 1,
+            },
+          ],
+          "label": "HOME",
+          "postTown": "London",
+          "postcode": "EC1R 5AR",
+          "tags": Array [
+            "primaryDelivery",
+          ],
+          "telephoneNumbers": Array [
+            Object {
+              "label": "Day",
+              "value": "07429049112",
+            },
+          ],
+        },
+      },
+    },
+    "banner": Object {
+      "bannerType": "",
+      "description": "",
+      "title": "",
+    },
+    "breadcrumb": Array [
+      Object {
+        "href": "/account/mock-lang/manage",
+        "text": "pages.account.title",
+      },
+      Object {
+        "current": true,
+        "text": "pages.landing.title",
+      },
+    ],
+  },
+}
+`;
+
+exports[`[Route: /] [GET] [Content-Type: json] success should set the correct response data 1`] = `
+Array [
+  Array [
+    Object {
+      "payload": Object {
+        "addresses": Object {
+          "other-addresses": Array [],
+          "primary-addresses": Object {
+            "clubcard": Object {
+              "addressLines": Array [
+                Object {
+                  "label": "Lever building",
+                  "lineNumber": 1,
+                },
+              ],
+              "label": "HOME",
+              "postTown": "London",
+              "postcode": "EC1R 5AR",
+              "tags": Array [
+                "primaryLoyalty",
+              ],
+              "telephoneNumbers": Array [
+                Object {
+                  "label": "Day",
+                  "value": "07429049112",
+                },
+              ],
+            },
+            "grocery": Object {
+              "addressLines": Array [
+                Object {
+                  "label": "Lever building",
+                  "lineNumber": 1,
+                },
+              ],
+              "label": "HOME",
+              "postTown": "London",
+              "postcode": "EC1R 5AR",
+              "tags": Array [
+                "primaryDelivery",
+              ],
+              "telephoneNumbers": Array [
+                Object {
+                  "label": "Day",
+                  "value": "07429049112",
+                },
+              ],
+            },
+          },
+        },
+        "banner": Object {
+          "bannerType": "",
+          "description": "",
+          "title": "",
+        },
+        "breadcrumb": Array [
+          Object {
+            "href": "/account/mock-lang/manage",
+            "text": "pages.account.title",
+          },
+          Object {
+            "current": true,
+            "text": "pages.landing.title",
+          },
+        ],
+      },
+    },
+  ],
+]
+`;

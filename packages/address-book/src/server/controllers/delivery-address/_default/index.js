@@ -1,10 +1,10 @@
 import { getServiceToken } from '../../../services/identity';
-import contactServiceClientFactory, {
+import getContactClient, {
   extractPhoneNumber,
   processedContactData,
   mapPhoneNumbersToFormValues,
 } from '../../../services/contact';
-import addressServiceClientFactory, {
+import getAddressClient, {
   extractAddressLines,
   mapAddressToFormValues,
 } from '../../../services/address';
@@ -12,8 +12,8 @@ import addressServiceClientFactory, {
 export async function getAddress({ accessToken, addressId, context, tracer }) {
   const serviceToken = await getServiceToken();
 
-  const contactService = contactServiceClientFactory(accessToken);
-  const addressService = addressServiceClientFactory(serviceToken);
+  const contactService = getContactClient(accessToken);
+  const addressService = getAddressClient(serviceToken);
 
   const contactAddress = await contactService.getSingleAddress(addressId, { tracer, context });
 
@@ -40,14 +40,14 @@ export async function getAddress({ accessToken, addressId, context, tracer }) {
 }
 
 export async function createAddress({ accessToken, data, context, tracer }) {
-  const contactService = contactServiceClientFactory(accessToken);
+  const contactService = getContactClient(accessToken);
 
   const serviceToken = await getServiceToken();
   let addressId = data.addressId;
   const postcode = data.postcode;
 
   if (!addressId) {
-    const addressService = addressServiceClientFactory(serviceToken);
+    const addressService = getAddressClient(serviceToken);
     const address = await addressService.createAddress({
       postcode,
       address: {
@@ -68,8 +68,8 @@ export async function createAddress({ accessToken, data, context, tracer }) {
 
 export async function updateAddress({ data, addressIndex, accessToken, context, tracer }) {
   const serviceToken = await getServiceToken({ context, tracer });
-  const contactService = contactServiceClientFactory(accessToken);
-  const addressService = addressServiceClientFactory(serviceToken);
+  const contactService = getContactClient(accessToken);
+  const addressService = getAddressClient(serviceToken);
   const contactAddress = await contactService.getSingleAddress(addressIndex, { tracer, context });
   const { label, addressUuid, tags, modifiedPhoneNumbers } = processedContactData(
     data,

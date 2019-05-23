@@ -1,10 +1,10 @@
 // Default controller
 import { getServiceToken } from '../../../services/identity';
-import contactServiceClientFactory, {
+import getContactClient, {
   mapPhoneNumbersToFormValues,
   processedContactData,
 } from '../../../services/contact';
-import addressServiceClientFactory, {
+import getAddressClient, {
   mapAddressToFormValues,
   extractAddressLines,
 } from '../../../services/address';
@@ -12,8 +12,8 @@ import addressServiceClientFactory, {
 export async function getAddress({ accessToken, addressId, context, tracer }) {
   const serviceToken = await getServiceToken();
 
-  const contactService = contactServiceClientFactory(accessToken);
-  const addressService = addressServiceClientFactory(serviceToken);
+  const contactService = getContactClient(accessToken);
+  const addressService = getAddressClient(serviceToken);
 
   const contactAddress = await contactService.getSingleAddress(addressId, { tracer, context });
 
@@ -40,8 +40,8 @@ export async function getAddress({ accessToken, addressId, context, tracer }) {
 
 export async function updateAddress({ data, addressIndex, accessToken, context, tracer }) {
   const serviceToken = await getServiceToken({ context, tracer });
-  const contactService = contactServiceClientFactory(accessToken);
-  const addressService = addressServiceClientFactory(serviceToken);
+  const contactService = getContactClient(accessToken);
+  const addressService = getAddressClient(serviceToken);
   const contactAddress = await contactService.getSingleAddress(addressIndex, { tracer, context });
   const { label, addressUuid, tags, modifiedPhoneNumbers } = processedContactData(
     data,

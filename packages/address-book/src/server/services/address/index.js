@@ -1,5 +1,9 @@
 import AddressService from '@web-foundations/service-address';
 import config from 'config';
+import log from '../../logger';
+
+const onAddressRequestStart = log.makeOnRequestEventHandler('Address Service Request');
+const onAddressRequestEnd = log.makeOnRequestEventHandler('Address Service Response');
 
 export function extractAddressLines(data) {
   const addressLine = 'address-line';
@@ -32,7 +36,7 @@ export function mapAddressToFormValues(address) {
   return result;
 }
 
-export default function addressServiceClientFactory(accessToken) {
+export default function getAddressClient(accessToken) {
   const address = new AddressService({
     accessToken,
     env: {
@@ -45,6 +49,9 @@ export default function addressServiceClientFactory(accessToken) {
     fullyQualifiedClientId: config.get('services.fullyQualifiedClientId'),
     akamaiAuthToken: config.get('services.akamaiAuthToken'),
   });
+
+  address.on('requestStart', onAddressRequestStart);
+  address.on('requestEnd', onAddressRequestEnd);
 
   return address;
 }

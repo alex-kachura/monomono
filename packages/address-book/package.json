@@ -167,6 +167,9 @@
   ],
   "snyk": true,
   "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/.*/__mocks__"
+    ],
     "setupFiles": [
       "./test/jest.config.js"
     ],

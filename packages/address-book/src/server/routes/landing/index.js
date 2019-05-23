@@ -115,9 +115,9 @@ export function formatAddressesForUse(addresses) {
   addresses.forEach((addr) => {
     const addressTags = addr.tags || [];
 
-    if (addressTags.indexOf('primaryLoyalty') > -1) {
+    if (addressTags.includes('primaryLoyalty')) {
       formattedAddresses['primary-addresses'].clubcard = addr;
-    } else if (addressTags.indexOf('primaryDelivery') > -1) {
+    } else if (addressTags.includes('primaryDelivery')) {
       formattedAddresses['primary-addresses'].grocery = addr;
     } else {
       formattedAddresses['other-addresses'].push(addr);

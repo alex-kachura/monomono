@@ -1,24 +1,22 @@
-import contactFactory from '../../utils/contact-service';
-import addressFactory from '../../utils/address-service';
+import getContactClient from '../../services/contact';
+import getAddressClient from '../../services/address';
 import { getServiceToken } from '../../services/identity';
 import log from '../../logger';
 
 export async function getAddresses(accessToken, { context = {} } = {}) {
-  const contact = contactFactory(accessToken);
+  const contact = getContactClient(accessToken);
 
   const serviceToken = await getServiceToken();
-  const address = addressFactory(serviceToken);
+  const address = getAddressClient(serviceToken);
 
-  const res = await contact.getFullAddresses(address, {
+  return contact.getFullAddresses(address, {
     tracer: context.sessionId,
     context,
   });
-
-  return res;
 }
 
 export async function deleteAddress(accessToken, contactAddressId, { tracer, context = {} } = {}) {
-  const contact = contactFactory(accessToken);
+  const contact = getContactClient(accessToken);
 
   try {
     await contact.removeAddress(contactAddressId, {

@@ -1,7 +1,6 @@
 import express from 'express';
 import config from 'config';
 
-// eslint-disable-next-line
 Reflect.defineProperty(express.request, 'getClaims', {
   value: function getClaims() {
     const accessTokenCookie = config.cookie.userAccessToken;
