@@ -1,7 +1,7 @@
 aurora:
   domainName: aurora.tescocloud.com
 app:
-  name: address book
+  name: address-book
   description: address book
   namespaceGroup: oneaccount
   version: 0.0.1
