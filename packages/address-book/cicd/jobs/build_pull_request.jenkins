@@ -1,6 +1,6 @@
 pipelineJob('address-book_build_pull_request') {
 	definition {
-		displayName('[address book] Build pull request')
+		displayName('[address-book] Build pull request')
 		logRotator {
 			numToKeep(10)
 			daysToKeep(30)

@@ -2,7 +2,7 @@
 
 pipelineJob('address-book_nonprod_deploy') {
 	definition {
-		displayName('[address book] Deploy to nonprod')
+		displayName('[address-book] Deploy to nonprod')
 		logRotator {
 			numToKeep(10)
 			daysToKeep(30)

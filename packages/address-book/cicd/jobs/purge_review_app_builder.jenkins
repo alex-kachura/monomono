@@ -2,7 +2,7 @@
 
 pipelineJob('address-book_purge_review_app') {
 	definition {
-		displayName('[address book] Purge Review App')
+		displayName('[address-book] Purge Review App')
 		logRotator {
 			numToKeep(10)
 			daysToKeep(30)

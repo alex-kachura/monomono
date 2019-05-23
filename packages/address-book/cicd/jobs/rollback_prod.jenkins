@@ -3,7 +3,7 @@
 
 pipelineJob('address-book_prod_rollback') {
 	definition {
-		displayName('[address book] Rollback prod to previous')
+		displayName('[address-book] Rollback prod to previous')
 		logRotator {
 			numToKeep(10)
 			daysToKeep(30)
