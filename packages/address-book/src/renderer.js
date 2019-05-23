@@ -34,11 +34,11 @@ const globalStyles = {
   normalize: true,
 };
 
-export const renderServer = (inititalData, routes, context, sheet, url) => {
+export const renderServer = (initialData, routes, context, sheet, url) => {
   const {
     payload: { breadcrumb, ...payload },
     ...appConfig
-  } = inititalData;
+  } = initialData;
 
   return ReactDOMServer.renderToString(
     sheet.collectStyles(
@@ -62,11 +62,11 @@ export const renderServer = (inititalData, routes, context, sheet, url) => {
   );
 };
 
-export const renderClient = (inititalData, routes) => {
+export const renderClient = (initialData, routes) => {
   const {
     payload: { breadcrumb, ...payload },
     ...appConfig
-  } = inititalData;
+  } = initialData;
 
   ReactDOM.hydrate(
     <Root

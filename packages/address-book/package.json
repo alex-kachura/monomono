@@ -51,7 +51,7 @@
     "@oneaccount/auth-utils": "0.1.0",
     "@oneaccount/form-validation": "0.5.0",
     "@oneaccount/node-logger-whitelists": "1.3.3",
-    "@oneaccount/react-foundations": "0.17.0",
+    "@oneaccount/react-foundations": "0.18.0",
     "@web-foundations/express-identity-validate": "^1.0.0",
     "@web-foundations/express-locale-middleware": "^1.0.4",
     "@web-foundations/express-traceid": "^0.2.0",

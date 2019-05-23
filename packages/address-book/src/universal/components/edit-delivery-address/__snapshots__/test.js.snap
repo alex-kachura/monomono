@@ -8,7 +8,7 @@ exports[`[Page: EditDeliveryAddressPage] [State: Default] should render correctl
     pages.delivery-address.edit.title
   </h1>
   <div
-    class="sc-bdVaJa hDWEwk"
+    class="sc-bZQynM gBCjJB"
   >
     <form
       autocomplete="off"

@@ -1,12 +1,26 @@
 import config from 'config';
-import log, { logOutcome } from '../../logger';
+import { logOutcome } from '../../logger';
 import { AddressServiceError } from '@web-foundations/service-address';
 import { ContactServiceError } from '@web-foundations/service-contact';
 import controllerFactory from '../../controllers';
 import { getPhraseFactory } from '../../utils/i18n';
 import AJV from 'ajv';
 import ajvErrors from 'ajv-errors';
-import { convertAJVErrorsToFormik, sanatizeValues } from '@oneaccount/react-foundations';
+import { convertAJVErrorsToFormik, sanitizeValues } from '@oneaccount/react-foundations';
+import {
+  handleAddressServiceError,
+  handleContactServiceError,
+  handleError,
+  handleValidationErrors,
+} from '../../utils/error-handlers';
+import { handleResponse } from '../../utils/response-handlers';
+
+const ajv = ajvErrors(
+  new AJV({ allErrors: true, jsonPointers: true, $data: true, coerceTypes: true }),
+  {
+    allErrors: true,
+  },
+);
 
 function getBreadcrumb(lang, getLocalePhrase) {
   return [
@@ -33,10 +47,11 @@ export async function getEditDeliveryAddressPage(req, res, next) {
   const { accessToken } = req.getClaims();
   const deliveryAddressController = controllerFactory('deliveryAddress.default', req.region);
   let address = {};
-  let outcome = 'successful';
+  const name = 'delivery-address:edit:get';
+  const outcome = 'successful';
 
-  if (id) {
-    // not-found
+  if (!id) {
+    return handleError({ name, error: new Error('CONTACT_ADDRESS_ID_REQUIRED'), req, res, next });
   }
 
   try {
@@ -48,25 +63,12 @@ export async function getEditDeliveryAddressPage(req, res, next) {
     });
   } catch (error) {
     if (error instanceof AddressServiceError) {
-      if (AddressServiceError.Codes.ADDRESS_NOT_FOUND) {
-        // Should never happen??
-      }
+      return handleAddressServiceError({ error, name, req, res, next });
     } else if (error instanceof ContactServiceError) {
-      if (error.message === ContactServiceError.Codes.ADDRESS_NOT_FOUND) {
-        log.warn(
-          'contact-service:get-single-address:ADDRESS_NOT_FOUND - Address not found',
-          error,
-          req,
-        );
-        outcome = 'error';
-      }
-    } else if (error.message === 'NOT_DELIVERY_ADDRESS') {
-      log.warn('delivery-address:edit:get - Address is not a delivery address', error, req);
-      outcome = 'error';
-    } else {
-      outcome = 'error';
-      log.error('delivery-address:edit:get - Unexpected error', error, req);
+      return handleContactServiceError({ error, name, req, res, next });
     }
+
+    return handleError({ name, error, req, res, next });
   }
 
   const payload = {
@@ -80,20 +82,14 @@ export async function getEditDeliveryAddressPage(req, res, next) {
     schema,
   };
 
-  logOutcome('delivery-address:edit:get', outcome, req);
+  logOutcome(name, outcome, req);
 
-  // TODO: REDIRECT OR SHOW NOT FOUND ERROR
-
-  return res.format({
-    html: () => {
-      res.data = {
-        ...res.data,
-        payload,
-      };
-
-      next();
+  return handleResponse({
+    res,
+    data: {
+      payload,
     },
-    json: () => res.send({ payload }),
+    next,
   });
 }
 
@@ -104,140 +100,58 @@ export async function postEditDeliveryAddressPage(req, res, next) {
   const { accessToken } = req.getClaims();
   const deliveryAddressController = controllerFactory('deliveryAddress.default', req.region);
 
-  // Call the controller method based on the region
-  // const data = editExample(); // eslint-disable-line
   const data = req.body;
-  let errors = {};
-  let banner = {};
-  let outcome = 'successfull';
-
-  const ajv = ajvErrors(
-    new AJV({ allErrors: true, jsonPointers: true, $data: true, coerceTypes: true }),
-    {
-      allErrors: true,
-    },
-  );
+  const outcome = 'successful';
+  const name = 'delivery-address:edit:post';
 
   // TODO: Cache schema
   const compiled = ajv.compile(schema);
-  const isValid = compiled(sanatizeValues(data));
-
-  if (!isValid) {
-    errors = convertAJVErrorsToFormik(compiled.errors, schema);
-    outcome = 'validations-error';
-  } else {
-    try {
-      await deliveryAddressController.updateAddress({
-        accessToken,
-        addressIndex: id,
-        data,
-        context: req,
-        tracer: req.sessionId,
-      });
-    } catch (error) {
-      if (error instanceof AddressServiceError) {
-        switch (error.message) {
-          case AddressServiceError.Codes.INVALID_ADDRESS:
-            error.violations.forEach(({ lineNumber }) => {
-              errors[
-                `address-line${lineNumber}`
-              ] = `address.fields.address-line${lineNumber}.error`;
-              log.warn(
-                `address-service:create-address:INVALID_ADDRESS - Invalid address line ${lineNumber} entered`,
-                error,
-                req,
-              );
-            });
-            outcome = 'validation-errors';
-            break;
-          case AddressServiceError.Codes.POSTCODE_NOT_FOUND:
-            errors.postcode = 'address.fields.postcode.error';
-            log.warn(
-              'address-service:create-address:POSTCODE_NOT_FOUND - Post code not found',
-              error,
-              req,
-            );
-            outcome = 'validation-errors';
-            break;
-          default:
-            banner = {
-              type: 'error',
-              title: 'pages.delivery-address.error.service.address.unexpected.title',
-              text: 'pages.delivery-address.error.service.address.unexpected.text',
-            };
-
-            outcome = 'error';
-
-            log.error(
-              'address-service:create-address - Unexpected error creating address',
-              error,
-              req,
-            );
-        }
-      } else if (error instanceof ContactServiceError) {
-        if (error.message === ContactServiceError.Codes.ADDRESS_NOT_FOUND) {
-          banner = {
-            type: 'error',
-            title: 'pages.delivery-address.error.service.contact.unexpected.title',
-            text: 'pages.delivery-address.error.service.contact.unexpected.text',
-          };
-
-          // TODO: What to do in this situation, since it shouldn't happen but it could happen
-
-          outcome = 'error';
-          log.warn('contact-service:get-single-address - Address Not Found', error, req);
-        } else {
-          banner = {
-            type: 'error',
-            title: 'pages.delivery-address.error.service.contact.unexpected.title',
-            text: 'pages.delivery-address.error.service.contact.unexpected.text',
-          };
-
-          outcome = 'error';
-          log.error('contact-service:update-address - Unexpected error adding address', error, req);
-        }
-      } else {
-        banner = {
-          type: 'error',
-          title: 'pages.delivery-address.error.unexpected.title',
-          text: 'pages.delivery-address.error.unexpected.text',
-        };
-
-        outcome = 'error';
-        log.error('delivery-address:edit - Unexpected error', error, req);
-      }
-    }
-  }
+  const isValid = compiled(sanitizeValues(data));
 
   const payload = {
     breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
-    banner,
     values: data,
-    errors,
+    errors: {},
+    banner: {},
     fields,
     schema,
   };
 
-  logOutcome('delivery-address:edit:post', outcome, req);
+  if (!isValid) {
+    const errors = convertAJVErrorsToFormik(compiled.errors, schema);
 
-  if (outcome === 'successful') {
-    return res.format({
-      html: () => res.redirect(`/account/address-book/${req.locale.type}?action=updated`),
-      json: () => {
-        res.send({ payload });
-      },
+    return handleValidationErrors({
+      name,
+      errors,
+      payload,
+      req,
+      res,
+      next,
     });
   }
 
-  return res.format({
-    html: () => {
-      res.data = {
-        ...res.data,
-        payload,
-      };
+  try {
+    await deliveryAddressController.updateAddress({
+      accessToken,
+      addressIndex: id,
+      data,
+      context: req,
+      tracer: req.sessionId,
+    });
+  } catch (error) {
+    if (error instanceof AddressServiceError) {
+      return handleAddressServiceError({ name, payload, error, req, res, next });
+    } else if (error instanceof ContactServiceError) {
+      return handleContactServiceError({ name, payload, error, req, res, next });
+    }
 
-      next();
-    },
+    return handleError(error);
+  }
+
+  logOutcome(name, outcome, req);
+
+  return res.format({
+    html: () => res.redirect(`/account/address-book/${req.locale.type}?action=updated`),
     json: () => {
       res.send({ payload });
     },

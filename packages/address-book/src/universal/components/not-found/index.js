@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from '../common/styled-components';
 import DocumentTitle from 'react-document-title';
 import { PageTitle, BodyText } from '@beans/typography';
@@ -24,9 +23,5 @@ export function NotFoundPage() {
     </DocumentTitle>
   );
 }
-
-NotFoundPage.contextTypes = {
-  theme: PropTypes.object,
-};
 
 export default NotFoundPage;

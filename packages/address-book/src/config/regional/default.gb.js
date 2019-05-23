@@ -272,18 +272,22 @@ module.exports = {
           },
           postcode: {
             type: 'string',
+            maxLength: 9,
             pattern: '^\\s*[A-Za-z]{1,2}[0-9][0-9A-Za-z]?\\s?[0-9][A-Za-z]{2}\\s*$',
             errorMessage: 'address.fields.postcode.error',
           },
           'address-line1': {
+            maxLength: 30,
             type: 'string',
             errorMessage: 'address.fields.address-line1.error',
           },
           'address-line2': {
+            maxLength: 30,
             type: 'string',
             errorMessage: 'address.fields.address-line2.error',
           },
           'address-line3': {
+            maxLength: 30,
             type: 'string',
             errorMessage: 'address.fields.address-line3.error',
           },
@@ -413,19 +417,23 @@ module.exports = {
           },
           postcode: {
             type: 'string',
+            maxLength: 9,
             pattern: '^\\s*[A-Za-z]{1,2}[0-9][0-9A-Za-z]?\\s?[0-9][A-Za-z]{2}\\s*$',
             errorMessage: 'address.fields.postcode.error',
           },
           'address-line1': {
             type: 'string',
+            maxLength: 30,
             errorMessage: 'address.fields.address-line1.error',
           },
           'address-line2': {
             type: 'string',
+            maxLength: 30,
             errorMessage: 'address.fields.address-line2.error',
           },
           'address-line3': {
             type: 'string',
+            maxLength: 30,
             errorMessage: 'address.fields.address-line3.error',
           },
           town: {

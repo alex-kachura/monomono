@@ -45,6 +45,9 @@ banners:
     update:
       title: "Sorry, we weren't able to save your details."
       copy-1: 'Please save again.'
+    unexpected:
+      title: 'Unexpected Error'
+      text: 'An unexpected error occurred, Please try again'
 
 # C
 contact-us: 'Contact us'
@@ -138,19 +141,6 @@ pages:
     edit:
       title: 'Edit Delivery Address'
       submit-button: 'Save changes'
-    error:
-      unexpected:
-        title: 'Unexpected Error'
-        text: 'An unexpected error occurred, Please try again'
-      service:
-        address:
-          unexpected:
-            title: 'Unexpected Error'
-            text: 'An unexpected error occurred, Please try again'
-        contact:
-          unexpected:
-            title: 'Unexpected Error'
-            text: 'An unexpected error occurred, Please try again'
     fields:
       day-number:
         label: 'Daytime phone number'

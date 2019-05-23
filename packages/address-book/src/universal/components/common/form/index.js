@@ -1,58 +1,20 @@
-import React, { memo, useState, useMemo } from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import Address from './fields/address';
 import Text from './fields/text';
 import Tel from './fields/tel';
+import Panel from '../panel';
+import Banner from '../banner';
+import { PageTitleStyled } from '../styled-components';
+import { Formik, useAppConfig } from '@oneaccount/react-foundations';
 import { connect } from 'formik';
-import { useAppConfig } from '@oneaccount/react-foundations';
 import Button from '@beans/button';
+import { useForm, useFields } from './helpers';
 
-function Form({ fields, csrf, formik, native, onError, submitText = 'Submit' }) {
-  const { getLocalePhrase } = useAppConfig();
-  const { formRef, handleSubmit, handleNativeSubmit, isSubmitting } = formik;
-  const [autoFocus] = useState(() => {
-    const { errors } = formik;
-
-    let focus = '';
-
-    for (let i = 0; i < fields.length; i++) {
-      const name = fields[i].name;
-
-      if (fields[i].hidden) continue;
-      if (!focus) {
-        focus = name;
-      }
-
-      if (errors[name]) {
-        focus = name;
-        break;
-      }
-    }
-
-    return focus;
-  });
-
-  const augmentedFields = useMemo(
-    () =>
-      fields.map((field) => ({
-        ...field,
-        onError,
-      })),
-    [onError, fields],
-  );
-
-  const addressFields = augmentedFields.reduce((result, field) => {
-    if (field.xtype === 'address') {
-      result.push({
-        ...field,
-        autoFocus: autoFocus === field.name,
-        label: getLocalePhrase(field.label),
-        placeholder: getLocalePhrase(field.placeholder),
-      });
-    }
-
-    return result;
-  }, []);
+const Form = memo(({ fields, native, onError, formik, submitText = 'Submit' }) => {
+  const { formRef, handleSubmit, handleNativeSubmit, isSubmitting, errors } = formik;
+  const { getLocalePhrase, csrf } = useAppConfig();
+  const { addressFields, augmentedFields } = useFields(fields, errors, onError);
 
   const content = [];
 
@@ -66,7 +28,6 @@ function Form({ fields, csrf, formik, native, onError, submitText = 'Submit' }) 
         content.push(
           <Tel
             {...field}
-            autoFocus={autoFocus === field.name}
             key={field.name}
             label={getLocalePhrase(field.label)}
             placeholder={getLocalePhrase(field.placeholder)}
@@ -76,7 +37,6 @@ function Form({ fields, csrf, formik, native, onError, submitText = 'Submit' }) 
         content.push(
           <Text
             {...field}
-            autoFocus={autoFocus === field.name}
             key={field.name}
             label={getLocalePhrase(field.label)}
             placeholder={getLocalePhrase(field.placeholder)}
@@ -101,6 +61,29 @@ function Form({ fields, csrf, formik, native, onError, submitText = 'Submit' }) 
       </Button>
     </form>
   );
+});
+
+const ConnectedForm = connect(Form);
+
+function FormWrapper({ title, initialValues, initialErrors, schema, url, onSubmit, ...rest }) {
+  const { handleSubmit, banner, handleError } = useForm(url, onSubmit);
+
+  return (
+    <React.Fragment>
+      <PageTitleStyled margin>{title}</PageTitleStyled>
+      <Banner {...banner} />
+      <Panel>
+        <Formik
+          initialValues={initialValues}
+          initialErrors={initialErrors}
+          schema={schema}
+          onSubmit={handleSubmit}
+        >
+          <ConnectedForm onError={handleError} {...rest} />
+        </Formik>
+      </Panel>
+    </React.Fragment>
+  );
 }
 
 Form.propTypes = {
@@ -110,15 +93,19 @@ Form.propTypes = {
       type: PropTypes.string.isRequired,
     }),
   ),
-  csrf: PropTypes.string.isRequired,
-  formik: PropTypes.shape({
-    formRef: PropTypes.object.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
-    handleNativeSubmit: PropTypes.func.isRequired,
-  }),
+  formik: PropTypes.object,
   onError: PropTypes.func,
   native: PropTypes.bool,
   submitText: PropTypes.string,
 };
 
-export default connect(memo(Form));
+FormWrapper.propTypes = {
+  title: PropTypes.string.isRequired,
+  initialValues: PropTypes.object.isRequired,
+  initialErrors: PropTypes.object,
+  schema: PropTypes.object.isRequired,
+  url: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};
+
+export default memo(FormWrapper);

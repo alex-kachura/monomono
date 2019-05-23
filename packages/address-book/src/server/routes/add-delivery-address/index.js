@@ -2,11 +2,24 @@ import config from 'config';
 import { AddressServiceError } from '@web-foundations/service-address';
 import { ContactServiceError } from '@web-foundations/service-contact';
 import controllerFactory from '../../controllers';
-import log, { logOutcome } from '../../logger';
+import { logOutcome } from '../../logger';
 import { getPhraseFactory } from '../../utils/i18n';
 import AJV from 'ajv';
 import ajvErrors from 'ajv-errors';
-import { convertAJVErrorsToFormik, sanatizeValues } from '@oneaccount/react-foundations';
+import { convertAJVErrorsToFormik, sanitizeValues } from '@oneaccount/react-foundations';
+import {
+  handleValidationErrors,
+  handleAddressServiceError,
+  handleContactServiceError,
+  handleError,
+} from '../../utils/error-handlers';
+
+const ajv = ajvErrors(
+  new AJV({ allErrors: true, jsonPointers: true, $data: true, coerceTypes: true }),
+  {
+    allErrors: true,
+  },
+);
 
 function getBreadcrumb(lang, getLocalePhrase) {
   return [
@@ -32,11 +45,7 @@ export function getAddDeliveryAddressPage(req, res, next) {
 
   const payload = {
     breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
-    banner: {
-      type: '',
-      title: '',
-      errorType: '',
-    },
+    banner: {},
     values: {
       postcode: '',
       'address-line1': '',
@@ -76,124 +85,51 @@ export async function postAddDeliveryAddressPage(req, res, next) {
   const deliveryAddressController = controllerFactory('deliveryAddress.default', req.region);
 
   const data = req.body;
-  let errors = {};
-  let banner = {};
-  let outcome = 'successfull';
-
-  const ajv = ajvErrors(
-    new AJV({ allErrors: true, jsonPointers: true, $data: true, coerceTypes: true }),
-    {
-      allErrors: true,
-    },
-  );
-
-  // TODO: Cache schema
-  const compiled = ajv.compile(schema);
-
-  const isValid = compiled(sanatizeValues(data));
-
-  if (!isValid) {
-    errors = convertAJVErrorsToFormik(compiled.errors, schema);
-    outcome = 'validation-errors';
-  } else {
-    try {
-      await deliveryAddressController.createAddress({
-        accessToken,
-        data,
-        context: req,
-        tracer: req.sessionId,
-      });
-    } catch (error) {
-      if (error instanceof AddressServiceError) {
-        switch (error.message) {
-          case AddressServiceError.Codes.INVALID_ADDRESS:
-            error.violations.forEach(({ lineNumber }) => {
-              errors[
-                `address-line${lineNumber}`
-              ] = `address.fields.address-line${lineNumber}.error`;
-              log.warn(
-                `address-service:create-address:INVALID_ADDRESS - Invalid address line ${lineNumber} entered`,
-                error,
-                req,
-              );
-            });
-            outcome = 'validation-errors';
-            break;
-          case AddressServiceError.Codes.POSTCODE_NOT_FOUND:
-            errors.postcode = 'address.fields.postcode.error';
-            log.warn(
-              'address-service:create-address:POSTCODE_NOT_FOUND - Post code not found',
-              error,
-              req,
-            );
-            outcome = 'validation-errors';
-            break;
-          default:
-            banner = {
-              type: 'error',
-              title: 'pages.delivery-address.error.service.address.unexpected.title',
-              text: 'pages.delivery-address.error.service.address.unexpected.text',
-            };
-
-            outcome = 'error';
-
-            log.error(
-              'address-service:create-address - Unexpected error creating address',
-              error,
-              req,
-            );
-        }
-      } else if (error instanceof ContactServiceError) {
-        banner = {
-          type: 'error',
-          title: 'pages.delivery-address.error.service.contact.unexpected.title',
-          text: 'pages.delivery-address.error.service.contact.unexpected.text',
-        };
-
-        outcome = 'error';
-        log.error('contact-service:add-address - Unexpected error adding address', error, req);
-      } else {
-        banner = {
-          type: 'error',
-          title: 'pages.delivery-address.error.unexpected.title',
-          text: 'pages.delivery-address.error.unexpected.text',
-        };
-
-        outcome = 'error';
-        log.error('delivery-address:add - Unexpected error', error, req);
-      }
-    }
-  }
+  let outcome = 'successful';
+  const name = 'delivery-address:add:post';
 
   const payload = {
     breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
-    banner,
+    banner: {},
     values: data,
-    errors,
+    errors: {},
     fields,
     schema,
   };
 
-  logOutcome('delivery-address:add:post', outcome, req);
+  // TODO: Cache schema
+  const compiled = ajv.compile(schema);
 
-  if (outcome === 'successful') {
-    return res.format({
-      html: () => res.redirect(`/account/address-book/${req.locale.type}?action=added`),
-      json: () => {
-        res.send({ payload });
-      },
+  const isValid = compiled(sanitizeValues(data));
+
+  if (!isValid) {
+    const errors = convertAJVErrorsToFormik(compiled.errors, schema);
+
+    outcome = 'validation-errors';
+
+    return handleValidationErrors({ name, errors, payload, req, res, next });
+  }
+  try {
+    await deliveryAddressController.createAddress({
+      accessToken,
+      data,
+      context: req,
+      tracer: req.sessionId,
     });
+  } catch (error) {
+    if (error instanceof AddressServiceError) {
+      return handleAddressServiceError({ name, error, payload, req, next });
+    } else if (error instanceof ContactServiceError) {
+      return handleContactServiceError({ name, error, payload, req, next });
+    }
+
+    return handleError({ name, error, payload, req, res, next });
   }
 
-  return res.format({
-    html: () => {
-      res.data = {
-        ...res.data,
-        payload,
-      };
+  logOutcome(name, outcome, req);
 
-      next();
-    },
+  return res.format({
+    html: () => res.redirect(`/account/address-book/${req.lang}?action=added`),
     json: () => {
       res.send({ payload });
     },
