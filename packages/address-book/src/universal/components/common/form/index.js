@@ -76,7 +76,7 @@ function FormWrapper({ title, initialValues, initialErrors, schema, url, onSubmi
         <Formik
           initialValues={initialValues}
           initialErrors={initialErrors}
-          schema={schema}
+          validationJSONSchema={schema}
           onSubmit={handleSubmit}
         >
           <ConnectedForm onError={handleError} {...rest} />
