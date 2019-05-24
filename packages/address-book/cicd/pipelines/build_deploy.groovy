@@ -155,6 +155,7 @@ def deployToEnvironment(zone, branch, jobName, commitSha, timestamp) {
     " --kube-context eu-west-1${zone}-nonprod" +
     " --namespace oneaccount-ppe" +
     " --install" +
+    " --force" +
     " --tls" +
     " --tls-cert /tiller/tls.crt" +
     " --tls-key /tiller/tls.key" +
