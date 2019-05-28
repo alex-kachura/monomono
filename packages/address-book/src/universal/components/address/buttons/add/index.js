@@ -23,7 +23,12 @@ export default function AddAddress({ rootPath }) {
     <AddAddressLink
       buttonVariant="secondary"
       href={addAddressLink}
-      icon={{ graphic: 'add' }}
+      icon={{
+        graphic: 'add',
+        position: {
+          global: 'left',
+        },
+      }}
       variant="iconButton"
       altLink={AddBtnAltLink}
     >

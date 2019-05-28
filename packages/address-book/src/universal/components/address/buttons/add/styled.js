@@ -21,7 +21,7 @@ export const AddAddressLink = styled(Link)`
     a {
       justify-content: flex-start;
     }
-    
+
     .beans-link__text {
       margin-left: 12px!important;
     }
@@ -45,10 +45,10 @@ export const LinkSubHeading = styled(SubHeading)`
 export const AddLinkInner = styled.div`
   & > span {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 
     ${media.belowTablet`
-      flex-direction: row-reverse;
+      flex-direction: row;
     `}
   }
 `;

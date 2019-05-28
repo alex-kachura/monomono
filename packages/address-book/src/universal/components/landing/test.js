@@ -3,10 +3,15 @@ import { render } from 'react-testing-library';
 import { renderProviders } from '@oneaccount/react-foundations/lib/test-utils';
 import { BrowserRouter } from 'react-router-dom';
 import { DefaultThemeProvider } from '@beans/theme';
-import { LandingPage } from './';
+import LandingPage from './';
+import { mockData } from './test-data';
 
-describe.skip('[Component: LandingPage]', () => {
+describe('[Component: LandingPage]', () => {
   let component;
+  const mockLocation = {
+    pathname: 'mock-path',
+    search: 'mock-search',
+  };
 
   beforeEach(() => {
     const providers = renderProviders({
@@ -14,10 +19,18 @@ describe.skip('[Component: LandingPage]', () => {
         getLocalePhrase: (key) => key,
         rootPath: '/mock/math',
       },
+      initialPageData: {
+        addresses: mockData,
+        banner: {
+          bannerType: 'error',
+          title: '',
+          description: '',
+        },
+      },
       children: (
         <DefaultThemeProvider>
           <BrowserRouter>
-            <LandingPage />
+            <LandingPage location={mockLocation} />
           </BrowserRouter>
         </DefaultThemeProvider>
       ),

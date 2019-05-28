@@ -20,6 +20,7 @@ function renderPage() {
         fields: [],
         schema: {},
         errors: {},
+        values: {},
       },
       children: (
         <DefaultThemeProvider>

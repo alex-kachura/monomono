@@ -86,7 +86,15 @@ function renderForm() {
       children: (
         <DefaultThemeProvider>
           <Formik>
-            <Form fields={fields} csrf="super-secure-token" />
+            <Form
+              initialValues={{}}
+              url={'/url'}
+              onSubmit={jest.fn()}
+              title={'pages.delivery-address.title'}
+              fields={fields}
+              csrf="super-secure-token"
+              schema={{}}
+            />
           </Formik>
         </DefaultThemeProvider>
       ),

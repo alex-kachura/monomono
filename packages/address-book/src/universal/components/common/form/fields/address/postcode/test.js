@@ -14,7 +14,7 @@ const postcodeProps = {
   handleFindAddress: jest.fn(),
 };
 
-function renderPostcode({ value = '', error = null, fetchFn }) {
+function renderPostcode({ value = '', loading = false, error = null, fetchFn }) {
   return render(
     renderProviders({
       appConfig: {
@@ -24,7 +24,7 @@ function renderPostcode({ value = '', error = null, fetchFn }) {
       children: (
         <DefaultThemeProvider>
           <Formik initialValues={{ postcode: value }} initialErrors={{ postcode: error }}>
-            <Postcode {...postcodeProps} />
+            <Postcode {...postcodeProps} loading={loading} />
           </Formik>
         </DefaultThemeProvider>
       ),
@@ -45,6 +45,17 @@ describe('[Component: Postcode]', () => {
     it('should render correctly', () => {
       const component = renderPostcode({
         value: 'EC1R 2NT',
+      });
+
+      expect(component.asFragment()).toMatchSnapshot();
+    });
+  });
+
+  describe('[State: Loading true]', () => {
+    it('should render correctly', () => {
+      const component = renderPostcode({
+        value: 'EC1R 2NT',
+        loading: true,
       });
 
       expect(component.asFragment()).toMatchSnapshot();

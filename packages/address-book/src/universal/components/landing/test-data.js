@@ -1,96 +1,104 @@
-export const TESTING_DATA = {
+export const mockData = {
   'primary-addresses': {
     clubcard: {
-      label: 'Clubcard Address',
-      addressLines: ['Lever Building', '85 Clerkenwell Road', 'Holborn'],
-      postTown: 'London',
-      postCode: 'EC1R 5AR',
+      addressIndex: 'NGC_0',
+      isPrimary: false,
+      label: 'Clubcard',
+      addressUuid: 'trn:tesco:address:address:uuid:36598ef5-8f13-4f77-abdc-f42328d0c1bf',
+      legacyAddress: null,
+      tags: ['primaryLoyalty', 'NGC'],
+      isCompleteAddress: true,
+      id: 'trn:tesco:address:address:uuid:36598ef5-8f13-4f77-abdc-f42328d0c1bf',
+      addressLines: [
+        {
+          lineNumber: 1,
+          value: '85 Clerkenwell Road',
+        },
+      ],
+      postcode: 'EC1R 5AR',
+      postTown: 'LONDON',
       telephoneNumbers: [
         {
           label: 'Day',
-          value: '123456789',
+          value: '07345234636',
+        },
+        {
+          label: 'Evening',
+          value: '07345234636',
+        },
+        {
+          label: 'Mobile',
+          value: '07345234636',
         },
       ],
     },
     grocery: {
-      label: 'Home',
-      addressLines: ['Tesco Pear Building', 'Shire Park', 'Kestrel Way'],
-      postTown: 'Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch',
-      postCode: 'AA9A 9AA',
+      addressIndex: 'GHS_11225523',
+      isPrimary: true,
+      label: 'home 3',
+      addressUuid: 'trn:tesco:address:address:uuid:36598ef5-8f13-4f77-abdc-f42328d0c1bf',
+      legacyAddress: null,
+      tags: ['primaryDelivery', 'delivery', 'GHS'],
+      isCompleteAddress: true,
+      id: 'trn:tesco:address:address:uuid:36598ef5-8f13-4f77-abdc-f42328d0c1bf',
+      addressLines: [
+        {
+          lineNumber: 1,
+          value: '85 Clerkenwell Road',
+        },
+      ],
+      postcode: 'EC1R 5AR',
+      postTown: 'LONDON',
       telephoneNumbers: [
         {
           label: 'Day',
-          value: '123456789',
+          value: '07345234636',
         },
         {
           label: 'Evening',
-          value: '123456789',
+          value: '07345234635',
         },
         {
           label: 'Mobile',
-          value: '123456789',
+          value: '07345234637',
         },
       ],
     },
   },
   'other-addresses': [
     {
-      label: "My favourite son's uni flat",
-      addressLines: ['122', 'Reservoir Road', 'Birmingham'],
-      postTown: 'Erdington',
-      postCode: 'B23 6DN',
-      telephoneNumbers: [
+      addressIndex: 'GHS_11214795',
+      isPrimary: false,
+      label: 'Luis',
+      addressUuid: 'trn:tesco:address:address:uuid:09b06963-c7c7-49ca-b3c3-3e69e32e150e',
+      legacyAddress: null,
+      tags: ['delivery', 'GHS'],
+      isCompleteAddress: true,
+      id: 'trn:tesco:address:address:uuid:09b06963-c7c7-49ca-b3c3-3e69e32e150e',
+      addressLines: [
         {
-          label: 'Day',
-          value: '123456789',
+          lineNumber: 1,
+          value: 'Flat 1',
         },
         {
-          label: 'Evening',
-          value: '123456789',
+          lineNumber: 2,
+          value: 'The Old School',
         },
         {
-          label: 'Mobile',
-          value: '123456789',
-        },
-      ],
-    },
-    {
-      label: "My other son's uni flat",
-      addressLines: ['122', 'Reservoir Road', 'Birmingham'],
-      postTown: 'Erdington',
-      postCode: 'B23 6DN',
-      telephoneNumbers: [
-        {
-          label: 'Day',
-          value: '123456789',
-        },
-        {
-          label: 'Evening',
-          value: '123456789',
-        },
-        {
-          label: 'Mobile',
-          value: '123456789',
+          lineNumber: 3,
+          value: '146 York Way',
         },
       ],
-    },
-    {
-      label: 'Home 2',
-      addressLines: ['Tesco Pear Building', 'Shire Park', 'Kestrel Way'],
-      postTown: 'Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch',
-      postCode: 'AA9A 9AA',
+      postcode: 'N1 0AE',
+      postTown: 'LONDON',
       telephoneNumbers: [
         {
           label: 'Day',
-          value: '123456789',
+          value: '07427708482',
         },
         {
           label: 'Evening',
-          value: '123456789',
-        },
-        {
-          label: 'Mobile',
-          value: '123456789',
+          value: '07427708482',
         },
       ],
     },
