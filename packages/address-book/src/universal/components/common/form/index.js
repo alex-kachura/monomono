@@ -65,8 +65,17 @@ const Form = memo(({ fields, native, onError, formik, submitText = 'Submit' }) =
 
 const ConnectedForm = connect(Form);
 
-function FormWrapper({ title, initialValues, initialErrors, schema, url, onSubmit, ...rest }) {
-  const { handleSubmit, banner, handleError } = useForm(url, onSubmit);
+function FormWrapper({
+  title,
+  initialValues,
+  initialBanner,
+  initialErrors,
+  schema,
+  url,
+  onSubmit,
+  ...rest
+}) {
+  const { handleSubmit, banner, handleError } = useForm(url, onSubmit, initialBanner);
 
   return (
     <React.Fragment>
@@ -103,6 +112,7 @@ FormWrapper.propTypes = {
   title: PropTypes.string.isRequired,
   initialValues: PropTypes.object.isRequired,
   initialErrors: PropTypes.object,
+  initialBanner: PropTypes.object,
   schema: PropTypes.object.isRequired,
   url: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,

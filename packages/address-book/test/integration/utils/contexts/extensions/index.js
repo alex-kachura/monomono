@@ -2,7 +2,6 @@
 // string litterals when specifying regions.
 export const Region = Object.freeze({
   GB: 'GB',
-  PL: 'PL',
 });
 
 // Parses an array of region country codes against the applications locales config
@@ -75,7 +74,7 @@ export const excludeFactory = (region, locales) => (exclusions) => {
 // specified in calls describe.each and it.each blocks.
 //
 // The returned function takes an array of regions to include. If the current
-// context region is found in the inlcusions array containing the region will be
+// context region is found in the inclusions array containing the region will be
 // returned otherwise an empty array is returned
 //
 // The former causes the it.each or describe.each to be executed whereas the
@@ -102,7 +101,7 @@ export const onlyFactory = (region, locales) => (inclusions) => {
 // * With an array of regions will return all specified contexts
 // * With an array containing unsupported regions, an excpetion is thrown.
 //
-// You can override regoins specified in via the REGIONS environment variable.
+// You can override regions specified in via the REGIONS environment variable.
 // This should be an comma delimited list of region country codes (e.g
 // REIGONS="GB,PL" etc)
 export const contextsFactory = (config) => (regions) => {

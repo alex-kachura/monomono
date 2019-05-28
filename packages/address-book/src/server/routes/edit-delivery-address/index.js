@@ -100,14 +100,13 @@ export async function postEditDeliveryAddressPage(req, res, next) {
   const { accessToken } = req.getClaims();
   const deliveryAddressController = controllerFactory('deliveryAddress.default', req.region);
 
-  const data = req.body;
+  const { _csrf, ...data } = req.body; // eslint-disable-line no-unused-vars
   const outcome = 'successful';
   const name = 'delivery-address:edit:post';
 
   // TODO: Cache schema
   const compiled = ajv.compile(schema);
   const isValid = compiled(sanitizeValues(data));
-
   const payload = {
     breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
     values: data,
@@ -151,7 +150,7 @@ export async function postEditDeliveryAddressPage(req, res, next) {
   logOutcome(name, outcome, req);
 
   return res.format({
-    html: () => res.redirect(`/account/address-book/${req.locale.type}?action=updated`),
+    html: () => res.redirect(`/account/address-book/${req.lang}?action=updated`),
     json: () => {
       res.send({ payload });
     },

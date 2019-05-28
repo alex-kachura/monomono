@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import { useAppConfig } from '@oneaccount/react-foundations';
 
 export function useForm(url, onSubmit, initialBanner = {}) {
-  const [banner, setBanner] = useState(initialBanner);
   const { fetch, getLocalePhrase } = useAppConfig();
+  const [banner, setBanner] = useState(() => ({
+    type: initialBanner.type,
+    text: initialBanner.text && getLocalePhrase(initialBanner.text),
+    title: initialBanner.title && getLocalePhrase(initialBanner.title),
+  }));
   const handleSubmit = useCallback(async (values, { setSubmitting, setErrors }) => {
     const { payload } = await fetch(url, {
       method: 'POST',

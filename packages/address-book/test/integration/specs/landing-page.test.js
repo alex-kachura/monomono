@@ -16,66 +16,54 @@ describe.each(contexts())('Landing Page (/)', (context) => {
   const { region, appUrl, appConfig } = context;
   const { externalApps } = appConfig[region];
 
-  // Context for these tests is limited to GB as PL links and login URLS etc
-  // are unknown.
-  describe.each(context.exclude([Region.PL]))(region, () => {
-    describe('should redirect to login when unauthenticated', () => {
-      beforeAll(async () => {
-        cookieJar = jar();
-        response = await getResponse(`${appUrl}/`, { jar: cookieJar, headers });
-      });
-
-      it('has a status code of 200', () => {
-        expect(response.statusCode).toBe(200);
-      });
-
-      it('login page has loaded', () => {
-        expect(response.request.href).toContain(externalApps.login);
-      });
+  describe('should redirect to login when unauthenticated', () => {
+    beforeAll(async () => {
+      cookieJar = jar();
+      response = await getResponse(`${appUrl}/`, { jar: cookieJar, headers });
     });
 
-    describe('should render page when authenticated', () => {
-      let $;
+    it('has a status code of 200', () => {
+      expect(response.statusCode).toBe(200);
+    });
 
-      beforeAll(async () => {
-        cookieJar = jar();
+    it('login page has loaded', () => {
+      expect(response.request.href).toContain(externalApps.login);
+    });
+  });
 
-        await login(
-          context.accounts.default.username,
-          context.accounts.default.password,
-          cookieJar,
-          externalApps.login,
-          {
-            headers,
-          },
-        );
+  describe('should render page when authenticated', () => {
+    let $;
 
-        response = await getResponse(`${appUrl}/`, { jar: cookieJar, headers });
+    beforeAll(async () => {
+      cookieJar = jar();
 
-        $ = cheerio.load(response.body);
-      });
+      await login(
+        context.accounts.default.username,
+        context.accounts.default.password,
+        cookieJar,
+        externalApps.login,
+        {
+          headers,
+        },
+      );
 
-      it('has a status code of 200', () => {
-        expect(response.statusCode).toBe(200);
-      });
+      response = await getResponse(`${appUrl}/`, { jar: cookieJar, headers });
 
-      it('landing page has loaded', () => {
-        expect(response.request.href).toBe(`${appUrl}/`);
-      });
+      $ = cheerio.load(response.body);
+    });
 
-      it('landing page contains a title', () => {
-        const pageTitle = context.getLocalePhrase(context.lang, 'pages.landing.title');
+    it('has a status code of 200', () => {
+      expect(response.statusCode).toBe(200);
+    });
 
-        expect($('h1').text()).toContain(pageTitle);
-      });
+    it('landing page has loaded', () => {
+      expect(response.request.href).toBe(`${appUrl}/`);
+    });
 
-      it('landing page contains a submit form button', () => {
-        const buttonTitle = context.getLocalePhrase(context.lang, 'pages.landing.sample-form-btn');
-        const relativeAppPath = `/${context.basePath}/${context.appPath}/${context.lang}`;
+    it('landing page contains a title', () => {
+      const pageTitle = context.getLocalePhrase(context.lang, 'pages.landing.title');
 
-        expect($('span').text()).toContain(buttonTitle);
-        expect($(`a[href='${relativeAppPath}/edit']`).length).toBe(1);
-      });
+      expect($('h1').text()).toContain(pageTitle);
     });
   });
 });

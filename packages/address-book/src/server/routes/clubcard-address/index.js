@@ -99,7 +99,7 @@ export async function postClubcardAddressPage(req, res, next) {
   const { accessToken } = req.getClaims();
   const clubcardAddressController = controllerFactory('clubcardAddress.default', req.region);
   const name = 'clubcard-address:edit:post';
-  const data = req.body;
+  const { _csrf, ...data } = req.body; // eslint-disable-line no-unused-vars
   const outcome = 'successful';
 
   if (!id) {

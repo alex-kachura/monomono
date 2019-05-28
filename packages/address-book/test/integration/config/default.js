@@ -15,10 +15,6 @@ module.exports = {
         clubcard: '634004027884554580',
       },
     },
-    PL: {
-      // None at the moment for Poland. Something the pop up team will need to
-      // look into.
-    },
   },
 
   imageDiffThreshold: 0.005,

@@ -9,25 +9,6 @@ const UNEXPECTED_BANNER = {
   text: 'banners.error.unexpected.text',
 };
 
-export function handleValidationErrors({ name, errors, payload, req, res, next }) {
-  const data = {
-    payload: {
-      ...payload,
-      errors,
-    },
-  };
-
-  if (Object.keys(errors).length === 0) {
-    logOutcome(name, 'error', req);
-
-    data.payload.banner = UNEXPECTED_BANNER;
-  }
-
-  logOutcome(name, 'validation-errors', req);
-
-  return handleResponse({ res, data, next });
-}
-
 export function handleAddressServiceError({ name, error, payload = {}, req, res, next }) {
   const errors = {};
   let banner = {};
@@ -129,6 +110,8 @@ export function handleError({ name, error, payload = {}, req, res, next }) {
     log.warn(`${name} - 'id' was not provided`, error, req);
 
     return next(error);
+  } else if (error.message === 'Validation Errors, Errors object is empty but still was invalid') {
+    return next(error);
   }
   log.error(`${name} - Unexpected error`, error, req);
 
@@ -148,6 +131,31 @@ export function handleError({ name, error, payload = {}, req, res, next }) {
   };
 
   logOutcome(name, outcome, req);
+
+  return handleResponse({ res, data, next });
+}
+
+export function handleValidationErrors({ name, errors, payload, req, res, next }) {
+  const data = {
+    payload: {
+      ...payload,
+      errors,
+    },
+  };
+
+  if (Object.keys(errors).length === 0) {
+    logOutcome(name, 'error', req);
+
+    return handleError({
+      name,
+      error: new Error('Validation Errors, Errors object is empty but still was invalid'),
+      req,
+      res,
+      next,
+    });
+  }
+
+  logOutcome(name, 'validation-errors', req);
 
   return handleResponse({ res, data, next });
 }

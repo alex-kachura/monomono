@@ -83,9 +83,8 @@ export async function postAddDeliveryAddressPage(req, res, next) {
   const { fields, schema } = config[req.region].pages['delivery-address'];
   const { accessToken } = req.getClaims();
   const deliveryAddressController = controllerFactory('deliveryAddress.default', req.region);
-
-  const data = req.body;
-  let outcome = 'successful';
+  const { _csrf, ...data } = req.body; // eslint-disable-line no-unused-vars
+  const outcome = 'successful';
   const name = 'delivery-address:add:post';
 
   const payload = {
@@ -104,8 +103,6 @@ export async function postAddDeliveryAddressPage(req, res, next) {
 
   if (!isValid) {
     const errors = convertAJVErrorsToFormik(compiled.errors, schema);
-
-    outcome = 'validation-errors';
 
     return handleValidationErrors({ name, errors, payload, req, res, next });
   }
