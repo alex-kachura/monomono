@@ -36,14 +36,14 @@ const globalStyles = {
 
 export const renderServer = (initialData, routes, context, sheet, url) => {
   const {
-    payload: { breadcrumb, ...payload },
+    payload: { breadcrumb, ...payload } = {},
     ...appConfig
   } = initialData;
 
   return ReactDOMServer.renderToString(
     sheet.collectStyles(
       <Root
-        initialPageData={payload || {}}
+        initialPageData={payload}
         appConfig={appConfig}
         breadcrumb={breadcrumb}
         loadingFallback={<Spinner />}
@@ -64,13 +64,13 @@ export const renderServer = (initialData, routes, context, sheet, url) => {
 
 export const renderClient = (initialData, routes) => {
   const {
-    payload: { breadcrumb, ...payload },
+    payload: { breadcrumb, ...payload } = {},
     ...appConfig
   } = initialData;
 
   ReactDOM.hydrate(
     <Root
-      initialPageData={payload || {}}
+      initialPageData={payload}
       appConfig={appConfig}
       breadcrumb={breadcrumb}
       loadingFallback={<Spinner />}
