@@ -20,6 +20,9 @@ export const WrapTextLabel = styled(BodyText)`
 `;
 
 export const WrapTextSubHeading = styled(SubHeading)`
+  && {
+    margin-bottom: 2px;
+  }
   word-wrap: break-word;
   cursor: default;
 `;

@@ -30,7 +30,7 @@ export const LandingSection = styled(Grid)`
       left: -9999px;
       right: -9999px;
       background-color: #f6f6f6;
-    } 
+    }
   `
       : `
     padding-top: 24px;
@@ -41,14 +41,21 @@ export const LandingSection = styled(Grid)`
 export const AddressRow = styled(Row)`
   display: flex;
   flex-grow: 1;
-  justify-content: space-between;
   height: 100%;
+  margin-left: -24px;
+  margin-right: -24px;
+
+  ${media.aboveTablet`
+    align-items: stretch;
+  `}
 `;
 
 export const OtherAddressesRow = styled(Row)`
   display: flex;
   flex-grow: 1;
   height: 100%;
+  margin-left: -24px;
+  margin-right: -24px;
 `;
 
 export const LandingSectionTitle = styled(SectionTitle)`

@@ -53,7 +53,7 @@ function Header() {
   return (
     <HeaderContainer>
       <HeaderStyled
-        fixedFrom="xl"
+        fixedFrom="lg"
         onChange={handleChange}
         selectedMenuItemID={state.selectedMenuItemID}
         selectedMenu={state.selectedMenu}

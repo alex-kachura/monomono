@@ -4,15 +4,15 @@ import { SubHeading } from '@beans/typography';
 import { media } from '@beans/foundation';
 
 export const AddAddressLink = styled(Link)`
-  height: 100%;
   width: 100%;
-
+  height: 100%;
+  display: flex;
+  flex: 1;
   a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    flex: 1;
     padding: 12px;
   }
 

@@ -11,16 +11,16 @@ function App(props) {
   return (
     <React.Fragment>
       <Header />
-      <Grid fixed="xl">
+      <Grid fixed="lg">
         <Row>
           <Column size={24}>
             <Breadcrumb />
           </Column>
         </Row>
       </Grid>
-      <GridStyled fixed="xl">
+      <GridStyled fixed="lg">
         <Row>
-          <Column size={24} centered>
+          <Column size={24} xl={20} centered>
             {renderRoutes(props.route.routes)}
           </Column>
         </Row>

@@ -3,16 +3,16 @@
 exports[`[Component: LandingPage] should render correctly 1`] = `
 <DocumentFragment>
   <h1
-    class="base-components__BaseElement-sc-150tvch-0 sc-kGXeez eYcMuw typography___styledElement-sc-186l0ce-0 hmbiuS"
+    class="base-components__BaseElement-sc-150tvch-0 sc-ckVGcZ fZTLHX typography___styledElement-sc-186l0ce-0 hmbiuS"
   >
     pages.landing.title
   </h1>
   <div
-    class="sc-kAzzGY PTydB"
+    class="sc-kGXeez eynIpZ"
     style="background-color: rgb(251, 239, 239);"
   >
     <div
-      class="sc-chPdSV dNJaks"
+      class="sc-kpOJdX rjhJz"
     >
       <div
         class="styled__Container-sc-1bf1p22-0 fRWwDM"
@@ -38,7 +38,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="sc-kgoBCf ejrMlZ"
+      class="sc-dxgOiQ ljBzWp"
     >
       <h5
         class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fREkql"
@@ -46,391 +46,352 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
     </div>
   </div>
   <div
-    class="sc-kpOJdX jNCgM styled-sc-140lqfg-0 hKAvLp"
+    class="sc-jKJlTe fLwXpA styled-sc-140lqfg-0 hKAvLp"
   >
     <h2
-      class="base-components__BaseElement-sc-150tvch-0 sc-jKJlTe hoKahT typography___styledElement-sc-186l0ce-0 iswQsi"
+      class="base-components__BaseElement-sc-150tvch-0 sc-kEYyzF bYCXGr typography___styledElement-sc-186l0ce-0 iswQsi"
     >
       pages.landing.primary-address.label
     </h2>
     <div
-      class="sc-dxgOiQ kgZZLJ styled-cgoahb-0 fFoLXC"
+      class="sc-eNQAEJ hGAEGh styled-cgoahb-0 fFoLXC"
     >
       <div
-        class="sc-bxivhb mbAYL styled-tbp4qh-0 bOYHKy"
+        class="sc-ifAKCX jmlQG styled-tbp4qh-0 hbPPrO"
       >
         <div
-          class="primary-address__address-header sc-ifAKCX ftQyPj"
+          class="sc-bxivhb eyMKcU"
         >
-          <svg
-            aria-hidden="true"
-            class="sc-EHOje hvHRgz styled__Container-sc-1bf1p22-0 gJOjrx"
-            color="currentColor"
-            height="22"
-            preserveAspectRatio="xMinYMax meet"
-            viewBox="0 1 24 22"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M20 20.5H4l-2.5-11h21zM12 12v6M16 12v6M8 12v6M12 9.5L18 1"
-              fill="none"
-              stroke="#00539f"
-            />
-          </svg>
           <div
-            class="sc-htoDjs ghWQVn"
+            class="primary-address__address-header sc-EHOje jrvcQh"
           >
-            <h5
-              class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fREkql"
+            <svg
+              aria-hidden="true"
+              class="sc-bZQynM eBMLPR styled__Container-sc-1bf1p22-0 gJOjrx"
+              color="currentColor"
+              height="22"
+              preserveAspectRatio="xMinYMax meet"
+              viewBox="0 1 24 22"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              pages.landing.primary-address.header.clubcard
-            </h5>
+              <path
+                d="M20 20.5H4l-2.5-11h21zM12 12v6M16 12v6M8 12v6M12 9.5L18 1"
+                fill="none"
+                stroke="#00539f"
+              />
+            </svg>
+            <div
+              class="sc-dnqmqq kWHYmu"
+            >
+              <h5
+                class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fREkql"
+              >
+                pages.landing.primary-address.header.clubcard
+              </h5>
+            </div>
           </div>
-        </div>
-        <div
-          class="sc-bdVaJa efQDjt"
-        >
-          <h4
-            class="base-components__BaseElement-sc-150tvch-0 sc-htpNat jPhAOX typography___styledElement-sc-186l0ce-0 ixZPNc"
+          <div
+            class="sc-bdVaJa efQDjt"
           >
-            Clubcard
-          </h4>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            85 Clerkenwell Road
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            LONDON
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            pages.landing.telephone.day: 07345234636
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            pages.landing.telephone.evening: 07345234636
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            pages.landing.telephone.mobile: 07345234636
-          </p>
-        </div>
-        <div
-          class="sc-bZQynM eEQwkh"
-        >
-          <span
-            class="styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
-          >
-            <a
-              href="/mock/math/edit-clubcard-address?id=NGC_0"
+            <h4
+              class="base-components__BaseElement-sc-150tvch-0 sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
             >
-              <span
-                class="styled__StandaloneSpan-sc-1xizymv-1 dHupAP"
+              Clubcard
+            </h4>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              85 Clerkenwell Road
+            </p>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              LONDON
+            </p>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              pages.landing.telephone.phone: 07345234636
+            </p>
+          </div>
+          <div
+            class="sc-gzVnrw jhTHcp"
+          >
+            <span
+              class="styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
+            >
+              <a
+                href="/mock/math/edit-clubcard-address?id=NGC_0"
               >
                 <span
-                  class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                  class="styled__StandaloneSpan-sc-1xizymv-1 dHupAP"
                 >
-                  pages.landing.edit-btn
+                  <span
+                    class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                  >
+                    pages.landing.edit-btn
+                  </span>
                 </span>
-              </span>
-            </a>
-          </span>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-gzVnrw fPZgfq typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            pages.landing.primary-address.additional.clubcard
-          </p>
+              </a>
+            </span>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs dRDBok typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              pages.landing.primary-address.additional.clubcard
+            </p>
+          </div>
         </div>
       </div>
       <div
-        class="sc-bxivhb mbAYL styled-tbp4qh-0 bOYHKy"
+        class="sc-ifAKCX jmlQG styled-tbp4qh-0 hbPPrO"
       >
         <div
-          class="primary-address__address-header sc-ifAKCX ftQyPj"
+          class="sc-bxivhb eyMKcU"
         >
-          <svg
-            aria-hidden="true"
-            class="sc-EHOje hvHRgz styled__Container-sc-1bf1p22-0 gJOjrx"
-            color="currentColor"
-            height="22"
-            preserveAspectRatio="xMinYMax meet"
-            viewBox="0 1 24 22"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M20 20.5H4l-2.5-11h21zM12 12v6M16 12v6M8 12v6M12 9.5L18 1"
-              fill="none"
-              stroke="#00539f"
-            />
-          </svg>
           <div
-            class="sc-htoDjs ghWQVn"
+            class="primary-address__address-header sc-EHOje jrvcQh"
           >
-            <h5
-              class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fREkql"
+            <svg
+              aria-hidden="true"
+              class="sc-bZQynM eBMLPR styled__Container-sc-1bf1p22-0 gJOjrx"
+              color="currentColor"
+              height="22"
+              preserveAspectRatio="xMinYMax meet"
+              viewBox="0 1 24 22"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              pages.landing.primary-address.header.grocery
-            </h5>
+              <path
+                d="M20 20.5H4l-2.5-11h21zM12 12v6M16 12v6M8 12v6M12 9.5L18 1"
+                fill="none"
+                stroke="#00539f"
+              />
+            </svg>
+            <div
+              class="sc-dnqmqq kWHYmu"
+            >
+              <h5
+                class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fREkql"
+              >
+                pages.landing.primary-address.header.grocery
+              </h5>
+            </div>
           </div>
-        </div>
-        <div
-          class="sc-bdVaJa efQDjt"
-        >
-          <h4
-            class="base-components__BaseElement-sc-150tvch-0 sc-htpNat jPhAOX typography___styledElement-sc-186l0ce-0 ixZPNc"
+          <div
+            class="sc-bdVaJa efQDjt"
           >
-            home 3
-          </h4>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            85 Clerkenwell Road
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            LONDON
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            pages.landing.telephone.day: 07345234636
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            pages.landing.telephone.evening: 07345234635
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            pages.landing.telephone.mobile: 07345234637
-          </p>
-        </div>
-        <div
-          class="sc-bZQynM eEQwkh"
-        >
-          <span
-            class="styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
-          >
-            <a
-              href="/mock/math/edit-delivery-address?id=GHS_11225523"
+            <h4
+              class="base-components__BaseElement-sc-150tvch-0 sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
             >
-              <span
-                class="styled__StandaloneSpan-sc-1xizymv-1 dHupAP"
+              home 3
+            </h4>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              85 Clerkenwell Road
+            </p>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              LONDON
+            </p>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              pages.landing.telephone.day: 07345234636
+            </p>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              pages.landing.telephone.evening: 07345234635
+            </p>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              pages.landing.telephone.mobile: 07345234637
+            </p>
+          </div>
+          <div
+            class="sc-gzVnrw jhTHcp"
+          >
+            <span
+              class="styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
+            >
+              <a
+                href="/mock/math/edit-delivery-address?id=GHS_11225523"
               >
                 <span
-                  class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                  class="styled__StandaloneSpan-sc-1xizymv-1 dHupAP"
                 >
-                  pages.landing.edit-btn
+                  <span
+                    class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                  >
+                    pages.landing.edit-btn
+                  </span>
                 </span>
-              </span>
-            </a>
-          </span>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-gzVnrw fPZgfq typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            pages.landing.primary-address.additional.grocery
-          </p>
+              </a>
+            </span>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs dRDBok typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              pages.landing.primary-address.additional.grocery
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    class="sc-kpOJdX kWdGTt styled-sc-140lqfg-0 hKAvLp"
+    class="sc-jKJlTe eggBET styled-sc-140lqfg-0 hKAvLp"
   >
     <h2
-      class="base-components__BaseElement-sc-150tvch-0 sc-jKJlTe hoKahT typography___styledElement-sc-186l0ce-0 iswQsi"
+      class="base-components__BaseElement-sc-150tvch-0 sc-kEYyzF bYCXGr typography___styledElement-sc-186l0ce-0 iswQsi"
     >
       pages.landing.other-addresses.label
     </h2>
     <div
-      class="sc-ckVGcZ gQSDAM styled-cgoahb-0 fFoLXC"
+      class="sc-hMqMXs eJeMEC styled-cgoahb-0 fFoLXC"
     >
       <div
-        class="sc-fjdhpX bFRsWr styled-tbp4qh-0 ZqveY"
-      >
-        <span
-          class="sc-eNQAEJ LBnAW styled__IconButtonContainerWithText-sc-1r4nugl-2 kjFGNs"
-        >
-          <a
-            href="/mock/math/add-delivery-address"
-          >
-            <div
-              class="sc-kEYyzF gfnKXe"
-            >
-              <span
-                class="styled__IconButtonSpanWithText-sc-1r4nugl-1 gcrMXp"
-              >
-                <span
-                  class="beans-link__text styled__TextSpan-sc-1r4nugl-3 fXsDiB"
-                >
-                  <h4
-                    class="base-components__BaseElement-sc-150tvch-0 sc-hMqMXs joTESV typography___styledElement-sc-186l0ce-0 ixZPNc"
-                  >
-                    Add delivery address
-                  </h4>
-                </span>
-                <span
-                  class="beans-link__icon styled__IconButtonSpan-sc-1r4nugl-4 kaDnyy"
-                >
-                  <span
-                    class="styled__IconSpan-sc-1r4nugl-5 kuXyIv"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="styled__Container-sc-1bf1p22-0 gJOjrx"
-                      color="currentColor"
-                      height="18"
-                      preserveAspectRatio="xMinYMax meet"
-                      viewBox="0 0 18 18"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 9h18M9 0v18"
-                        fill="none"
-                        stroke="currentColor"
-                      />
-                    </svg>
-                  </span>
-                </span>
-              </span>
-            </div>
-          </a>
-        </span>
-      </div>
-      <div
-        class="sc-fjdhpX bbSFuK styled-tbp4qh-0 ZqveY"
+        class="styled-tbp4qh-0 fsXMrV"
       >
         <div
-          class="sc-bdVaJa fOmtxQ"
-        >
-          <h4
-            class="base-components__BaseElement-sc-150tvch-0 sc-htpNat jPhAOX typography___styledElement-sc-186l0ce-0 ixZPNc"
-          >
-            Luis
-          </h4>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            Flat 1
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            The Old School
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            146 York Way
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            LONDON
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            pages.landing.telephone.day: 07427708482
-          </p>
-          <p
-            class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
-          >
-            pages.landing.telephone.evening: 07427708482
-          </p>
-        </div>
-        <div
-          class="sc-jzJRlG cWXUaE"
+          class="sc-kAzzGY frIysL"
         >
           <span
-            class="styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
+            class="sc-kkGfuU cjqfGD styled__IconButtonContainerWithText-sc-1r4nugl-2 kjFGNs"
           >
             <a
-              href="/mock/math/edit-delivery-address?id=GHS_11214795"
+              href="/mock/math/add-delivery-address"
             >
-              <span
-                class="styled__StandaloneSpan-sc-1xizymv-1 dHupAP"
+              <div
+                class="sc-hSdWYo jYuCVO"
               >
                 <span
-                  class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                  class="styled__IconButtonSpanWithText-sc-1r4nugl-1 gcrMXp"
                 >
-                  pages.landing.edit-btn
+                  <span
+                    class="beans-link__text styled__TextSpan-sc-1r4nugl-3 fXsDiB"
+                  >
+                    <h4
+                      class="base-components__BaseElement-sc-150tvch-0 sc-iAyFgw jviHqQ typography___styledElement-sc-186l0ce-0 ixZPNc"
+                    >
+                      Add delivery address
+                    </h4>
+                  </span>
+                  <span
+                    class="beans-link__icon styled__IconButtonSpan-sc-1r4nugl-4 kaDnyy"
+                  >
+                    <span
+                      class="styled__IconSpan-sc-1r4nugl-5 kuXyIv"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="styled__Container-sc-1bf1p22-0 gJOjrx"
+                        color="currentColor"
+                        height="18"
+                        preserveAspectRatio="xMinYMax meet"
+                        viewBox="0 0 18 18"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 9h18M9 0v18"
+                          fill="none"
+                          stroke="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </span>
                 </span>
-              </span>
+              </div>
             </a>
           </span>
+        </div>
+      </div>
+      <div
+        class="styled-tbp4qh-0 fsXMrV"
+      >
+        <div
+          class="sc-kAzzGY gHktkG"
+        >
           <div
-            class="sc-cSHVUG CLQlj"
-          />
-          <form
-            action="/mock/math/"
-            method="POST"
+            class="sc-bdVaJa fOmtxQ"
           >
-            <input
-              name="contact-address-id"
-              type="hidden"
-              value="GHS_11214795"
-            />
-            <button
-              aria-disabled="false"
-              class="styled__BaseButton-sc-3mnirm-0 styled__LinkButton-sc-3mnirm-13 gyNqJj"
-              role="button"
-              type="submit"
-            >
-              <span
-                class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
-              >
-                <span
-                  class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
-                >
-                  pages.landing.delete-btn
-                </span>
-              </span>
-            </button>
-            <input
-              name="_csrf"
-              type="hidden"
-              value=""
-            />
-          </form>
-          <div
-            class="sc-gZMcBi eYiLpf"
-            style="transform: translate3d(0, 100%, 0); opacity: 0;"
-          >
-            <p
-              class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 gxVCAq"
-            >
-              pages.landing.delete.confirmation-message
-            </p>
             <h4
-              class="base-components__BaseElement-sc-150tvch-0 sc-gqjmRU jjaMMH typography___styledElement-sc-186l0ce-0 ixZPNc"
+              class="base-components__BaseElement-sc-150tvch-0 sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
             >
               Luis
             </h4>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-VigVT joiRQM typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               Flat 1
             </p>
-            <div
-              class="sc-jTzLTM jotsyK"
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
+              The Old School
+            </p>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              146 York Way
+            </p>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              LONDON
+            </p>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              pages.landing.telephone.day: 07427708482
+            </p>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              pages.landing.telephone.evening: 07427708482
+            </p>
+          </div>
+          <div
+            class="sc-chPdSV gqRtJR"
+          >
+            <span
+              class="styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
+            >
+              <a
+                href="/mock/math/edit-delivery-address?id=GHS_11214795"
+              >
+                <span
+                  class="styled__StandaloneSpan-sc-1xizymv-1 dHupAP"
+                >
+                  <span
+                    class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
+                  >
+                    pages.landing.edit-btn
+                  </span>
+                </span>
+              </a>
+            </span>
+            <div
+              class="sc-kgoBCf hJlppJ"
+            />
+            <form
+              action="/mock/math/"
+              method="POST"
+            >
+              <input
+                name="contact-address-id"
+                type="hidden"
+                value="GHS_11214795"
+              />
               <button
                 aria-disabled="false"
-                class="styled__BaseButton-sc-3mnirm-0 styled__SecondaryButton-sc-3mnirm-3 bzFQfg"
+                class="styled__BaseButton-sc-3mnirm-0 styled__LinkButton-sc-3mnirm-13 gyNqJj"
                 role="button"
-                type="button"
+                type="submit"
               >
                 <span
                   class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
@@ -438,10 +399,39 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                   <span
                     class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
                   >
-                    pages.landing.delete.cancel
+                    pages.landing.delete-btn
                   </span>
                 </span>
               </button>
+              <input
+                name="_csrf"
+                type="hidden"
+                value=""
+              />
+            </form>
+            <div
+              class="sc-gqjmRU xUiFG"
+              style="transform: translate3d(0, 100%, 0); opacity: 0;"
+            >
+              <h4
+                class="base-components__BaseElement-sc-150tvch-0 sc-VigVT eyiuaP typography___styledElement-sc-186l0ce-0 ixZPNc"
+              >
+                pages.landing.delete.confirmation-message
+              </h4>
+              <div
+                class="sc-cSHVUG bhIRwB"
+              >
+                <p
+                  class="base-components__BaseElement-sc-150tvch-0 sc-fjdhpX glRFcX typography___styledElement-sc-186l0ce-0 gxVCAq"
+                >
+                  Luis
+                </p>
+                <p
+                  class="base-components__BaseElement-sc-150tvch-0 sc-jTzLTM cjflfh typography___styledElement-sc-186l0ce-0 gxVCAq"
+                >
+                  Flat 1
+                </p>
+              </div>
               <form
                 action="/mock/math/"
                 method="POST"
@@ -453,7 +443,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                 />
                 <button
                   aria-disabled="false"
-                  class="styled__BaseButton-sc-3mnirm-0 styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+                  class="styled__BaseButton-sc-3mnirm-0 sc-jzJRlG cyAuDu styled__PrimaryButton-sc-3mnirm-2 giYBMC"
                   role="button"
                   type="submit"
                 >
@@ -473,6 +463,22 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                   value=""
                 />
               </form>
+              <button
+                aria-disabled="false"
+                class="styled__BaseButton-sc-3mnirm-0 styled__SecondaryButton-sc-3mnirm-3 bzFQfg"
+                role="button"
+                type="button"
+              >
+                <span
+                  class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+                >
+                  <span
+                    class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+                  >
+                    pages.landing.delete.cancel
+                  </span>
+                </span>
+              </button>
             </div>
           </div>
         </div>

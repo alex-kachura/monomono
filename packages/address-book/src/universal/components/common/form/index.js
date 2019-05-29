@@ -8,8 +8,8 @@ import Banner from '../banner';
 import { PageTitleStyled } from '../styled-components';
 import { Formik, useAppConfig } from '@oneaccount/react-foundations';
 import { connect } from 'formik';
-import Button from '@beans/button';
 import { useForm, useFields } from './helpers';
+import { ButtonStyled } from './styled';
 
 const Form = memo(({ fields, native, onError, formik, submitText = 'Submit' }) => {
   const { formRef, handleSubmit, handleNativeSubmit, isSubmitting, errors } = formik;
@@ -56,9 +56,9 @@ const Form = memo(({ fields, native, onError, formik, submitText = 'Submit' }) =
     >
       {content}
       <input type="hidden" name="_csrf" value={csrf} />
-      <Button disabled={isSubmitting} type="submit">
+      <ButtonStyled disabled={isSubmitting} type="submit">
         {submitText}
-      </Button>
+      </ButtonStyled>
     </form>
   );
 });

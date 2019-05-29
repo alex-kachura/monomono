@@ -22,7 +22,7 @@ exports[`[Page: EditDeliveryAddressPage] [State: Default] should render correctl
       />
       <button
         aria-disabled="false"
-        class="styled__BaseButton-sc-3mnirm-0 styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+        class="styled__BaseButton-sc-3mnirm-0 sc-iwsKbI coJpLO styled__PrimaryButton-sc-3mnirm-2 giYBMC"
         role="button"
         type="submit"
       >

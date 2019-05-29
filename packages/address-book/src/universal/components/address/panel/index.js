@@ -18,6 +18,26 @@ export default function AddressPanel({ address, isClubcard, additional }) {
 
   const { label, addressLines, postTown, postCode, telephoneNumbers } = address;
 
+  let phoneNumbers = null;
+
+  if (isClubcard) {
+    phoneNumbers = telephoneNumbers && (
+      <WrapTextLabel>
+        {`${getLocalePhrase(`pages.landing.telephone.phone`)}: ${telephoneNumbers[0].value}`}
+      </WrapTextLabel>
+    );
+  } else {
+    phoneNumbers =
+      telephoneNumbers &&
+      telephoneNumbers.map((tele, idx) => (
+        <WrapTextLabel key={`telephone-number-${idx.toString()}`}>
+          {`${getLocalePhrase(`pages.landing.telephone.${tele.label.toLocaleLowerCase()}`)}: ${
+            tele.value
+          }`}
+        </WrapTextLabel>
+      ));
+  }
+
   return (
     <AddressPanelStyled additional={!!additional}>
       {label && <WrapTextSubHeading>{label}</WrapTextSubHeading>}
@@ -26,14 +46,7 @@ export default function AddressPanel({ address, isClubcard, additional }) {
       ))}
       {postTown && <WrapTextLabel>{postTown}</WrapTextLabel>}
       {postCode && <WrapTextLabel>{postCode}</WrapTextLabel>}
-      {telephoneNumbers &&
-        telephoneNumbers.map((tele, idx) => (
-          <WrapTextLabel key={`telephone-number-${idx.toString()}`}>
-            {`${getLocalePhrase(`pages.landing.telephone.${tele.label.toLocaleLowerCase()}`)}: ${
-              tele.value
-            }`}
-          </WrapTextLabel>
-        ))}
+      {phoneNumbers}
     </AddressPanelStyled>
   );
 }

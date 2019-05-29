@@ -1,36 +1,29 @@
 import styled from 'styled-components';
 import { media } from '@beans/foundation';
-import { Column } from '@beans/grid';
 
-export const AdditionalPanelStyled = styled(Column)`
+export const AdditionalPanelStyled = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 300px;
   margin-top: 21px;
   background-color: #ffffff;
   overflow: hidden;
-
-  ${media.aboveTablet`
-    &:not(:nth-child(3n)) {
-      margin-right: 3%;
-    }
-  `}
+  min-height: 300px;
 
   ${(props) =>
     props.panelButton
       ? `
         border: 1px solid #e5e8ea;
         padding: 0;
-    `
+        align-items: center;
+        justify-content: center;
+        min-height: 64px;
+      `
       : ''}
 
-  ${(props) =>
-    props.panelButton &&
-    media.belowTablet`
-        min-height: 0;
-        height: 64px;
-    `}
+  ${media.aboveTablet`
+    min-height: 300px;
+  `}
 `;
 
 export const AdditionalButtons = styled.div`

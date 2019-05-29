@@ -24,7 +24,7 @@ exports[`App component should render correctly 1`] = `
               role="toolbar"
             >
               <div
-                class="styled__StyledGrid-zuw78m-0 kCKBYS styled-sc-140lqfg-0 jjHJYZ"
+                class="styled__StyledGrid-zuw78m-0 kCKBYS styled-sc-140lqfg-0 jzEHNh"
               >
                 <div
                   class="styled__StyledRow-zuw78m-1 vsBWF styled-cgoahb-0 fFoLXC"
@@ -74,7 +74,7 @@ exports[`App component should render correctly 1`] = `
             class="styled-tbp4qh-0 fauaRP"
           >
             <div
-              class="styled-sc-140lqfg-0 jjHJYZ"
+              class="styled-sc-140lqfg-0 jzEHNh"
             >
               <div
                 class="styled-cgoahb-0 fFoLXC"
@@ -317,7 +317,7 @@ exports[`App component should render correctly 1`] = `
     </header>
   </div>
   <div
-    class="styled-sc-140lqfg-0 jjHJYZ"
+    class="styled-sc-140lqfg-0 jzEHNh"
   >
     <div
       class="styled-cgoahb-0 fFoLXC"
@@ -328,13 +328,13 @@ exports[`App component should render correctly 1`] = `
     </div>
   </div>
   <div
-    class="sc-bxivhb kVKMTh styled-sc-140lqfg-0 jjHJYZ"
+    class="sc-bxivhb kVKMTh styled-sc-140lqfg-0 jzEHNh"
   >
     <div
       class="styled-cgoahb-0 fFoLXC"
     >
       <div
-        class="styled-tbp4qh-0 hoOrpN"
+        class="styled-tbp4qh-0 kIqCsW"
       />
     </div>
   </div>

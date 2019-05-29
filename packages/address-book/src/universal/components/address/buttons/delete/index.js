@@ -1,9 +1,15 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@beans/button';
-import { BodyText } from '@beans/typography';
 import { useAppConfig } from '@oneaccount/react-foundations';
-import { ButtonContainer, WrapBodyText, ConfirmationSheet, WrapTextSubHeading } from './styled';
+import {
+  Content,
+  ButtonStyled,
+  EllipsisBodyText,
+  ConfirmationSheet,
+  WrapTextSubHeading,
+  BoldWrapBodyText,
+} from './styled';
 
 export default function DeleteButton({ itemId, label, firstLine }) {
   const { rootPath, getLocalePhrase, csrf } = useAppConfig();
@@ -13,7 +19,7 @@ export default function DeleteButton({ itemId, label, firstLine }) {
 
   const didToggleShowConfirmation = useCallback(() => {
     setShowConfirmation(!showConfirmation);
-  });
+  }, [showConfirmation]);
 
   function handleFormSubmit(e) {
     e.stopPropagation();
@@ -40,21 +46,23 @@ export default function DeleteButton({ itemId, label, firstLine }) {
         <input type="hidden" name="_csrf" value={csrf} />
       </form>
       <ConfirmationSheet style={confirmationStyle}>
-        <BodyText>{getLocalePhrase('pages.landing.delete.confirmation-message')}</BodyText>
-        <WrapTextSubHeading>{label}</WrapTextSubHeading>
-        <WrapBodyText>{firstLine}</WrapBodyText>
-        <ButtonContainer>
-          <Button variant="secondary" onClick={didToggleShowConfirmation}>
-            {getLocalePhrase('pages.landing.delete.cancel')}
-          </Button>
-          <form action={deleteUrl} method="POST">
-            <input type="hidden" name="contact-address-id" value={itemId} />
-            <Button variant="primary" type="submit">
-              {getLocalePhrase('pages.landing.delete.confirm')}
-            </Button>
-            <input type="hidden" name="_csrf" value={csrf} />
-          </form>
-        </ButtonContainer>
+        <WrapTextSubHeading>
+          {getLocalePhrase('pages.landing.delete.confirmation-message')}
+        </WrapTextSubHeading>
+        <Content>
+          <BoldWrapBodyText>{label}</BoldWrapBodyText>
+          <EllipsisBodyText>{firstLine}</EllipsisBodyText>
+        </Content>
+        <form action={deleteUrl} method="POST">
+          <input type="hidden" name="contact-address-id" value={itemId} />
+          <ButtonStyled variant="primary" type="submit">
+            {getLocalePhrase('pages.landing.delete.confirm')}
+          </ButtonStyled>
+          <input type="hidden" name="_csrf" value={csrf} />
+        </form>
+        <Button variant="secondary" onClick={didToggleShowConfirmation}>
+          {getLocalePhrase('pages.landing.delete.cancel')}
+        </Button>
       </ConfirmationSheet>
     </React.Fragment>
   );

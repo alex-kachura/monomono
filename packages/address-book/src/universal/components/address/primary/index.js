@@ -11,6 +11,7 @@ import {
   HeaderIcon,
   FooterLabel,
   AddressHeaderText,
+  Column,
 } from './styled';
 
 export default function PrimaryAddress({ isClubcard, details }) {
@@ -30,21 +31,23 @@ export default function PrimaryAddress({ isClubcard, details }) {
   );
 
   return (
-    <AddressPanelStyled size={24} sm={11.7} gutter={'0px'}>
-      <AddressHeader className="primary-address__address-header">
-        {iconGraphic}
-        <AddressHeaderText>{headerText}</AddressHeaderText>
-      </AddressHeader>
-      <AddressPanel address={details} isClubcard />
-      <AddressFooter>
-        {details.addressIndex && (
-          <React.Fragment>
-            <EditButton itemId={details.addressIndex} isMCA={isClubcard} />
-            <FooterLabel>{additionalText}</FooterLabel>
-          </React.Fragment>
-        )}
-      </AddressFooter>
-    </AddressPanelStyled>
+    <Column size={24} sm={12}>
+      <AddressPanelStyled>
+        <AddressHeader className="primary-address__address-header">
+          {iconGraphic}
+          <AddressHeaderText>{headerText}</AddressHeaderText>
+        </AddressHeader>
+        <AddressPanel address={details} isClubcard={isClubcard} />
+        <AddressFooter>
+          {details.addressIndex && (
+            <React.Fragment>
+              <EditButton itemId={details.addressIndex} isMCA={isClubcard} />
+              <FooterLabel>{additionalText}</FooterLabel>
+            </React.Fragment>
+          )}
+        </AddressFooter>
+      </AddressPanelStyled>
+    </Column>
   );
 }
 

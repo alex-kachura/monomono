@@ -19,7 +19,7 @@ import {
 import AddAddress from '../address/buttons/add';
 
 export function LandingPage(props) {
-  const { addresses, banner } = props.initialData;
+  const { addresses = {}, banner } = props.initialData;
   const { rootPath, getLocalePhrase } = useAppConfig();
   const pageTitle = getLocalePhrase('pages.landing.title');
 
