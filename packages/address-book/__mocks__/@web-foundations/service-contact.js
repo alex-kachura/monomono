@@ -13,4 +13,6 @@ const MockContactService = jest.fn(function ContactServiceMock() {
   });
 });
 
+export const ContactServiceError = original.ContactServiceError;
+
 export default MockContactService;

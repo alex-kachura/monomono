@@ -22,7 +22,7 @@ const ajv = ajvErrors(
   },
 );
 
-function getBreadcrumb(lang, getLocalePhrase) {
+export function getBreadcrumb(lang, getLocalePhrase) {
   return [
     {
       text: getLocalePhrase('pages.account.title'),
@@ -47,11 +47,19 @@ export async function getEditDeliveryAddressPage(req, res, next) {
   const { accessToken } = req.getClaims();
   const deliveryAddressController = controllerFactory('deliveryAddress.default', req.region);
   let address = {};
+  const action = 'get-address';
   const name = 'delivery-address:edit:get';
   const outcome = 'successful';
 
   if (!id) {
-    return handleError({ name, error: new Error('CONTACT_ADDRESS_ID_REQUIRED'), req, res, next });
+    return handleError({
+      name,
+      action,
+      error: new Error('CONTACT_ADDRESS_ID_REQUIRED'),
+      req,
+      res,
+      next,
+    });
   }
 
   try {
@@ -63,12 +71,12 @@ export async function getEditDeliveryAddressPage(req, res, next) {
     });
   } catch (error) {
     if (error instanceof AddressServiceError) {
-      return handleAddressServiceError({ error, name, req, res, next });
+      return handleAddressServiceError({ error, action, name, req, res, next });
     } else if (error instanceof ContactServiceError) {
-      return handleContactServiceError({ error, name, req, res, next });
+      return handleContactServiceError({ error, action, name, req, res, next });
     }
 
-    return handleError({ name, error, req, res, next });
+    return handleError({ name, action, error, req, res, next });
   }
 
   const payload = {
@@ -97,6 +105,7 @@ export async function postEditDeliveryAddressPage(req, res, next) {
   const getLocalePhrase = getPhraseFactory(req.lang);
   const { fields, schema } = config[req.region].pages['delivery-address'];
   const { id } = req.query;
+  const action = 'update-address';
   const { accessToken } = req.getClaims();
   const deliveryAddressController = controllerFactory('deliveryAddress.default', req.region);
 
@@ -121,6 +130,7 @@ export async function postEditDeliveryAddressPage(req, res, next) {
 
     return handleValidationErrors({
       name,
+      action,
       errors,
       payload,
       req,
@@ -139,12 +149,12 @@ export async function postEditDeliveryAddressPage(req, res, next) {
     });
   } catch (error) {
     if (error instanceof AddressServiceError) {
-      return handleAddressServiceError({ name, payload, error, req, res, next });
+      return handleAddressServiceError({ name, action, payload, error, req, res, next });
     } else if (error instanceof ContactServiceError) {
-      return handleContactServiceError({ name, payload, error, req, res, next });
+      return handleContactServiceError({ name, action, payload, error, req, res, next });
     }
 
-    return handleError(error);
+    return handleError({ name, action, error, payload, req, res, next });
   }
 
   logOutcome(name, outcome, req);

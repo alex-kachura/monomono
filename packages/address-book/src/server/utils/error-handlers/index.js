@@ -3,13 +3,13 @@ import { AddressServiceError } from '@web-foundations/service-address';
 import { ContactServiceError } from '@web-foundations/service-contact';
 import { handleResponse } from '../response-handlers';
 
-const UNEXPECTED_BANNER = {
+export const UNEXPECTED_BANNER = {
   type: 'error',
   title: 'banners.error.unexpected.title',
   text: 'banners.error.unexpected.text',
 };
 
-export function handleAddressServiceError({ name, error, payload = {}, req, res, next }) {
+export function handleAddressServiceError({ name, action, error, payload = {}, req, res, next }) {
   const errors = {};
   let banner = {};
   let outcome = 'error';
@@ -19,7 +19,7 @@ export function handleAddressServiceError({ name, error, payload = {}, req, res,
       error.violations.forEach(({ lineNumber }) => {
         errors[`address-line${lineNumber}`] = `address.fields.address-line${lineNumber}.error`;
         log.warn(
-          `address-service:create-address:INVALID_ADDRESS - Invalid address line ${lineNumber} entered`,
+          `address-service:${action}:INVALID_ADDRESS - Invalid address line ${lineNumber} entered`,
           error,
           req,
         );
@@ -28,11 +28,7 @@ export function handleAddressServiceError({ name, error, payload = {}, req, res,
       break;
     case AddressServiceError.Codes.POSTCODE_NOT_FOUND:
       errors.postcode = 'address.fields.postcode.error';
-      log.warn(
-        'address-service:create-address:POSTCODE_NOT_FOUND - Post code not found',
-        error,
-        req,
-      );
+      log.warn(`address-service:${action}:POSTCODE_NOT_FOUND - Post code not found`, error, req);
       outcome = 'validation-errors';
       break;
     default:
@@ -40,7 +36,7 @@ export function handleAddressServiceError({ name, error, payload = {}, req, res,
 
       outcome = 'error';
 
-      log.error('address-service:create-address - Unexpected error creating address', error, req);
+      log.error(`address-service:${action} - Unexpected error creating address`, error, req);
   }
 
   logOutcome(name, outcome, req);
@@ -56,22 +52,20 @@ export function handleAddressServiceError({ name, error, payload = {}, req, res,
   return handleResponse({ res, data, next });
 }
 
-export function handleContactServiceError({ name, error, payload = {}, req, res, next }) {
+export function handleContactServiceError({ name, action, error, payload = {}, req, res, next }) {
   const outcome = 'error';
   let banner = {};
 
+  logOutcome(name, outcome, req);
+
   if (error.message === ContactServiceError.Codes.ADDRESS_NOT_FOUND) {
-    log.warn(
-      'contact-service:get-single-address:ADDRESS_NOT_FOUND - Address not found',
-      error,
-      req,
-    );
+    log.warn(`contact-service:${action}:ADDRESS_NOT_FOUND - Address not found`, error, req);
 
     return next(error);
   }
   banner = UNEXPECTED_BANNER;
 
-  log.error('contact-service:add-address - Unexpected error adding address', error, req);
+  log.error(`contact-service:${action} - Unexpected error adding address`, error, req);
 
   if (req.method === 'GET') {
     return next(error);
@@ -84,16 +78,13 @@ export function handleContactServiceError({ name, error, payload = {}, req, res,
     },
   };
 
-  logOutcome(name, outcome, req);
-
   return handleResponse({ res, data, next });
 }
 
 export function handleError({ name, error, payload = {}, req, res, next }) {
   let banner = {};
 
-  const outcome = 'error';
-
+  logOutcome(name, 'error', req);
   if (error.message === 'NOT_DELIVERY_ADDRESS') {
     // redirect to not found
 
@@ -103,7 +94,7 @@ export function handleError({ name, error, payload = {}, req, res, next }) {
   } else if (error.message === 'NOT_CLUBCARD_ADDRESS') {
     // redirect to not found
 
-    log.warn(`${name} - Address is not a club card address`, error, req);
+    log.warn(`${name} - Address is not a clubcard address`, error, req);
 
     return next(error);
   } else if (error.message === 'CONTACT_ADDRESS_ID_REQUIRED') {
@@ -113,6 +104,7 @@ export function handleError({ name, error, payload = {}, req, res, next }) {
   } else if (error.message === 'Validation Errors, Errors object is empty but still was invalid') {
     return next(error);
   }
+
   log.error(`${name} - Unexpected error`, error, req);
 
   // Get request don't have any current state.
@@ -129,8 +121,6 @@ export function handleError({ name, error, payload = {}, req, res, next }) {
       banner,
     },
   };
-
-  logOutcome(name, outcome, req);
 
   return handleResponse({ res, data, next });
 }

@@ -1,173 +1,317 @@
 import config from 'config';
+import { AddressServiceError } from '@web-foundations/service-address';
+import { getAddDeliveryAddressPage, postAddDeliveryAddressPage, getBreadcrumb } from './';
+import log, { logOutcome } from '../../logger';
+import { send, lang, next, requestFactory, responseFactory } from '../../utils/test-helpers';
+import { createAddress } from '../../controllers/delivery-address/_default';
+import { getLocalePhrase } from '../../utils/i18n';
+import { UNEXPECTED_BANNER } from '../../utils/error-handlers';
+import { ContactServiceError } from '@web-foundations/service-contact';
 
-describe.skip('[Route: /edit]', () => {
-  describe('[GET]', () => {
-    let getEditPage;
-    const mockTracer = 'mock-tracer';
-    const mockSend = jest.fn();
-    let responseType;
-    const mockUpdated = 'mock-updated';
-    const mockLang = 'mock-lang';
-    const mockRegion = 'GB';
-    const req = {
-      sessionId: mockTracer,
-      query: {
-        updated: mockUpdated,
-      },
-      getLocalePhrase: (key) => key,
-      lang: mockLang,
-      region: mockRegion,
-    };
-    const res = {
-      format: (f) => f[responseType](),
-      send: mockSend,
-      data: {},
-    };
-    const next = jest.fn();
-    let mockLogger;
-    let mockGetPhraseFactory;
-    let mockGetLocalePhrase;
+const payloadFactory = (req, extra) => {
+  const { fields, schema } = config[req.region].pages['delivery-address'];
+  const defaultValues = {
+    'address-id': '',
+    'address-label': '',
+    'address-line1': '',
+    'address-line2': '',
+    'address-line3': '',
+    day: '',
+    evening: '',
+    mobile: '',
+    postcode: '',
+    town: '',
+  };
 
-    function mockGetImports() {
-      jest.doMock('../../logger', () => ({ logOutcome: mockLogger }));
-      jest.doMock('../../utils/i18n', () => ({
-        getPhraseFactory: mockGetPhraseFactory,
-      }));
-    }
+  return {
+    breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
+    fields,
+    schema,
+    values: defaultValues,
+    errors: {},
+    banner: {},
+    ...extra,
+  };
+};
 
-    beforeEach(() => {
-      mockGetLocalePhrase = jest.fn((key) => key);
-      mockGetPhraseFactory = jest.fn(() => mockGetLocalePhrase);
-      mockLogger = jest.fn();
-    });
+describe('[Route: /add-delivery-address]', () => {
+  describe.each(['html', 'json'])('[Content-Type: %s]', (responseType) => {
+    describe('[GET]', () => {
+      describe('[success]', () => {
+        const res = responseFactory({ responseType });
+        const req = requestFactory();
+        const payload = payloadFactory(req);
 
-    afterEach(() => {
-      next.mockClear();
-      mockSend.mockClear();
-      mockLogger.mockClear();
-      jest.resetModules();
-      res.data = {};
-    });
-
-    describe('[Content-Type: html]', () => {
-      beforeEach(() => {
-        responseType = 'html';
-      });
-
-      describe('success', () => {
-        beforeEach(async () => {
-          mockGetImports();
-
-          getEditPage = require('./').getEditPage;
-
-          await getEditPage(req, res, next);
-        });
-
-        it('should call getPhraseFactory with request lang', () => {
-          expect(mockGetPhraseFactory).toHaveBeenCalledWith(mockLang);
+        beforeAll(async () => {
+          await getAddDeliveryAddressPage(req, res, next);
         });
 
         it('should log correctly', () => {
-          expect(mockLogger).toHaveBeenCalledWith('edit', 'successful', req);
+          expect(logOutcome).toHaveBeenCalledWith('delivery-address:add:get', 'successful', req);
         });
 
-        it('should set the correct response data', () => {
-          const { fields, schema } = config[req.region];
-
-          expect(res.data).toEqual({
-            payload: {
-              breadcrumb: [
-                {
-                  text: 'pages.landing.title',
-                  href: `/${config.basePath}/${config.appPath}/${mockLang}`,
-                  useAltLink: true,
-                },
-                {
-                  text: 'pages.edit.title',
-                },
-              ],
-              fields,
-              schema,
-              errors: {},
-              values: {
-                name: '',
-                age: '',
-                password: '',
-                confirmPassword: '',
-                postcode: '',
-                'address-line1': '',
-                'address-line2': '',
-                'address-line3': '',
-                town: '',
-                'address-id': '',
-              },
-              banner: {
-                type: '',
-                title: '',
-                errorType: '',
-              },
-            },
+        if (responseType === 'html') {
+          it('should set the correct response data', () => {
+            expect(res.data).toEqual({
+              payload,
+            });
           });
-        });
 
-        it('should call next correctly', () => {
-          expect(next).toHaveBeenCalledWith();
+          it('should call next correctly', () => {
+            expect(next).toHaveBeenCalledWith();
+          });
+        }
+
+        if (responseType === 'json') {
+          it('should set the correct response data', () => {
+            expect(send).toHaveBeenCalledWith({
+              payload,
+            });
+          });
+        }
+
+        afterAll(() => {
+          jest.clearAllMocks();
         });
       });
     });
 
-    describe('[Content-Type: json]', () => {
-      beforeEach(() => {
-        responseType = 'json';
-      });
+    describe('[POST]', () => {
+      const values = {
+        postcode: 'NE14PQ',
+        'address-line1': 'mock-address-line-1',
+        'address-line2': '',
+        'address-line3': '',
+        town: 'mock-town',
+        'address-id': '',
+        day: '07777888888',
+        evening: '07777888888',
+        mobile: '',
+        'address-label': 'mock-label',
+      };
+      const body = {
+        _csrf: 'mock-csrf',
+        ...values,
+      };
 
-      describe('success', () => {
-        beforeEach(async () => {
-          mockGetImports();
-
-          getEditPage = require('./').getEditPage;
-
-          await getEditPage(req, res, next);
-        });
-
-        it('should set the correct response data', () => {
-          const { fields, schema } = config[req.region];
-
-          expect(mockSend).toHaveBeenCalledWith({
-            payload: {
-              breadcrumb: [
+      const errors = [
+        [
+          'AddressServiceError',
+          {
+            error: new AddressServiceError(AddressServiceError.Codes.INVALID_ADDRESS, {
+              violations: [
                 {
-                  text: 'pages.landing.title',
-                  href: `/${config.basePath}/${config.appPath}/${mockLang}`,
-                  useAltLink: true,
-                },
-                {
-                  text: 'pages.edit.title',
+                  lineNumber: 1,
                 },
               ],
-              errors: {},
-              fields,
-              schema,
-              values: {
-                name: '',
-                age: '',
-                password: '',
-                confirmPassword: '',
-                postcode: '',
-                'address-line1': '',
-                'address-line2': '',
-                'address-line3': '',
-                town: '',
-                'address-id': '',
-              },
-              banner: {
-                type: '',
-                title: '',
-                errorType: '',
+            }),
+            body,
+            errorPayload: {
+              errors: {
+                'address-line1': 'address.fields.address-line1.error',
               },
             },
-          });
+            errorCode: 'INVALID_ADDRESS',
+            outcome: 'validation-errors',
+            log: {
+              warn: `address-service:create-address:INVALID_ADDRESS - Invalid address line 1 entered`,
+            },
+          },
+        ],
+        [
+          'AddressServiceError',
+          {
+            errorCode: 'POSTCODE_NOT_FOUND',
+            error: new AddressServiceError(AddressServiceError.Codes.POSTCODE_NOT_FOUND),
+            body,
+            errorPayload: {
+              errors: {
+                postcode: 'address.fields.postcode.error',
+              },
+            },
+            outcome: 'validation-errors',
+            log: {
+              warn: `address-service:create-address:POSTCODE_NOT_FOUND - Post code not found`,
+            },
+          },
+        ],
+        [
+          'AddressServiceError',
+          {
+            errorCode: 'UNEXPECTED_RESPONSE',
+            error: new AddressServiceError(AddressServiceError.Codes.UNEXPECTED_RESPONSE),
+            body,
+            errorPayload: {
+              banner: UNEXPECTED_BANNER,
+            },
+            outcome: 'error',
+            log: {
+              error: `address-service:create-address - Unexpected error creating address`,
+            },
+          },
+        ],
+        [
+          'ContactServiceError',
+          {
+            errorCode: 'UNEXPECTED_RESPONSE',
+            error: new ContactServiceError(ContactServiceError.Codes.UNEXPECTED_RESPONSE),
+            body,
+            errorPayload: {
+              banner: UNEXPECTED_BANNER,
+            },
+            outcome: 'error',
+            log: {
+              error: `contact-service:create-address - Unexpected error adding address`,
+            },
+          },
+        ],
+        [
+          'ERROR',
+          {
+            errorCode: 'UNEXPECTED_ERROR',
+            error: new Error('UNEXPECTED_ERROR'),
+            body,
+            errorPayload: {
+              banner: UNEXPECTED_BANNER,
+            },
+            outcome: 'error',
+            log: {
+              error: `delivery-address:add:post - Unexpected error`,
+            },
+          },
+        ],
+        [
+          'FORMIK_VALIDATION_ERROR',
+          {
+            errorCode: 'Invalid Body',
+            error: null,
+            body: {
+              _csrf: 'mock-csrf',
+            },
+            errorPayload: {
+              errors: {
+                'address-label': 'pages.delivery-address.fields.address-nickname.error',
+                'address-line1': 'address.fields.address-line1.error',
+                day: 'pages.delivery-address.fields.day-number.error',
+                evening: 'pages.delivery-address.fields.evening-number.error',
+                postcode: 'address.fields.postcode.error',
+                town: 'address.fields.town.error',
+              },
+            },
+            outcome: 'validation-errors',
+          },
+        ],
+      ];
+
+      describe('[success]', () => {
+        const req = requestFactory({ body });
+        const res = responseFactory({ responseType });
+        const payload = payloadFactory(req, {
+          values,
         });
+
+        beforeAll(async () => {
+          await postAddDeliveryAddressPage(req, res, next);
+        });
+
+        it('should log correctly', () => {
+          expect(logOutcome).toHaveBeenCalledWith('delivery-address:add:post', 'successful', req);
+        });
+
+        if (responseType === 'html') {
+          it('should set the correct response data', () => {
+            expect(res.redirect).toBeCalledWith(`/account/address-book/${lang}?action=added`);
+          });
+        }
+
+        if (responseType === 'json') {
+          it('should set the correct response data', () => {
+            expect(send).toHaveBeenLastCalledWith({
+              payload,
+            });
+          });
+        }
+
+        afterAll(() => {
+          jest.clearAllMocks();
+        });
+      });
+
+      describe('[failure]', () => {
+        describe.each(errors)(
+          '[%s]',
+          (
+            errorName,
+            {
+              body: _body,
+              errorCode,
+              error,
+              outcome,
+              errorPayload,
+              log: { warn: warnLog, error: errorLog } = {},
+            },
+          ) => {
+            describe(errorCode, () => {
+              const { _csrf, ..._values } = _body; // eslint-disable-line
+              const req = requestFactory({ body: _body });
+              const res = responseFactory({ responseType });
+              const payload = payloadFactory(req, {
+                values: _values,
+                ...errorPayload,
+              });
+
+              beforeAll(async () => {
+                if (error) {
+                  createAddress.mockImplementationOnce(() => {
+                    throw error;
+                  });
+                }
+
+                await postAddDeliveryAddressPage(req, res, next);
+              });
+
+              it('Should log outcome correctly', () => {
+                expect(logOutcome).toBeCalledWith('delivery-address:add:post', outcome, req);
+              });
+
+              if (warnLog) {
+                it('Should log warning correctly', () => {
+                  expect(log.warn).toHaveBeenCalledWith(warnLog, error, req);
+                });
+              }
+
+              if (errorLog) {
+                it('Should log error correctly', () => {
+                  expect(log.error).toHaveBeenCalledWith(errorLog, error, req);
+                });
+              }
+
+              if (responseType === 'html') {
+                it('should set the correct response data', () => {
+                  expect(res.data).toEqual({
+                    payload,
+                  });
+                });
+
+                it('should call next correctly', () => {
+                  expect(next).toHaveBeenCalledWith();
+                });
+              }
+
+              if (responseType === 'json') {
+                it('should set the correct response data', () => {
+                  expect(send).toHaveBeenLastCalledWith({
+                    payload,
+                  });
+                });
+              }
+
+              afterAll(() => {
+                jest.clearAllMocks();
+              });
+            });
+          },
+        );
       });
     });
   });

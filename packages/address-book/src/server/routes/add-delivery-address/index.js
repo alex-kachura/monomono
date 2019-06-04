@@ -21,7 +21,7 @@ const ajv = ajvErrors(
   },
 );
 
-function getBreadcrumb(lang, getLocalePhrase) {
+export function getBreadcrumb(lang, getLocalePhrase) {
   return [
     {
       text: getLocalePhrase('pages.account.title'),
@@ -80,11 +80,11 @@ export function getAddDeliveryAddressPage(req, res, next) {
 
 export async function postAddDeliveryAddressPage(req, res, next) {
   const getLocalePhrase = getPhraseFactory(req.lang);
+  const action = 'create-address';
   const { fields, schema } = config[req.region].pages['delivery-address'];
   const { accessToken } = req.getClaims();
   const deliveryAddressController = controllerFactory('deliveryAddress.default', req.region);
   const { _csrf, ...data } = req.body; // eslint-disable-line no-unused-vars
-  const outcome = 'successful';
   const name = 'delivery-address:add:post';
 
   const payload = {
@@ -104,7 +104,7 @@ export async function postAddDeliveryAddressPage(req, res, next) {
   if (!isValid) {
     const errors = convertAJVErrorsToFormik(compiled.errors, schema);
 
-    return handleValidationErrors({ name, errors, payload, req, res, next });
+    return handleValidationErrors({ name, action, errors, payload, req, res, next });
   }
   try {
     await deliveryAddressController.createAddress({
@@ -115,15 +115,15 @@ export async function postAddDeliveryAddressPage(req, res, next) {
     });
   } catch (error) {
     if (error instanceof AddressServiceError) {
-      return handleAddressServiceError({ name, error, payload, req, next });
+      return handleAddressServiceError({ name, action, error, payload, req, res, next });
     } else if (error instanceof ContactServiceError) {
-      return handleContactServiceError({ name, error, payload, req, next });
+      return handleContactServiceError({ name, action, error, payload, req, res, next });
     }
 
-    return handleError({ name, error, payload, req, res, next });
+    return handleError({ name, action, error, payload, req, res, next });
   }
 
-  logOutcome(name, outcome, req);
+  logOutcome(name, 'successful', req);
 
   return res.format({
     html: () => res.redirect(`/account/address-book/${req.lang}?action=added`),

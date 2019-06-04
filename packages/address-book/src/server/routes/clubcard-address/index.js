@@ -21,7 +21,7 @@ const ajv = ajvErrors(
   },
 );
 
-function getBreadcrumb(lang, getLocalePhrase) {
+export function getBreadcrumb(lang, getLocalePhrase) {
   return [
     {
       text: getLocalePhrase('pages.account.title'),
@@ -48,6 +48,11 @@ export async function getClubcardAddressPage(req, res, next) {
   let address = {};
   const outcome = 'successful';
   const name = 'clubcard-address:edit:get';
+  const action = 'get-address';
+
+  if (!id) {
+    return handleError({ name, error: new Error('CONTACT_ADDRESS_ID_REQUIRED'), req, res, next });
+  }
 
   try {
     address = await clubcardAddressController.getAddress({
@@ -58,12 +63,12 @@ export async function getClubcardAddressPage(req, res, next) {
     });
   } catch (error) {
     if (error instanceof AddressServiceError) {
-      return handleAddressServiceError({ name, error, req, res, next });
+      return handleAddressServiceError({ name, action, error, req, res, next });
     } else if (error instanceof ContactServiceError) {
-      return handleContactServiceError({ name, error, req, res, next });
+      return handleContactServiceError({ name, action, error, req, res, next });
     }
 
-    return handleError(error);
+    return handleError({ name, action, error, req, res, next });
   }
 
   const payload = {
@@ -101,6 +106,7 @@ export async function postClubcardAddressPage(req, res, next) {
   const name = 'clubcard-address:edit:post';
   const { _csrf, ...data } = req.body; // eslint-disable-line no-unused-vars
   const outcome = 'successful';
+  const action = 'update-address';
 
   if (!id) {
     return handleError({ name, error: new Error('CONTACT_ADDRESS_ID_REQUIRED'), req, res, next });
@@ -134,12 +140,12 @@ export async function postClubcardAddressPage(req, res, next) {
     });
   } catch (error) {
     if (error instanceof AddressServiceError) {
-      return handleAddressServiceError({ name, error, payload, req, res, next });
+      return handleAddressServiceError({ name, action, error, payload, req, res, next });
     } else if (error instanceof ContactServiceError) {
-      return handleContactServiceError({ name, error, payload, req, res, next });
+      return handleContactServiceError({ name, action, error, payload, req, res, next });
     }
 
-    return handleError({ name, error, payload, req, res, next });
+    return handleError({ name, action, error, payload, req, res, next });
   }
 
   logOutcome(name, outcome, req);
