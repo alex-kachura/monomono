@@ -2,7 +2,9 @@ import express from 'express';
 import config from 'config';
 import csrf from 'csurf';
 import isAuthenticatedFactory from '@web-foundations/express-identity-validate';
-import handleUnauthenticated from '../middleware/handle-unauthenticated';
+import handleUnauthenticated, {
+  handleUnauthenticatedFactory,
+} from '../middleware/handle-unauthenticated';
 import setResponseData from '../middleware/response-data';
 import getIdentityClient from '../services/identity';
 import { getLandingPage } from './landing';
@@ -15,12 +17,25 @@ const { name: csrfCookieName, ...csrfCookieOptions } = config.get('cookie.CSRF')
 
 const BASE_PATH = config.get('basePath');
 const APP_PATH = config.get('appPath');
+const ROUTE_PATH = `/${BASE_PATH}/${APP_PATH}/:locale`;
 
 const baseRouter = express.Router(); // eslint-disable-line new-cap
 const appRouter = express.Router(); // eslint-disable-line new-cap
+const clubcardRouter = express.Router(); // eslint-disable-line new-cap
 const isAuthenticated = isAuthenticatedFactory({
   service: getIdentityClient(),
   getTracer: (req) => req.cookies[config.cookie.tracer.name] || req.sessionId,
+});
+const isElevatedAuthenticated = isAuthenticatedFactory({
+  service: getIdentityClient(),
+  getTracer: (req) => req.cookies[config.cookie.tracer.name] || req.sessionId,
+  targetConfidence: 16,
+});
+
+const handleElevatedUnauthenticated = handleUnauthenticatedFactory({
+  redirectTo(req) {
+    return config[req.region].externalApps.verify;
+  },
 });
 
 // Status check. This route is used by automated journeys to determine whether
@@ -34,10 +49,10 @@ baseRouter.use(
   (req, res) => res.redirect(301, `/${BASE_PATH}/${APP_PATH}/${req.lang}/`),
 );
 
-// All routes are only accessible to logged in users.
 appRouter.use(isAuthenticated, handleUnauthenticated);
+clubcardRouter.use(isElevatedAuthenticated, handleElevatedUnauthenticated);
 
-appRouter.use(
+baseRouter.use(
   csrf({
     cookie: {
       key: csrfCookieName,
@@ -47,6 +62,7 @@ appRouter.use(
 );
 
 appRouter.use(setResponseData);
+clubcardRouter.use(setResponseData);
 
 appRouter.get('/', getLandingPage);
 appRouter.post('/', postDeleteAddressRoute);
@@ -54,9 +70,10 @@ appRouter.get('/add-delivery-address', getAddDeliveryAddressPage);
 appRouter.post('/add-delivery-address', postAddDeliveryAddressPage);
 appRouter.get('/edit-delivery-address', getEditDeliveryAddressPage);
 appRouter.post('/edit-delivery-address', postEditDeliveryAddressPage);
-appRouter.get('/edit-clubcard-address', getClubcardAddressPage);
-appRouter.post('/edit-clubcard-address', postClubcardAddressPage);
+clubcardRouter.get('/', getClubcardAddressPage);
+clubcardRouter.post('/', postClubcardAddressPage);
 
-baseRouter.use(`/${BASE_PATH}/${APP_PATH}/:locale`, appRouter);
+baseRouter.use(`${ROUTE_PATH}/edit-clubcard-address`, clubcardRouter);
+baseRouter.use(ROUTE_PATH, appRouter);
 
 export default baseRouter;

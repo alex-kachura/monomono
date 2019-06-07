@@ -1,30 +1,38 @@
 import config from 'config';
 
-export default function handleUnauthenticated(req, res, next) {
-  const loginUrl = config[req.region].externalApps.login;
+export function handleUnauthenticatedFactory({ redirectTo } = {}) {
+  return (req, res, next) => {
+    let url = config[req.region].externalApps.login;
 
-  // If there's no login url configured (e.g. a country whose language config has
-  // been added, but there's still no login page ready to intregate), we allow pass-through.
-  if (req.isAuthenticated || loginUrl === '') {
-    return next();
-  }
+    if (redirectTo) {
+      url = typeof redirectTo === 'string' ? redirectTo : redirectTo(req);
+    }
 
-  const fromUrl = encodeURIComponent(`${config.protocol}${req.hostname}${req.baseUrl}${req.url}`);
+    // If there's no login url configured (e.g. a country whose language config has
+    // been added, but there's still no login page ready to intregate), we allow pass-through.
+    if (req.isAuthenticated || url === '') {
+      return next();
+    }
 
-  // get region-specific login url, e.g. UK or Ireland
-  const redirectPath = `${loginUrl}?from=${fromUrl}`;
+    const fromUrl = encodeURIComponent(`${config.protocol}${req.hostname}${req.baseUrl}${req.url}`);
 
-  return res.format({
-    // for ajax or fetch requests, we provide the location and return a 401, unauthorised
-    json() {
-      res.location(redirectPath);
+    // get region-specific login url, e.g. UK or Ireland
+    const redirectPath = `${url}?from=${fromUrl}`;
 
-      return res.status(401).end();
-    },
+    return res.format({
+      // for ajax or fetch requests, we provide the location and return a 401, unauthorised
+      json() {
+        res.location(redirectPath);
 
-    // for standard http requests, we redirect to the login page
-    html() {
-      return res.redirect(redirectPath);
-    },
-  });
+        return res.status(401).end();
+      },
+
+      // for standard http requests, we redirect to the login page
+      html() {
+        return res.redirect(redirectPath);
+      },
+    });
+  };
 }
+
+export default handleUnauthenticatedFactory();

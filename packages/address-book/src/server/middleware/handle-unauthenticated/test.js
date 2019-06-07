@@ -1,76 +1,74 @@
 import config from 'config';
-import handleUnauthenticated from '.';
+import defaultHandleUnauthenticated, { handleUnauthenticatedFactory } from '.';
+import { requestFactory, responseFactory, next, hostname } from '../../utils/test-helpers';
 
-describe('#handleUnauthenticated', () => {
-  let req;
-  let res;
-  let next;
-  let responseType;
-  const mockHost = 'mock-host';
+const verifyUrl = config.GB.externalApps.verify;
+const loginUrl = config.GB.externalApps.login;
+const customHandleUnauthenticated = handleUnauthenticatedFactory({
+  redirectTo: () => verifyUrl,
+});
 
-  beforeEach(() => {
-    req = {
-      hostname: mockHost,
-      baseUrl: '/base-url',
-      url: '/url?param1=val&parm2=val',
-      region: 'GB',
-    };
-    res = {
-      format: (f) => f[responseType](),
-      location: jest.fn(),
-      status: jest.fn(() => ({ end: jest.fn() })),
-      redirect: jest.fn(),
-    };
-    next = jest.fn();
-  });
-
-  afterEach(() => {
-    res.location.mockClear();
-    res.status.mockClear();
-    res.redirect.mockClear();
-    next.mockClear();
-  });
-
+describe.each([
+  [
+    '#handleUnauthenticated',
+    {
+      handleUnauthenticated: defaultHandleUnauthenticated,
+      redirectTo: loginUrl,
+    },
+  ],
+  [
+    '#customHandleUnauthenticated',
+    {
+      handleUnauthenticated: customHandleUnauthenticated,
+      redirectTo: verifyUrl,
+    },
+  ],
+])('%s', (name, { handleUnauthenticated, redirectTo }) => {
   describe('authenticated', () => {
-    beforeEach(() => {
-      req.isAuthenticated = true;
+    const req = requestFactory({
+      isAuthenticated: true,
+    });
+    const res = responseFactory();
 
+    beforeAll(() => {
       handleUnauthenticated(req, res, next);
     });
 
     it('should call next', () => {
       expect(next).toHaveBeenCalledWith();
     });
+
+    afterAll(() => {
+      jest.clearAllMocks();
+    });
   });
 
   describe('unauthenticated', () => {
-    const host = `${config.protocol}${mockHost}`;
-    const loginUrl = config.GB.externalApps.login;
-    const location = `${loginUrl}?from=${encodeURIComponent(
+    const host = `${config.protocol}${hostname}`;
+    const location = `${redirectTo}?from=${encodeURIComponent(
       host,
     )}%2Fbase-url%2Furl%3Fparam1%3Dval%26parm2%3Dval`; // eslint-disable-line max-len
 
-    describe('json', () => {
-      beforeEach(() => {
-        responseType = 'json';
+    describe.each(['html', 'json'])(`[ResponseType: %s]`, (responseType) => {
+      const req = requestFactory();
+      const res = responseFactory({ responseType });
+
+      beforeAll(() => {
         handleUnauthenticated(req, res, next);
       });
 
-      it('should call set response location correctly', () =>
-        expect(res.location).toHaveBeenCalledWith(location));
+      if (responseType === 'json') {
+        it('should call set response location correctly', () =>
+          expect(res.location).toHaveBeenCalledWith(location));
 
-      it('should send a 401 response', () => {
-        expect(res.status).toHaveBeenCalledWith(401);
-      });
-    });
+        it('should send a 401 response', () => {
+          expect(res.status).toHaveBeenCalledWith(401);
+        });
+      }
 
-    describe('html', () => {
-      beforeEach(() => {
-        responseType = 'html';
-        handleUnauthenticated(req, res, next);
-      });
-
-      it('should call res.redirect', () => expect(res.redirect).toHaveBeenCalledWith(location));
+      if (responseType === 'html') {
+        it('should call res.redirect', () => expect(res.redirect).toHaveBeenCalledWith(location));
+      }
     });
   });
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
-import { Root } from '@oneaccount/react-foundations';
+import { Root, fetchFactory } from '@oneaccount/react-foundations';
 import { StaticRouter } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
@@ -35,10 +35,7 @@ const globalStyles = {
 };
 
 export const renderServer = (initialData, routes, context, sheet, url) => {
-  const {
-    payload: { breadcrumb, ...payload } = {},
-    ...appConfig
-  } = initialData;
+  const { payload: { breadcrumb, ...payload } = {}, ...appConfig } = initialData;
 
   return ReactDOMServer.renderToString(
     sheet.collectStyles(
@@ -63,15 +60,15 @@ export const renderServer = (initialData, routes, context, sheet, url) => {
 };
 
 export const renderClient = (initialData, routes) => {
-  const {
-    payload: { breadcrumb, ...payload } = {},
-    ...appConfig
-  } = initialData;
+  const { payload: { breadcrumb, ...payload } = {}, ...appConfig } = initialData;
 
   ReactDOM.hydrate(
     <Root
       initialPageData={payload}
-      appConfig={appConfig}
+      appConfig={{
+        ...appConfig,
+        fetch: fetchFactory({ csrf: appConfig.csrf }, { replaceHistoryOnRedirect: true }),
+      }}
       breadcrumb={breadcrumb}
       loadingFallback={<Spinner />}
       errorFallback={<div>Error Please refresh the page</div>}
