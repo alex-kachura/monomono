@@ -4,6 +4,7 @@ module.exports = {
     tescoSecure: 'https://secure.tesco.com',
     login: 'https://secure.tesco.com/account/en-GB/login',
     logout: 'https://secure.tesco.com/account/en-GB/logout',
+    register: 'https://secure.tesco.com/account/en-GB/register',
     verify: 'https://secure.tesco.com/account/login/en-GB/verify',
   },
   supportLinks: [

@@ -3,14 +3,14 @@
 exports[`Breadcrumb component has breadcrumb should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="base-components__BaseElement-sc-150tvch-0 sc-bdVaJa dYnrJc"
+    class="sc-bdVaJa dYnrJc"
   >
     <nav
       aria-label="breadcrumb"
-      class="base-components__RootElement-sc-150tvch-1 styled__NavContainer-sc-1fzx5su-0 dXoXQG"
+      class="styled__NavContainer-sc-1fzx5su-0 dXoXQG"
     >
       <ol
-        class="base-components__BaseList-sc-150tvch-2 styled__OrderedList-sc-1fzx5su-2 dzvyLR"
+        class="styled__OrderedList-sc-1fzx5su-2 dzvyLR"
       >
         <li
           class="styled__ListItem-sc-1fzx5su-3 kDICdn"

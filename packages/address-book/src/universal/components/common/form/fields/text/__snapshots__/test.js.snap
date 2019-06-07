@@ -12,7 +12,7 @@ exports[`[Component: Text] [State: Default] should render correctly 1`] = `
       Test 
     </label>
     <div
-      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+      class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
     >
       <input
         aria-disabled="false"
@@ -41,7 +41,7 @@ exports[`[Component: Text] [State: Error] should render correctly 1`] = `
       Test 
     </label>
     <div
-      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+      class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
     >
       <input
         aria-describedby="test-error"
@@ -56,7 +56,7 @@ exports[`[Component: Text] [State: Error] should render correctly 1`] = `
       />
     </div>
     <p
-      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__message beans-form-group__error-message styled__Message-wt4ift-3 jcJuKh typography___styledElement-sc-186l0ce-0 dmJyuB"
+      class="beans-form-group__message beans-form-group__error-message styled__Message-wt4ift-3 jcJuKh typography___styledElement-sc-186l0ce-0 dmJyuB"
       id="test-error"
     >
       Error on field
@@ -77,7 +77,7 @@ exports[`[Component: Text] [State: Initial Value] should render correctly 1`] = 
       Test 
     </label>
     <div
-      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+      class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
     >
       <input
         aria-disabled="false"

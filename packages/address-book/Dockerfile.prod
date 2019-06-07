@@ -31,7 +31,7 @@ RUN npm install --production=false
 
 RUN npm run test
 
-RUN npm run lint
+RUN npm run lint:prod
 
 RUN npm run build:prod
 

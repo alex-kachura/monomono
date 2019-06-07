@@ -36,7 +36,7 @@ exports[`[Component: Banner] should render correctly 1`] = `
         class="base-components__BaseElement-sc-150tvch-0 edjZlZ"
       >
         <p
-          class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 cvZwhD"
+          class="typography___styledElement-sc-186l0ce-0 cvZwhD"
         >
           Banner title
         </p>

@@ -6,7 +6,7 @@ exports[`Footer renders correctly 1`] = `
     class="base-components__RootElement-sc-150tvch-1 irJAMC"
   >
     <div
-      class="base-components__BaseElement-sc-150tvch-0 styled__LinksContainer-sc-6mv3y9-0 fvhWhk"
+      class="styled__LinksContainer-sc-6mv3y9-0 fvhWhk"
     >
       <div
         class="styled-sc-140lqfg-0 jzEHNh"
@@ -19,12 +19,12 @@ exports[`Footer renders correctly 1`] = `
           >
             <section>
               <p
-                class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
+                class="styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
               >
                 footer.links.header1.title
               </p>
               <ul
-                class="base-components__BaseList-sc-150tvch-2 styled__LinkList-sc-6mv3y9-4 chGOT"
+                class="styled__LinkList-sc-6mv3y9-4 chGOT"
               >
                 <li
                   class="styled__LinkListItem-sc-6mv3y9-5 gelICI"
@@ -65,21 +65,21 @@ exports[`Footer renders correctly 1`] = `
             class="styled-tbp4qh-0 fauaRP"
           >
             <div
-              class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1ifdouk-0 krOkLW"
+              class="styled__RootContainer-sc-1ifdouk-0 krOkLW"
             >
               <div
-                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
+                class="styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
               >
                 <div
                   aria-controls="footer-accordion-0"
                   aria-expanded="false"
                   aria-label="footer.links.header1.title"
-                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
+                  class="beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
                   role="button"
                   tabindex="0"
                 >
                   <div
-                    class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
+                    class="styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
                   >
                     <a
                       class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 dDsMKJ styled__StandaloneLink-sc-1xizymv-0 eMAWHs"
@@ -96,13 +96,13 @@ exports[`Footer renders correctly 1`] = `
                   <button
                     aria-disabled="false"
                     aria-hidden="true"
-                    class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
+                    class="beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
                     role="presentation"
                     tabindex="-1"
                     type="button"
                   >
                     <span
-                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fzVDJ"
+                      class="styled__InnerContainer-sc-3mnirm-1 fzVDJ"
                     >
                       <svg
                         aria-hidden="true"
@@ -125,10 +125,10 @@ exports[`Footer renders correctly 1`] = `
                   </button>
                 </div>
                 <div
-                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
+                  class="beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
                 >
                   <div
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
+                    class="beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
                     id="footer-accordion-0"
                     role="region"
                     tabindex="-1"
@@ -214,15 +214,15 @@ exports[`Footer renders correctly 1`] = `
             class="styled-tbp4qh-0 fauaRP"
           >
             <div
-              class="base-components__BaseElement-sc-150tvch-0 styled__SocialLinksContainer-sc-6mv3y9-7 dvriro"
+              class="styled__SocialLinksContainer-sc-6mv3y9-7 dvriro"
             >
               <p
-                class="base-components__BaseElement-sc-150tvch-0 styled__SocialLinksCTA-sc-6mv3y9-8 bdWYQo typography___styledElement-sc-186l0ce-0 TmeCA"
+                class="styled__SocialLinksCTA-sc-6mv3y9-8 bdWYQo typography___styledElement-sc-186l0ce-0 TmeCA"
               >
                 footer.social-bar.label
               </p>
               <ul
-                class="base-components__BaseList-sc-150tvch-2 styled__SocialLinksList-sc-6mv3y9-9 jDltrn"
+                class="styled__SocialLinksList-sc-6mv3y9-9 jDltrn"
               >
                 <li
                   class="styled__SocialLinkItem-sc-6mv3y9-10 hETbMH"
@@ -264,7 +264,7 @@ exports[`Footer renders correctly 1`] = `
           class="styled__CopyrightColumn-sc-6mv3y9-11 fulVqn styled-tbp4qh-0 ZIHPV"
         >
           <p
-            class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 TmeCA"
+            class="typography___styledElement-sc-186l0ce-0 TmeCA"
           >
             © tesco-site footer.copyright
           </p>

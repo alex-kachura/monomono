@@ -127,8 +127,6 @@ export async function postAddDeliveryAddressPage(req, res, next) {
 
   return res.format({
     html: () => res.redirect(`/account/address-book/${req.lang}?action=added`),
-    json: () => {
-      res.send({ payload });
-    },
+    json: () => res.send({ payload }),
   });
 }

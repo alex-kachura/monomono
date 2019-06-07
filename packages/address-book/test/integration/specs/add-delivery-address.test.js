@@ -1,149 +1,88 @@
 import cheerio from 'cheerio';
-import { jar } from 'request';
-import { getResponse, login, extractStateAndHiddenCsfr } from '@oneaccount/test-common';
+import { getResponse, extractStateAndHiddenCsfr } from '@oneaccount/test-common';
 
-jest.setTimeout(30000);
+const jar = global.jar;
+const defaultFormFields = {
+  'address-id': 'trn:tesco:address:address:uuid:36598ef5-8f13-4f77-abdc-f42328d0c1bf',
+  postcode: 'EC1R 5AR',
+  'address-line1': '85 Clerkenwell Road',
+  'address-line2': '',
+  'address-line3': '',
+  town: 'LONDON',
+  day: '01234567891',
+  evening: '01234567891',
+  mobile: '',
+};
+const headers = {
+  'Content-Type': 'text/html',
+  Accept: 'text/html',
+};
+
+let response;
+let $;
 
 describe.each(contexts())('Add Delivery Address Page', (context) => {
-  const headers = {
-    'Content-Type': 'text/html',
-    Accept: 'text/html',
-  };
+  const { region, appUrl } = context;
+  const addPageUrl = `${appUrl}/add-delivery-address`;
 
-  let cookieJar;
-  let response;
+  async function loadPage(url) {
+    response = await getResponse(url, { jar, headers });
+    $ = cheerio.load(response.body);
 
-  const { region, appUrl, appConfig } = context;
-  const { externalApps } = appConfig[region];
-  const defaultFormFields = {
-    'address-id': 'trn:tesco:address:address:uuid:36598ef5-8f13-4f77-abdc-f42328d0c1bf',
-    postcode: 'EC1R 5AR',
-    'address-line1': '85 Clerkenwell Road',
-    'address-line2': '',
-    'address-line3': '',
-    town: 'LONDON',
-    day: '01234567891',
-    evening: '01234567891',
-    mobile: '',
-  };
+    expect(response.statusCode).toBe(200);
+    expect(response.request.href).toBe(url);
+  }
 
-  // Context for these tests is limited to GB as PL links and login URLS etc
-  // are unknown.
-  describe.each(contexts())(`${region} add delivery address`, () => {
-    async function submitForm(formData) {
-      const { state, hiddenCsrf } = extractStateAndHiddenCsfr(response.body);
+  async function submitForm(formData) {
+    const { state, hiddenCsrf } = extractStateAndHiddenCsfr(response.body);
 
-      return getResponse(`${appUrl}/add-delivery-address`, {
-        method: 'POST',
-        jar: cookieJar,
-        followAllRedirects: true,
-        form: {
-          ...formData,
-          state,
-        },
-        headers: {
-          Accept: 'text/html',
-          'csrf-token': hiddenCsrf,
-        },
-      });
-    }
+    return getResponse(addPageUrl, {
+      method: 'POST',
+      jar,
+      followAllRedirects: true,
+      form: {
+        ...formData,
+        state,
+      },
+      headers: {
+        Accept: 'text/html',
+        'csrf-token': hiddenCsrf,
+      },
+    });
+  }
 
-    async function deleteAddress(formData) {
-      const { state, hiddenCsrf } = extractStateAndHiddenCsfr(response.body);
+  async function deleteAddress(formData) {
+    const { state, hiddenCsrf } = extractStateAndHiddenCsfr(response.body);
 
-      return getResponse(`${appUrl}/`, {
-        method: 'POST',
-        jar: cookieJar,
-        followAllRedirects: true,
-        form: {
-          ...formData,
-          state,
-        },
-        headers: {
-          Accept: 'text/html',
-          'csrf-token': hiddenCsrf,
-        },
-      });
-    }
+    return getResponse(appUrl, {
+      method: 'POST',
+      jar,
+      followAllRedirects: true,
+      form: {
+        ...formData,
+        state,
+      },
+      headers: {
+        Accept: 'text/html',
+        'csrf-token': hiddenCsrf,
+      },
+    });
+  }
 
-    describe('should redirect to login when unauthenticated', () => {
+  describe(region, () => {
+    describe('Page render', () => {
       beforeAll(async () => {
-        cookieJar = jar();
-        response = await getResponse(`${appUrl}/add-delivery-address`, { jar: cookieJar, headers });
+        await loadPage(addPageUrl);
       });
 
-      it('has a status code of 200', () => {
-        expect(response.statusCode).toBe(200);
-      });
+      it('should contain correct page title', () => {
+        const pageTitle = context.getLocalePhrase(context.lang, 'pages.delivery-address.add.title');
 
-      it('login page has loaded', () => {
-        expect(response.request.href).toContain(externalApps.login);
+        expect($('h1').text()).toContain(pageTitle);
       });
     });
 
-    describe('when authenticated', () => {
-      let $;
-
-      beforeAll(async () => {
-        cookieJar = jar();
-
-        await login(
-          context.accounts.default.username,
-          context.accounts.default.password,
-          cookieJar,
-          externalApps.login,
-          {
-            headers,
-          },
-        );
-      });
-
-      describe('should render page', () => {
-        beforeAll(async () => {
-          response = await getResponse(`${appUrl}/add-delivery-address`, {
-            jar: cookieJar,
-            headers,
-          });
-
-          $ = cheerio.load(response.body);
-        });
-
-        it('has a status code of 200', () => {
-          expect(response.statusCode).toBe(200);
-        });
-
-        it('has loaded', () => {
-          expect(response.request.href).toBe(`${appUrl}/add-delivery-address`);
-        });
-
-        it('contains a title', () => {
-          const pageTitle = context.getLocalePhrase(
-            context.lang,
-            'pages.delivery-address.add.title',
-          );
-
-          expect($('h1').text()).toContain(pageTitle);
-        });
-      });
-    });
-
-    describe('when authenticated', () => {
-      let $;
-
-      beforeAll(async () => {
-        cookieJar = jar();
-
-        await login(
-          context.accounts.default.username,
-          context.accounts.default.password,
-          cookieJar,
-          externalApps.login,
-          {
-            headers,
-          },
-        );
-      });
-
+    describe('Functionality', () => {
       afterEach(async () => {
         $ = cheerio.load(response.body);
         const contactAddressId = $('form:last-of-type input[name="contact-address-id"]').attr(
@@ -157,11 +96,7 @@ describe.each(contexts())('Add Delivery Address Page', (context) => {
 
       describe('POST new delivery address', () => {
         beforeAll(async () => {
-          response = await getResponse(`${appUrl}/add-delivery-address`, {
-            jar: cookieJar,
-            headers,
-          });
-
+          await loadPage(addPageUrl);
           response = await submitForm({
             ...defaultFormFields,
             'address-label': 'Work',
@@ -170,38 +105,28 @@ describe.each(contexts())('Add Delivery Address Page', (context) => {
 
         it('successful', async () => {
           expect(response.statusCode).toBe(200);
-
           expect(response.request.href).toBe(`${appUrl}?action=added`);
         });
       });
 
       describe('POST new delivery address with apostrophe in label', () => {
         beforeAll(async () => {
-          response = await getResponse(`${appUrl}/add-delivery-address`, {
-            jar: cookieJar,
-            headers,
-          });
-
+          await loadPage(addPageUrl);
           response = await submitForm({
             ...defaultFormFields,
             'address-label': "Work's",
           });
         });
 
-        it('successful', async () => {
+        it('should load successfully', async () => {
           expect(response.statusCode).toBe(200);
-
           expect(response.request.href).toBe(`${appUrl}?action=added`);
         });
       });
 
       describe('POST an address with more than 30 characters', () => {
         beforeAll(async () => {
-          response = await getResponse(`${appUrl}/add-delivery-address`, {
-            jar: cookieJar,
-            headers,
-          });
-
+          await loadPage(addPageUrl);
           response = await submitForm({
             ...defaultFormFields,
             'address-label': 'This is a very very long address',

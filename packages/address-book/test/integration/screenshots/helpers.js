@@ -1,12 +1,22 @@
 import path from 'path';
 import config from 'config';
 import devices from 'puppeteer/DeviceDescriptors';
+
+const app = config.get('app');
+const locale = app.locales[0];
+const language = locale.languages[0];
+const region = locale.region;
+const regional = app[region];
+
 export { toMatchImageSnapshot } from 'jest-image-snapshot';
 export const devicesToEmulate = ['iPhone X'];
-export const baseURL = `${config.app.baseUrl}${config.env.basePath}${config.env.language}`;
+export const baseURL = `${app.protocol}${locale.hostname}/${app.basePath}/${
+  app.appPath
+}/${language}`;
+
 const HEADLESS = process.env.HEADLESS !== 'false';
-const IS_MOBILE = process.env.IS_MOBILE !== 'false';
-const INLINE_MODE = process.env.INLINE_MODE !== 'false';
+const IS_MOBILE = process.env.IS_MOBILE === 'true';
+const INLINE_MODE = process.env.INLINE_MODE === 'true';
 
 export const browserConfig = {
   ignoreHTTPSErrors: true,
@@ -49,8 +59,6 @@ export async function openURL(page, endpoint) {
 
   // emulate on default mobile device after opening the page
   if (IS_MOBILE) {
-    // await page.emulate(devices[devicesToEmulate[0]]);
-
     const emulateOptions = {
       ...devices[devicesToEmulate[0]],
     };
@@ -67,7 +75,7 @@ export async function openURL(page, endpoint) {
 }
 
 export async function generateAndCompare(page, filename) {
-  const imageMobile = await page.screenshot({
+  const image = await page.screenshot({
     fullPage: true,
   });
   let deviceName = devicesToEmulate[0];
@@ -78,5 +86,15 @@ export async function generateAndCompare(page, filename) {
 
   name += INLINE_MODE ? '-inline' : '';
 
-  expect(imageMobile).toMatchImageSnapshot(setConfig(name));
+  expect(image).toMatchImageSnapshot(setConfig(name));
+}
+
+export async function login(page, username, password) {
+  await openURL(page, regional.externalApps.login, {
+    waitUntil: ['load', 'networkidle2'],
+  });
+  await page.type('#username', username, { delay: 5 });
+  await page.type('#password', password, { delay: 2 });
+  await page.click('button.ui-component__button');
+  await page.waitForNavigation({ waitUntil: 'networkidle2' });
 }

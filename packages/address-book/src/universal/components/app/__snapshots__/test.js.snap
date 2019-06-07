@@ -6,7 +6,7 @@ exports[`App component should render correctly 1`] = `
     class="sc-bdVaJa byVKAQ"
   >
     <header
-      class="base-components__RootElement-sc-150tvch-1 sc-bwzfXH KWSuy styled__RootContainer-sc-1jruf7q-0 bVilUy"
+      class="sc-bwzfXH KWSuy styled__RootContainer-sc-1jruf7q-0 bVilUy"
     >
       <div
         class="styled-sc-140lqfg-0 hKAvLp"
@@ -34,7 +34,7 @@ exports[`App component should render correctly 1`] = `
                   >
                     <ul
                       aria-orientation="horizontal"
-                      class="base-components__BaseList-sc-150tvch-2 styled__UnorderedList-wyo7rg-0 crQnIg"
+                      class="styled__UnorderedList-wyo7rg-0 crQnIg"
                       direction="leftToRight"
                       orientation="horizontal"
                       role="menubar"
@@ -83,10 +83,10 @@ exports[`App component should render correctly 1`] = `
                   class="styled-tbp4qh-0 fauaRP"
                 >
                   <div
-                    class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1xcz8or-0 csCmxN"
+                    class="styled__RootContainer-sc-1xcz8or-0 csCmxN"
                   >
                     <div
-                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-1xcz8or-1 gyjrSV"
+                      class="styled__InnerContainer-sc-1xcz8or-1 gyjrSV"
                     >
                       <a
                         class="styled__StandaloneLink-sc-1xizymv-0 kXDmej"
@@ -224,7 +224,7 @@ exports[`App component should render correctly 1`] = `
                         </span>
                       </a>
                       <div
-                        class="base-components__BaseElement-sc-150tvch-0 styled__ContentContainer-sc-1xcz8or-4 fmbvcg"
+                        class="styled__ContentContainer-sc-1xcz8or-4 fmbvcg"
                       />
                     </div>
                   </div>
@@ -252,7 +252,7 @@ exports[`App component should render correctly 1`] = `
                         >
                           <ul
                             aria-orientation="horizontal"
-                            class="base-components__BaseList-sc-150tvch-2 styled__UnorderedList-wyo7rg-0 bYfZga"
+                            class="styled__UnorderedList-wyo7rg-0 bYfZga"
                             direction="leftToRight"
                             orientation="horizontal"
                             role="menubar"
@@ -265,7 +265,7 @@ exports[`App component should render correctly 1`] = `
                               role="menuitem"
                             >
                               <div
-                                class="base-components__BaseElement-sc-150tvch-0 beans-menu-item__popup-icon styled__PopupIconContainer-sc-1pj7ufq-2 ekeYAo"
+                                class="beans-menu-item__popup-icon styled__PopupIconContainer-sc-1pj7ufq-2 ekeYAo"
                               >
                                 <svg
                                   aria-hidden="true"
@@ -302,7 +302,7 @@ exports[`App component should render correctly 1`] = `
                             </li>
                           </ul>
                           <div
-                            class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-13qoh1s-0 krDoXx"
+                            class="styled__RootContainer-sc-13qoh1s-0 krDoXx"
                           />
                         </div>
                       </div>
@@ -342,7 +342,7 @@ exports[`App component should render correctly 1`] = `
     class="base-components__RootElement-sc-150tvch-1 irJAMC"
   >
     <div
-      class="base-components__BaseElement-sc-150tvch-0 styled__LinksContainer-sc-6mv3y9-0 fvhWhk"
+      class="styled__LinksContainer-sc-6mv3y9-0 fvhWhk"
     >
       <div
         class="styled-sc-140lqfg-0 jzEHNh"
@@ -355,12 +355,12 @@ exports[`App component should render correctly 1`] = `
           >
             <section>
               <p
-                class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
+                class="styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
               >
                 footer.links.header1.title
               </p>
               <ul
-                class="base-components__BaseList-sc-150tvch-2 styled__LinkList-sc-6mv3y9-4 chGOT"
+                class="styled__LinkList-sc-6mv3y9-4 chGOT"
               />
             </section>
           </div>
@@ -369,12 +369,12 @@ exports[`App component should render correctly 1`] = `
           >
             <section>
               <p
-                class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
+                class="styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
               >
                 footer.links.header2.title
               </p>
               <ul
-                class="base-components__BaseList-sc-150tvch-2 styled__LinkList-sc-6mv3y9-4 chGOT"
+                class="styled__LinkList-sc-6mv3y9-4 chGOT"
               />
             </section>
           </div>
@@ -383,12 +383,12 @@ exports[`App component should render correctly 1`] = `
           >
             <section>
               <p
-                class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
+                class="styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
               >
                 footer.links.header3.title
               </p>
               <ul
-                class="base-components__BaseList-sc-150tvch-2 styled__LinkList-sc-6mv3y9-4 chGOT"
+                class="styled__LinkList-sc-6mv3y9-4 chGOT"
               />
             </section>
           </div>
@@ -397,12 +397,12 @@ exports[`App component should render correctly 1`] = `
           >
             <section>
               <p
-                class="base-components__BaseElement-sc-150tvch-0 styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
+                class="styled__LinkListHeader-sc-6mv3y9-3 kOmdNs typography___styledElement-sc-186l0ce-0 kAQtwM"
               >
                 footer.links.header4.title
               </p>
               <ul
-                class="base-components__BaseList-sc-150tvch-2 styled__LinkList-sc-6mv3y9-4 chGOT"
+                class="styled__LinkList-sc-6mv3y9-4 chGOT"
               />
             </section>
           </div>
@@ -414,21 +414,21 @@ exports[`App component should render correctly 1`] = `
             class="styled-tbp4qh-0 fauaRP"
           >
             <div
-              class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1ifdouk-0 krOkLW"
+              class="styled__RootContainer-sc-1ifdouk-0 krOkLW"
             >
               <div
-                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
+                class="styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
               >
                 <div
                   aria-controls="footer-accordion-0"
                   aria-expanded="false"
                   aria-label="footer.links.header1.title"
-                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
+                  class="beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
                   role="button"
                   tabindex="0"
                 >
                   <div
-                    class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
+                    class="styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
                   >
                     <a
                       class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 dDsMKJ styled__StandaloneLink-sc-1xizymv-0 eMAWHs"
@@ -445,13 +445,13 @@ exports[`App component should render correctly 1`] = `
                   <button
                     aria-disabled="false"
                     aria-hidden="true"
-                    class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
+                    class="beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
                     role="presentation"
                     tabindex="-1"
                     type="button"
                   >
                     <span
-                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fzVDJ"
+                      class="styled__InnerContainer-sc-3mnirm-1 fzVDJ"
                     >
                       <svg
                         aria-hidden="true"
@@ -474,10 +474,10 @@ exports[`App component should render correctly 1`] = `
                   </button>
                 </div>
                 <div
-                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
+                  class="beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
                 >
                   <div
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
+                    class="beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
                     id="footer-accordion-0"
                     role="region"
                     tabindex="-1"
@@ -485,18 +485,18 @@ exports[`App component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
+                class="styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
               >
                 <div
                   aria-controls="footer-accordion-1"
                   aria-expanded="false"
                   aria-label="footer.links.header2.title"
-                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
+                  class="beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
                   role="button"
                   tabindex="0"
                 >
                   <div
-                    class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
+                    class="styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
                   >
                     <a
                       class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 dDsMKJ styled__StandaloneLink-sc-1xizymv-0 eMAWHs"
@@ -513,13 +513,13 @@ exports[`App component should render correctly 1`] = `
                   <button
                     aria-disabled="false"
                     aria-hidden="true"
-                    class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
+                    class="beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
                     role="presentation"
                     tabindex="-1"
                     type="button"
                   >
                     <span
-                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fzVDJ"
+                      class="styled__InnerContainer-sc-3mnirm-1 fzVDJ"
                     >
                       <svg
                         aria-hidden="true"
@@ -542,10 +542,10 @@ exports[`App component should render correctly 1`] = `
                   </button>
                 </div>
                 <div
-                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
+                  class="beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
                 >
                   <div
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
+                    class="beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
                     id="footer-accordion-1"
                     role="region"
                     tabindex="-1"
@@ -553,18 +553,18 @@ exports[`App component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
+                class="styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
               >
                 <div
                   aria-controls="footer-accordion-2"
                   aria-expanded="false"
                   aria-label="footer.links.header3.title"
-                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
+                  class="beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
                   role="button"
                   tabindex="0"
                 >
                   <div
-                    class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
+                    class="styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
                   >
                     <a
                       class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 dDsMKJ styled__StandaloneLink-sc-1xizymv-0 eMAWHs"
@@ -581,13 +581,13 @@ exports[`App component should render correctly 1`] = `
                   <button
                     aria-disabled="false"
                     aria-hidden="true"
-                    class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
+                    class="beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
                     role="presentation"
                     tabindex="-1"
                     type="button"
                   >
                     <span
-                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fzVDJ"
+                      class="styled__InnerContainer-sc-3mnirm-1 fzVDJ"
                     >
                       <svg
                         aria-hidden="true"
@@ -610,10 +610,10 @@ exports[`App component should render correctly 1`] = `
                   </button>
                 </div>
                 <div
-                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
+                  class="beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
                 >
                   <div
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
+                    class="beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
                     id="footer-accordion-2"
                     role="region"
                     tabindex="-1"
@@ -621,18 +621,18 @@ exports[`App component should render correctly 1`] = `
                 </div>
               </div>
               <div
-                class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
+                class="styled__RootContainer-sc-1cy9yz3-0 eyFAPM"
               >
                 <div
                   aria-controls="footer-accordion-3"
                   aria-expanded="false"
                   aria-label="footer.links.header4.title"
-                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
+                  class="beans-accordion__heading styled__Heading-sc-1cy9yz3-1 dSqCAx"
                   role="button"
                   tabindex="0"
                 >
                   <div
-                    class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
+                    class="styled__LinkContainer-sc-1cy9yz3-3 bnuwOJ"
                   >
                     <a
                       class="beans-accordion__link styled__StyledLink-sc-1cy9yz3-4 dDsMKJ styled__StandaloneLink-sc-1xizymv-0 eMAWHs"
@@ -649,13 +649,13 @@ exports[`App component should render correctly 1`] = `
                   <button
                     aria-disabled="false"
                     aria-hidden="true"
-                    class="styled__BaseButton-sc-3mnirm-0 beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
+                    class="beans-accordion__button styled__StyledButton-sc-1cy9yz3-2 jqfjuZ styled__PrimaryButton-sc-3mnirm-2 diLGBG"
                     role="presentation"
                     tabindex="-1"
                     type="button"
                   >
                     <span
-                      class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fzVDJ"
+                      class="styled__InnerContainer-sc-3mnirm-1 fzVDJ"
                     >
                       <svg
                         aria-hidden="true"
@@ -678,10 +678,10 @@ exports[`App component should render correctly 1`] = `
                   </button>
                 </div>
                 <div
-                  class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
+                  class="beans-accordion__content-container styled__ContentContainer-sc-1cy9yz3-5 engaKX"
                 >
                   <div
-                    class="base-components__BaseElement-sc-150tvch-0 beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
+                    class="beans-accordion__content styled__Content-sc-1cy9yz3-6 hlXXeL"
                     id="footer-accordion-3"
                     role="region"
                     tabindex="-1"
@@ -710,7 +710,7 @@ exports[`App component should render correctly 1`] = `
           class="styled__CopyrightColumn-sc-6mv3y9-11 fulVqn styled-tbp4qh-0 ZIHPV"
         >
           <p
-            class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 TmeCA"
+            class="typography___styledElement-sc-186l0ce-0 TmeCA"
           >
             © tesco-site footer.copyright
           </p>

@@ -1,69 +1,52 @@
 import cheerio from 'cheerio';
-import { jar } from 'request';
-import { getResponse, login } from '@oneaccount/test-common';
+import { getResponse } from '@oneaccount/test-common';
 
-jest.setTimeout(30000);
+const jar = global.jar;
+const headers = {
+  'Content-Type': 'text/html',
+  Accept: 'text/html',
+};
+
+let response;
+let $;
 
 describe.each(contexts())('Landing Page (/)', (context) => {
-  const headers = {
-    'Content-Type': 'text/html',
-    Accept: 'text/html',
-  };
+  const { appUrl, region } = context;
 
-  let cookieJar;
-  let response;
-
-  const { region, appUrl, appConfig } = context;
-  const { externalApps } = appConfig[region];
-
-  describe('should redirect to login when unauthenticated', () => {
+  describe(region, () => {
     beforeAll(async () => {
-      cookieJar = jar();
-      response = await getResponse(`${appUrl}/`, { jar: cookieJar, headers });
-    });
-
-    it('has a status code of 200', () => {
-      expect(response.statusCode).toBe(200);
-    });
-
-    it('login page has loaded', () => {
-      expect(response.request.href).toContain(externalApps.login);
-    });
-  });
-
-  describe('should render page when authenticated', () => {
-    let $;
-
-    beforeAll(async () => {
-      cookieJar = jar();
-
-      await login(
-        context.accounts.default.username,
-        context.accounts.default.password,
-        cookieJar,
-        externalApps.login,
-        {
-          headers,
-        },
-      );
-
-      response = await getResponse(`${appUrl}/`, { jar: cookieJar, headers });
+      response = await getResponse(`${appUrl}/`, { jar, headers });
 
       $ = cheerio.load(response.body);
     });
 
-    it('has a status code of 200', () => {
+    it('should load successfully', () => {
       expect(response.statusCode).toBe(200);
-    });
-
-    it('landing page has loaded', () => {
       expect(response.request.href).toBe(`${appUrl}/`);
     });
 
-    it('landing page contains a title', () => {
+    it('should contain correct page title', () => {
       const pageTitle = context.getLocalePhrase(context.lang, 'pages.landing.title');
 
       expect($('h1').text()).toContain(pageTitle);
+    });
+
+    it('should contain Clubcard address', () => {
+      const clubcardAddressTitle = context.getLocalePhrase(
+        context.lang,
+        'pages.landing.primary-address.header.clubcard',
+      );
+
+      expect($('h5').text()).toContain(clubcardAddressTitle);
+    });
+
+    it('should contain Online Grocery Shopping address', () => {
+      const groceryAddressTitle = context.getLocalePhrase(
+        context.lang,
+        'pages.landing.primary-address.header.grocery',
+      );
+
+      expect($('h5').text()).toContain(groceryAddressTitle);
     });
   });
 });

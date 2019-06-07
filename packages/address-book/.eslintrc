@@ -32,7 +32,9 @@
     "afterAll": false,
     "beforeAll": false,
     "contexts": false,
-    "Region": false
+    "Region": false,
+    "User": false,
+    "jar": false
   },
   "env": {
     "es6": true,

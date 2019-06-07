@@ -3,7 +3,7 @@
 exports[`[Component: LandingPage] should render correctly 1`] = `
 <DocumentFragment>
   <h1
-    class="base-components__BaseElement-sc-150tvch-0 sc-ckVGcZ fZTLHX typography___styledElement-sc-186l0ce-0 hmbiuS"
+    class="sc-ckVGcZ fZTLHX typography___styledElement-sc-186l0ce-0 hmbiuS"
   >
     pages.landing.title
   </h1>
@@ -41,7 +41,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
       class="sc-dxgOiQ ljBzWp"
     >
       <h5
-        class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fREkql"
+        class="typography___styledElement-sc-186l0ce-0 fREkql"
       />
     </div>
   </div>
@@ -49,7 +49,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
     class="sc-jKJlTe fLwXpA styled-sc-140lqfg-0 hKAvLp"
   >
     <h2
-      class="base-components__BaseElement-sc-150tvch-0 sc-kEYyzF bYCXGr typography___styledElement-sc-186l0ce-0 iswQsi"
+      class="sc-kEYyzF bYCXGr typography___styledElement-sc-186l0ce-0 iswQsi"
     >
       pages.landing.primary-address.label
     </h2>
@@ -85,7 +85,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               class="sc-dnqmqq kWHYmu"
             >
               <h5
-                class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fREkql"
+                class="typography___styledElement-sc-186l0ce-0 fREkql"
               >
                 pages.landing.primary-address.header.clubcard
               </h5>
@@ -95,22 +95,22 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
             class="sc-bdVaJa efQDjt"
           >
             <h4
-              class="base-components__BaseElement-sc-150tvch-0 sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
+              class="sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
             >
               Clubcard
             </h4>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               85 Clerkenwell Road
             </p>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               LONDON
             </p>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.phone: 07345234636
             </p>
@@ -136,7 +136,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               </a>
             </span>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs dRDBok typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-htoDjs dRDBok typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.primary-address.additional.clubcard
             </p>
@@ -172,7 +172,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               class="sc-dnqmqq kWHYmu"
             >
               <h5
-                class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fREkql"
+                class="typography___styledElement-sc-186l0ce-0 fREkql"
               >
                 pages.landing.primary-address.header.grocery
               </h5>
@@ -182,32 +182,32 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
             class="sc-bdVaJa efQDjt"
           >
             <h4
-              class="base-components__BaseElement-sc-150tvch-0 sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
+              class="sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
             >
               home 3
             </h4>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               85 Clerkenwell Road
             </p>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               LONDON
             </p>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.day: 07345234636
             </p>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.evening: 07345234635
             </p>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.mobile: 07345234637
             </p>
@@ -233,7 +233,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               </a>
             </span>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs dRDBok typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-htoDjs dRDBok typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.primary-address.additional.grocery
             </p>
@@ -246,7 +246,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
     class="sc-jKJlTe eggBET styled-sc-140lqfg-0 hKAvLp"
   >
     <h2
-      class="base-components__BaseElement-sc-150tvch-0 sc-kEYyzF bYCXGr typography___styledElement-sc-186l0ce-0 iswQsi"
+      class="sc-kEYyzF bYCXGr typography___styledElement-sc-186l0ce-0 iswQsi"
     >
       pages.landing.other-addresses.label
     </h2>
@@ -275,7 +275,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                     class="beans-link__text styled__TextSpan-sc-1r4nugl-3 fXsDiB"
                   >
                     <h4
-                      class="base-components__BaseElement-sc-150tvch-0 sc-iAyFgw jviHqQ typography___styledElement-sc-186l0ce-0 ixZPNc"
+                      class="sc-iAyFgw jviHqQ typography___styledElement-sc-186l0ce-0 ixZPNc"
                     >
                       Add delivery address
                     </h4>
@@ -320,37 +320,37 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
             class="sc-bdVaJa fOmtxQ"
           >
             <h4
-              class="base-components__BaseElement-sc-150tvch-0 sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
+              class="sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
             >
               Luis
             </h4>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               Flat 1
             </p>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               The Old School
             </p>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               146 York Way
             </p>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               LONDON
             </p>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.day: 07427708482
             </p>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.evening: 07427708482
             </p>
@@ -389,15 +389,15 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               />
               <button
                 aria-disabled="false"
-                class="styled__BaseButton-sc-3mnirm-0 styled__LinkButton-sc-3mnirm-13 gyNqJj"
+                class="styled__LinkButton-sc-3mnirm-13 gyNqJj"
                 role="button"
                 type="submit"
               >
                 <span
-                  class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+                  class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
                 >
                   <span
-                    class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+                    class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
                   >
                     pages.landing.delete-btn
                   </span>
@@ -414,7 +414,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               style="transform: translate3d(0, 100%, 0); opacity: 0;"
             >
               <h4
-                class="base-components__BaseElement-sc-150tvch-0 sc-VigVT eyiuaP typography___styledElement-sc-186l0ce-0 ixZPNc"
+                class="sc-VigVT eyiuaP typography___styledElement-sc-186l0ce-0 ixZPNc"
               >
                 pages.landing.delete.confirmation-message
               </h4>
@@ -422,12 +422,12 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                 class="sc-cSHVUG bhIRwB"
               >
                 <p
-                  class="base-components__BaseElement-sc-150tvch-0 sc-fjdhpX glRFcX typography___styledElement-sc-186l0ce-0 gxVCAq"
+                  class="sc-fjdhpX cxEKBW typography___styledElement-sc-186l0ce-0 gxVCAq"
                 >
                   Luis
                 </p>
                 <p
-                  class="base-components__BaseElement-sc-150tvch-0 sc-jTzLTM cjflfh typography___styledElement-sc-186l0ce-0 gxVCAq"
+                  class="sc-jTzLTM cjflfh typography___styledElement-sc-186l0ce-0 gxVCAq"
                 >
                   Flat 1
                 </p>
@@ -443,15 +443,15 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                 />
                 <button
                   aria-disabled="false"
-                  class="styled__BaseButton-sc-3mnirm-0 sc-jzJRlG cyAuDu styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+                  class="sc-jzJRlG cyAuDu styled__PrimaryButton-sc-3mnirm-2 giYBMC"
                   role="button"
                   type="submit"
                 >
                   <span
-                    class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+                    class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
                   >
                     <span
-                      class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+                      class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
                     >
                       pages.landing.delete.confirm
                     </span>
@@ -465,15 +465,15 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               </form>
               <button
                 aria-disabled="false"
-                class="styled__BaseButton-sc-3mnirm-0 styled__SecondaryButton-sc-3mnirm-3 bzFQfg"
+                class="styled__SecondaryButton-sc-3mnirm-3 bzFQfg"
                 role="button"
                 type="button"
               >
                 <span
-                  class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
+                  class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
                 >
                   <span
-                    class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+                    class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
                   >
                     pages.landing.delete.cancel
                   </span>

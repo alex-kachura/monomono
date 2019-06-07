@@ -4,17 +4,17 @@ exports[`NotFound component should render correctly 1`] = `
 <DocumentFragment>
   <div>
     <h1
-      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 hmbiuS"
+      class="typography___styledElement-sc-186l0ce-0 hmbiuS"
     >
       pages.not-found.heading
     </h1>
     <p
-      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 eEYJsv"
+      class="typography___styledElement-sc-186l0ce-0 eEYJsv"
     >
       pages.not-found.paragraphs.0
     </p>
     <p
-      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 eEYJsv"
+      class="typography___styledElement-sc-186l0ce-0 eEYJsv"
     >
       pages.not-found.paragraphs.1
     </p>

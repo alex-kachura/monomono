@@ -39,7 +39,7 @@ export const BoldWrapBodyText = styled(BodyText)`
   width: 100%;
   && {
     font-weight: bold;
-    color: 000;
+    color: #000;
   }
 `;
 
