@@ -12,6 +12,7 @@ import {
   handleContactServiceError,
   handleError,
   handleValidationErrors,
+  ErrorCodes,
 } from '../../utils/error-handlers';
 import { handleResponse } from '../../utils/response-handlers';
 
@@ -55,7 +56,7 @@ export async function getEditDeliveryAddressPage(req, res, next) {
     return handleError({
       name,
       action,
-      error: new Error('CONTACT_ADDRESS_ID_REQUIRED'),
+      error: new Error(ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED),
       req,
       res,
       next,

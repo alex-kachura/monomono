@@ -12,6 +12,7 @@ import {
   handleContactServiceError,
   handleError,
   handleValidationErrors,
+  ErrorCodes,
 } from '../../utils/error-handlers';
 
 const ajv = ajvErrors(
@@ -51,7 +52,13 @@ export async function getClubcardAddressPage(req, res, next) {
   const action = 'get-address';
 
   if (!id) {
-    return handleError({ name, error: new Error('CONTACT_ADDRESS_ID_REQUIRED'), req, res, next });
+    return handleError({
+      name,
+      error: new Error(ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED),
+      req,
+      res,
+      next,
+    });
   }
 
   try {
@@ -109,7 +116,13 @@ export async function postClubcardAddressPage(req, res, next) {
   const action = 'update-address';
 
   if (!id) {
-    return handleError({ name, error: new Error('CONTACT_ADDRESS_ID_REQUIRED'), req, res, next });
+    return handleError({
+      name,
+      error: new Error(ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED),
+      req,
+      res,
+      next,
+    });
   }
 
   // TODO: Cache schema

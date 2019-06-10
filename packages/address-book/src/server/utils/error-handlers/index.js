@@ -3,10 +3,24 @@ import { AddressServiceError } from '@web-foundations/service-address';
 import { ContactServiceError } from '@web-foundations/service-contact';
 import { handleResponse } from '../response-handlers';
 
+export const ErrorCodes = {
+  NOT_CLUBCARD_ADDRESS: 'NOT_CLUBCARD_ADDRESS',
+  NOT_DELIVERY_ADDRESS: 'NOT_DELIVERY_ADDRESS',
+  PHONE_NUMBERS_NOT_VALID: 'PHONE_NUMBERS_NOT_VALID',
+  CONTACT_ADDRESS_ID_REQUIRED: 'CONTACT_ADDRESS_ID_REQUIRED',
+};
+
 export const UNEXPECTED_BANNER = {
   type: 'error',
   title: 'banners.error.unexpected.title',
   text: 'banners.error.unexpected.text',
+};
+
+export const NumberTypeErrors = {
+  day: 'pages.delivery-address.fields.day-number.error',
+  evening: 'pages.delivery-address.fields.evening-number.error',
+  mobile: 'pages.delivery-address.fields.mobile-number.error',
+  phone: 'pages.clubcard-address.fields.phone-number.error',
 };
 
 export function handleAddressServiceError({ name, action, error, payload = {}, req, res, next }) {
@@ -53,19 +67,40 @@ export function handleAddressServiceError({ name, action, error, payload = {}, r
 }
 
 export function handleContactServiceError({ name, action, error, payload = {}, req, res, next }) {
-  const outcome = 'error';
+  let outcome = 'error';
   let banner = {};
-
-  logOutcome(name, outcome, req);
+  let errors = {};
 
   if (error.message === ContactServiceError.Codes.ADDRESS_NOT_FOUND) {
     log.warn(`contact-service:${action}:ADDRESS_NOT_FOUND - Address not found`, error, req);
 
+    logOutcome(name, outcome, req);
+
     return next(error);
   }
-  banner = UNEXPECTED_BANNER;
 
-  log.error(`contact-service:${action} - Unexpected error adding address`, error, req);
+  if (error.message === ErrorCodes.PHONE_NUMBERS_NOT_VALID) {
+    log.warn(
+      `contact-service:${action}:PHONE_NUMBERS_NOT_VALID - phone numbers not valid`,
+      error,
+      req,
+    );
+
+    outcome = 'validation-errors';
+    errors = error.violations.reduce((result, phoneError) => {
+      result[phoneError[0]] = NumberTypeErrors[phoneError[0]];
+
+      return result;
+    }, {});
+  }
+
+  if (outcome === 'error') {
+    banner = UNEXPECTED_BANNER;
+
+    log.error(`contact-service:${action} - Unexpected error adding address`, error, req);
+  }
+
+  logOutcome(name, outcome, req);
 
   if (req.method === 'GET') {
     return next(error);
@@ -74,6 +109,7 @@ export function handleContactServiceError({ name, action, error, payload = {}, r
   const data = {
     payload: {
       ...payload,
+      errors,
       banner,
     },
   };
@@ -85,19 +121,19 @@ export function handleError({ name, error, payload = {}, req, res, next }) {
   let banner = {};
 
   logOutcome(name, 'error', req);
-  if (error.message === 'NOT_DELIVERY_ADDRESS') {
+  if (error.message === ErrorCodes.NOT_DELIVERY_ADDRESS) {
     // redirect to not found
 
     log.warn(`${name} - Address is not a delivery address`, error, req);
 
     return next(error);
-  } else if (error.message === 'NOT_CLUBCARD_ADDRESS') {
+  } else if (error.message === ErrorCodes.NOT_CLUBCARD_ADDRESS) {
     // redirect to not found
 
     log.warn(`${name} - Address is not a clubcard address`, error, req);
 
     return next(error);
-  } else if (error.message === 'CONTACT_ADDRESS_ID_REQUIRED') {
+  } else if (error.message === ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED) {
     log.warn(`${name} - 'id' was not provided`, error, req);
 
     return next(error);

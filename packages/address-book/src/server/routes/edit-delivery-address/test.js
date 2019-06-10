@@ -5,7 +5,7 @@ import log, { logOutcome } from '../../logger';
 import { send, lang, next, requestFactory, responseFactory } from '../../utils/test-helpers';
 import { getAddress, updateAddress } from '../../controllers/delivery-address/_default';
 import { getLocalePhrase } from '../../utils/i18n';
-import { UNEXPECTED_BANNER } from '../../utils/error-handlers';
+import { UNEXPECTED_BANNER, ErrorCodes } from '../../utils/error-handlers';
 import { ContactServiceError } from '@web-foundations/service-contact';
 
 const testAddress = {
@@ -43,9 +43,9 @@ describe('[Route: /edit-delivery-address]', () => {
         [
           'ERROR',
           {
-            error: new Error('NOT_DELIVERY_ADDRESS'),
+            error: new Error(ErrorCodes.NOT_DELIVERY_ADDRESS),
             errorPayload: {},
-            errorCode: 'NOT_DELIVERY_ADDRESS',
+            errorCode: ErrorCodes.NOT_DELIVERY_ADDRESS,
             outcome: 'error',
             log: {
               warn: `delivery-address:edit:get - Address is not a delivery address`,

@@ -1,8 +1,10 @@
 // Default controller
+import { ErrorCodes } from '../../../utils/error-handlers';
 import { getServiceToken } from '../../../services/identity';
 import getContactClient, {
   mapPhoneNumbersToFormValues,
   processedContactData,
+  validatePhoneNumbers,
 } from '../../../services/contact';
 import getAddressClient, {
   mapAddressToFormValues,
@@ -21,7 +23,7 @@ export async function getAddress({ accessToken, addressId, context, tracer }) {
   const { addressUuid, tags } = addresses[0];
 
   if (!tags.includes('primaryLoyalty')) {
-    throw new Error('NOT_CLUBCARD_ADDRESS');
+    throw new Error(ErrorCodes.NOT_CLUBCARD_ADDRESS);
   }
 
   const address = await addressService.getAddress({
@@ -55,7 +57,7 @@ export async function updateAddress({ data, addressIndex, accessToken, context, 
   const postcode = data.postcode;
 
   if (!tags.includes('primaryLoyalty')) {
-    throw new Error('NOT_CLUBCARD_ADDRESS');
+    throw new Error(ErrorCodes.NOT_CLUBCARD_ADDRESS);
   }
 
   if (!addressId) {
@@ -69,6 +71,17 @@ export async function updateAddress({ data, addressIndex, accessToken, context, 
     });
 
     addressId = address.addressId;
+  }
+
+  if (modifiedPhoneNumbers.length > 0) {
+    const phones = [
+      {
+        numberType: 'phone',
+        value: modifiedPhoneNumbers[0].value,
+      },
+    ];
+
+    await validatePhoneNumbers(contactService, phones, { tracer, context });
   }
 
   await Promise.all(

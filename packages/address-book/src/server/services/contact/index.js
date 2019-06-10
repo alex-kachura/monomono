@@ -1,6 +1,7 @@
-import ContactService from '@web-foundations/service-contact';
+import ContactService, { ContactServiceError } from '@web-foundations/service-contact';
 import config from 'config';
 import log from '../../logger';
+import { ErrorCodes } from '../../utils/error-handlers';
 
 const onContactRequestStart = log.makeOnRequestEventHandler('Contact Service Request');
 const onContactRequestEnd = log.makeOnRequestEventHandler('Contact Service Response');
@@ -37,6 +38,7 @@ export function getModifiedPhoneNumbers(phoneNumbers, OriginalPhoneNumbers) {
         telephoneNumberIndex: original.telephoneNumberIndex,
         value,
         oldValue: original.value,
+        numberType,
       };
     })
     .filter(({ value, oldValue }) => value !== oldValue);
@@ -72,6 +74,35 @@ export function mapPhoneNumbersToFormValues(phoneNumbers, { isClubcard = false }
   });
 
   return result;
+}
+
+export async function validatePhoneNumbers(contactService, phoneNumbers, { tracer, context }) {
+  const validationResponse = await Promise.all(
+    phoneNumbers.map(({ value }) =>
+      contactService.validatePhoneNumber({
+        countryCode: 'GB',
+        phoneNumber: value,
+        tracer,
+        context,
+      }),
+    ),
+  );
+
+  const phoneErrors = validationResponse.reduce((result, { isValid, errors }, index) => {
+    if (!isValid) {
+      result.push([phoneNumbers[index].numberType, errors]);
+    }
+
+    return result;
+  }, []);
+
+  if (phoneErrors.length > 0) {
+    const error = new ContactServiceError(ErrorCodes.PHONE_NUMBERS_NOT_VALID);
+
+    error.violations = phoneErrors;
+
+    throw error;
+  }
 }
 
 export default function getContactClient(accessToken) {

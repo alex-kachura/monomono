@@ -5,7 +5,7 @@ import log, { logOutcome } from '../../logger';
 import { send, lang, next, requestFactory, responseFactory } from '../../utils/test-helpers';
 import { getAddress, updateAddress } from '../../controllers/clubcard-address/_default';
 import { getLocalePhrase } from '../../utils/i18n';
-import { UNEXPECTED_BANNER } from '../../utils/error-handlers';
+import { UNEXPECTED_BANNER, ErrorCodes } from '../../utils/error-handlers';
 import { ContactServiceError } from '@web-foundations/service-contact';
 
 const testAddress = {
@@ -44,8 +44,8 @@ describe('[Route: /edit-clubcard-address]', () => {
         [
           'ERROR',
           {
-            error: new Error('CONTACT_ADDRESS_ID_REQUIRED'),
-            errorCode: 'CONTACT_ADDRESS_ID_REQUIRED',
+            error: new Error(ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED),
+            errorCode: ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED,
             outcome: 'error',
             query: {},
             log: {
@@ -146,7 +146,7 @@ describe('[Route: /edit-clubcard-address]', () => {
               const res = responseFactory({ responseType });
 
               beforeAll(async () => {
-                if (error && error.message !== 'CONTACT_ADDRESS_ID_REQUIRED') {
+                if (error && error.message !== ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED) {
                   getAddress.mockImplementationOnce(() => {
                     throw error;
                   });
@@ -203,8 +203,8 @@ describe('[Route: /edit-clubcard-address]', () => {
         [
           'ERROR',
           {
-            error: new Error('CONTACT_ADDRESS_ID_REQUIRED'),
-            errorCode: 'CONTACT_ADDRESS_ID_REQUIRED',
+            error: new Error(ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED),
+            errorCode: ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED,
             outcome: 'error',
             body,
             query: {},
@@ -394,7 +394,7 @@ describe('[Route: /edit-clubcard-address]', () => {
               });
 
               beforeAll(async () => {
-                if (error && error.message !== 'CONTACT_ADDRESS_ID_REQUIRED') {
+                if (error && error.message !== ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED) {
                   updateAddress.mockImplementationOnce(() => {
                     throw error;
                   });
@@ -420,7 +420,7 @@ describe('[Route: /edit-clubcard-address]', () => {
               }
 
               if (
-                (!error || error.message !== 'CONTACT_ADDRESS_ID_REQUIRED') &&
+                (!error || error.message !== ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED) &&
                 responseType === 'html'
               ) {
                 it('should set the correct response data', () => {
@@ -435,7 +435,7 @@ describe('[Route: /edit-clubcard-address]', () => {
               }
 
               if (
-                (!error || error.message !== 'CONTACT_ADDRESS_ID_REQUIRED') &&
+                (!error || error.message !== ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED) &&
                 responseType === 'json'
               ) {
                 it('should set the correct response data', () => {
@@ -445,7 +445,7 @@ describe('[Route: /edit-clubcard-address]', () => {
                 });
               }
 
-              if (error && error.message === 'CONTACT_ADDRESS_ID_REQUIRED') {
+              if (error && error.message === ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED) {
                 it('should call next correctly', () => {
                   expect(next).toHaveBeenCalledWith(error);
                 });
