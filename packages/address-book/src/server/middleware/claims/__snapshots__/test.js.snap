@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Claims middleware getClaims should return an object with an access token and UUID 1`] = `
-Object {
-  "accessToken": "test",
-  "uuid": "uuid",
-}
-`;

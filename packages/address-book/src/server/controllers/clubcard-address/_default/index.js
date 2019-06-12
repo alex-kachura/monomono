@@ -12,7 +12,7 @@ import getAddressClient, {
 } from '../../../services/address';
 
 export async function getAddress({ accessToken, addressId, context, tracer }) {
-  const serviceToken = await getServiceToken();
+  const serviceToken = await getServiceToken({ tracer, context });
 
   const contactService = getContactClient(accessToken);
   const addressService = getAddressClient(serviceToken);
@@ -45,6 +45,7 @@ export async function updateAddress({ data, addressIndex, accessToken, context, 
   const contactService = getContactClient(accessToken);
   const addressService = getAddressClient(serviceToken);
   const contactAddress = await contactService.getSingleAddress(addressIndex, { tracer, context });
+
   const { label, addressUuid, tags, modifiedPhoneNumbers } = processedContactData(
     data,
     contactAddress,

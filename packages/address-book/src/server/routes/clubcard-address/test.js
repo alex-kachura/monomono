@@ -8,6 +8,8 @@ import { getLocalePhrase } from '../../utils/i18n';
 import { UNEXPECTED_BANNER, ErrorCodes } from '../../utils/error-handlers';
 import { ContactServiceError } from '@web-foundations/service-contact';
 
+jest.mock('../../controllers/clubcard-address/_default');
+
 const testAddress = {
   postcode: 'NE14PQ',
   'address-line1': 'mock-address-line-1',
@@ -91,7 +93,7 @@ describe('[Route: /edit-clubcard-address]', () => {
         const payload = payloadFactory(req);
 
         beforeAll(async () => {
-          getAddress.mockImplementationOnce(() => Promise.resolve(testAddress));
+          getAddress.mockResolvedValueOnce(testAddress);
 
           await getClubcardAddressPage(req, res, next);
         });
@@ -147,9 +149,7 @@ describe('[Route: /edit-clubcard-address]', () => {
 
               beforeAll(async () => {
                 if (error && error.message !== ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED) {
-                  getAddress.mockImplementationOnce(() => {
-                    throw error;
-                  });
+                  getAddress.mockRejectedValueOnce(error);
                 }
 
                 await getClubcardAddressPage(req, res, next);
@@ -395,9 +395,7 @@ describe('[Route: /edit-clubcard-address]', () => {
 
               beforeAll(async () => {
                 if (error && error.message !== ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED) {
-                  updateAddress.mockImplementationOnce(() => {
-                    throw error;
-                  });
+                  updateAddress.mockRejectedValueOnce(error);
                 }
 
                 await postClubcardAddressPage(req, res, next);

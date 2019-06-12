@@ -1,12 +1,12 @@
-import { mockGetFullAddresses, mockRemoveAddress } from '@web-foundations/service-contact';
-import { getAddresses, deleteAddress } from '.';
+import { getFullAddresses, removeAddress } from '@web-foundations/service-contact';
+const { getAddresses, deleteAddress } = jest.requireActual('.');
 
 describe('[Controller: Address]', () => {
   describe('getAddresses', () => {
     it('should call Contact', async () => {
       await getAddresses('accessToken');
 
-      expect(mockGetFullAddresses).toHaveBeenCalled();
+      expect(getFullAddresses).toHaveBeenCalled();
     });
   });
 
@@ -17,7 +17,7 @@ describe('[Controller: Address]', () => {
         tracer: 'test-tracer',
       });
 
-      expect(mockRemoveAddress).toHaveBeenCalledWith('contactAddressId', {
+      expect(removeAddress).toHaveBeenCalledWith('contactAddressId', {
         context: 'test-context',
         tracer: 'test-tracer',
       });

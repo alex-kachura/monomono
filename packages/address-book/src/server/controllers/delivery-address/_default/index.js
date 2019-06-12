@@ -45,7 +45,7 @@ export async function createAddress({ accessToken, data, context, tracer }) {
   const contactService = getContactClient(accessToken);
 
   const serviceToken = await getServiceToken();
-  let addressId = data.addressId;
+  let addressId = data['address-id'];
   const postcode = data.postcode;
 
   if (!addressId) {

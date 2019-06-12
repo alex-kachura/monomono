@@ -55,7 +55,7 @@ Object {
     },
     "breadcrumb": Array [
       Object {
-        "href": "/account/mock-lang/manage",
+        "href": "/account/en-GB/manage",
         "text": "pages.account.title",
       },
       Object {
@@ -124,7 +124,7 @@ Array [
         },
         "breadcrumb": Array [
           Object {
-            "href": "/account/mock-lang/manage",
+            "href": "/account/en-GB/manage",
             "text": "pages.account.title",
           },
           Object {

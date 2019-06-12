@@ -8,6 +8,8 @@ import { getLocalePhrase } from '../../utils/i18n';
 import { UNEXPECTED_BANNER, ErrorCodes } from '../../utils/error-handlers';
 import { ContactServiceError } from '@web-foundations/service-contact';
 
+jest.mock('../../controllers/delivery-address/_default');
+
 const testAddress = {
   postcode: 'NE14PQ',
   'address-line1': 'mock-address-line-1',
@@ -76,7 +78,7 @@ describe('[Route: /edit-delivery-address]', () => {
         const payload = payloadFactory(req);
 
         beforeAll(async () => {
-          getAddress.mockImplementationOnce(() => Promise.resolve(testAddress));
+          getAddress.mockResolvedValueOnce(testAddress);
 
           await getEditDeliveryAddressPage(req, res, next);
         });
@@ -128,9 +130,7 @@ describe('[Route: /edit-delivery-address]', () => {
 
               beforeAll(async () => {
                 if (error) {
-                  getAddress.mockImplementationOnce(() => {
-                    throw error;
-                  });
+                  getAddress.mockRejectedValueOnce(error);
                 }
 
                 await getEditDeliveryAddressPage(req, res, next);
@@ -361,9 +361,7 @@ describe('[Route: /edit-delivery-address]', () => {
 
               beforeAll(async () => {
                 if (error) {
-                  updateAddress.mockImplementationOnce(() => {
-                    throw error;
-                  });
+                  updateAddress.mockRejectedValueOnce(error);
                 }
 
                 await postEditDeliveryAddressPage(req, res, next);

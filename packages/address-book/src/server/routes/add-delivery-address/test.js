@@ -8,6 +8,8 @@ import { getLocalePhrase } from '../../utils/i18n';
 import { UNEXPECTED_BANNER } from '../../utils/error-handlers';
 import { ContactServiceError } from '@web-foundations/service-contact';
 
+jest.mock('../../controllers/delivery-address/_default');
+
 const payloadFactory = (req, extra) => {
   const { fields, schema } = config[req.region].pages['delivery-address'];
   const defaultValues = {
@@ -262,9 +264,7 @@ describe('[Route: /add-delivery-address]', () => {
 
               beforeAll(async () => {
                 if (error) {
-                  createAddress.mockImplementationOnce(() => {
-                    throw error;
-                  });
+                  createAddress.mockRejectedValueOnce(error);
                 }
 
                 await postAddDeliveryAddressPage(req, res, next);

@@ -8,13 +8,11 @@ export async function postDeleteAddressRoute(req, res, next) {
   const { accessToken } = req.getClaims();
   const getLocalePhrase = getPhraseFactory(req.lang);
 
-  if (!contactAddressId) {
-    return res.format({
-      html: () => next(new Error('Missing address id.')),
-    });
-  }
-
   try {
+    if (!contactAddressId) {
+      throw new Error('Missing address id.');
+    }
+
     await deleteAddress(accessToken, contactAddressId, {
       context: req,
       tracer: req.sessionId,
@@ -55,6 +53,8 @@ export async function postDeleteAddressRoute(req, res, next) {
       json: () => res.send({ payload }),
     });
   } catch (error) {
+    logOutcome('delete-address', 'error', req);
+
     return res.format({
       html: () => void next(error),
     });

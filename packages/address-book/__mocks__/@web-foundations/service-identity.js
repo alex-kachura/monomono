@@ -1,7 +1,7 @@
 const original = jest.requireActual('@web-foundations/service-identity');
 
 export const mockOn = jest.fn();
-export const mockGetClaims = jest.fn(() => ({ access_token: 'test-access-token' })); // eslint-disable-line camelcase
+export const mockGetClaims = jest.fn().mockReturnValue({ access_token: 'test-access-token' }); // eslint-disable-line camelcase
 
 const MockIdentityService = jest.fn(function IdentityServiceMock() {
   Object.assign(this, {

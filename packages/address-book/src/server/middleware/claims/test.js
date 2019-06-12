@@ -38,7 +38,10 @@ describe('Claims middleware', () => {
         uuid,
       };
 
-      expect(request.getClaims()).toMatchSnapshot();
+      expect(request.getClaims()).toEqual({
+        accessToken,
+        uuid,
+      });
     });
   });
 });

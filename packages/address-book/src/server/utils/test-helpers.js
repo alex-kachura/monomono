@@ -30,8 +30,8 @@ export const responseFactory = ({ responseType = 'html', ...extra } = {}) => ({
   redirect,
   format: (formats) => formats[responseType](),
   send,
-  data: {},
   status,
+  data: {},
   location,
   ...extra,
 });

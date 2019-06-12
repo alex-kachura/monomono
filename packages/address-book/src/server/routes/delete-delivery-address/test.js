@@ -1,129 +1,75 @@
-import Immutable from 'immutable';
-import { Promise } from 'q';
+import { deleteAddress, getAddresses } from '../../controllers/address';
+import { postDeleteAddressRoute } from './';
+import { logOutcome } from '../../logger';
+import { requestFactory, responseFactory, next } from '../../utils/test-helpers';
+
+jest.mock('../../controllers/address');
+
+const mockAddresses = [
+  {
+    addressIndex: 'GHS_13371337',
+    isPrimary: true,
+    label: 'test 1',
+    addressUuid: 'trn:tesco:address:address:uuid:0a2590b0-acad-414e-bd25-ff47c58358a5',
+    legacyAddress: null,
+    tags: ['primaryDelivery', 'delivery', 'GHS'],
+    isCompleteAddress: true,
+  },
+];
+
+getAddresses.mockResolvedValue(mockAddresses);
 
 describe('[Route: /]', () => {
-  const accessToken = 'mock-access-token';
-  const mockAddresses = [
-    {
-      addressIndex: 'GHS_13371337',
-      isPrimary: true,
-      label: 'test 1',
-      addressUuid: 'trn:tesco:address:address:uuid:0a2590b0-acad-414e-bd25-ff47c58358a5',
-      legacyAddress: null,
-      tags: ['primaryDelivery', 'delivery', 'GHS'],
-      isCompleteAddress: true,
-    },
-  ];
-
   describe('[POST]', () => {
     describe('Successful deletion', () => {
-      let mockRes;
-      let mockReq;
-      let mockNext;
-      let mockController;
-      let deleteAddressRoute;
-      let mockGetPhraseFactory;
-      let mockGetLocalePhrase;
+      const req = requestFactory({
+        body: {
+          'contact-address-id': 'mock-id',
+        },
+      });
+      const res = responseFactory();
 
       beforeAll(async () => {
-        mockReq = {
-          body: { 'contact-address-id': 'mock-address-id' },
-          sessionId: 'mock-tracer',
-          referer: 'mock-referer',
-          getClaims: () => ({ accessToken: 'mock-access-token' }),
-        };
-        mockRes = {
-          addresses: [],
-          format: (obj) => obj.html(),
-          status: jest.fn(),
-          data: Immutable.fromJS({}),
-        };
-        mockNext = jest.fn();
-        mockController = {
-          deleteAddress: jest.fn().mockReturnValue(Promise.resolve()),
-          getAddresses: jest.fn().mockReturnValue(Promise.resolve(mockAddresses)),
-        };
-        mockGetLocalePhrase = jest.fn((key) => key);
-        mockGetPhraseFactory = jest.fn(() => mockGetLocalePhrase);
-        jest.doMock('../../controllers/address', () => mockController);
-        jest.doMock('../../utils/i18n', () => ({
-          getPhraseFactory: mockGetPhraseFactory,
-        }));
-        deleteAddressRoute = require('./').postDeleteAddressRoute; // eslint-disable-line global-require
-
-        await deleteAddressRoute(mockReq, mockRes, mockNext);
+        await postDeleteAddressRoute(req, res, next);
       });
 
       afterAll(() => {
-        jest.resetModules();
+        jest.clearAllMocks();
       });
 
       it('"next" should be called', () => {
-        expect(mockNext).toHaveBeenCalled();
+        expect(next).toHaveBeenCalled();
       });
 
-      it('"deleteAddress" should be called', () => {
-        expect(mockController.deleteAddress).toHaveBeenCalled();
+      it('should log correctly', () => {
+        expect(logOutcome).toHaveBeenCalledWith('delete-address', 'successful', req);
       });
 
-      it('"getAddresses" should be called', () => {
-        expect(mockController.getAddresses).toHaveBeenCalledWith(accessToken, {
-          context: mockReq,
-        });
-      });
-
-      it('"mockRes" status code to be 202 - accepted', () => {
-        expect(mockRes.status).toHaveBeenCalledWith(200);
+      it('"res" status code to be 200 - successful', () => {
+        expect(res.status).toHaveBeenCalledWith(200);
       });
     });
 
     describe('Service failure', () => {
-      let mockRes;
-      let mockReq;
-      let mockNext;
-      let mockController;
-      let deleteAddressRoute;
+      const req = requestFactory({
+        body: {
+          'contact-address-id': 'mock-id',
+        },
+      });
+      const res = responseFactory();
       const err = new Error();
 
       beforeAll(async () => {
-        mockReq = {
-          body: { 'contact-address-id': 'mock-address-id' },
-          sessionId: 'mock-tracer',
-          referer: 'mock-referer',
-          getClaims: () => ({ accessToken: 'mock-access-token' }),
-          data: Immutable.fromJS({}),
-        };
-        mockRes = {
-          tests: {
-            addressBook: {
-              segment: 'enabled',
-            },
-          },
-          format: (obj) => obj.html(),
-          status: jest.fn(),
-          data: Immutable.fromJS({}),
-        };
-        mockNext = jest.fn();
-        mockController = {
-          deleteAddress: jest.fn(() => Promise.reject(err)),
-          getAddresses: jest.fn().mockReturnValue(Promise.resolve(mockAddresses)),
-        };
-        jest.doMock('../../controllers/address', () => mockController);
-        deleteAddressRoute = require('./').postDeleteAddressRoute; // eslint-disable-line global-require
+        deleteAddress.mockRejectedValueOnce(err);
+        await postDeleteAddressRoute(req, res, next);
+      });
 
-        await deleteAddressRoute(mockReq, mockRes, mockNext);
+      it('should log correctly', () => {
+        expect(logOutcome).toHaveBeenCalledWith('delete-address', 'error', req);
       });
 
       it('"next" should be called with error', () => {
-        expect(mockNext).toHaveBeenCalledWith(err);
-      });
-
-      it('"deleteAddress" should be called', () => {
-        expect(mockController.deleteAddress).toHaveBeenCalled();
-      });
-
-      it('"getAddresses" should not be called', () => {
-        expect(mockController.getAddresses).not.toHaveBeenCalled();
+        expect(next).toHaveBeenCalledWith(err);
       });
     });
   });

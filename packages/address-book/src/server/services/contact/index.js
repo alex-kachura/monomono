@@ -51,6 +51,7 @@ export function processedContactData(data, contactAddress, { isClubcard = false 
   const phoneNumbers = extractPhoneNumber(data, {
     isClubcard,
   });
+
   const modifiedPhoneNumbers = getModifiedPhoneNumbers(phoneNumbers, telephoneNumbers);
 
   return {
