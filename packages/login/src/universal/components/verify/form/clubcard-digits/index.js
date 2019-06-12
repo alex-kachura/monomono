@@ -8,10 +8,7 @@ import { useFieldLogic, getNumberProps, getFormErrorMsg } from './helpers';
 
 export function ClubcardDigits({ fields, submitRef, formik }) {
   const { getLocalePhrase } = useAppConfig();
-  const {
-    handleChange,
-    handleKeyDown,
-  } = useFieldLogic(fields, formik, submitRef);
+  const { handleChange, handleKeyDown } = useFieldLogic(fields, formik, submitRef);
   const errorMsg = getFormErrorMsg(formik);
 
   return (
@@ -25,12 +22,9 @@ export function ClubcardDigits({ fields, submitRef, formik }) {
       fieldset
       styles={formGroupStyles}
     >
-      {fields.map(({ name, id, label, type, ref }, index) =>
+      {fields.map(({ name, id, label, type, ref }, index) => (
         <InputGroupStyled key={id}>
-          <LabelStyled
-            htmlFor={id}
-            error={Boolean(formik.errors[name])}
-          >
+          <LabelStyled htmlFor={id} error={Boolean(formik.errors[name])}>
             {label}
           </LabelStyled>
           <InputStyled
@@ -39,6 +33,11 @@ export function ClubcardDigits({ fields, submitRef, formik }) {
             autoFocus={index === 0}
             error={formik.errors[name] ? Boolean(formik.errors[name]) : false}
             labelText={label}
+            aria-label={`${label} clubcard number ${
+              formik.errors[name]
+                ? `${getLocalePhrase('pages.verify.aria-label.error-field')}`
+                : `${getLocalePhrase('pages.verify.aria-label.empty-field')}`
+            }`}
             type={type}
             name={name}
             id={id}
@@ -51,7 +50,7 @@ export function ClubcardDigits({ fields, submitRef, formik }) {
             {...getNumberProps(type)}
           />
         </InputGroupStyled>
-      )}
+      ))}
     </FormGroup>
   );
 }

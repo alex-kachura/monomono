@@ -65,7 +65,10 @@ pages:
     sub-title: "Your online security is important to us."
     digits-prompt: "Enter the requested Clubcard digits"
     digits-ordinal: "th"
-    error-msg: "Please enter the requested digit"
+    aria-label:
+      empty-field: "Please enter a digit"
+      error-field: "Please enter a correct digit"
+    error-msg: "Please enter the requested digits"
     buttons:
       submit: "Submit"
     clubcard-info:

@@ -1,21 +1,23 @@
 import { useRef, useCallback, useEffect } from 'react';
 
 export function getNumberProps(inputType) {
-  return inputType === 'number' ? {
-    min: "0",
-    inputMode: "numeric",
-    pattern: "[0-9]*",
-  } : {};
+  return inputType === 'number'
+    ? {
+        min: '0',
+        inputMode: 'numeric',
+        pattern: '[0-9]*',
+      }
+    : {};
 }
 
 export function getFormErrorMsg(formik) {
   let formErrorMsg;
 
-  if ((formik.errors && formik.submitCount) || Object.keys(formik.initialErrors).length) {
+  if (formik.errors || Object.keys(formik.initialErrors).length) {
     Object.keys(formik.errors).forEach((key) => {
       formErrorMsg = formik.errors[key];
 
-      return false;
+      return formErrorMsg;
     });
   }
 
@@ -52,7 +54,6 @@ export function useFieldLogic(fields, formik, submitRef) {
   // Filter to only allow numbers on change
   const handleChange = useCallback((e) => {
     if (isValidDigit(e.target.value)) {
-
       // Update React's reference to the current field index
       currentFieldRef.current = getFieldIndex(fields, e.target.name);
 
@@ -65,36 +66,36 @@ export function useFieldLogic(fields, formik, submitRef) {
     }
   }, []);
 
-  const handleKeyDown = useCallback((e) => {
+  const handleKeyDown = useCallback(
+    (e) => {
+      // Get React's reference to current field index
+      currentFieldRef.current = getFieldIndex(fields, e.target.name);
 
-    // Get React's reference to current field index
-    currentFieldRef.current = getFieldIndex(fields, e.target.name);
+      if (e.key === 'Backspace' && formik.values[e.target.name] === '') {
+        // We need to prevent the default action of Backspace deleting a character.
+        // The reason is that we're going to focus on the previous input given
+        // that the current input is empty.
+        // Otherwise, the previous input's value would be cleared by this event
+        e.preventDefault();
 
-    if (e.key === 'Backspace' && formik.values[e.target.name] === '') {
-      // We need to prevent the default action of Backspace deleting a character.
-      // The reason is that we're going to focus on the previous input given
-      // that the current input is empty.
-      // Otherwise, the previous input's value would be cleared by this event
-      e.preventDefault();
+        // Point at previous field
+        currentFieldRef.current--;
 
-      // Point at previous field
-      currentFieldRef.current--;
+        // Focus on given field
+        focusField(fields, currentFieldRef.current, submitRef);
+      }
 
-      // Focus on given field
-      focusField(fields, currentFieldRef.current, submitRef);
-    }
+      // If keyed value equals existing value of input
+      if (e.key === formik.values[e.target.name]) {
+        // Point at next field
+        currentFieldRef.current++;
 
-    // If keyed value equals existing value of input
-    if (e.key === formik.values[e.target.name]) {
-
-      // Point at next field
-      currentFieldRef.current++;
-
-      // Focus on given field
-      focusField(fields, currentFieldRef.current, submitRef);
-    }
-
-  }, [formik.values]);
+        // Focus on given field
+        focusField(fields, currentFieldRef.current, submitRef);
+      }
+    },
+    [formik.values],
+  );
 
   const handleClick = useCallback((e) => {
     e.currentTarget.select();
@@ -102,10 +103,7 @@ export function useFieldLogic(fields, formik, submitRef) {
 
   // Handle focusing on first field or next one after typing a value.
   // Called on initial render and for every form value change.
-  useEffect(() =>
-    focusField(fields, currentFieldRef.current, submitRef),
-    [formik.values]
-  );
+  useEffect(() => focusField(fields, currentFieldRef.current, submitRef), [formik.values]);
 
   return { handleChange, handleKeyDown, handleClick };
 }

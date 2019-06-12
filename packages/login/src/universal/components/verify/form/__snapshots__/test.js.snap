@@ -18,7 +18,7 @@ exports[`VerifyForm component has initial errors should render error state of fo
             </legend>
           </div>
           <div
-@@ -25,17 +25,17 @@
+@@ -25,18 +25,18 @@
             <div
               class=\\"sc-EHOje kdKQiq\\"
               name=\\"clubcard-form-group\\"
@@ -31,14 +31,16 @@ exports[`VerifyForm component has initial errors should render error state of fo
                 11th
               </label>
               <input
+-               aria-label=\\"11th clubcard number pages.verify.aria-label.empty-field\\"
 -               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
++               aria-label=\\"11th clubcard number pages.verify.aria-label.error-field\\"
 +               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
                 id=\\"digit11\\"
                 maxlength=\\"1\\"
                 name=\\"digit11\\"
                 required=\\"\\"
                 type=\\"text\\"
-@@ -45,17 +45,17 @@
+@@ -46,18 +46,18 @@
             <div
               class=\\"sc-EHOje kdKQiq\\"
               name=\\"clubcard-form-group\\"
@@ -51,14 +53,16 @@ exports[`VerifyForm component has initial errors should render error state of fo
                 12th
               </label>
               <input
+-               aria-label=\\"12th clubcard number pages.verify.aria-label.empty-field\\"
 -               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
++               aria-label=\\"12th clubcard number pages.verify.aria-label.error-field\\"
 +               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
                 id=\\"digit12\\"
                 maxlength=\\"1\\"
                 name=\\"digit12\\"
                 required=\\"\\"
                 type=\\"text\\"
-@@ -65,26 +65,31 @@
+@@ -67,27 +67,32 @@
             <div
               class=\\"sc-EHOje kdKQiq\\"
               name=\\"clubcard-form-group\\"
@@ -71,7 +75,9 @@ exports[`VerifyForm component has initial errors should render error state of fo
                 13th
               </label>
               <input
+-               aria-label=\\"13th clubcard number pages.verify.aria-label.empty-field\\"
 -               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
++               aria-label=\\"13th clubcard number pages.verify.aria-label.error-field\\"
 +               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
                 id=\\"digit13\\"
                 maxlength=\\"1\\"
@@ -130,6 +136,7 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
               11th
             </label>
             <input
+              aria-label="11th clubcard number pages.verify.aria-label.empty-field"
               class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
               id="digit11"
               maxlength="1"
@@ -150,6 +157,7 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
               12th
             </label>
             <input
+              aria-label="12th clubcard number pages.verify.aria-label.empty-field"
               class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
               id="digit12"
               maxlength="1"
@@ -170,6 +178,7 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
               13th
             </label>
             <input
+              aria-label="13th clubcard number pages.verify.aria-label.empty-field"
               class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
               id="digit13"
               maxlength="1"
