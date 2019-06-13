@@ -1,10 +1,10 @@
 const original = jest.requireActual('config');
 
-export const mockGet = jest.fn((key) => key);
+export const get = jest.fn((key) => key);
 
 const mockConfig = {
   ...original,
-  get: mockGet,
+  get,
 };
 
 export default mockConfig;

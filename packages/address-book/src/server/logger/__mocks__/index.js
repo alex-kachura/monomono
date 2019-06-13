@@ -3,7 +3,7 @@ export const info = jest.fn();
 export const validation = jest.fn();
 export const warn = jest.fn();
 export const error = jest.fn();
-export const makeOnRequestEventHandler = jest.fn(() => Function);
+export const makeOnRequestEventHandler = jest.fn().mockReturnValue(Function);
 
 const mockNodeLogger = {
   debug,

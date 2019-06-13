@@ -13,6 +13,6 @@ const MockAddressService = jest.fn(function AddressServiceMock() {
   });
 });
 
-export const AddressServiceError = original.AddressServiceError;
+export const { AddressServiceError } = original;
 
 export default MockAddressService;

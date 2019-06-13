@@ -47,7 +47,7 @@ describe.each([
     const host = `${config.protocol}${hostname}`;
     const location = `${redirectTo}?from=${encodeURIComponent(
       host,
-    )}%2Fbase-url%2Furl%3Fparam1%3Dval%26parm2%3Dval`; // eslint-disable-line max-len
+    )}%2Fbase-url%2Furl%3Fparam1%3Dval%26param2%3Dval`;
 
     describe.each(['html', 'json'])(`[ResponseType: %s]`, (responseType) => {
       const req = requestFactory();

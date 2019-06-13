@@ -12,8 +12,9 @@ export const redirect = jest.fn();
 export const end = jest.fn();
 export const status = jest.fn(() => ({ end }));
 export const baseUrl = '/base-url';
-export const url = '/url?param1=val&parm2=val';
+export const url = '/url?param1=val&param2=val';
 export const location = jest.fn();
+
 export const requestFactory = (extra = {}) => ({
   baseUrl,
   url,

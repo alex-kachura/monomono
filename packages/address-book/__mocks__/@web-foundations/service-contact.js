@@ -8,6 +8,7 @@ export const removeAddress = jest.fn().mockResolvedValue();
 export const updatePhoneNumber = jest.fn().mockResolvedValue();
 export const updateAddress = jest.fn().mockResolvedValue();
 export const validatePhoneNumber = jest.fn().mockResolvedValue({ isValid: true });
+
 const MockContactService = jest.fn(function ContactServiceMock() {
   Object.assign(this, {
     ...original.default,
@@ -22,6 +23,6 @@ const MockContactService = jest.fn(function ContactServiceMock() {
   });
 });
 
-export const ContactServiceError = original.ContactServiceError;
+export const { ContactServiceError } = original;
 
 export default MockContactService;
