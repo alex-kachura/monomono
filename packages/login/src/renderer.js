@@ -33,10 +33,10 @@ export const renderServer = (inititalData, history, routes, context, sheet, url)
             {renderRoutes(routes)}
           </StaticRouter>
         </DefaultThemeProvider>
-      </Root>
+      </Root>,
     ),
   );
-}
+};
 
 export const renderClient = (inititalData, routes, history) => {
   const { payload, ...appConfig } = inititalData;

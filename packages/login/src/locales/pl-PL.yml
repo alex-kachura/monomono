@@ -61,6 +61,7 @@ help: "Help"
 # P
 pages:
   verify:
+    backward-link: "Back to"
     title: "Account verification"
     sub-title: "Your online security is important to us."
     digits-prompt: "Enter the requested Clubcard digits"

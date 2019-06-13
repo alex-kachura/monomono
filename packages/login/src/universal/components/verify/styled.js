@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import { media } from '@beans/foundation';
 import { PageTitle, SectionTitle, Heading, BodyText } from '@beans/typography';
+import { spacing } from '@beans/selectors';
+import Link from '@beans/link';
 
+export const LinkStyled = styled(Link)`
+  margin-top: ${spacing.lg} !important;
+`;
 export const PageTitleStyled = styled(PageTitle)`
   margin-top: 28px !important;
 
@@ -11,7 +16,7 @@ export const PageTitleStyled = styled(PageTitle)`
 `;
 
 export const MainCopy = styled(BodyText)`
-  margin: 16px 0 ${({ hasBanner }) => hasBanner ? '15' : '19'}px !important;
+  margin: 16px 0 ${({ hasBanner }) => (hasBanner ? '15' : '19')}px !important;
 `;
 
 export const FormSection = styled.section`

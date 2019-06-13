@@ -5,9 +5,7 @@ import url from 'url';
 
 const cookieName = config.get('cookie.onwardLocation.name');
 const cookieOptions = config.get('cookie.onwardLocation.options');
-const validOnwardLocations = config
-  .get('referrerDomainWhitelist')
-  .map((str) => new RegExp(str));
+const validOnwardLocations = config.get('referrerDomainWhitelist').map((str) => new RegExp(str));
 
 // Add an onward location redirection method to the response object. We should
 // use this over "res.redirect" when redirecting to any consumer using the
@@ -56,8 +54,8 @@ Reflect.defineProperty(express.response, 'completeJourney', {
     // match a whitelist. If the proposed onward location does not match any of
     // the allowed values we redirect to a default location which is most likely
     // the tesco.com homepage.
-    const isValidLocation = validOnwardLocations.some(
-      (validLocation) => validLocation.test(onwardLocation)
+    const isValidLocation = validOnwardLocations.some((validLocation) =>
+      validLocation.test(onwardLocation),
     );
 
     // Default onward location is tesco.com
@@ -81,6 +79,7 @@ export default function fromMiddleware(req, res, next) {
   // overhead here - it suffices to do the check based on the cookie value at
   // redirection time. We also add an equivalent property to the request state
   // object which can be used in the event that the journey is completed before
+
   // the cookie is set on the client.
   if (req.query.from) {
     res.data.onwardLocation = encodeURIComponent(req.query.from);

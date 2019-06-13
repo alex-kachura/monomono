@@ -100,9 +100,9 @@ module.exports = {
       options: {
         domain: '.tesco.com',
         httpOnly: true,
-        secure: false
-      }
-    }
+        secure: false,
+      },
+    },
   },
   csp: {
     defaultSrc: ["'self'"],
@@ -143,7 +143,10 @@ module.exports = {
     appKey: '',
   },
   backToWhitelist: {
-    en: [],
+    en: [
+      { url: 'https://mytesco.secure.tesco.com/account/address-book/en-GB', label: 'Address book' },
+      { url: 'https://www-local.tesco.com/account/address-book/en-GB', label: 'Address book' },
+    ],
   },
   services: {
     akamaiAuthToken: 'manadatoy-for-production-no-effect-ppe',
@@ -194,7 +197,7 @@ module.exports = {
           {
             name: 'enabled',
             weighting: 100,
-          }
+          },
         ],
         cookieOptions: {
           maxAge: 2629746000,

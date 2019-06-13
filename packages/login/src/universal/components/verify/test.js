@@ -28,6 +28,7 @@ function renderVerifyPage({ accountLocked }) {
         errors: {},
         schema: {},
         fields: [],
+        backlink: {},
       }}
       appConfig={{
         getLocalePhrase: (key) => key,
@@ -47,7 +48,7 @@ function renderVerifyPage({ accountLocked }) {
       <DefaultThemeProvider globalStyles={globalStyles}>
         <VerifyPage />
       </DefaultThemeProvider>
-    </Root>
+    </Root>,
   );
 }
 

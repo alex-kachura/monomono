@@ -19,6 +19,12 @@ module.exports = {
   thirdParties: {
     active: true,
   },
+  backToWhitelist: {
+    en: [
+      { url: 'https://secure-ppe.tesco.com/account/address-book/en-GB', label: 'Address book' },
+      { url: 'https://www-ppe.tesco.com/account/address-book/en-GB', label: 'Address book' },
+    ],
+  },
   segmentation: {
     cookiePrefix: 'login_segment_',
     tests: [
@@ -32,7 +38,7 @@ module.exports = {
           {
             name: 'enabled',
             weighting: 100,
-          }
+          },
         ],
         cookieOptions: {
           maxAge: 2629746000,

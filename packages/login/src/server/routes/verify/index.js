@@ -10,11 +10,7 @@ export async function getVerifyPage(req, res, next) {
   const { accessToken } = req.getClaims();
 
   // Attempt a confidence level 16 handshake
-  const {
-    authenticated,
-    challenge,
-    error,
-  } = await verifyController.handshake({
+  const { authenticated, challenge, error } = await verifyController.handshake({
     accessToken,
     context: req,
     tracer: req.sessionId,
@@ -64,6 +60,7 @@ export async function getVerifyPage(req, res, next) {
         required: fieldsToRender.map((field) => field.name),
       },
       stateToken: challenge.stateToken,
+      backlink: res.data.backlink || {},
     },
   };
 
@@ -190,12 +187,7 @@ export async function postVerifyPage(req, res, next) {
   const identityFields = mapValuesToPayload(req.body);
 
   // Request a token elevation via the controller
-  const {
-    authenticated,
-    challenge,
-    accountLocked,
-    error,
-  } = await verifyController.elevateToken({
+  const { authenticated, challenge, accountLocked, error } = await verifyController.elevateToken({
     fields: identityFields,
     stateToken: req.body.state,
     lang: req.lang,
@@ -229,7 +221,11 @@ export async function postVerifyPage(req, res, next) {
   // If max attempts reached, their account is locked for an hour.
 
   const payload = getElevationFailurePayload({
-    req, res, challenge, accountLocked, schema
+    req,
+    res,
+    challenge,
+    accountLocked,
+    schema,
   });
 
   res.data = { ...res.data, payload };

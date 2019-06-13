@@ -8,7 +8,7 @@ import ClubcardInfo from './clubcard-info';
 import OrderClubcard from './order-clubcard';
 import ContactInfo from './contact-info';
 import Banner from '../common/banner';
-import { FormSection, MainCopy } from './styled';
+import { FormSection, MainCopy, LinkStyled } from './styled';
 
 export function VerifyPage({ initialData }) {
   const { getLocalePhrase, csrf } = useAppConfig();
@@ -21,14 +21,28 @@ export function VerifyPage({ initialData }) {
     errors,
     schema,
     fields,
+    backlink,
   } = initialData;
 
   const pageTitle = getLocalePhrase('pages.verify.title');
+  const link = backlink.link || '';
+  const label = backlink.label || '';
 
   return (
     <DocumentTitle title={pageTitle}>
       <div>
+        {link ? (
+          <LinkStyled
+            href={link}
+            emphasized
+            icon={{ graphic: 'backwardLink', position: { global: 'left' } }}
+            variant="standalone"
+          >
+            {`${getLocalePhrase('pages.verify.backward-link')} ${label}`}
+          </LinkStyled>
+        ) : null}
         <PageTitle margin>{pageTitle}</PageTitle>
+
         <MainCopy hasBanner={banner && banner.type !== ''}>
           {getLocalePhrase('pages.verify.sub-title')}
         </MainCopy>

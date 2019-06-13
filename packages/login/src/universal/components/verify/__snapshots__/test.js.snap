@@ -9,12 +9,12 @@ exports[`VerifyPage component account locked should render correctly 1`] = `
       pages.verify.title
     </h1>
     <p
-      class="base-components__BaseElement-sc-150tvch-0 sc-gqjmRU daXCtc typography___styledElement-sc-186l0ce-0 kSJIks"
+      class="base-components__BaseElement-sc-150tvch-0 sc-VigVT dEVIzl typography___styledElement-sc-186l0ce-0 kSJIks"
     >
       pages.verify.sub-title
     </p>
     <section
-      class="sc-jTzLTM kvtIle"
+      class="sc-fjdhpX bGkDPg"
     >
       <h2
         class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 UZvGl"
@@ -27,7 +27,7 @@ exports[`VerifyPage component account locked should render correctly 1`] = `
         pages.verify.order-clubcard.copy
       </p>
       <a
-        class="sc-kGXeez krFtiJ styled__TextButtonLink-ipdqot-0 cTOLFq"
+        class="sc-kpOJdX inMzwo styled__TextButtonLink-ipdqot-0 cTOLFq"
         href="mock-tesco-secure/account/undefined/manage/order-clubcard"
       >
         <span
@@ -38,26 +38,26 @@ exports[`VerifyPage component account locked should render correctly 1`] = `
       </a>
     </section>
     <section
-      class="sc-kpOJdX bJqAiR"
+      class="sc-dxgOiQ dxuEQz"
     >
       <h2
-        class="base-components__BaseElement-sc-150tvch-0 sc-dxgOiQ eeTsxu typography___styledElement-sc-186l0ce-0 eOHSoV"
+        class="base-components__BaseElement-sc-150tvch-0 sc-ckVGcZ kBvaNQ typography___styledElement-sc-186l0ce-0 eOHSoV"
       >
         pages.verify.contact-info.heading
       </h2>
       <p
-        class="base-components__BaseElement-sc-150tvch-0 sc-ckVGcZ hNnpLL typography___styledElement-sc-186l0ce-0 kSJIks"
+        class="base-components__BaseElement-sc-150tvch-0 sc-jKJlTe csbMBW typography___styledElement-sc-186l0ce-0 kSJIks"
       >
         pages.verify.contact-info.contact-us.part-1
         <a
-          class="sc-kkGfuU dcjbUL styled__InlineLink-y3p06c-0 hZdEYQ"
+          class="sc-iAyFgw dFwInV styled__InlineLink-y3p06c-0 hZdEYQ"
           href="tel:pages.verify.contact-info.phone-number-1"
         >
           pages.verify.contact-info.phone-number-1
         </a>
         pages.verify.contact-info.contact-us.part-2
         <a
-          class="sc-kkGfuU dcjbUL styled__InlineLink-y3p06c-0 hZdEYQ"
+          class="sc-iAyFgw dFwInV styled__InlineLink-y3p06c-0 hZdEYQ"
           href="tel:pages.verify.contact-info.phone-number-2"
         >
           pages.verify.contact-info.phone-number-2
@@ -65,15 +65,15 @@ exports[`VerifyPage component account locked should render correctly 1`] = `
         pages.verify.contact-info.contact-us.part-3
       </p>
       <section
-        class="sc-jKJlTe gjnbgQ"
+        class="sc-eNQAEJ bCzRNH"
       >
         <p
-          class="base-components__BaseElement-sc-150tvch-0 sc-eNQAEJ sc-hMqMXs nIhiv typography___styledElement-sc-186l0ce-0 kSJIks"
+          class="base-components__BaseElement-sc-150tvch-0 sc-hMqMXs sc-kEYyzF iFqmEZ typography___styledElement-sc-186l0ce-0 kSJIks"
         >
           pages.verify.contact-info.calls-info1
         </p>
         <p
-          class="base-components__BaseElement-sc-150tvch-0 sc-eNQAEJ sc-kEYyzF kAerQu typography___styledElement-sc-186l0ce-0 kSJIks"
+          class="base-components__BaseElement-sc-150tvch-0 sc-hMqMXs sc-kkGfuU kzXOKM typography___styledElement-sc-186l0ce-0 kSJIks"
         >
           pages.verify.contact-info.calls-info2
         </p>
@@ -92,12 +92,12 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
       pages.verify.title
     </h1>
     <p
-      class="base-components__BaseElement-sc-150tvch-0 sc-gqjmRU daXCtc typography___styledElement-sc-186l0ce-0 kSJIks"
+      class="base-components__BaseElement-sc-150tvch-0 sc-VigVT dEVIzl typography___styledElement-sc-186l0ce-0 kSJIks"
     >
       pages.verify.sub-title
     </p>
     <section
-      class="sc-VigVT krdOOf"
+      class="sc-jTzLTM hXXbyO"
     >
       <div
         class="sc-iwsKbI igoYVT"
@@ -153,7 +153,7 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
       </div>
     </section>
     <section
-      class="sc-jTzLTM kvtIle"
+      class="sc-fjdhpX bGkDPg"
     >
       <h2
         class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 UZvGl"
@@ -167,12 +167,12 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
           pages.verify.clubcard-info.sub-heading-1
         </h3>
         <p
-          class="base-components__BaseElement-sc-150tvch-0 sc-cSHVUG bimZUh typography___styledElement-sc-186l0ce-0 kSJIks"
+          class="base-components__BaseElement-sc-150tvch-0 sc-kAzzGY gjTIzz typography___styledElement-sc-186l0ce-0 kSJIks"
         >
           pages.verify.clubcard-info.copy-1
         </p>
         <div
-          class="sc-kAzzGY lgvtaJ"
+          class="sc-chPdSV hHBNpa"
         >
           <svg
             height="100px"
@@ -229,12 +229,12 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
           pages.verify.clubcard-info.sub-heading-2
         </h3>
         <p
-          class="base-components__BaseElement-sc-150tvch-0 sc-cSHVUG bimZUh typography___styledElement-sc-186l0ce-0 kSJIks"
+          class="base-components__BaseElement-sc-150tvch-0 sc-kAzzGY gjTIzz typography___styledElement-sc-186l0ce-0 kSJIks"
         >
           pages.verify.clubcard-info.copy-2
         </p>
         <div
-          class="sc-kAzzGY lgvtaJ"
+          class="sc-chPdSV hHBNpa"
         >
           <svg
             height="100px"
@@ -286,7 +286,7 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
       </section>
     </section>
     <section
-      class="sc-jTzLTM kvtIle"
+      class="sc-fjdhpX bGkDPg"
     >
       <h2
         class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 UZvGl"
@@ -299,7 +299,7 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
         pages.verify.order-clubcard.copy
       </p>
       <a
-        class="sc-kGXeez krFtiJ styled__TextButtonLink-ipdqot-0 cTOLFq"
+        class="sc-kpOJdX inMzwo styled__TextButtonLink-ipdqot-0 cTOLFq"
         href="mock-tesco-secure/account/undefined/manage/order-clubcard"
       >
         <span
@@ -310,26 +310,26 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
       </a>
     </section>
     <section
-      class="sc-kpOJdX bJqAiR"
+      class="sc-dxgOiQ dxuEQz"
     >
       <h2
-        class="base-components__BaseElement-sc-150tvch-0 sc-dxgOiQ eeTsxu typography___styledElement-sc-186l0ce-0 eOHSoV"
+        class="base-components__BaseElement-sc-150tvch-0 sc-ckVGcZ kBvaNQ typography___styledElement-sc-186l0ce-0 eOHSoV"
       >
         pages.verify.contact-info.heading
       </h2>
       <p
-        class="base-components__BaseElement-sc-150tvch-0 sc-ckVGcZ hNnpLL typography___styledElement-sc-186l0ce-0 kSJIks"
+        class="base-components__BaseElement-sc-150tvch-0 sc-jKJlTe csbMBW typography___styledElement-sc-186l0ce-0 kSJIks"
       >
         pages.verify.contact-info.contact-us.part-1
         <a
-          class="sc-kkGfuU dcjbUL styled__InlineLink-y3p06c-0 hZdEYQ"
+          class="sc-iAyFgw dFwInV styled__InlineLink-y3p06c-0 hZdEYQ"
           href="tel:pages.verify.contact-info.phone-number-1"
         >
           pages.verify.contact-info.phone-number-1
         </a>
         pages.verify.contact-info.contact-us.part-2
         <a
-          class="sc-kkGfuU dcjbUL styled__InlineLink-y3p06c-0 hZdEYQ"
+          class="sc-iAyFgw dFwInV styled__InlineLink-y3p06c-0 hZdEYQ"
           href="tel:pages.verify.contact-info.phone-number-2"
         >
           pages.verify.contact-info.phone-number-2
@@ -337,15 +337,15 @@ exports[`VerifyPage component account not locked should render correctly 1`] = `
         pages.verify.contact-info.contact-us.part-3
       </p>
       <section
-        class="sc-jKJlTe gjnbgQ"
+        class="sc-eNQAEJ bCzRNH"
       >
         <p
-          class="base-components__BaseElement-sc-150tvch-0 sc-eNQAEJ sc-hMqMXs nIhiv typography___styledElement-sc-186l0ce-0 kSJIks"
+          class="base-components__BaseElement-sc-150tvch-0 sc-hMqMXs sc-kEYyzF iFqmEZ typography___styledElement-sc-186l0ce-0 kSJIks"
         >
           pages.verify.contact-info.calls-info1
         </p>
         <p
-          class="base-components__BaseElement-sc-150tvch-0 sc-eNQAEJ sc-kEYyzF kAerQu typography___styledElement-sc-186l0ce-0 kSJIks"
+          class="base-components__BaseElement-sc-150tvch-0 sc-hMqMXs sc-kkGfuU kzXOKM typography___styledElement-sc-186l0ce-0 kSJIks"
         >
           pages.verify.contact-info.calls-info2
         </p>

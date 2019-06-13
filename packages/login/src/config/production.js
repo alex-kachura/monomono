@@ -16,6 +16,9 @@ module.exports = {
   log: {
     encryptionDisabled: false,
   },
+  backToWhitelist: {
+    en: [{ url: 'https://www.tesco.com/account/address-book/en-GB', label: 'Address book' }],
+  },
   services: {
     clientId: 'trn:tesco:cid:ea61a462-e6e3-4410-beb9-37abff5ded54',
     identity: {
@@ -49,7 +52,7 @@ module.exports = {
           {
             name: 'enabled',
             weighting: 0,
-          }
+          },
         ],
         cookieOptions: {
           maxAge: 2629746000,

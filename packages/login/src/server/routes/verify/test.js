@@ -118,7 +118,7 @@ describe('[Route: /verify]', () => {
         mockHandshake.mockReturnValue(
           Promise.resolve({
             authenticated: mockAuthenticated,
-          })
+          }),
         );
 
         getVerifyPage = require('./').getVerifyPage;
@@ -169,7 +169,7 @@ describe('[Route: /verify]', () => {
               fields: mockFields,
               stateToken: mockStateToken,
             },
-          })
+          }),
         );
 
         getVerifyPage = require('./').getVerifyPage;
@@ -202,7 +202,8 @@ describe('[Route: /verify]', () => {
               required: mockRequiredFields,
             },
             stateToken: mockStateToken,
-          }
+            backlink: {},
+          },
         });
       });
     });
@@ -214,7 +215,7 @@ describe('[Route: /verify]', () => {
         mockHandshake.mockReturnValue(
           Promise.resolve({
             error: mockError,
-          })
+          }),
         );
 
         getVerifyPage = require('./').getVerifyPage;
@@ -267,7 +268,7 @@ describe('[Route: /verify]', () => {
         mockElevateToken.mockReturnValue(
           Promise.resolve({
             authenticated: mockAuthenticated,
-          })
+          }),
         );
 
         postVerifyPage = require('./').postVerifyPage;
@@ -296,12 +297,15 @@ describe('[Route: /verify]', () => {
       });
 
       it('should call mapPayloadToFields correctly', () => {
-        expect(mockMapPayloadToFields).toHaveBeenCalledWith([
-          {
-            id: 'digit11',
-            value: '3',
-          }
-        ], mockLang)
+        expect(mockMapPayloadToFields).toHaveBeenCalledWith(
+          [
+            {
+              id: 'digit11',
+              value: '3',
+            },
+          ],
+          mockLang,
+        );
       });
 
       it('should set response data correctly', () => {
@@ -321,8 +325,8 @@ describe('[Route: /verify]', () => {
               required: mockRequiredFields,
             },
             stateToken: mockStateToken,
-          }
-        })
+          },
+        });
       });
 
       it('should set 400 status', () => {
@@ -344,7 +348,7 @@ describe('[Route: /verify]', () => {
         mockElevateToken.mockReturnValue(
           Promise.resolve({
             authenticated: mockAuthenticated,
-          })
+          }),
         );
 
         postVerifyPage = require('./').postVerifyPage;
@@ -398,7 +402,7 @@ describe('[Route: /verify]', () => {
                 fields: mockFields,
                 stateToken: mockStateToken,
               },
-            })
+            }),
           );
 
           postVerifyPage = require('./').postVerifyPage;
@@ -407,7 +411,11 @@ describe('[Route: /verify]', () => {
         });
 
         it('should log the outcome', () => {
-          expect(mockLogger).toHaveBeenCalledWith('verify:post', 'error-incorrect-digits-entered', req);
+          expect(mockLogger).toHaveBeenCalledWith(
+            'verify:post',
+            'error-incorrect-digits-entered',
+            req,
+          );
         });
 
         it('should call mapPayloadToFields', () => {
@@ -437,7 +445,7 @@ describe('[Route: /verify]', () => {
               },
               stateToken: mockStateToken,
               accountLocked: undefined,
-            }
+            },
           });
         });
 
@@ -461,7 +469,7 @@ describe('[Route: /verify]', () => {
                 stateToken: mockStateToken,
               },
               accountLocked: true,
-            })
+            }),
           );
 
           postVerifyPage = require('./').postVerifyPage;
@@ -500,7 +508,7 @@ describe('[Route: /verify]', () => {
               },
               stateToken: undefined,
               accountLocked: true,
-            }
+            },
           });
         });
 
@@ -521,7 +529,7 @@ describe('[Route: /verify]', () => {
         mockElevateToken.mockReturnValue(
           Promise.resolve({
             error: mockError,
-          })
+          }),
         );
 
         postVerifyPage = require('./').postVerifyPage;

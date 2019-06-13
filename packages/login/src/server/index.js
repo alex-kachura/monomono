@@ -10,9 +10,9 @@ import segmentation from '@web-foundations/express-user-segmentation';
 import reactRouterRenderMiddleware from './middleware/react-router-render';
 import routes from './routes';
 import errorHandler from './middleware/error-handler';
-import referrerMiddleware from './middleware/referrer';
+import fromMiddleware from './middleware/from';
 import localeMiddlewareFactory from '@web-foundations/express-locale-middleware';
-import onwardLocation from './middleware/from';
+import backlinkMiddleware from './middleware/backlink';
 import './middleware/claims';
 
 export default () => {
@@ -61,8 +61,10 @@ export default () => {
 
     next();
   });
-  app.use(onwardLocation);
-  app.use(referrerMiddleware);
+
+  app.use(fromMiddleware);
+  app.use(backlinkMiddleware);
+
   app.use(segmentation(config.get('segmentation')));
   app.use(routes);
   app.use(reactRouterRenderMiddleware());
