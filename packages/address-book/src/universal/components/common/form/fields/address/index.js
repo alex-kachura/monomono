@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useState, useEffect } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { connect } from 'formik';
@@ -33,6 +33,7 @@ function AddressDropdown({ addresses, className, handleSelect, handleAddressManu
 }
 
 function Address({ formik, fields, onError }) {
+  const [isMounted, setMounted] = useState(false);
   const { getLocalePhrase } = useAppConfig();
   const {
     addresses,
@@ -45,6 +46,10 @@ function Address({ formik, fields, onError }) {
     postcodeRef,
   } = useAddress(formik, fields, onError);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleChange = useCallback((e) => {
     if (e.target.name !== 'address-id') {
       formik.setFieldValue('address-id', '');
@@ -53,8 +58,10 @@ function Address({ formik, fields, onError }) {
   }, []);
 
   const content = [];
+  const addressIdField = fields.find(({ name }) => name === 'address-id');
 
   fields.forEach(({ name, ...rest }) => {
+    if (name === 'address-id') return;
     if (name === 'postcode') {
       content.push(
         <Postcode
@@ -111,6 +118,7 @@ function Address({ formik, fields, onError }) {
   return (
     <div className={cn('address', { 'is-find-address': isFindAddress })}>
       <GlobalStyle />
+      {isMounted && addressIdField && <Text {...addressIdField} />}
       {content}
     </div>
   );
