@@ -34,14 +34,14 @@ spec:
         imagePullPolicy: {{ .app.imagePullPolicy }}
         livenessProbe:
           httpGet:
-            path: /address-book/_status
+            path: /account/address-book/_status
             port: {{ .app.appContainerPort }}
             scheme: HTTP
           initialDelaySeconds: 3
           periodSeconds: 5
         readinessProbe:
           httpGet:
-            path: /address-book/_status
+            path: /account/address-book/_status
             port: {{ .app.appContainerPort }}
             scheme: HTTP
           initialDelaySeconds: 3
