@@ -10,9 +10,16 @@ export default function EditButton({ itemId, isMCA }) {
   const editLink = isMCA
     ? `${rootPath}/edit-clubcard-address?id=${itemId}`
     : `${rootPath}/edit-delivery-address?id=${itemId}`;
+  const elementClass = `edit-address-link${isMCA ? '-clubcard' : '-grocery'}`;
 
   return (
-    <Link emphasized variant="standalone" href={editLink} altLink={AltLink}>
+    <Link
+      className={elementClass}
+      emphasized
+      variant="standalone"
+      href={editLink}
+      altLink={AltLink}
+    >
       {getLocalePhrase('pages.landing.edit-btn')}
     </Link>
   );

@@ -1,0 +1,28 @@
+{
+  "name": "address-book-tests-e2e",
+  "private": true,
+  "description": "address book End to End tests",
+  "version": "0.1.0",
+  "author": "Tesco",
+  "repository": {
+    "type": "git",
+    "url": "https://github.dev.global.tesco.org/oneaccount/address-book"
+  },
+  "scripts": {
+    "lint": "pretty-quick --staged && eslint . --fix",
+    "debug": "NODE_ENV=dev testcafe $NODE_DEBUG_OPTION chrome test/ --skip-js-errors",
+    "e2e:dev": "NODE_ENV=dev testcafe -c 1 chrome test -S -s screenshots -e  -r list,xunit:report/resChrome.xml --assertion-timeout 10000",
+    "e2e:dev:headless": "NODE_ENV=dev testcafe -c 2 chrome:headless test -S -s screenshots -e  -r list,xunit:report/resChrome.xml --assertion-timeout 10000",
+    "e2e:ppe": "NODE_ENV=ppe testcafe -c 1 chrome test -S -s screenshots -e  -r list,xunit:report/resChrome.xml --assertion-timeout 10000",
+    "e2e:ppe:headless": "NODE_ENV=ppe testcafe -c 2 chrome:headless test -S -s screenshots -e  -r list,xunit:report/resChrome.xml --assertion-timeout 10000",
+    "e2e:prod": "NODE_ENV=production testcafe -c 1 chrome test -S -s screenshots -e  -r list,xunit:report/resChrome.xml --assertion-timeout 10000",
+    "e2e:prod:headless": "NODE_ENV=production testcafe -c 2 chrome:headless test -S -s screenshots -e  -r list,xunit:report/resChrome.xml --assertion-timeout 10000"
+  },
+  "engines": {
+    "node": "8.9.4"
+  },
+  "dependencies": {
+    "testcafe": "^1.2.1-alpha.3",
+    "config": "~1.31.0"
+  }
+}

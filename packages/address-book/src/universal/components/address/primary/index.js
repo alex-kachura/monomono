@@ -29,10 +29,11 @@ export default function PrimaryAddress({ isClubcard, details }) {
   const additionalText = getLocalePhrase(
     `pages.landing.primary-address.additional.${isClubcard ? 'clubcard' : 'grocery'}`,
   );
+  const elementId = `edit-address${isClubcard ? '-clubcard' : '-grocery'}`;
 
   return (
     <Column size={24} sm={12}>
-      <AddressPanelStyled>
+      <AddressPanelStyled id={elementId}>
         <AddressHeader className="primary-address__address-header">
           {iconGraphic}
           <AddressHeaderText>{headerText}</AddressHeaderText>

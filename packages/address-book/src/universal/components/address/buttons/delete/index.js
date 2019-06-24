@@ -17,9 +17,12 @@ export default function DeleteButton({ itemId, label, firstLine }) {
 
   const deleteUrl = `${rootPath}/`;
 
-  const didToggleShowConfirmation = useCallback(() => {
-    setShowConfirmation(!showConfirmation);
-  }, [showConfirmation]);
+  const didToggleShowConfirmation = useCallback(
+    () => {
+      setShowConfirmation(!showConfirmation);
+    },
+    [showConfirmation],
+  );
 
   function handleFormSubmit(e) {
     e.stopPropagation();
@@ -40,7 +43,12 @@ export default function DeleteButton({ itemId, label, firstLine }) {
     <React.Fragment>
       <form action={deleteUrl} method="POST" onSubmit={handleFormSubmit}>
         <input type="hidden" name="contact-address-id" value={itemId} />
-        <Button variant="link" type="submit" onClick={didToggleShowConfirmation}>
+        <Button
+          className="delete-address"
+          variant="link"
+          type="submit"
+          onClick={didToggleShowConfirmation}
+        >
           {getLocalePhrase('pages.landing.delete-btn')}
         </Button>
         <input type="hidden" name="_csrf" value={csrf} />
@@ -50,17 +58,21 @@ export default function DeleteButton({ itemId, label, firstLine }) {
           {getLocalePhrase('pages.landing.delete.confirmation-message')}
         </WrapTextSubHeading>
         <Content>
-          <BoldWrapBodyText>{label}</BoldWrapBodyText>
-          <EllipsisBodyText>{firstLine}</EllipsisBodyText>
+          <BoldWrapBodyText className='nickname'>{label}</BoldWrapBodyText>
+          <EllipsisBodyText className='address-line-0'>{firstLine}</EllipsisBodyText>
         </Content>
         <form action={deleteUrl} method="POST">
           <input type="hidden" name="contact-address-id" value={itemId} />
-          <ButtonStyled variant="primary" type="submit">
+          <ButtonStyled className="delete-address-confirm" variant="primary" type="submit">
             {getLocalePhrase('pages.landing.delete.confirm')}
           </ButtonStyled>
           <input type="hidden" name="_csrf" value={csrf} />
         </form>
-        <Button variant="secondary" onClick={didToggleShowConfirmation}>
+        <Button
+          className="delete-address-cancel"
+          variant="secondary"
+          onClick={didToggleShowConfirmation}
+        >
           {getLocalePhrase('pages.landing.delete.cancel')}
         </Button>
       </ConfirmationSheet>

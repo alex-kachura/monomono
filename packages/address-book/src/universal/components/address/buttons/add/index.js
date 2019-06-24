@@ -21,6 +21,7 @@ export default function AddAddress({ rootPath }) {
 
   return (
     <AddAddressLink
+      id="add-delivery-address"
       buttonVariant="secondary"
       href={addAddressLink}
       icon={{

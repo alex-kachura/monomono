@@ -41,7 +41,7 @@ export function LandingPage(props) {
         <LandingSectionTitle>
           {getLocalePhrase('pages.landing.other-addresses.label')}
         </LandingSectionTitle>
-        <OtherAddressesRow>
+        <OtherAddressesRow className="other-address">
           <AdditionalPanel panelButton>
             <AddAddress rootPath={rootPath} />
           </AdditionalPanel>

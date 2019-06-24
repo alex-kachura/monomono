@@ -1,5 +1,7 @@
 .idea/
 test/integration/screenshots/__snapshots__/*/__diff_output__/*
+test/e2e/screenshots/*
+test/e2e/report/*
 
 # Logs
 logs

@@ -61,6 +61,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
       >
         <div
           class="sc-bxivhb eyMKcU"
+          id="edit-address-clubcard"
         >
           <div
             class="primary-address__address-header sc-EHOje jrvcQh"
@@ -95,22 +96,22 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
             class="sc-bdVaJa efQDjt"
           >
             <h4
-              class="sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
+              class="nickname sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
             >
               Clubcard
             </h4>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="address-line-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               85 Clerkenwell Road
             </p>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="town sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               LONDON
             </p>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="telephone-number sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.phone: 07345234636
             </p>
@@ -119,7 +120,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
             class="sc-gzVnrw jhTHcp"
           >
             <span
-              class="styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
+              class="edit-address-link-clubcard styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
             >
               <a
                 href="/mock/math/edit-clubcard-address?id=NGC_0"
@@ -148,6 +149,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
       >
         <div
           class="sc-bxivhb eyMKcU"
+          id="edit-address-grocery"
         >
           <div
             class="primary-address__address-header sc-EHOje jrvcQh"
@@ -182,32 +184,32 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
             class="sc-bdVaJa efQDjt"
           >
             <h4
-              class="sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
+              class="nickname sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
             >
               home 3
             </h4>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="address-line-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               85 Clerkenwell Road
             </p>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="town sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               LONDON
             </p>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="telephone-number-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.day: 07345234636
             </p>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="telephone-number-1 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.evening: 07345234635
             </p>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="telephone-number-2 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.mobile: 07345234637
             </p>
@@ -216,7 +218,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
             class="sc-gzVnrw jhTHcp"
           >
             <span
-              class="styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
+              class="edit-address-link-grocery styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
             >
               <a
                 href="/mock/math/edit-delivery-address?id=GHS_11225523"
@@ -251,7 +253,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
       pages.landing.other-addresses.label
     </h2>
     <div
-      class="sc-hMqMXs eJeMEC styled-cgoahb-0 fFoLXC"
+      class="other-address sc-hMqMXs eJeMEC styled-cgoahb-0 fFoLXC"
     >
       <div
         class="styled-tbp4qh-0 fsXMrV"
@@ -270,6 +272,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               >
                 <span
                   class="styled__IconButtonSpanWithText-sc-1r4nugl-1 gcrMXp"
+                  id="add-delivery-address"
                 >
                   <span
                     class="beans-link__text styled__TextSpan-sc-1r4nugl-3 fXsDiB"
@@ -320,37 +323,37 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
             class="sc-bdVaJa fOmtxQ"
           >
             <h4
-              class="sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
+              class="nickname sc-htpNat ctyXjV typography___styledElement-sc-186l0ce-0 ixZPNc"
             >
               Luis
             </h4>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="address-line-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               Flat 1
             </p>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="address-line-1 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               The Old School
             </p>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="address-line-2 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               146 York Way
             </p>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="town sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               LONDON
             </p>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="telephone-number-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.day: 07427708482
             </p>
             <p
-              class="sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="telephone-number-1 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.evening: 07427708482
             </p>
@@ -359,7 +362,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
             class="sc-chPdSV gqRtJR"
           >
             <span
-              class="styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
+              class="edit-address-link-grocery styled__StandaloneContainer-sc-1xizymv-2 fFdXrc"
             >
               <a
                 href="/mock/math/edit-delivery-address?id=GHS_11214795"
@@ -389,7 +392,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               />
               <button
                 aria-disabled="false"
-                class="styled__LinkButton-sc-3mnirm-13 gyNqJj"
+                class="delete-address styled__LinkButton-sc-3mnirm-13 gyNqJj"
                 role="button"
                 type="submit"
               >
@@ -422,12 +425,12 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                 class="sc-cSHVUG bhIRwB"
               >
                 <p
-                  class="sc-fjdhpX cxEKBW typography___styledElement-sc-186l0ce-0 gxVCAq"
+                  class="nickname sc-fjdhpX cxEKBW typography___styledElement-sc-186l0ce-0 gxVCAq"
                 >
                   Luis
                 </p>
                 <p
-                  class="sc-jTzLTM cjflfh typography___styledElement-sc-186l0ce-0 gxVCAq"
+                  class="address-line-0 sc-jTzLTM cjflfh typography___styledElement-sc-186l0ce-0 gxVCAq"
                 >
                   Flat 1
                 </p>
@@ -443,7 +446,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                 />
                 <button
                   aria-disabled="false"
-                  class="sc-jzJRlG cyAuDu styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+                  class="delete-address-confirm sc-jzJRlG cyAuDu styled__PrimaryButton-sc-3mnirm-2 giYBMC"
                   role="button"
                   type="submit"
                 >
@@ -465,7 +468,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               </form>
               <button
                 aria-disabled="false"
-                class="styled__SecondaryButton-sc-3mnirm-3 bzFQfg"
+                class="delete-address-cancel styled__SecondaryButton-sc-3mnirm-3 bzFQfg"
                 role="button"
                 type="button"
               >

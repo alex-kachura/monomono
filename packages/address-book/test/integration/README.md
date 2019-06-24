@@ -78,7 +78,7 @@ To resolve this an approach was taken that:
 We'll cover how this done in more depth in the [Confgiuration](#configuration), [Contexts](#contexts) and [Structure](#structure) sections.  If you've read these sections before or you are familiar with the code base you can skip ahead to the the [Integration Test - An Example](#integration-test---an-example) for a refresher.
 
 ## Configuration
-Application and Integration Test configuration uses the `node-config` library. The full capability of this module is outside ths scope of this document, though we will be touching it's merging, multi-environment and defered loading capabilities as used by the Integration Tests. More information about `node-config` can be found on it's [GitHub page](https://github.com/lorenwest/node-config)
+Application and Integration Test configuration uses the `node-config` library. The full capability of this module is outside the scope of this document, though we will be touching it's merging, multi-environment and defered loading capabilities as used by the Integration Tests. More information about `node-config` can be found on it's [GitHub page](https://github.com/lorenwest/node-config)
 
 
 The integration tests define the the following configuration files in `test/integration/config`:
@@ -116,7 +116,7 @@ import { excludeFactory, includeFactory } from '../utils/contexts/extensions';
 
 module.exports = {
   // Import application configuration
-  app: require('../../../src/config/default'), // eslint-disable-line global-require
+  app: require('../../../src/config/default'), 
 
   // Add named accounts as needed by adding a property for each new account per region needed.
   accounts: {
