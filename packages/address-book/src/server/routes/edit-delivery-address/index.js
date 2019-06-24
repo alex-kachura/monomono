@@ -1,4 +1,5 @@
 import config from 'config';
+import get from 'lodash/get';
 import { logOutcome } from '../../logger';
 import { AddressServiceError } from '@web-foundations/service-address';
 import { ContactServiceError } from '@web-foundations/service-contact';
@@ -42,8 +43,19 @@ export function getBreadcrumb(lang, getLocalePhrase) {
 }
 
 export async function getEditDeliveryAddressPage(req, res, next) {
-  const getLocalePhrase = getPhraseFactory(req.lang);
   const { id } = req.query;
+  const isOldAddressBook = /disabled/.test(get(req, 'cookies.myaccount_segment_singleAddressBook'));
+
+  if (isOldAddressBook) {
+    const url = `${config[req.region].externalApps.accountAddressBookEditAddress}?id=${id.replace(
+      /\D/g,
+      '',
+    )}`;
+
+    return res.redirect(url);
+  }
+
+  const getLocalePhrase = getPhraseFactory(req.lang);
   const { fields, schema } = config[req.region].pages['delivery-address'];
   const { accessToken } = req.getClaims();
   const deliveryAddressController = controllerFactory('deliveryAddress.default', req.region);

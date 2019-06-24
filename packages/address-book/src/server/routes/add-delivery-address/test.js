@@ -315,4 +315,28 @@ describe('[Route: /add-delivery-address]', () => {
       });
     });
   });
+
+  describe('disabled by segmentation', () => {
+    const reqWithSegment = requestFactory({
+      cookies: {
+        // eslint-disable-next-line camelcase
+        myaccount_segment_singleAddressBook: '{"segment":"disabled","weighting":"100"}',
+      },
+    });
+    const res = responseFactory();
+
+    beforeAll(async () => {
+      await getAddDeliveryAddressPage(reqWithSegment, res, next);
+    });
+
+    it('should redirect to Address Book in My Account', () => {
+      expect(res.redirect).toHaveBeenCalledWith(
+        expect.stringContaining('manage/address-book/add-address'),
+      );
+    });
+
+    afterAll(() => {
+      jest.clearAllMocks();
+    });
+  });
 });

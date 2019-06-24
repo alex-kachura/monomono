@@ -6,6 +6,11 @@ module.exports = {
     logout: 'https://www-local.tesco.com/account/en-GB/logout',
     register: 'https://www-local.tesco.com/account/en-GB/register',
     verify: 'https://www-local.tesco.com/account/login/en-GB/verify',
+    accountAddressBook: 'https://www-local.tesco.com/account/en-GB/manage/address-book',
+    accountAddressBookAddAddress:
+      'https://www-local.tesco.com/account/en-GB/manage/address-book/add-address',
+    accountAddressBookEditAddress:
+      'https://www-local.tesco.com/account/en-GB/manage/address-book/change-address',
   },
   supportLinks: [
     {

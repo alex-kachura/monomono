@@ -412,4 +412,31 @@ describe('[Route: /edit-delivery-address]', () => {
       });
     });
   });
+
+  describe('disabled by segmentation', () => {
+    const reqWithSegment = requestFactory({
+      cookies: {
+        // eslint-disable-next-line camelcase
+        myaccount_segment_singleAddressBook: '{"segment":"disabled","weighting":"100"}',
+      },
+      query: {
+        id: 'GHS_12345',
+      },
+    });
+    const res = responseFactory();
+
+    beforeAll(async () => {
+      await getEditDeliveryAddressPage(reqWithSegment, res, next);
+    });
+
+    it('should redirect to Address Book in My Account', () => {
+      expect(res.redirect).toHaveBeenCalledWith(
+        expect.stringContaining('manage/address-book/change-address?id=12345'),
+      );
+    });
+
+    afterAll(() => {
+      jest.clearAllMocks();
+    });
+  });
 });

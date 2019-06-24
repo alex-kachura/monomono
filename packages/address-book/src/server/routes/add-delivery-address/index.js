@@ -1,4 +1,5 @@
 import config from 'config';
+import get from 'lodash/get';
 import { AddressServiceError } from '@web-foundations/service-address';
 import { ContactServiceError } from '@web-foundations/service-contact';
 import controllerFactory from '../../controllers';
@@ -40,6 +41,12 @@ export function getBreadcrumb(lang, getLocalePhrase) {
 }
 
 export function getAddDeliveryAddressPage(req, res, next) {
+  const isOldAddressBook = /disabled/.test(get(req, 'cookies.myaccount_segment_singleAddressBook'));
+
+  if (isOldAddressBook) {
+    return res.redirect(config[req.region].externalApps.accountAddressBookAddAddress);
+  }
+
   const getLocalePhrase = getPhraseFactory(req.lang);
   const { fields, schema } = config[req.region].pages['delivery-address'];
 

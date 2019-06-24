@@ -1,4 +1,5 @@
 import config from 'config';
+import get from 'lodash/get';
 import { logOutcome } from '../../logger';
 import { getPhraseFactory } from '../../utils/i18n';
 import { getAddresses } from '../../controllers/address';
@@ -128,6 +129,12 @@ export function formatAddressesForUse(addresses) {
 }
 
 export async function getLandingPage(req, res, next) {
+  const isOldAddressBook = /disabled/.test(get(req, 'cookies.myaccount_segment_singleAddressBook'));
+
+  if (isOldAddressBook) {
+    return res.redirect(config[req.region].externalApps.accountAddressBook);
+  }
+
   const getLocalePhrase = getPhraseFactory(req.lang);
   const claims = req.getClaims();
   let addresses;
