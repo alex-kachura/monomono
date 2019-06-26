@@ -16,7 +16,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /{{ .app.name }}
+      - path: /account/{{ .app.name }}
         backend:
           serviceName: {{ .app.name }}
           servicePort: http
