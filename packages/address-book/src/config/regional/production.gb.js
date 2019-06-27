@@ -11,7 +11,7 @@ module.exports = {
       'https://secure.tesco.com/account/en-GB/manage/address-book/add-address',
     accountAddressBookEditAddress:
       'https://secure.tesco.com/account/en-GB/manage/address-book/change-address',
-    postcodeLookup: 'https://www.tesco.com/account/en-GB/address/addresses',
+    postcodeLookup: 'https://secure.tesco.com/account/en-GB/address/addresses',
   },
   supportLinks: [
     {
