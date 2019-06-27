@@ -103,7 +103,7 @@ module.exports = {
       '*.tesco.com',
       '*.appdynamics.com',
     ],
-    connectSrc: ["'self'", '*.eum-appdynamics.com'],
+    connectSrc: ["'self'", '*.eum-appdynamics.com', '*.tesco.com'],
     styleSrc: ["'self'", "'unsafe-inline'", '*.tesco.com'],
     imgSrc: ["'self'", 'data:', '*.tesco.com'],
     fontSrc: ["'self'", 'data:'],
