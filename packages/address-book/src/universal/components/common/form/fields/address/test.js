@@ -26,6 +26,14 @@ function renderAddress({ values, fetchFn }) {
       appConfig: {
         getLocalePhrase: (key) => key,
         fetch: fetchFn,
+        region: 'en-GB',
+        config: {
+          'en-GB': {
+            externalApps: {
+              postcodeLookup: 'https://www-local.tesco.com/account/en-GB/address/addresses',
+            },
+          },
+        },
       },
       children: (
         <DefaultThemeProvider>
@@ -106,7 +114,7 @@ describe('[Component: Address]', () => {
 
       fireEvent.click(button, {});
 
-      expect(fetch).toBeCalledWith('/account/en-GB/address/addresses?postcode=NE14PQ', undefined);
+      expect(fetch).toBeCalledWith(expect.stringContaining('?postcode=NE14PQ'), undefined);
 
       await waitForDomChange();
 

@@ -1,10 +1,11 @@
 import { useCallback, useState, useEffect, useRef } from 'react';
 import get from 'lodash/get';
-import { useFetch } from '@oneaccount/react-foundations';
+import { useAppConfig, useFetch } from '@oneaccount/react-foundations';
 
 export const useAddress = (formik, fields, onError) => {
   const selectRef = useRef();
   const postcodeRef = useRef();
+  const { config, region } = useAppConfig();
   const { data, loading, error, load } = useFetch({
     throwErrors: false,
   });
@@ -38,36 +39,53 @@ export const useAddress = (formik, fields, onError) => {
     [addresses],
   );
 
-  const handleFindAddress = useCallback(() => {
-    // eslint-disable-next-line
-    if (values.postcode && !originalErrors.postcode) {
-      load(`/account/en-GB/address/addresses?postcode=${values.postcode.split(' ').join('')}`);
-    } else if (postcodeRef.current) {
-      postcodeRef.current.focus();
-    }
-  }, [load, values.postcode, originalErrors.postcode]);
+  const handleFindAddress = useCallback(
+    () => {
+      // eslint-disable-next-line
+      if (values.postcode && !originalErrors.postcode) {
+        load(
+          `${config[region].externalApps.postcodeLookup}?postcode=${values.postcode.replace(
+            /\s/,
+            '',
+          )}`,
+        );
+      } else if (postcodeRef.current) {
+        postcodeRef.current.focus();
+      }
+    },
+    [load, values.postcode, originalErrors.postcode],
+  );
 
   const handleAddressManually = useCallback(() => {
     setFindAddress(false);
   });
 
-  useEffect(() => {
-    setAddresses(data);
-  }, [data]);
+  useEffect(
+    () => {
+      setAddresses(data);
+    },
+    [data],
+  );
 
-  useEffect(() => {
-    if (selectRef.current) {
-      selectRef.current.focus();
-    }
-  }, [addresses]);
+  useEffect(
+    () => {
+      if (selectRef.current) {
+        selectRef.current.focus();
+      }
+    },
+    [addresses],
+  );
 
-  useEffect(() => {
-    if (error && error.response.status === 404) {
-      setFieldError('postcode', 'address.fields.postcode.error');
-    } else if (error && onError) {
-      onError(error);
-    }
-  }, [error]);
+  useEffect(
+    () => {
+      if (error && error.response.status === 404) {
+        setFieldError('postcode', 'address.fields.postcode.error');
+      } else if (error && onError) {
+        onError(error);
+      }
+    },
+    [error],
+  );
 
   return {
     postcodeRef,

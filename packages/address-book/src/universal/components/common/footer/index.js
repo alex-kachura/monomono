@@ -1,6 +1,6 @@
 import React, { memo, useMemo, useState } from 'react';
 import BeansFooter from '@beans/footer';
-import { useAppConfig } from '@oneaccount/react-foundations/lib/app-config';
+import { useAppConfig } from '@oneaccount/react-foundations';
 
 const CLOSE = 'close';
 const ALL = 'all';

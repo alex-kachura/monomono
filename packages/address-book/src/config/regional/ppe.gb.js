@@ -5,12 +5,13 @@ module.exports = {
     login: 'https://secure-ppe.tesco.com/account/en-GB/login',
     logout: 'https://sercure-ppe.tesco.com/account/en-GB/logout',
     register: 'https://secure-ppe.tesco.com/account/en-GB/register',
-    verify: 'https://secure-ppe.tesco.com/account/login/en-GB/verify',
+    verify: 'https://www-ppe.tesco.com/account/login/en-GB/verify',
     accountAddressBook: 'https://secure-ppe.tesco.com/account/en-GB/manage/address-book',
     accountAddressBookAddAddress:
       'https://secure-ppe.tesco.com/account/en-GB/manage/address-book/add-address',
     accountAddressBookEditAddress:
       'https://secure-ppe.tesco.com/account/en-GB/manage/address-book/change-address',
+    postcodeLookup: 'https://www-ppe.tesco.com/account/en-GB/address/addresses',
   },
   supportLinks: [
     {

@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import { FormGroupStyled, Spinner } from './styled';
 import BaseInput from '@beans/input';
 import Button from '@beans/button';
-import { useAppConfig } from '@oneaccount/react-foundations/';
+import { useAppConfig } from '@oneaccount/react-foundations';
 
 const Input = memo(BaseInput);
 

@@ -1,7 +1,7 @@
 module.exports = {
   externalApps: {
     tescoHomepage: 'https://www-local.tesco.com',
-    tescoSecure: 'https://secure-local.tesco.com',
+    tescoSecure: 'https://secure-ppe.tesco.com',
     login: 'https://www-local.tesco.com/account/en-GB/login',
     logout: 'https://www-local.tesco.com/account/en-GB/logout',
     register: 'https://www-local.tesco.com/account/en-GB/register',
@@ -11,6 +11,7 @@ module.exports = {
       'https://www-local.tesco.com/account/en-GB/manage/address-book/add-address',
     accountAddressBookEditAddress:
       'https://www-local.tesco.com/account/en-GB/manage/address-book/change-address',
+    postcodeLookup: 'https://www-local.tesco.com/account/en-GB/address/addresses',
   },
   supportLinks: [
     {
