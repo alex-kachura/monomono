@@ -14,6 +14,7 @@ export const status = jest.fn(() => ({ end }));
 export const baseUrl = '/base-url';
 export const url = '/url?param1=val&param2=val';
 export const location = jest.fn();
+export const json = jest.fn();
 
 export const requestFactory = (extra = {}) => ({
   baseUrl,
@@ -34,5 +35,6 @@ export const responseFactory = ({ responseType = 'html', ...extra } = {}) => ({
   status,
   data: {},
   location,
+  json,
   ...extra,
 });

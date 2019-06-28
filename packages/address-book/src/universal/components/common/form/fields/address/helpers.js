@@ -5,7 +5,7 @@ import { useAppConfig, useFetch } from '@oneaccount/react-foundations';
 export const useAddress = (formik, fields, onError) => {
   const selectRef = useRef();
   const postcodeRef = useRef();
-  const { config, region } = useAppConfig();
+  const { rootPath } = useAppConfig();
   const { data, loading, error, load } = useFetch({
     throwErrors: false,
   });
@@ -43,12 +43,7 @@ export const useAddress = (formik, fields, onError) => {
     () => {
       // eslint-disable-next-line
       if (values.postcode && !originalErrors.postcode) {
-        load(
-          `${config[region].externalApps.postcodeLookup}?postcode=${values.postcode.replace(
-            /\s/,
-            '',
-          )}`,
-        );
+        load(`${rootPath}/lookup?postcode=${values.postcode.replace(/\s/, '')}`);
       } else if (postcodeRef.current) {
         postcodeRef.current.focus();
       }

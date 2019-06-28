@@ -8,6 +8,7 @@ import handleUnauthenticated, {
 import setResponseData from '../middleware/response-data';
 import getIdentityClient from '../services/identity';
 import { getLandingPage } from './landing';
+import { lookup } from './lookup';
 import { getAddDeliveryAddressPage, postAddDeliveryAddressPage } from './add-delivery-address';
 import { getEditDeliveryAddressPage, postEditDeliveryAddressPage } from './edit-delivery-address';
 import { getClubcardAddressPage, postClubcardAddressPage } from './clubcard-address';
@@ -70,6 +71,7 @@ appRouter.get('/add-delivery-address', getAddDeliveryAddressPage);
 appRouter.post('/add-delivery-address', postAddDeliveryAddressPage);
 appRouter.get('/edit-delivery-address', getEditDeliveryAddressPage);
 appRouter.post('/edit-delivery-address', postEditDeliveryAddressPage);
+appRouter.get('/lookup', lookup);
 clubcardRouter.get('/', getClubcardAddressPage);
 clubcardRouter.post('/', postClubcardAddressPage);
 
