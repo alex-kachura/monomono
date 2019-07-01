@@ -16,7 +16,11 @@ const editedClubcardAddressUrl = `${config.env.baseUrl}${config.env.basePath}${c
 fixture`Edit Clubcard Address` // eslint-disable-line no-undef
   .page(loginPage.addressUrl)
   .beforeEach(async (t) => {
-    await loginPage.loginUser(t);
+    // t.ctx.clubcardNumber = await registrationPage.registerUser(t);;
+    await t
+      .useRole(loginPage.logIn)
+      .expect(landingPage.signOutButton.exists)
+      .ok();
   });
 
 test(`Address Book - Verify Digits Success`, async (t) => {
@@ -29,6 +33,7 @@ test(`Address Book - Verify Digits Success`, async (t) => {
   const inputs = Selector('[name="clubcard-form-group"] label'); // eslint-disable-line new-cap
   const counts = await inputs.count;
   const digitPositions = [];
+  // const clubcardNumber = t.ctx.clubcard;
   const clubcardNumber = `${config.data.accounts.addressBook.clubcard}`;
 
   for (let i = 0; i < counts; i++) {

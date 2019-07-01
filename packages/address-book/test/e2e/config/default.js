@@ -4,6 +4,8 @@ module.exports = {
     baseUrlLogin: 'https://secure-ppe.tesco.com',
     basePath: '/account/address-book/',
     loginPath: '/account/login/',
+    registerPath: '/register/',
+    accountPath: '/account/',
     verifyPath: '/verify',
     language: 'en-GB',
   },

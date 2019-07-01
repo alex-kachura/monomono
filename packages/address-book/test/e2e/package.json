@@ -22,6 +22,7 @@
     "node": "8.9.4"
   },
   "dependencies": {
+    "@oneaccount/test-common": "~2.4.6",
     "testcafe": "^1.2.1-alpha.3",
     "config": "~1.31.0"
   }

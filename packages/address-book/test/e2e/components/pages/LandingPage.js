@@ -2,7 +2,7 @@ import { Selector } from 'testcafe';
 
 export default class LandingPage {
   constructor() {
-    this.signOutButton = Selector('#sign-out'); // eslint-disable-line new-cap
+    this.signOutButton = Selector('a[href*="logout"]'); // eslint-disable-line new-cap
     this.editPrimaryClubAddress = Selector('#edit-address-clubcard .edit-address-link-clubcard'); // eslint-disable-line new-cap
     this.editPrimaryDeliveryAddress = Selector('#edit-address-grocery .edit-address-link-grocery'); // eslint-disable-line new-cap
     this.addDeliveryAddressButton = Selector('#add-delivery-address'); // eslint-disable-line new-cap
