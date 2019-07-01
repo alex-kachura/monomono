@@ -7,9 +7,11 @@ import AltLink from '../../../common/alt-link';
 
 export default function EditButton({ itemId, isMCA }) {
   const { rootPath, getLocalePhrase } = useAppConfig();
+
   const editLink = isMCA
     ? `${rootPath}/edit-clubcard-address?id=${itemId}`
     : `${rootPath}/edit-delivery-address?id=${itemId}`;
+
   const elementClass = `edit-address-link${isMCA ? '-clubcard' : '-grocery'}`;
 
   return (

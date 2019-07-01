@@ -33,19 +33,23 @@ const encryptionConfig = {
   key: logConf.encryptionKey,
   disabled: logConf.encryptionDisabled,
 };
+
 const clearTextRewriter = clearTextRewriterFactory({
   whitelist: clearTextWhitelist,
 });
+
 const redactedRewriter = redactedRewriterFactory({
   whitelist: redactedWhitelist,
   encryptionConfig,
   nodeEnv,
 });
+
 const regexRedactedRewriter = regexRedactedRewriterFactory({
   whitelist: regexRedactedWhitelist,
   encryptionConfig,
   nodeEnv,
 });
+
 const messageFilter = messageFilterFactory({
   encryptionConfig,
   messageFilterRegexes,
@@ -58,7 +62,6 @@ const preParseRewriter = preParseRewriterFactory({
 
 const rewriters = [preParseRewriter, clearTextRewriter, redactedRewriter, regexRedactedRewriter];
 const filters = [messageFilter];
-
 const logger = loggerFactory({ transports, rewriters, filters });
 
 logger.makeOnRequestEventHandler = function makeOnRequestEventHandler(message) {

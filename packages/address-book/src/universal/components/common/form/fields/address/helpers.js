@@ -6,6 +6,7 @@ export const useAddress = (formik, fields, onError) => {
   const selectRef = useRef();
   const postcodeRef = useRef();
   const { rootPath } = useAppConfig();
+
   const { data, loading, error, load } = useFetch({
     throwErrors: false,
   });
@@ -13,6 +14,7 @@ export const useAddress = (formik, fields, onError) => {
   const [addresses, setAddresses] = useState(data);
   const { values, originalErrors, setFieldValue, setFieldError } = formik;
   const [isFindAddress, setFindAddress] = useState(!values.postcode);
+
   const handleSelect = useCallback(
     (e) => {
       const address = addresses.find(({ id }) => e.target.value === id);

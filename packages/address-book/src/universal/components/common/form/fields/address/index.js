@@ -35,6 +35,7 @@ function AddressDropdown({ addresses, className, handleSelect, handleAddressManu
 function Address({ formik, fields, onError }) {
   const [isMounted, setMounted] = useState(false);
   const { getLocalePhrase } = useAppConfig();
+
   const {
     addresses,
     loading,

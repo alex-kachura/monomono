@@ -5,9 +5,7 @@ import { AddressServiceError } from '@web-foundations/service-address';
 import { ContactServiceError } from '@web-foundations/service-contact';
 import controllerFactory from '../../controllers';
 import { getPhraseFactory } from '../../utils/i18n';
-import AJV from 'ajv';
-import ajvErrors from 'ajv-errors';
-import { convertAJVErrorsToFormik, sanitizeValues } from '@oneaccount/react-foundations';
+import { validate } from '@oneaccount/react-foundations';
 import {
   handleAddressServiceError,
   handleContactServiceError,
@@ -16,13 +14,6 @@ import {
   ErrorCodes,
 } from '../../utils/error-handlers';
 import { handleResponse } from '../../utils/response-handlers';
-
-const ajv = ajvErrors(
-  new AJV({ allErrors: true, jsonPointers: true, $data: true, coerceTypes: true }),
-  {
-    allErrors: true,
-  },
-);
 
 export function getBreadcrumb(lang, getLocalePhrase) {
   return [
@@ -121,14 +112,10 @@ export async function postEditDeliveryAddressPage(req, res, next) {
   const action = 'update-address';
   const { accessToken } = req.getClaims();
   const deliveryAddressController = controllerFactory('deliveryAddress.default', req.region);
-
   const { _csrf, ...data } = req.body; // eslint-disable-line no-unused-vars
   const outcome = 'successful';
   const name = 'delivery-address:edit:post';
 
-  // TODO: Cache schema
-  const compiled = ajv.compile(schema);
-  const isValid = compiled(sanitizeValues(data));
   const payload = {
     breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
     values: data,
@@ -138,9 +125,9 @@ export async function postEditDeliveryAddressPage(req, res, next) {
     schema,
   };
 
-  if (!isValid) {
-    const errors = convertAJVErrorsToFormik(compiled.errors, schema);
+  const { isValid, values, errors } = validate(schema, data);
 
+  if (!isValid) {
     return handleValidationErrors({
       name,
       action,
@@ -156,7 +143,7 @@ export async function postEditDeliveryAddressPage(req, res, next) {
     await deliveryAddressController.updateAddress({
       accessToken,
       addressIndex: id,
-      data,
+      data: values,
       context: req,
       tracer: req.sessionId,
     });

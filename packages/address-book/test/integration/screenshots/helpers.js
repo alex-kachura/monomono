@@ -10,9 +10,7 @@ const regional = app[region];
 
 export { toMatchImageSnapshot } from 'jest-image-snapshot';
 export const devicesToEmulate = ['iPhone X'];
-export const baseURL = `${app.protocol}${locale.hostname}/${app.basePath}/${
-  app.appPath
-}/${language}`;
+export const baseURL = `${app.protocol}${locale.hostname}/${app.basePath}/${app.appPath}/${language}`;
 
 const HEADLESS = process.env.HEADLESS !== 'false';
 const IS_MOBILE = process.env.IS_MOBILE === 'true';
@@ -78,6 +76,7 @@ export async function generateAndCompare(page, filename) {
   const image = await page.screenshot({
     fullPage: true,
   });
+
   let deviceName = devicesToEmulate[0];
 
   deviceName = deviceName.replace(' ', '-').toLowerCase();

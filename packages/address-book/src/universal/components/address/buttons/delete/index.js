@@ -14,7 +14,6 @@ import {
 export default function DeleteButton({ itemId, label, firstLine }) {
   const { rootPath, getLocalePhrase, csrf } = useAppConfig();
   const [showConfirmation, setShowConfirmation] = useState(false);
-
   const deleteUrl = `${rootPath}/`;
 
   const didToggleShowConfirmation = useCallback(

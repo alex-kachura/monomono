@@ -7,6 +7,7 @@ export async function lookup(req, res, next) {
   if (!req.query.postcode) {
     return res.status(400).end();
   }
+
   const serviceAccessToken = await getServiceToken({
     tracer: req.sessionId,
     context: req,

@@ -15,18 +15,18 @@ import { getClubcardAddressPage, postClubcardAddressPage } from './clubcard-addr
 import { postDeleteAddressRoute } from './delete-delivery-address';
 
 const { name: csrfCookieName, ...csrfCookieOptions } = config.get('cookie.CSRF');
-
 const BASE_PATH = config.get('basePath');
 const APP_PATH = config.get('appPath');
 const ROUTE_PATH = `/${BASE_PATH}/${APP_PATH}/:locale`;
-
 const baseRouter = express.Router(); // eslint-disable-line new-cap
 const appRouter = express.Router(); // eslint-disable-line new-cap
 const clubcardRouter = express.Router(); // eslint-disable-line new-cap
+
 const isAuthenticated = isAuthenticatedFactory({
   service: getIdentityClient(),
   getTracer: (req) => req.cookies[config.cookie.tracer.name] || req.sessionId,
 });
+
 const isElevatedAuthenticated = isAuthenticatedFactory({
   service: getIdentityClient(),
   getTracer: (req) => req.cookies[config.cookie.tracer.name] || req.sessionId,

@@ -16,9 +16,9 @@ import {
 
 export default function PrimaryAddress({ isClubcard, details }) {
   const { getLocalePhrase } = useAppConfig();
-
   // TODO: Clubcard Icon
   const iconGraphic = <HeaderIcon graphic={isClubcard ? 'basket' : 'basket'} size="sm" />;
+
   const headerText = (
     <Signpost>
       {getLocalePhrase(
@@ -26,9 +26,11 @@ export default function PrimaryAddress({ isClubcard, details }) {
       )}
     </Signpost>
   );
+
   const additionalText = getLocalePhrase(
     `pages.landing.primary-address.additional.${isClubcard ? 'clubcard' : 'grocery'}`,
   );
+
   const elementId = `edit-address${isClubcard ? '-clubcard' : '-grocery'}`;
 
   return (

@@ -7,13 +7,8 @@ import config from 'config';
 const loginPage = new LoginPage();
 const landingPage = new LandingPage();
 const addAddressPage = new AddNewDeliveryAddressPage();
-
-const addDeliveryAddressUrl = `${config.env.baseUrl}${config.env.basePath}${
-  config.env.language
-}/add-delivery-address`;
-const addressBookAddedUrl = `${config.env.baseUrl}${config.env.basePath}${
-  config.env.language
-}?action=added`;
+const addDeliveryAddressUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}/add-delivery-address`;
+const addressBookAddedUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}?action=added`;
 
 fixture`Add Delivery Address`.page(loginPage.addressUrl); // eslint-disable-line no-undef
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
+import { render, cleanup } from '@testing-library/react';
 import { renderProviders } from '@oneaccount/react-foundations/lib/test-utils';
 import { DefaultThemeProvider } from '@beans/theme';
 import Breadcrumb from '.';
@@ -39,6 +39,7 @@ describe('Breadcrumb component', () => {
           text: 'mock-text',
         },
       ]);
+
       const fragment = asFragment();
 
       expect(fragment).toMatchSnapshot();

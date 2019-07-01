@@ -12,6 +12,7 @@ export const Region = Object.freeze({
 // * unsupported - An array of unsupported regions (null if non found)
 export const parseRegions = (_regions, locales) => {
   const regions = Array.isArray(_regions) ? _regions : [_regions];
+
   const { supported, unsupported } = regions
     .reduce((result, region) => {
       // Sanitise each region so that its upper cased, trimmed (whitespace removed).

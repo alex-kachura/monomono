@@ -3,7 +3,7 @@
 exports[`[Component: Form] [State: Default] should render correctly 1`] = `
 <DocumentFragment>
   <h1
-    class="sc-htoDjs krCBJg typography___styledElement-sc-186l0ce-0 hmbiuS"
+    class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs krCBJg typography___styledElement-sc-186l0ce-0 hmbiuS"
   >
     pages.delivery-address.title
   </h1>
@@ -38,7 +38,7 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
             address.fields.postcode.label 
           </label>
           <div
-            class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+            class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
           >
             <input
               aria-disabled="false"
@@ -51,15 +51,15 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
             />
             <button
               aria-disabled="false"
-              class="find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+              class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
               role="button"
               type="button"
             >
               <span
-                class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+                class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
               >
                 <span
-                  class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+                  class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
                 >
                   address.find-address
                 </span>
@@ -69,15 +69,15 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
         </div>
         <button
           aria-disabled="false"
-          class="manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+          class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
           role="button"
           type="button"
         >
           <span
-            class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+            class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
           >
             <span
-              class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+              class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
             >
               address.address-manually
             </span>
@@ -93,7 +93,7 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
             address.fields.address-line1.label 
           </label>
           <div
-            class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+            class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
           >
             <input
               aria-disabled="false"
@@ -116,13 +116,13 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
           >
             address.fields.address-line2.label 
             <span
-              class="styled__OptionalSpan-wt4ift-1 fgdShb"
+              class="base-components__BaseElement-sc-150tvch-0 styled__OptionalSpan-wt4ift-1 fgdShb"
             >
               (optional)
             </span>
           </label>
           <div
-            class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+            class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
           >
             <input
               aria-disabled="false"
@@ -144,13 +144,13 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
           >
             address.fields.address-line3.label 
             <span
-              class="styled__OptionalSpan-wt4ift-1 fgdShb"
+              class="base-components__BaseElement-sc-150tvch-0 styled__OptionalSpan-wt4ift-1 fgdShb"
             >
               (optional)
             </span>
           </label>
           <div
-            class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+            class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
           >
             <input
               aria-disabled="false"
@@ -173,7 +173,7 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
             address.fields.town.label 
           </label>
           <div
-            class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+            class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
           >
             <input
               aria-disabled="false"
@@ -198,7 +198,7 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
           pages.clubcard-address.fields.phone-number.label 
         </label>
         <div
-          class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+          class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
         >
           <input
             aria-disabled="false"
@@ -219,15 +219,15 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
       />
       <button
         aria-disabled="false"
-        class="sc-iwsKbI coJpLO styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+        class="styled__BaseButton-sc-3mnirm-0 sc-iwsKbI coJpLO styled__PrimaryButton-sc-3mnirm-2 giYBMC"
         role="button"
         type="submit"
       >
         <span
-          class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
         >
           <span
-            class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
           >
             Submit
           </span>

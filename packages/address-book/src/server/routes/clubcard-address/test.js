@@ -85,11 +85,13 @@ describe('[Route: /edit-clubcard-address]', () => {
 
       describe('[success]', () => {
         const res = responseFactory({ responseType });
+
         const req = requestFactory({
           query: {
             id: 'test-id',
           },
         });
+
         const payload = payloadFactory(req);
 
         beforeAll(async () => {
@@ -145,6 +147,7 @@ describe('[Route: /edit-clubcard-address]', () => {
                 method: 'GET',
                 query: errorQuery,
               });
+
               const res = responseFactory({ responseType });
 
               beforeAll(async () => {
@@ -194,6 +197,7 @@ describe('[Route: /edit-clubcard-address]', () => {
         'address-id': '',
         phone: '07777888888',
       };
+
       const body = {
         _csrf: 'mock-csrf',
         ...values,
@@ -332,7 +336,9 @@ describe('[Route: /edit-clubcard-address]', () => {
           },
           body,
         });
+
         const res = responseFactory({ responseType });
+
         const payload = payloadFactory(req, {
           values,
         });
@@ -383,11 +389,14 @@ describe('[Route: /edit-clubcard-address]', () => {
           ) => {
             describe(errorCode, () => {
               const { _csrf, ..._values } = _body; // eslint-disable-line
+
               const req = requestFactory({
                 query: queryError,
                 body: _body,
               });
+
               const res = responseFactory({ responseType });
+
               const payload = payloadFactory(req, {
                 values: _values,
                 ...errorPayload,

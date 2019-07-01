@@ -70,11 +70,13 @@ describe('[Route: /edit-delivery-address]', () => {
 
       describe('[success]', () => {
         const res = responseFactory({ responseType });
+
         const req = requestFactory({
           query: {
             id: 'test-id',
           },
         });
+
         const payload = payloadFactory(req);
 
         beforeAll(async () => {
@@ -126,6 +128,7 @@ describe('[Route: /edit-delivery-address]', () => {
                   id: 'test-id',
                 },
               });
+
               const res = responseFactory({ responseType });
 
               beforeAll(async () => {
@@ -178,6 +181,7 @@ describe('[Route: /edit-delivery-address]', () => {
         mobile: '',
         'address-label': 'mock-label-2',
       };
+
       const body = {
         _csrf: 'mock-csrf',
         ...values,
@@ -299,7 +303,9 @@ describe('[Route: /edit-delivery-address]', () => {
           },
           body,
         });
+
         const res = responseFactory({ responseType });
+
         const payload = payloadFactory(req, {
           values,
         });
@@ -347,13 +353,16 @@ describe('[Route: /edit-delivery-address]', () => {
           ) => {
             describe(errorCode, () => {
               const { _csrf, ..._values } = _body; // eslint-disable-line
+
               const req = requestFactory({
                 query: {
                   id: 'test-id',
                 },
                 body: _body,
               });
+
               const res = responseFactory({ responseType });
+
               const payload = payloadFactory(req, {
                 values: _values,
                 ...errorPayload,
@@ -423,6 +432,7 @@ describe('[Route: /edit-delivery-address]', () => {
         id: 'GHS_12345',
       },
     });
+
     const res = responseFactory();
 
     beforeAll(async () => {

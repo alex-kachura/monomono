@@ -2,6 +2,7 @@ import cheerio from 'cheerio';
 import { getResponse, getLinkHrefWithLinkText } from '@oneaccount/test-common';
 
 const jar = global.jar;
+
 const headers = {
   'Content-Type': 'text/html',
   Accept: 'text/html',

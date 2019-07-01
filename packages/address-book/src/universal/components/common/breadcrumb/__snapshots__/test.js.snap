@@ -3,24 +3,24 @@
 exports[`Breadcrumb component has breadcrumb should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdVaJa dYnrJc"
+    class="base-components__BaseElement-sc-150tvch-0 sc-bdVaJa dYnrJc"
   >
     <nav
       aria-label="breadcrumb"
-      class="styled__NavContainer-sc-1fzx5su-0 dXoXQG"
+      class="styled__Container-sc-1bf1p22-0 gcqbvE"
     >
       <ol
-        class="styled__OrderedList-sc-1fzx5su-2 dzvyLR"
+        class="base-components__BaseList-sc-150tvch-2 styled__OrderedList-sc-1fzx5su-1 ftwQqA"
       >
         <li
-          class="styled__ListItem-sc-1fzx5su-3 kDICdn"
+          class="styled__ListItem-sc-1fzx5su-2 hclgpr"
         >
           <div
-            class="styled__Item-sc-1fzx5su-4 epQOWE"
+            class="styled__Item-sc-1fzx5su-3 fMNMlJ"
           >
             <a
               aria-label="home"
-              class="styled__IconLink-sc-117kvua-0 kZAYfa"
+              class="styled__IconLink-sc-117kvua-0 llODtM"
               href="mock-url"
             >
               <svg
@@ -43,14 +43,14 @@ exports[`Breadcrumb component has breadcrumb should render correctly 1`] = `
           </div>
         </li>
         <li
-          class="styled__ListItem-sc-1fzx5su-3 kDICdn"
+          class="styled__ListItem-sc-1fzx5su-2 hclgpr"
         >
           <div
-            class="styled__Item-sc-1fzx5su-4 epQOWE"
+            class="styled__Item-sc-1fzx5su-3 fMNMlJ"
           >
             <svg
               aria-hidden="true"
-              class="styled__Separator-sc-1fzx5su-5 kaoddq styled__Container-sc-1bf1p22-0 gJOjrx"
+              class="styled__Separator-sc-1fzx5su-4 iQJALb styled__Container-sc-1bf1p22-0 gJOjrx"
               color="currentColor"
               height="20"
               preserveAspectRatio="xMinYMax meet"
@@ -66,7 +66,7 @@ exports[`Breadcrumb component has breadcrumb should render correctly 1`] = `
               />
             </svg>
             <a
-              class="styled__StandaloneLink-sc-1xizymv-0 IAUPG"
+              class="styled__StandaloneLink-sc-1xizymv-0 fRhty"
               href="mock-url"
             >
               <span

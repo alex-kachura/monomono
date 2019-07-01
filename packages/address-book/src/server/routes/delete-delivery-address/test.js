@@ -27,6 +27,7 @@ describe('[Route: /]', () => {
           'contact-address-id': 'mock-id',
         },
       });
+
       const res = responseFactory();
 
       beforeAll(async () => {
@@ -56,6 +57,7 @@ describe('[Route: /]', () => {
           'contact-address-id': 'mock-id',
         },
       });
+
       const res = responseFactory();
       const err = new Error();
 

@@ -5,7 +5,6 @@ import log from '../../logger';
 
 export async function getAddresses(accessToken, { context = {} } = {}) {
   const contact = getContactClient(accessToken);
-
   const serviceToken = await getServiceToken();
   const address = getAddressClient(serviceToken);
 

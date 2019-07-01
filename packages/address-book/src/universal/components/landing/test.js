@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { renderProviders } from '@oneaccount/react-foundations/lib/test-utils';
 import { BrowserRouter } from 'react-router-dom';
 import { DefaultThemeProvider } from '@beans/theme';
@@ -8,6 +8,7 @@ import { mockData } from './test-data';
 
 describe('[Component: LandingPage]', () => {
   let component;
+
   const mockLocation = {
     pathname: 'mock-path',
     search: 'mock-search',

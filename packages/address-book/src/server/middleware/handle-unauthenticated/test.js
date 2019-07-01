@@ -4,6 +4,7 @@ import { requestFactory, responseFactory, next, hostname } from '../../utils/tes
 
 const verifyUrl = config.GB.externalApps.verify;
 const loginUrl = config.GB.externalApps.login;
+
 const customHandleUnauthenticated = handleUnauthenticatedFactory({
   redirectTo: () => verifyUrl,
 });
@@ -28,6 +29,7 @@ describe.each([
     const req = requestFactory({
       isAuthenticated: true,
     });
+
     const res = responseFactory();
 
     beforeAll(() => {
@@ -45,6 +47,7 @@ describe.each([
 
   describe('unauthenticated', () => {
     const host = `${config.protocol}${hostname}`;
+
     const location = `${redirectTo}?from=${encodeURIComponent(
       host,
     )}%2Fbase-url%2Furl%3Fparam1%3Dval%26param2%3Dval`;

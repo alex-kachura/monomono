@@ -15,7 +15,6 @@ const Form = memo(({ fields, native, onError, formik, submitText = 'Submit' }) =
   const { formRef, handleSubmit, handleNativeSubmit, isSubmitting, errors } = formik;
   const { getLocalePhrase, csrf } = useAppConfig();
   const { addressFields, augmentedFields } = useFields(fields, errors, onError);
-
   const content = [];
 
   if (addressFields.length > 0) {
@@ -73,6 +72,7 @@ function FormWrapper({
   schema,
   url,
   onSubmit,
+  onErrors,
   ...rest
 }) {
   const { handleSubmit, banner, handleError } = useForm(url, onSubmit, initialBanner);
@@ -87,6 +87,7 @@ function FormWrapper({
           initialErrors={initialErrors}
           validationJSONSchema={schema}
           onSubmit={handleSubmit}
+          onErrors={onErrors}
         >
           <ConnectedForm onError={handleError} {...rest} />
         </Formik>
@@ -116,6 +117,7 @@ FormWrapper.propTypes = {
   schema: PropTypes.object.isRequired,
   url: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  onErrors: PropTypes.func,
 };
 
 export default memo(FormWrapper);

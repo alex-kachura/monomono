@@ -7,6 +7,7 @@ const onAddressRequestEnd = log.makeOnRequestEventHandler('Address Service Respo
 
 export function extractAddressLines(data) {
   const addressLine = 'address-line';
+
   const addresLinesKeys = Object.keys(data)
     .filter((key) => key.includes(addressLine) && data[key])
     .sort(

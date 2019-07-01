@@ -15,7 +15,6 @@ export function handleUnauthenticatedFactory({ redirectTo } = {}) {
     }
 
     const fromUrl = encodeURIComponent(`${config.protocol}${req.hostname}${req.baseUrl}${req.url}`);
-
     // get region-specific login url, e.g. UK or Ireland
     const redirectPath = `${url}?from=${fromUrl}`;
 

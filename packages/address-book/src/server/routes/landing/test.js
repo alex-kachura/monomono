@@ -55,6 +55,7 @@ describe('[Route: /]', () => {
             action: 'mockUpdated',
           },
         });
+
         const res = responseFactory();
 
         beforeAll(async () => {
@@ -86,6 +87,7 @@ describe('[Route: /]', () => {
             action: 'mockUpdated',
           },
         });
+
         const res = responseFactory({ responseType: 'json' });
 
         beforeAll(async () => {
@@ -114,6 +116,7 @@ describe('[Route: /]', () => {
         myaccount_segment_singleAddressBook: '{"segment":"disabled","weighting":"100"}',
       },
     });
+
     const res = responseFactory();
 
     beforeAll(async () => {

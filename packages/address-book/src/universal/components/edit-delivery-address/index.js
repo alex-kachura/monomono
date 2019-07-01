@@ -9,12 +9,24 @@ import { connectPage, useAppConfig } from '@oneaccount/react-foundations';
 const EditDeliveryAddressPage = ({
   history,
   location,
-  initialData: { banner: initialBanner = {}, values: initialValues, fields, errors, schema },
+  initialData: {
+    banner: initialBanner = {},
+    values: initialValues,
+    fields,
+    errors: initialErrors,
+    schema,
+  },
 }) => {
   const { getLocalePhrase, rootPath } = useAppConfig();
 
   const handleSubmit = useCallback(() => {
     history.replace(`${rootPath}?action=updated`);
+  }, []);
+
+  const handleErrors = useCallback(() => {
+    /**
+     * Do analytics stuff
+     */
   }, []);
 
   return (
@@ -24,11 +36,12 @@ const EditDeliveryAddressPage = ({
         title={getLocalePhrase('pages.delivery-address.edit.title')}
         initialBanner={initialBanner}
         initialValues={initialValues}
-        initialErrors={errors}
+        initialErrors={initialErrors}
         schema={schema}
         fields={fields}
         submitText={getLocalePhrase('pages.delivery-address.edit.submit-button')}
         onSubmit={handleSubmit}
+        onErrors={handleErrors}
       />
     </DocumentTitle>
   );

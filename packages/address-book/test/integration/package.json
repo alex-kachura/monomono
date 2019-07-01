@@ -33,7 +33,9 @@
   },
   "dependencies": {
     "@oneaccount/test-common": "~2.4.6",
+    "babel-jest": "^24.8.0",
     "cheerio": "~1.0.0-rc.2",
+    "jest": "^24.8.0",
     "jest-image-snapshot": "~2.5.0",
     "puppeteer": "~1.8.0",
     "request": "~2.88.0",
@@ -43,7 +45,7 @@
     "setupFiles": [
       "<rootDir>/jest.init.js"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/jest.framework.setup.js",
+    "setupFilesAfterEnv": ["<rootDir>/jest.framework.setup.js"],
     "testPathIgnorePatterns": [
       "/config/",
       "/node_modules/"

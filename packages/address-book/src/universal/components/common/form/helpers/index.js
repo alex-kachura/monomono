@@ -4,16 +4,19 @@ import { useAppConfig } from '@oneaccount/react-foundations';
 
 export function useForm(url, onSubmit, initialBanner = {}) {
   const { fetch, getLocalePhrase } = useAppConfig();
+
   const [banner, setBanner] = useState(() => ({
     type: initialBanner.type,
     text: initialBanner.text && getLocalePhrase(initialBanner.text),
     title: initialBanner.title && getLocalePhrase(initialBanner.title),
   }));
+
   const handleSubmit = useCallback(async (values, { setSubmitting, setErrors }) => {
     const { payload } = await fetch(url, {
       method: 'POST',
       body: JSON.stringify(values),
     });
+
     const { banner: payloadBanner = {}, errors } = payload;
     const hasErrors = Object.keys(errors).length > 0;
 

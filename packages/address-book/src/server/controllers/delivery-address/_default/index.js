@@ -13,12 +13,9 @@ import { ErrorCodes } from '../../../utils/error-handlers';
 
 export async function getAddress({ accessToken, addressId, context, tracer }) {
   const serviceToken = await getServiceToken();
-
   const contactService = getContactClient(accessToken);
   const addressService = getAddressClient(serviceToken);
-
   const contactAddress = await contactService.getSingleAddress(addressId, { tracer, context });
-
   const { addresses, telephoneNumbers } = contactAddress;
   const { label, addressUuid, tags } = addresses[0];
 
@@ -43,13 +40,13 @@ export async function getAddress({ accessToken, addressId, context, tracer }) {
 
 export async function createAddress({ accessToken, data, context, tracer }) {
   const contactService = getContactClient(accessToken);
-
   const serviceToken = await getServiceToken();
   let addressId = data['address-id'];
   const postcode = data.postcode;
 
   if (!addressId) {
     const addressService = getAddressClient(serviceToken);
+
     const address = await addressService.createAddress({
       postcode,
       address: {
@@ -75,6 +72,7 @@ export async function updateAddress({ data, addressIndex, accessToken, context, 
   const contactService = getContactClient(accessToken);
   const addressService = getAddressClient(serviceToken);
   const contactAddress = await contactService.getSingleAddress(addressIndex, { tracer, context });
+
   const { label, addressUuid, tags, modifiedPhoneNumbers } = processedContactData(
     data,
     contactAddress,

@@ -23,7 +23,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              forceEnv: 'browser',
+              envName: 'browser',
             },
           },
         ],
@@ -68,6 +68,7 @@ module.exports = {
   },
   mode: process.env.NODE_ENV,
   optimization: {
+    // usedExports: true,
     splitChunks: {
       cacheGroups: {
         styles: {

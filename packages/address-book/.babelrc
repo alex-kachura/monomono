@@ -1,27 +1,24 @@
 {
   "env": {
     "test": {
-      "plugins": [
-        "istanbul"
-      ],
       "presets": [
         [
-          "env",
+          "@babel/env",
           {
             "targets": {
               "node": "current"
             }
           }
         ],
-        "react",
-        "stage-0"
+        "@babel/react",
       ]
     },
     "browser": {
       "presets": [
         [
-          "env",
+          "@babel/env",
           {
+
             "targets": {
               "browsers": [
                 "ie 9"
@@ -29,22 +26,20 @@
             }
           }
         ],
-        "react",
-        "stage-0"
+        "@babel/react",
       ]
     },
     "node": {
       "presets": [
         [
-          "env",
+          "@babel/env",
           {
             "targets": {
               "node": "current"
             }
           }
         ],
-        "react",
-        "stage-0"
+        "@babel/react",
       ]
     }
   }

@@ -9,16 +9,9 @@ const loginPage = new LoginPage();
 const landingPage = new LandingPage();
 const verifyDigitsPage = new VerifyDigitsPage();
 const editClubcardAddressPage = new EditClubcardAddressPage();
-
-const verifyDigitsClubcardUrl = `${config.env.baseUrl}${config.env.loginPath}${
-  config.env.language
-}${config.env.verifyPath}`;
-const editClubcardAddressUrl = `${config.env.baseUrl}${config.env.basePath}${
-  config.env.language
-}/edit-clubcard-address`;
-const editedClubcardAddressUrl = `${config.env.baseUrl}${config.env.basePath}${
-  config.env.language
-}?action=clubcard-updated`;
+const verifyDigitsClubcardUrl = `${config.env.baseUrl}${config.env.loginPath}${config.env.language}${config.env.verifyPath}`;
+const editClubcardAddressUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}/edit-clubcard-address`;
+const editedClubcardAddressUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}?action=clubcard-updated`;
 
 fixture`Edit Clubcard Address` // eslint-disable-line no-undef
   .page(loginPage.addressUrl)

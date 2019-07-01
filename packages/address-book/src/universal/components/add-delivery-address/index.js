@@ -7,7 +7,13 @@ import Form from '../common/form';
 import { connectPage, useAppConfig } from '@oneaccount/react-foundations';
 
 const AddDeliveryAddressPage = ({
-  initialData: { banner: initialBanner = {}, values: initialValues = {}, fields, errors, schema },
+  initialData: {
+    banner: initialBanner = {},
+    values: initialValues = {},
+    fields,
+    errors: initialErrors,
+    schema,
+  },
   location,
   history,
 }) => {
@@ -17,6 +23,12 @@ const AddDeliveryAddressPage = ({
     history.replace(`${rootPath}?action=added`);
   }, []);
 
+  const handleErrors = useCallback(() => {
+    /**
+     * Do analytics stuff
+     */
+  }, []);
+
   return (
     <DocumentTitle title={getLocalePhrase('pages.delivery-address.add.title')}>
       <Form
@@ -24,11 +36,12 @@ const AddDeliveryAddressPage = ({
         title={getLocalePhrase('pages.delivery-address.add.title')}
         initialBanner={initialBanner}
         initialValues={initialValues}
-        initialErrors={errors}
+        initialErrors={initialErrors}
         schema={schema}
         fields={fields}
         submitText={getLocalePhrase('pages.delivery-address.add.submit-button')}
         onSubmit={handleSubmit}
+        onErrors={handleErrors}
       />
     </DocumentTitle>
   );

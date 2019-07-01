@@ -5,22 +5,13 @@ import { ContactServiceError } from '@web-foundations/service-contact';
 import controllerFactory from '../../controllers';
 import { logOutcome } from '../../logger';
 import { getPhraseFactory } from '../../utils/i18n';
-import AJV from 'ajv';
-import ajvErrors from 'ajv-errors';
-import { convertAJVErrorsToFormik, sanitizeValues } from '@oneaccount/react-foundations';
+import { validate } from '@oneaccount/react-foundations';
 import {
   handleValidationErrors,
   handleAddressServiceError,
   handleContactServiceError,
   handleError,
 } from '../../utils/error-handlers';
-
-const ajv = ajvErrors(
-  new AJV({ allErrors: true, jsonPointers: true, $data: true, coerceTypes: true }),
-  {
-    allErrors: true,
-  },
-);
 
 export function getBreadcrumb(lang, getLocalePhrase) {
   return [
@@ -103,20 +94,24 @@ export async function postAddDeliveryAddressPage(req, res, next) {
     schema,
   };
 
-  // TODO: Cache schema
-  const compiled = ajv.compile(schema);
-
-  const isValid = compiled(sanitizeValues(data));
+  const { isValid, values, errors } = validate(schema, data);
 
   if (!isValid) {
-    const errors = convertAJVErrorsToFormik(compiled.errors, schema);
-
-    return handleValidationErrors({ name, action, errors, payload, req, res, next });
+    return handleValidationErrors({
+      name,
+      action,
+      errors,
+      payload,
+      req,
+      res,
+      next,
+    });
   }
+
   try {
     await deliveryAddressController.createAddress({
       accessToken,
-      data,
+      data: values,
       context: req,
       tracer: req.sessionId,
     });

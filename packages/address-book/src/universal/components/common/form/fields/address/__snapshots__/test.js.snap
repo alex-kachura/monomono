@@ -15,7 +15,7 @@ exports[`[Component: Address] [Find Address] should call fetch and render addres
         Postcode 
       </label>
       <div
-        class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+        class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
       >
         <input
           aria-disabled="false"
@@ -28,15 +28,15 @@ exports[`[Component: Address] [Find Address] should call fetch and render addres
         />
         <button
           aria-disabled="false"
-          class="find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+          class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
           role="button"
           type="button"
         >
           <span
-            class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+            class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
           >
             <span
-              class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+              class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
             >
               address.find-address
             </span>
@@ -87,15 +87,15 @@ exports[`[Component: Address] [Find Address] should call fetch and render addres
     </div>
     <button
       aria-disabled="false"
-      class="manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+      class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
       role="button"
       type="button"
     >
       <span
-        class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
       >
         <span
-          class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+          class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
         >
           address.address-manually
         </span>
@@ -120,7 +120,7 @@ exports[`[Component: Address] [State: Default] should render correctly 1`] = `
         Postcode 
       </label>
       <div
-        class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+        class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
       >
         <input
           aria-disabled="false"
@@ -133,15 +133,15 @@ exports[`[Component: Address] [State: Default] should render correctly 1`] = `
         />
         <button
           aria-disabled="false"
-          class="find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+          class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
           role="button"
           type="button"
         >
           <span
-            class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+            class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
           >
             <span
-              class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+              class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
             >
               address.find-address
             </span>
@@ -151,15 +151,15 @@ exports[`[Component: Address] [State: Default] should render correctly 1`] = `
     </div>
     <button
       aria-disabled="false"
-      class="manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+      class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
       role="button"
       type="button"
     >
       <span
-        class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
       >
         <span
-          class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+          class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
         >
           address.address-manually
         </span>
@@ -184,7 +184,7 @@ exports[`[Component: Address] [State: Initial Values] should render correctly 1`
         Postcode 
       </label>
       <div
-        class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+        class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
       >
         <input
           aria-disabled="false"
@@ -197,15 +197,15 @@ exports[`[Component: Address] [State: Initial Values] should render correctly 1`
         />
         <button
           aria-disabled="false"
-          class="find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+          class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
           role="button"
           type="button"
         >
           <span
-            class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+            class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
           >
             <span
-              class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+              class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
             >
               address.find-address
             </span>
@@ -215,15 +215,15 @@ exports[`[Component: Address] [State: Initial Values] should render correctly 1`
     </div>
     <button
       aria-disabled="false"
-      class="manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+      class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
       role="button"
       type="button"
     >
       <span
-        class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
       >
         <span
-          class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+          class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
         >
           address.address-manually
         </span>
@@ -248,7 +248,7 @@ exports[`[Component: Address] [State: Initial Values] should render correctly 2`
         Postcode 
       </label>
       <div
-        class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+        class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
       >
         <input
           aria-disabled="false"
@@ -261,15 +261,15 @@ exports[`[Component: Address] [State: Initial Values] should render correctly 2`
         />
         <button
           aria-disabled="false"
-          class="find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+          class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
           role="button"
           type="button"
         >
           <span
-            class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+            class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
           >
             <span
-              class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+              class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
             >
               address.find-address
             </span>
@@ -279,15 +279,15 @@ exports[`[Component: Address] [State: Initial Values] should render correctly 2`
     </div>
     <button
       aria-disabled="false"
-      class="manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+      class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
       role="button"
       type="button"
     >
       <span
-        class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+        class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
       >
         <span
-          class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+          class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
         >
           address.address-manually
         </span>

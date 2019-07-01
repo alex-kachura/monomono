@@ -17,7 +17,6 @@ export default function AddressPanel({ address, isClubcard, additional }) {
   }
 
   const { label, addressLines, postTown, postCode, telephoneNumbers } = address;
-
   let phoneNumbers = null;
 
   if (isClubcard) {

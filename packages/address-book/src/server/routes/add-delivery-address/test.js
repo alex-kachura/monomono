@@ -12,6 +12,7 @@ jest.mock('../../controllers/delivery-address/_default');
 
 const payloadFactory = (req, extra) => {
   const { fields, schema } = config[req.region].pages['delivery-address'];
+
   const defaultValues = {
     'address-id': '',
     'address-label': '',
@@ -91,6 +92,7 @@ describe('[Route: /add-delivery-address]', () => {
         mobile: '',
         'address-label': 'mock-label',
       };
+
       const body = {
         _csrf: 'mock-csrf',
         ...values,
@@ -208,6 +210,7 @@ describe('[Route: /add-delivery-address]', () => {
       describe('[success]', () => {
         const req = requestFactory({ body });
         const res = responseFactory({ responseType });
+
         const payload = payloadFactory(req, {
           values,
         });
@@ -257,6 +260,7 @@ describe('[Route: /add-delivery-address]', () => {
               const { _csrf, ..._values } = _body; // eslint-disable-line
               const req = requestFactory({ body: _body });
               const res = responseFactory({ responseType });
+
               const payload = payloadFactory(req, {
                 values: _values,
                 ...errorPayload,
@@ -323,6 +327,7 @@ describe('[Route: /add-delivery-address]', () => {
         myaccount_segment_singleAddressBook: '{"segment":"disabled","weighting":"100"}',
       },
     });
+
     const res = responseFactory();
 
     beforeAll(async () => {

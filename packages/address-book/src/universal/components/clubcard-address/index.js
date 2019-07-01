@@ -9,12 +9,24 @@ import { connectPage, useAppConfig } from '@oneaccount/react-foundations';
 const ClubcardAddressPage = ({
   history,
   location,
-  initialData: { banner: initialBanner, values: initialValues, fields, errors, schema },
+  initialData: {
+    banner: initialBanner,
+    values: initialValues,
+    fields,
+    errors: initialErrors,
+    schema,
+  },
 }) => {
   const { getLocalePhrase, rootPath } = useAppConfig();
 
   const handleSubmit = useCallback(() => {
     history.replace(`${rootPath}?action=clubcard-updated`);
+  }, []);
+
+  const handleErrors = useCallback(() => {
+    /**
+     * Do analytics stuff
+     */
   }, []);
 
   return (
@@ -24,11 +36,12 @@ const ClubcardAddressPage = ({
         title={getLocalePhrase('pages.clubcard-address.edit.title')}
         initialBanner={initialBanner}
         initialValues={initialValues}
-        initialErrors={errors}
+        initialErrors={initialErrors}
         schema={schema}
         fields={fields}
         submitText={getLocalePhrase('pages.clubcard-address.edit.submit-button')}
         onSubmit={handleSubmit}
+        onErrors={handleErrors}
       />
     </DocumentTitle>
   );

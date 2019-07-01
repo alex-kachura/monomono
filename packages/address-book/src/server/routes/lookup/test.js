@@ -8,6 +8,7 @@ describe('[Route: /lookup]', () => {
   describe('[GET]', () => {
     describe('[success]', () => {
       const res = responseFactory();
+
       const req = requestFactory({
         query: {
           postcode: 'EC1R 5AR',
@@ -40,6 +41,7 @@ describe('[Route: /lookup]', () => {
       new Error('Kaboom!!!'),
     ])('[failure] - %s', (error) => {
       const res = responseFactory();
+
       const req = requestFactory({
         query: {
           postcode: 'INVALID',

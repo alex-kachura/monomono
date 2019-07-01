@@ -2,10 +2,12 @@ import cheerio from 'cheerio';
 import { getResponse, extractStateAndHiddenCsfr } from '@oneaccount/test-common';
 
 const jar = global.jar;
+
 const headers = {
   'Content-Type': 'text/html',
   Accept: 'text/html',
 };
+
 const defaultFormFields = {
   'address-id': 'trn:tesco:address:address:uuid:1ed74c15-b204-4d66-8a90-c22f3b7c05f2',
   'address-label': 'test',

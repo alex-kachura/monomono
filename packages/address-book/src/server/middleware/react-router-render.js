@@ -12,6 +12,7 @@ import { getDictionary, getPhraseFactory } from '../utils/i18n';
 export default function reactRouterRenderMiddlewareFactory() {
   return function reactRouterRenderMiddleware(req, res) {
     const { lang } = req;
+
     const context = {
       csrfToken: res.data.csrf,
     };
@@ -55,12 +56,14 @@ export default function reactRouterRenderMiddlewareFactory() {
     } else {
       // eslint-disable-next-line global-require
       const assets = require('../../webpack-assets.json');
+
       const data = {
         config: clientConfig,
         title: DocumentTitle.rewind(),
         lang,
         dictionary: getDictionary(lang),
       };
+
       const thirdParties = config.get('thirdParties');
 
       data.analytics = {

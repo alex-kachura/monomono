@@ -4,15 +4,18 @@ describe('Set response data middleware', () => {
   const mockToken = 'mock-token';
   const mockAuth = 'mock-is-auth';
   const mockGetToken = jest.fn();
+
   const req = {
     csrfToken: mockGetToken.mockReturnValue(mockToken),
     isAuthenticated: mockAuth,
   };
+
   const res = {
     data: {
       foo: 'bar',
     },
   };
+
   const next = jest.fn();
 
   beforeEach(() => {

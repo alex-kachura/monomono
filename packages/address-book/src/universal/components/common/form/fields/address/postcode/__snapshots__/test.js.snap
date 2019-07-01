@@ -12,7 +12,7 @@ exports[`[Component: Postcode] [State: Default] should render correctly 1`] = `
       Postcode 
     </label>
     <div
-      class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
     >
       <input
         aria-disabled="false"
@@ -25,15 +25,15 @@ exports[`[Component: Postcode] [State: Default] should render correctly 1`] = `
       />
       <button
         aria-disabled="false"
-        class="find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+        class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
         role="button"
         type="button"
       >
         <span
-          class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
         >
           <span
-            class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
           >
             address.find-address
           </span>
@@ -56,7 +56,7 @@ exports[`[Component: Postcode] [State: Error] should render correctly 1`] = `
       Postcode 
     </label>
     <div
-      class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
     >
       <input
         aria-describedby="postcode-error"
@@ -70,15 +70,15 @@ exports[`[Component: Postcode] [State: Error] should render correctly 1`] = `
       />
       <button
         aria-disabled="false"
-        class="find-address styled__PrimaryButton-sc-3mnirm-2 eQEoWE"
+        class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 eQEoWE"
         role="button"
         type="button"
       >
         <span
-          class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
         >
           <span
-            class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
           >
             address.find-address
           </span>
@@ -86,7 +86,7 @@ exports[`[Component: Postcode] [State: Error] should render correctly 1`] = `
       </button>
     </div>
     <p
-      class="beans-form-group__message beans-form-group__error-message styled__Message-wt4ift-3 jcJuKh typography___styledElement-sc-186l0ce-0 dmJyuB"
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__message beans-form-group__error-message styled__Message-wt4ift-3 jcJuKh typography___styledElement-sc-186l0ce-0 dmJyuB"
       id="postcode-error"
     >
       Error on field
@@ -107,7 +107,7 @@ exports[`[Component: Postcode] [State: Initial Value] should render correctly 1`
       Postcode 
     </label>
     <div
-      class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
     >
       <input
         aria-disabled="false"
@@ -120,15 +120,15 @@ exports[`[Component: Postcode] [State: Initial Value] should render correctly 1`
       />
       <button
         aria-disabled="false"
-        class="find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+        class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 giYBMC"
         role="button"
         type="button"
       >
         <span
-          class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
         >
           <span
-            class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
           >
             address.find-address
           </span>
@@ -151,7 +151,7 @@ exports[`[Component: Postcode] [State: Loading true] should render correctly 1`]
       Postcode 
     </label>
     <div
-      class="beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
+      class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 bNvdOT"
     >
       <input
         aria-disabled="false"
@@ -163,20 +163,20 @@ exports[`[Component: Postcode] [State: Loading true] should render correctly 1`]
         value="EC1R 2NT"
       />
       <div
-        class="sc-bxivhb igFwTS"
+        class="sc-bwzfXH sc-bxivhb igFwTS"
       />
       <button
         aria-disabled="true"
-        class="find-address styled__PrimaryButton-sc-3mnirm-2 jblHkh"
+        class="styled__BaseButton-sc-3mnirm-0 find-address styled__PrimaryButton-sc-3mnirm-2 jblHkh"
         disabled=""
         role="button"
         type="button"
       >
         <span
-          class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
         >
           <span
-            class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
             disabled=""
           >
             address.find-address

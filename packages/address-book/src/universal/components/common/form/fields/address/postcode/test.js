@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { renderProviders } from '@oneaccount/react-foundations/lib/test-utils';
 import { DefaultThemeProvider } from '@beans/theme';
 import Postcode from './';

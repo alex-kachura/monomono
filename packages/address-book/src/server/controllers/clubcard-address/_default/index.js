@@ -13,12 +13,9 @@ import getAddressClient, {
 
 export async function getAddress({ accessToken, addressId, context, tracer }) {
   const serviceToken = await getServiceToken({ tracer, context });
-
   const contactService = getContactClient(accessToken);
   const addressService = getAddressClient(serviceToken);
-
   const contactAddress = await contactService.getSingleAddress(addressId, { tracer, context });
-
   const { addresses, telephoneNumbers } = contactAddress;
   const { addressUuid, tags } = addresses[0];
 

@@ -153,6 +153,7 @@ export async function getLandingPage(req, res, next) {
 
   const { clubcard, grocery } = addresses['primary-addresses'];
   const bannerProps = getBannerProps(req, grocery, clubcard);
+
   const payload = {
     addresses,
     breadcrumb: [

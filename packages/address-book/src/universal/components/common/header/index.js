@@ -7,6 +7,7 @@ import { useAppConfig } from '@oneaccount/react-foundations';
 
 function getMenuLinks({ config, region, getLocalePhrase, isAuthenticated }) {
   const loginUrl = config[region].externalApps.login;
+
   const links = config[region].header.menu.map((link) => ({
     ...link,
     text: getLocalePhrase(`header.menu.${link.text}`),
@@ -39,10 +40,12 @@ function getMobileMenuItem({ config, region, getLocalePhrase }) {
 
 function Header() {
   const { config, region, getLocalePhrase, isAuthenticated } = useAppConfig();
+
   const [state, handleChange] = useState({
     selectedMenu: undefined,
     selectedMenuItemID: undefined,
   });
+
   const menuLinks = useMemo(
     () => getMenuLinks({ config, region, getLocalePhrase, isAuthenticated }),
     [],

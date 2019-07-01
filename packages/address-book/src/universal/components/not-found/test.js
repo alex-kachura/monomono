@@ -1,6 +1,6 @@
 import React from 'react';
 import NotFoundPage from '.';
-import { render, cleanup } from 'react-testing-library';
+import { render, cleanup } from '@testing-library/react';
 import { AppProvider } from '@oneaccount/react-foundations';
 import { DefaultThemeProvider } from '@beans/theme';
 
@@ -19,13 +19,13 @@ describe('NotFound component', () => {
               },
             },
           },
-          region:'GB',
+          region: 'GB',
         }}
       >
         <DefaultThemeProvider>
           <NotFoundPage />
         </DefaultThemeProvider>
-      </AppProvider>
+      </AppProvider>,
     );
   }
 

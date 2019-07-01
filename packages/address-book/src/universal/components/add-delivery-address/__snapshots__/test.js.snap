@@ -3,7 +3,7 @@
 exports[`[Page: AddDeliveryAddressPage] [State: Default] should render correctly 1`] = `
 <DocumentFragment>
   <h1
-    class="sc-htoDjs krCBJg typography___styledElement-sc-186l0ce-0 hmbiuS"
+    class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs krCBJg typography___styledElement-sc-186l0ce-0 hmbiuS"
   >
     pages.delivery-address.add.title
   </h1>
@@ -22,15 +22,15 @@ exports[`[Page: AddDeliveryAddressPage] [State: Default] should render correctly
       />
       <button
         aria-disabled="false"
-        class="sc-iwsKbI coJpLO styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+        class="styled__BaseButton-sc-3mnirm-0 sc-iwsKbI coJpLO styled__PrimaryButton-sc-3mnirm-2 giYBMC"
         role="button"
         type="submit"
       >
         <span
-          class="styled__InnerContainer-sc-3mnirm-1 fUwmia"
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
         >
           <span
-            class="beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
+            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__TextSpan-sc-3mnirm-5 eqKhmg"
           >
             pages.delivery-address.add.submit-button
           </span>

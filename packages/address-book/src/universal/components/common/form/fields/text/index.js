@@ -39,7 +39,6 @@ const Text = memo(
     const [isMounted, setMount] = useState(false);
     const { getLocalePhrase } = useAppConfig();
     const localeError = error ? getLocalePhrase(error) : undefined;
-
     const helpLinkRef = useRef();
     const boundingRef = useRef();
 

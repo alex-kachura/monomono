@@ -14,6 +14,7 @@ const newAddressUuid = 'new-mock-uuid';
 const tracer = 'mock-tracer-id';
 const context = 'mock-context';
 const accessToken = 'mock-token';
+
 const telephoneNumbers = [
   {
     telephoneNumberIndex: 'telephone_number_index_day',

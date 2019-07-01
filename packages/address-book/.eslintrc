@@ -43,6 +43,14 @@
     "jest": true
   },
   "rules": {
+    "newline-after-var": "off",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": ["const", "let"], "next": "*" },
+      { "blankLine": "any", "prev": ["const", "let"], "next": ["const", "let", "var"] },
+      { "blankLine": "always", "prev": ["multiline-const", "multiline-let"], "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": ["multiline-const", "multiline-let"] }
+    ],
     "react/jsx-space-before-closing": 0,
     "react/jsx-wrap-multilines": 0
   },

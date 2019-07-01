@@ -3,9 +3,8 @@ import config from 'config';
 import { defaultFormFields } from '../data.js';
 
 const getPageUrl = ClientFunction(() => window.location.href.toString()); // eslint-disable-line new-cap
-const addressBookAddedUrl = `${config.env.baseUrl}${config.env.basePath}${
-  config.env.language
-}?action=added`;
+
+const addressBookAddedUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}?action=added`;
 
 export default class AddNewDeliveryAddressPage {
   constructor() {

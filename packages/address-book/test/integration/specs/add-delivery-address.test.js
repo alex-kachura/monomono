@@ -2,6 +2,7 @@ import cheerio from 'cheerio';
 import { getResponse, extractStateAndHiddenCsfr } from '@oneaccount/test-common';
 
 const jar = global.jar;
+
 const defaultFormFields = {
   'address-id': 'trn:tesco:address:address:uuid:36598ef5-8f13-4f77-abdc-f42328d0c1bf',
   postcode: 'EC1R 5AR',
@@ -13,6 +14,7 @@ const defaultFormFields = {
   evening: '01234567891',
   mobile: '',
 };
+
 const headers = {
   'Content-Type': 'text/html',
   Accept: 'text/html',
@@ -85,6 +87,7 @@ describe.each(contexts())('Add Delivery Address Page', (context) => {
     describe('Functionality', () => {
       afterEach(async () => {
         $ = cheerio.load(response.body);
+
         const contactAddressId = $('form:last-of-type input[name="contact-address-id"]').attr(
           'value',
         );

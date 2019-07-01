@@ -1,6 +1,7 @@
 describe('Claims middleware', () => {
   const request = { region: 'gb' };
   const mockExpress = { request };
+
   const mockConfig = {
     cookie: {
       userAccessToken: {

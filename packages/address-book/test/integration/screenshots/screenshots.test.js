@@ -8,7 +8,6 @@ import {
 } from './helpers';
 
 const puppeteer = require('puppeteer');
-
 let browser;
 let page;
 let filenamePrefix;

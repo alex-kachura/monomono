@@ -52,9 +52,11 @@ describe('Error handling middleware', () => {
 
   it('should load the 500 page', () => {
     const sendStub = jest.fn();
+
     const statusStub = jest.fn(() => ({
       send: sendStub,
     }));
+
     const mockResponse = { status: statusStub };
 
     errorHandler({}, {}, mockResponse, () => {}); // eslint-disable-line no-empty-function

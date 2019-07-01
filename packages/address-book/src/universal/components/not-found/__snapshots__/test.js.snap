@@ -4,22 +4,22 @@ exports[`NotFound component should render correctly 1`] = `
 <DocumentFragment>
   <div>
     <h1
-      class="typography___styledElement-sc-186l0ce-0 hmbiuS"
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 hmbiuS"
     >
       pages.not-found.heading
     </h1>
     <p
-      class="typography___styledElement-sc-186l0ce-0 eEYJsv"
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 eEYJsv"
     >
       pages.not-found.paragraphs.0
     </p>
     <p
-      class="typography___styledElement-sc-186l0ce-0 eEYJsv"
+      class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 eEYJsv"
     >
       pages.not-found.paragraphs.1
     </p>
     <a
-      class="sc-bwzfXH fGCCLo styled__TextButtonLink-ipdqot-0 enAVcp"
+      class="sc-bwzfXH fGCCLo styled__TextButtonLink-ipdqot-0 drVknR"
       href="/mock-path"
     >
       <span
