@@ -11,7 +11,7 @@ def jobName = "${env.JOB_NAME}-${env.BUILD_NUMBER}"
 def commitSha
 
 try {
-  setGitHubPullRequestStatus state: 'PENDING', context: 'login_pull_request_builder', message: "Job #${env.BUILD_NUMBER} started"
+  setGitHubPullRequestStatus state: 'PENDING', context: 'login_build_pull_request', message: "Job #${env.BUILD_NUMBER} started"
 	podTemplate(label: label, serviceAccount: 'jenkins',
   	containers: [
 			containerTemplate(name: 'jnlp', image: 'jenkins/jnlp-slave:alpine', resourceRequestCpu: '500m', resourceLimitCpu: '500m', resourceRequestMemory: '300Mi', resourceLimitMemory: '300Mi', envVars: [envVar(key: 'JAVA_OPTS', value: '-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1 -XshowSettings:vm')]),
@@ -100,7 +100,7 @@ try {
 	println('Failure' + e.getMessage())
 	currentBuild.result = 'FAILURE'
 } finally {
-  setGitHubPullRequestStatus state: currentBuild.result, context: 'login_deploy_review_app', message: "Job #${env.BUILD_NUMBER} finished: ${currentBuild.result}"
+  setGitHubPullRequestStatus state: currentBuild.result, context: 'login_build_pull_request', message: "Job #${env.BUILD_NUMBER} finished: ${currentBuild.result}"
 }
 
 def notifyOnSlack(toneColor, message) {
