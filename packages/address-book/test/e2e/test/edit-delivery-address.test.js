@@ -12,13 +12,13 @@ const registrationPage = new RegistrationPage();
 const editDeliveryAddressUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}/edit-delivery-address`;
 const editDeliveryAddressUpdatedUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}?action=updated`;
 
-fixture`Edit Delivery Address` // eslint-disable-line no-undef
+fixture`Address Book - Edit Delivery Address` // eslint-disable-line no-undef
   .page(loginPage.addressUrl)
   .beforeEach(async (t) => {
     await registrationPage.registerUser(t);
   });
 
-test(`Address Book - Edit Primary Delivery Address Line 1`, async (t) => {
+test(`Edit Primary Delivery Address Line 1`, async (t) => {
   await landingPage.clickEditDeliveryAddress(t);
 
   let getLocation = ClientFunction(() => document.location.href); // eslint-disable-line new-cap

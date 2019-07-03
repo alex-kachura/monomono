@@ -13,7 +13,7 @@ const verifyDigitsClubcardUrl = `${config.env.baseUrl}${config.env.loginPath}${c
 const editClubcardAddressUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}/edit-clubcard-address`;
 const editedClubcardAddressUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}?action=clubcard-updated`;
 
-fixture`Edit Clubcard Address` // eslint-disable-line no-undef
+fixture`Address Book - Edit Clubcard Address Page` // eslint-disable-line no-undef
   .page(loginPage.addressUrl)
   .beforeEach(async (t) => {
     // t.ctx.clubcardNumber = await registrationPage.registerUser(t);;
@@ -23,7 +23,7 @@ fixture`Edit Clubcard Address` // eslint-disable-line no-undef
       .ok();
   });
 
-test(`Address Book - Verify Digits Success`, async (t) => {
+test(`Verify Digits Success`, async (t) => {
   await landingPage.clickEditClubcardAddress(t);
 
   let getLocation = ClientFunction(() => document.location.href); // eslint-disable-line new-cap
@@ -54,7 +54,7 @@ test(`Address Book - Verify Digits Success`, async (t) => {
   await t.expect(getLocation()).contains(editClubcardAddressUrl);
 });
 
-test(`Address Book - Edit Clubcard Address`, async (t) => {
+test(`Edit Clubcard Address`, async (t) => {
   await landingPage.clickEditClubcardAddress(t);
 
   const inputs = Selector('[name="clubcard-form-group"] label'); // eslint-disable-line new-cap

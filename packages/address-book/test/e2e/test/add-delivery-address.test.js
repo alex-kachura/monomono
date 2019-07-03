@@ -12,9 +12,9 @@ const addAddressPage = new AddNewDeliveryAddressPage();
 const addDeliveryAddressUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}/add-delivery-address`;
 const addressBookAddedUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}?action=added`;
 
-fixture`Add Delivery Address`.page(loginPage.addressUrl); // eslint-disable-line no-undef
+fixture`Address Book - Add Delivery Address Page`.page(loginPage.addressUrl); // eslint-disable-line no-undef
 
-test(`Address Book - Landing Page Has Correct URL`, async (t) => {
+test(`Landing Page Has Correct URL`, async (t) => {
   await registrationPage.registerUser(t);
 
   let getLocation = ClientFunction(() => document.location.href); // eslint-disable-line new-cap
@@ -34,7 +34,7 @@ test(`Address Book - Landing Page Has Correct URL`, async (t) => {
   await t.expect(getLocation()).contains(addressBookAddedUrl);
 });
 
-test.page(addDeliveryAddressUrl)(`Address Book - Check postcode field is focused`, async (t) => {
+test.page(addDeliveryAddressUrl)(`Check postcode field is focused`, async (t) => {
   await t
     .useRole(loginPage.logIn)
     .expect(landingPage.signOutButton.exists)
@@ -43,7 +43,7 @@ test.page(addDeliveryAddressUrl)(`Address Book - Check postcode field is focused
   await t.expect(addAddressPage.postcodeField.focused).ok();
 });
 
-test.page(addDeliveryAddressUrl)(`Address Book - Select Address From Dropdown`, async (t) => {
+test.page(addDeliveryAddressUrl)(`Select Address From Dropdown`, async (t) => {
   await t
     .useRole(loginPage.logIn)
     .expect(landingPage.signOutButton.exists)
@@ -53,7 +53,7 @@ test.page(addDeliveryAddressUrl)(`Address Book - Select Address From Dropdown`, 
 });
 
 test.page(addDeliveryAddressUrl)(
-  `Address Book - Postcode error should be visible when invalid postcode is submitted`,
+  `Postcode error should be visible when invalid postcode is submitted`,
   async (t) => {
     await t
       .useRole(loginPage.logIn)
