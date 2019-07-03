@@ -88,7 +88,7 @@ function doFormValidation(reqBody, schema) {
 }
 
 // Prepares the payload and reloads the page with error messages
-function getInvalidFormPayload({ req, postedValues, validator, schema }) {
+function getInvalidFormPayload({ req, res, postedValues, validator, schema }) {
   const errors = convertAJVErrorsToFormik(validator.errors, schema);
 
   // Convert posted values into payload that Identity can understand
@@ -114,6 +114,7 @@ function getInvalidFormPayload({ req, postedValues, validator, schema }) {
       required: fieldsToRender.map((field) => field.name),
     },
     stateToken: req.body.state,
+    backlink: res.data.backlink || {},
   };
 }
 
@@ -160,6 +161,7 @@ function getElevationFailurePayload({ req, res, challenge, accountLocked, schema
     },
     stateToken,
     accountLocked,
+    backlink: res.data.backlink || {},
   };
 }
 
@@ -174,7 +176,7 @@ export async function postVerifyPage(req, res, next) {
   if (!isValid) {
     logOutcome('verify:post', 'invalid-form-posted', req);
 
-    const payload = getInvalidFormPayload({ req, postedValues, validator, schema });
+    const payload = getInvalidFormPayload({ req, res, postedValues, validator, schema });
 
     res.data = { ...res.data, payload };
 

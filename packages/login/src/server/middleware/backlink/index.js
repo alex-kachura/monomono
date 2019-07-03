@@ -18,8 +18,16 @@ function sanitiseBacklink(backlink) {
 
     const parsed = url.parse(decodedbacklink);
 
-    if (parsed.protocol && parsed.hostname) {
-      sanitisedBacklink = `${parsed.protocol}//${parsed.hostname}${parsed.path}`;
+    if (parsed.protocol && parsed.hostname && parsed.path) {
+      const path = parsed.path;
+
+      if (path.indexOf('account/address-book') > -1) {
+        const addressBookPath = path.substring(0, path.indexOf('edit-clubcard-address'));
+
+        sanitisedBacklink = `${parsed.protocol}//${parsed.hostname}${addressBookPath}`;
+      } else {
+        sanitisedBacklink = `${parsed.protocol}//${parsed.hostname}${path}`;
+      }
     }
   }
 

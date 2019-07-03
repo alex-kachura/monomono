@@ -10,7 +10,8 @@ describe('Backlink middleware', () => {
     mockReq = {};
     mockRes = {
       data: {
-        onwardLocation: 'https://www-local.tesco.com/account/address-book/en-GB',
+        onwardLocation:
+          'https%3A%2F%2Fwww-local.tesco.com%2Faccount%2Faddress-book%2Fen-GB%2Fedit-clubcard-address%2F%3Fid%3DNGC_0',
       },
     };
 
@@ -36,7 +37,7 @@ describe('Backlink middleware', () => {
   describe('valid backlink', () => {
     beforeEach(() => {
       mockReq = {
-        get: () => 'https://www.tesco.com/direct',
+        get: () => 'https://www.tesco.com/groceries',
         locale: {
           language: 'en',
         },
@@ -47,7 +48,7 @@ describe('Backlink middleware', () => {
       middleware(mockReq, mockRes, mockNext);
 
       expect(mockRes.data.backlink).toEqual({
-        link: 'https://www-local.tesco.com/account/address-book/en-GB',
+        link: 'https://www-local.tesco.com/account/address-book/en-GB/',
         label: 'Address Book',
       });
     });
@@ -56,7 +57,7 @@ describe('Backlink middleware', () => {
   describe('"getBacklinkLabel()"', () => {
     beforeEach(() => {
       mockReq = {
-        get: () => 'www.tesco.com/direct',
+        get: () => 'www.tesco.com/groceries',
         locale: {
           language: 'en',
         },

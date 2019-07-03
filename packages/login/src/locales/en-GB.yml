@@ -1,115 +1,123 @@
 # A
 app:
   logo:
-    alt: "Tesco"
+    alt: 'Tesco'
   menu:
-    close-text: "Close"
+    close-text: 'Close'
 
 # B
+back-to:
+  address-book: 'Address Book'
+  groceries: 'Tesco groceries'
+  clubcard: 'Tesco Clubcard'
+  delivery-saver: 'Delivery Saver'
+  real-food: 'Tesco Real Food'
+  mca: 'My Clubcard account'
+  default: 'Tesco.com'
 banners:
   error:
     load:
       title: "Sorry, we weren't able to load your details."
-      copy-1: "Please"
-      copy-2: "refresh this page"
+      copy-1: 'Please'
+      copy-2: 'refresh this page'
     update:
       title: "Sorry, we weren't able to save your details."
-      copy-1: "Please save again."
+      copy-1: 'Please save again.'
 
 # C
-contact-us: "Contact us"
+contact-us: 'Contact us'
 
 # F
-feedback: "Feedback"
+feedback: 'Feedback'
 footer:
-  copyright: "%{year} All rights reserved."
+  copyright: '%{year} All rights reserved.'
   social-bar:
-    label: "Follow us:"
+    label: 'Follow us:'
   links:
     header1:
-      title: "Here to help"
-      link1: "Help and FAQs"
-      link2: "Contact us"
+      title: 'Here to help'
+      link1: 'Help and FAQs'
+      link2: 'Contact us'
     header2:
-      title: "About this website"
-      link1: "Terms & conditions"
-      link2: "Privacy & cookies"
-      link3: "Accessibility"
-      link4: "Privacy centre"
-      link5: "Website feedback"
+      title: 'About this website'
+      link1: 'Terms & conditions'
+      link2: 'Privacy & cookies'
+      link3: 'Accessibility'
+      link4: 'Privacy centre'
+      link5: 'Website feedback'
     header3:
-      title: "Useful links"
-      link1: "Store locator"
-      link2: "My account"
-      link3: "Product recall"
-      link4: "Sitemap"
+      title: 'Useful links'
+      link1: 'Store locator'
+      link2: 'My account'
+      link3: 'Product recall'
+      link4: 'Sitemap'
     header4:
-      title: "About Tesco"
-      link1: "Work for Tesco"
-      link2: "Tesco PLC"
+      title: 'About Tesco'
+      link1: 'Work for Tesco'
+      link2: 'Tesco PLC'
 
 # H
 header:
   menu:
-    title: "Menu"
-    link1: "Tesco.com"
-    link2: "Contact us"
-    link3: "Help"
-    link4: "Feedback"
-help: "Help"
+    title: 'Menu'
+    link1: 'Tesco.com'
+    link2: 'Contact us'
+    link3: 'Help'
+    link4: 'Feedback'
+help: 'Help'
 
 # P
 pages:
   verify:
-    backward-link: "Back to"
-    title: "Account verification"
-    sub-title: "Your online security is important to us."
-    digits-prompt: "Enter the requested Clubcard digits"
-    digits-ordinal: "th"
+    backward-link: 'Back to'
+    title: 'Account verification'
+    sub-title: 'Your online security is important to us.'
+    digits-prompt: 'Enter the requested Clubcard digits'
+    digits-ordinal: 'th'
     aria-label:
-      empty-field: "Please enter a digit"
-      error-field: "Please enter a correct digit"
-    error-msg: "Please enter the requested digits"
+      empty-field: 'Please enter a digit'
+      error-field: 'Please enter a correct digit'
+    error-msg: 'Please enter the requested digits'
     buttons:
-      submit: "Submit"
+      submit: 'Submit'
     clubcard-info:
-      heading: "Where can I find my Clubcard number?"
-      sub-heading-1: "Tesco Clubcard"
-      copy-1: "You can find your Clubcard number digits on the front of your Tesco Clubcard."
-      sub-heading-2: "Tesco Bank Credit Card?"
-      copy-2: "You can find your Clubcard number digits on the back of your Tesco Bank card, beneath the signature strip."
+      heading: 'Where can I find my Clubcard number?'
+      sub-heading-1: 'Tesco Clubcard'
+      copy-1: 'You can find your Clubcard number digits on the front of your Tesco Clubcard.'
+      sub-heading-2: 'Tesco Bank Credit Card?'
+      copy-2: 'You can find your Clubcard number digits on the back of your Tesco Bank card, beneath the signature strip.'
     order-clubcard:
-      heading: "Can’t find your Clubcard?"
-      copy: "We can send you a new one by post, in 7-10 days."
-      button: "Order a new one"
+      heading: 'Can’t find your Clubcard?'
+      copy: 'We can send you a new one by post, in 7-10 days.'
+      button: 'Order a new one'
     contact-info:
-      heading: "Contact information"
+      heading: 'Contact information'
       contact-us:
-        part-1: "For further help, contact Customer services on "
-        part-2: "* or "
-        part-3: "**"
-      phone-number-1: "0800 591 688"
-      phone-number-2: "0330 123 1688"
-      calls-info1: "Calls are free from a BT landline number, lines are open Monday - Friday 8am to 8pm, Saturday 8am - 6pm."
-      calls-info2: "Calls from mobiles will be charged at local rate. Lines are open Monday - Friday 8am to 8pm, Saturday 8am - 6pm."
+        part-1: 'For further help, contact Customer services on '
+        part-2: '* or '
+        part-3: '**'
+      phone-number-1: '0800 591 688'
+      phone-number-2: '0330 123 1688'
+      calls-info1: 'Calls are free from a BT landline number, lines are open Monday - Friday 8am to 8pm, Saturday 8am - 6pm.'
+      calls-info2: 'Calls from mobiles will be charged at local rate. Lines are open Monday - Friday 8am to 8pm, Saturday 8am - 6pm.'
     banners:
       incorrect-digits:
-        title: "Please try again"
-        text: "The details you have entered do not match an active Clubcard for this account."
+        title: 'Please try again'
+        text: 'The details you have entered do not match an active Clubcard for this account.'
       account-locked:
-        title: "Your account is locked after too many fail attempts. To unlock your account please contact Customer Services*"
+        title: 'Your account is locked after too many fail attempts. To unlock your account please contact Customer Services*'
 
   not-found:
-    title: "Page not found"
+    title: 'Page not found'
     heading: "Oops!...we couldn't find the page you requested."
-    home: "Go to homepage"
+    home: 'Go to homepage'
     paragraphs:
       - "If you typed the address in, please check that it's correct and try again. It's also possible that you clicked on an outdated link."
       - "Our homepage may be able to help you find the feature or store you're looking for."
 
 # S
-sign-in: "Sign in"
-sign-out: "Sign out"
+sign-in: 'Sign in'
+sign-out: 'Sign out'
 
 # T
-tesco-site: "Tesco.com"
+tesco-site: 'Tesco.com'

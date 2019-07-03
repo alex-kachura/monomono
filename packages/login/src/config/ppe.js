@@ -21,8 +21,34 @@ module.exports = {
   },
   backToWhitelist: {
     en: [
-      { url: 'https://secure-ppe.tesco.com/account/address-book/en-GB', label: 'Address book' },
-      { url: 'https://www-ppe.tesco.com/account/address-book/en-GB', label: 'Address book' },
+      {
+        url: 'https://secure-ppe.tesco.com/account/address-book/en-GB',
+        label: 'back-to.address-book',
+      },
+      {
+        url: 'https://www-ppe.tesco.com/account/address-book/en-GB',
+        label: 'back-to.address-book',
+      },
+      {
+        url: 'https://www-ppe.tesco.com/groceries',
+        label: 'back-to.groceries',
+      },
+      {
+        url: 'https://www-ppe.realfood.tesco.com',
+        label: 'back-to.real-food',
+      },
+      {
+        url: 'https://secure-ppe.tesco.com/clubcard/myaccount/home/home',
+        label: 'back-to.mca',
+      },
+      {
+        url: 'https://secure-ppe.tesco.com/clubcard',
+        label: 'back-to.clubcard',
+      },
+      {
+        url: 'https://www-ppe.tesco.com/deliverysaver',
+        label: 'back-to.delivery-saver',
+      },
     ],
   },
   segmentation: {

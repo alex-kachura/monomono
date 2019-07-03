@@ -325,6 +325,7 @@ describe('[Route: /verify]', () => {
               required: mockRequiredFields,
             },
             stateToken: mockStateToken,
+            backlink: {},
           },
         });
       });
@@ -445,6 +446,7 @@ describe('[Route: /verify]', () => {
               },
               stateToken: mockStateToken,
               accountLocked: undefined,
+              backlink: {},
             },
           });
         });
@@ -508,6 +510,7 @@ describe('[Route: /verify]', () => {
               },
               stateToken: undefined,
               accountLocked: true,
+              backlink: {},
             },
           });
         });

@@ -26,7 +26,7 @@ export function VerifyPage({ initialData }) {
 
   const pageTitle = getLocalePhrase('pages.verify.title');
   const link = backlink.link || '';
-  const label = backlink.label || '';
+  const label = getLocalePhrase(backlink.label) || '';
 
   return (
     <DocumentTitle title={pageTitle}>

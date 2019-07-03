@@ -7,7 +7,7 @@ exports[`[Component: Banner] should render correctly 1`] = `
   >
     <div
       aria-live="polite"
-      class="base-components__RootElement-sc-150tvch-1 styled__RootContainer-kcflkd-0 blNllx"
+      class="base-components__RootElement-sc-150tvch-1 notification-banner styled__RootContainer-kcflkd-0 blNllx"
       role="status"
     >
       <div

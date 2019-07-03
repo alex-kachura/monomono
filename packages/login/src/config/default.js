@@ -144,8 +144,34 @@ module.exports = {
   },
   backToWhitelist: {
     en: [
-      { url: 'https://mytesco.secure.tesco.com/account/address-book/en-GB', label: 'Address book' },
-      { url: 'https://www-local.tesco.com/account/address-book/en-GB', label: 'Address book' },
+      {
+        url: 'https://mytesco.secure.tesco.com/account/address-book/en-GB',
+        label: 'back-to.address-book',
+      },
+      {
+        url: 'https://www-local.tesco.com/account/address-book/en-GB',
+        label: 'back-to.address-book',
+      },
+      {
+        url: 'https://www.tesco.com/groceries',
+        label: 'back-to.groceries',
+      },
+      {
+        url: 'https://www.realfood.tesco.com',
+        label: 'back-to.real-food',
+      },
+      {
+        url: 'https://secure.tesco.com/clubcard/myaccount/home/home',
+        label: 'back-to.mca',
+      },
+      {
+        url: 'https://secure.tesco.com/clubcard',
+        label: 'back-to.clubcard',
+      },
+      {
+        url: 'https://www.tesco.com/deliverysaver',
+        label: 'back-to.delivery-saver',
+      },
     ],
   },
   services: {
