@@ -16,8 +16,7 @@ import {
 
 export default function PrimaryAddress({ isClubcard, details }) {
   const { getLocalePhrase } = useAppConfig();
-  // TODO: Clubcard Icon
-  const iconGraphic = <HeaderIcon graphic={isClubcard ? 'basket' : 'basket'} size="sm" />;
+  const iconGraphic = <HeaderIcon graphic={isClubcard ? 'clubcard' : 'basket'} size="sm" />;
 
   const headerText = (
     <Signpost>

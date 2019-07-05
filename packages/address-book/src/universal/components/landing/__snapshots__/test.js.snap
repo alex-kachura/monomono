@@ -70,14 +70,15 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               aria-hidden="true"
               class="sc-bZQynM eBMLPR styled__Container-sc-1bf1p22-0 gJOjrx"
               color="currentColor"
-              height="22"
+              height="18"
               preserveAspectRatio="xMinYMax meet"
-              viewBox="0 1 24 22"
+              viewBox="0 0 24 18"
               width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M20 20.5H4l-2.5-11h21zM12 12v6M16 12v6M8 12v6M12 9.5L18 1"
+                d="M21 16.5H3c-.8 0-1.5-.7-1.5-1.5V3c0-.8.7-1.5 1.5-1.5h18c.8 0 1.5.7 1.5 1.5v12c0 .8-.7 1.5-1.5 1.5zM10
+        7.5h4.1M8 10.5h8"
                 fill="none"
                 stroke="#00539f"
               />
