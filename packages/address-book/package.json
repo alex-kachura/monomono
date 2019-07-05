@@ -23,7 +23,7 @@
     "docker-build": "npm run npm_token -- docker-compose build",
     "docker-clean": "docker system prune",
     "docker-test": "npm run npm_token -- docker-compose -f docker-compose.test.yml build && docker-compose -f docker-compose.test.yml up -d app nginx; sleep 5; docker-compose -f docker-compose.test.yml up",
-    "prepare": "npm run snyk:protect",
+    "prepare": "",
     "analyzer": "webpack -p && webpack --profile --json > ./dist/public/stats.json && webpack-bundle-analyzer ./dist/public/stats.json",
     "update-beans": "update-beans"
   },

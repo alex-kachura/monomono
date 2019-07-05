@@ -15,17 +15,6 @@
     "integration:ppe": "NODE_CONFIG_ENV=ppe npm run integration:_",
     "integration:prod": "NODE_CONFIG_ENV=production npm run integration:_",
     "integration:_": "jest --passWithNoTests ./specs/*.test.js",
-    "screenshots": "npm run screenshots:dev",
-    "screenshots:dev": "NODE_CONFIG_ENV=proxy npm run screenshots:all",
-    "screenshots:dev:mobile": "NODE_CONFIG_ENV=proxy npm run screenshots:mobile",
-    "screenshots:dev:desktop": "NODE_CONFIG_ENV=proxy npm run screenshots:desktop",
-    "screenshots:ppe": "NODE_CONFIG_ENV=ppe npm run screenshots:all",
-    "screenshots:ppe:mobile": "NODE_CONFIG_ENV=ppe npm run screenshots:mobile",
-    "screenshots:ppe:desktop": "NODE_CONFIG_ENV=ppe npm run screenshots:desktop",
-    "screenshots:all": "npm run screenshots:mobile && npm run screenshots:desktop",
-    "screenshots:mobile": "IS_MOBILE=true npm run screenshots:_",
-    "screenshots:desktop": "IS_MOBILE=false npm run screenshots:_",
-    "screenshots:_": "INLINE_MODE=false HEADLESS=false jest ./screenshots/*.test.js",
     "start": "wait-on -d 5000 -i 1000 $BASE_URL/address-book/_status && jest --maxWorkers=1"
   },
   "engines": {
@@ -36,8 +25,6 @@
     "babel-jest": "^24.8.0",
     "cheerio": "~1.0.0-rc.2",
     "jest": "^24.8.0",
-    "jest-image-snapshot": "~2.5.0",
-    "puppeteer": "~1.8.0",
     "request": "~2.88.0",
     "wait-on": "~2.1.2"
   },
