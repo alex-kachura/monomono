@@ -149,9 +149,9 @@ export async function postEditDeliveryAddressPage(req, res, next) {
     });
   } catch (error) {
     if (error instanceof AddressServiceError) {
-      return handleAddressServiceError({ name, action, payload, error, req, res, next });
+      return handleAddressServiceError({ name, action, error, payload, req, res, next });
     } else if (error instanceof ContactServiceError) {
-      return handleContactServiceError({ name, action, payload, error, req, res, next });
+      return handleContactServiceError({ name, action, error, payload, req, res, next });
     }
 
     return handleError({ name, action, error, payload, req, res, next });

@@ -27,21 +27,44 @@ export function extractPhoneNumber(data, { isClubcard = false } = {}) {
   }, []);
 }
 
-export function getModifiedPhoneNumbers(phoneNumbers, OriginalPhoneNumbers) {
-  return phoneNumbers
-    .map(({ numberType, value }) => {
-      const original = OriginalPhoneNumbers.find(
-        ({ label: phoneLabel }) => phoneLabel.toLowerCase() === numberType,
-      );
+function receivedPhoneNumbersFactory(originalPhoneNumbers) {
+  return ({ value, numberType }) => {
+    let number = { value, numberType };
+    const original = originalPhoneNumbers.find(({ label }) => label.toLowerCase() === numberType);
 
-      return {
-        telephoneNumberIndex: original.telephoneNumberIndex,
-        value,
-        oldValue: original.value,
-        numberType,
+    if (original) {
+      const { telephoneNumberIndex, value: oldValue } = original;
+
+      number = {
+        ...number,
+        telephoneNumberIndex,
+        oldValue,
       };
-    })
+    }
+
+    return number;
+  };
+}
+
+function deletedPhoneNumbersFactory(phoneNumbers) {
+  return ({ label }) => !phoneNumbers.find(({ numberType }) => label.toLowerCase() === numberType);
+}
+
+export function getModifiedPhoneNumbers(phoneNumbers, originalPhoneNumbers) {
+  const updatedPhoneNumbers = phoneNumbers
+    .map(receivedPhoneNumbersFactory(originalPhoneNumbers))
     .filter(({ value, oldValue }) => value !== oldValue);
+
+  const deletedPhoneNumbers = originalPhoneNumbers
+    .filter(deletedPhoneNumbersFactory(phoneNumbers))
+    .map(({ telephoneNumberIndex, label, value: oldValue }) => ({
+      telephoneNumberIndex,
+      value: null,
+      oldValue,
+      numberType: label.toLowerCase(),
+    }));
+
+  return updatedPhoneNumbers.concat(deletedPhoneNumbers);
 }
 
 export function processedContactData(data, contactAddress, { isClubcard = false } = {}) {
@@ -79,14 +102,16 @@ export function mapPhoneNumbersToFormValues(phoneNumbers, { isClubcard = false }
 
 export async function validatePhoneNumbers(contactService, phoneNumbers, { tracer, context }) {
   const validationResponse = await Promise.all(
-    phoneNumbers.map(({ value }) =>
-      contactService.validatePhoneNumber({
-        countryCode: 'GB',
-        phoneNumber: value,
-        tracer,
-        context,
-      }),
-    ),
+    phoneNumbers
+      .filter(({ value }) => value)
+      .map(({ value }) =>
+        contactService.validatePhoneNumber({
+          countryCode: 'GB',
+          phoneNumber: value,
+          tracer,
+          context,
+        }),
+      ),
   );
 
   const phoneErrors = validationResponse.reduce((result, { isValid, errors }, index) => {

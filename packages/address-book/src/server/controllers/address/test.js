@@ -1,4 +1,5 @@
 import { getFullAddresses, removeAddress } from '@web-foundations/service-contact';
+
 const { getAddresses, deleteAddress } = jest.requireActual('.');
 
 describe('[Controller: Address]', () => {

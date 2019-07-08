@@ -1,8 +1,8 @@
 import { getServiceToken } from '../../../services/identity';
 import getContactClient, {
   extractPhoneNumber,
-  processedContactData,
   mapPhoneNumbersToFormValues,
+  processedContactData,
   validatePhoneNumbers,
 } from '../../../services/contact';
 import getAddressClient, {
@@ -29,13 +29,11 @@ export async function getAddress({ accessToken, addressId, context, tracer }) {
     tracer,
   });
 
-  const result = {
+  return {
     'address-label': label,
     ...mapAddressToFormValues(address),
     ...mapPhoneNumbersToFormValues(telephoneNumbers),
   };
-
-  return result;
 }
 
 export async function createAddress({ accessToken, data, context, tracer }) {
@@ -68,11 +66,11 @@ export async function createAddress({ accessToken, data, context, tracer }) {
 }
 
 export async function updateAddress({ data, addressIndex, accessToken, context, tracer }) {
-  const serviceToken = await getServiceToken({ context, tracer });
+  const meta = { tracer, context };
+  const serviceToken = await getServiceToken(meta);
   const contactService = getContactClient(accessToken);
   const addressService = getAddressClient(serviceToken);
-  const contactAddress = await contactService.getSingleAddress(addressIndex, { tracer, context });
-
+  const contactAddress = await contactService.getSingleAddress(addressIndex, meta);
   const { label, addressUuid, tags, modifiedPhoneNumbers } = processedContactData(
     data,
     contactAddress,
@@ -91,28 +89,40 @@ export async function updateAddress({ data, addressIndex, accessToken, context, 
       address: {
         addressLines: extractAddressLines(data),
       },
-      context,
-      tracer,
+      ...meta,
     });
 
     addressId = address.addressId;
   }
 
-  await validatePhoneNumbers(contactService, modifiedPhoneNumbers, { tracer, context });
+  await validatePhoneNumbers(contactService, modifiedPhoneNumbers, meta);
 
   await Promise.all(
-    modifiedPhoneNumbers.map(({ telephoneNumberIndex, value }) =>
-      contactService.updatePhoneNumber(
+    modifiedPhoneNumbers.map(({ telephoneNumberIndex, value, oldValue, numberType }) => {
+      if (!value) {
+        return contactService.deletePhoneNumber(telephoneNumberIndex, meta);
+      }
+
+      if (!oldValue) {
+        return contactService.createPhoneNumber(
+          {
+            value,
+            label: numberType,
+            country: 'GB',
+            relatesToAddressIndex: addressIndex,
+          },
+          meta,
+        );
+      }
+
+      return contactService.updatePhoneNumber(
         telephoneNumberIndex,
         {
           value,
         },
-        {
-          tracer,
-          context,
-        },
-      ),
-    ),
+        meta,
+      );
+    }),
   );
 
   if (addressUuid !== addressId || label !== data['address-label']) {
@@ -122,10 +132,7 @@ export async function updateAddress({ data, addressIndex, accessToken, context, 
         label: data['address-label'],
         addressUuid: addressId,
       },
-      {
-        tracer,
-        context,
-      },
+      meta,
     );
   }
 }

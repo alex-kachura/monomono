@@ -60,7 +60,7 @@
     "@web-foundations/express-user-segmentation": "^0.1.0",
     "@web-foundations/logger": "^1.4.0",
     "@web-foundations/service-address": "3.21.0",
-    "@web-foundations/service-contact": "3.21.4",
+    "@web-foundations/service-contact": "3.21.5",
     "@web-foundations/service-identity": "3.21.0",
     "accept-language": "~3.0.18",
     "acorn": "~6.1.1",
