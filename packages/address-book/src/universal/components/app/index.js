@@ -5,11 +5,13 @@ import Footer from '../common/footer';
 import Header from '../common/header';
 import { Grid, Column, Row } from '@beans/grid';
 import Breadcrumb from '../common/breadcrumb';
+import ScrollToTop from '../common/scroll-top';
 import { GridStyled } from './styled';
 
 function App(props) {
   return (
     <React.Fragment>
+      <ScrollToTop />
       <Header />
       <Grid fixed="lg">
         <Row>

@@ -16,12 +16,12 @@ export default function AddressPanel({ address, isClubcard, additional }) {
     );
   }
 
-  const { label, addressLines, postTown, postCode, telephoneNumbers } = address;
+  const { label, addressLines, postTown, postcode, telephoneNumbers } = address;
   let phoneNumbers = null;
 
   if (isClubcard) {
     phoneNumbers = telephoneNumbers && (
-      <WrapTextLabel className='telephone-number'>
+      <WrapTextLabel className="telephone-number">
         {`${getLocalePhrase(`pages.landing.telephone.phone`)}: ${telephoneNumbers[0].value}`}
       </WrapTextLabel>
     );
@@ -29,7 +29,10 @@ export default function AddressPanel({ address, isClubcard, additional }) {
     phoneNumbers =
       telephoneNumbers &&
       telephoneNumbers.map((tele, idx) => (
-        <WrapTextLabel className={`telephone-number-${idx.toString()}`} key={`telephone-number-${idx.toString()}`}>
+        <WrapTextLabel
+          className={`telephone-number-${idx.toString()}`}
+          key={`telephone-number-${idx.toString()}`}
+        >
           {`${getLocalePhrase(`pages.landing.telephone.${tele.label.toLocaleLowerCase()}`)}: ${
             tele.value
           }`}
@@ -39,12 +42,17 @@ export default function AddressPanel({ address, isClubcard, additional }) {
 
   return (
     <AddressPanelStyled additional={!!additional}>
-      {label && <WrapTextSubHeading className='nickname'>{label}</WrapTextSubHeading>}
+      {label && <WrapTextSubHeading className="nickname">{label}</WrapTextSubHeading>}
       {addressLines.map(({ value }, idx) => (
-        <WrapTextLabel className={`address-line-${idx.toString()}`} key={`address-line-${idx.toString()}`}>{value}</WrapTextLabel>
+        <WrapTextLabel
+          className={`address-line-${idx.toString()}`}
+          key={`address-line-${idx.toString()}`}
+        >
+          {value}
+        </WrapTextLabel>
       ))}
-      {postTown && <WrapTextLabel className='town'>{postTown}</WrapTextLabel>}
-      {postCode && <WrapTextLabel className='postcode'>{postCode}</WrapTextLabel>}
+      {postTown && <WrapTextLabel className="town">{postTown}</WrapTextLabel>}
+      {postcode && <WrapTextLabel className="postcode">{postcode}</WrapTextLabel>}
       {phoneNumbers}
     </AddressPanelStyled>
   );

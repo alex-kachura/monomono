@@ -1,5 +1,11 @@
 import styled from 'styled-components';
+import { Column } from '@beans/grid';
 import { media } from '@beans/foundation';
+
+export const ColumnStyled = styled(Column)`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const AdditionalPanelStyled = styled.div`
   position: relative;
@@ -23,6 +29,7 @@ export const AdditionalPanelStyled = styled.div`
 
   ${media.aboveTablet`
     min-height: 300px;
+    flex: 1;
   `}
 `;
 

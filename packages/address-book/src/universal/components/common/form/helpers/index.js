@@ -57,31 +57,10 @@ export function useForm(url, onSubmit, initialBanner = {}) {
 export function useFields(fields, errors, onError) {
   const { getLocalePhrase } = useAppConfig();
 
-  const [autoFocus] = useState(() => {
-    let focus = '';
-
-    for (let i = 0; i < fields.length; i++) {
-      const name = fields[i].name;
-
-      if (fields[i].hidden) continue;
-      if (!focus) {
-        focus = name;
-      }
-
-      if (errors[name]) {
-        focus = name;
-        break;
-      }
-    }
-
-    return focus;
-  });
-
   const augmentedFields = useMemo(
     () =>
       fields.map((field) => ({
         ...field,
-        autoFocus: autoFocus === field.name,
         onError,
       })),
     [onError, fields],

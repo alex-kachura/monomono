@@ -6,6 +6,7 @@ import { AppProvider } from '@oneaccount/react-foundations';
 import App from '.';
 
 describe('App component', () => {
+  window.scrollTo = jest.fn();
   it('should render correctly', () => {
     const mockRoute = {
       routes: [],

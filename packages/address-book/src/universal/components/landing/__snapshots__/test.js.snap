@@ -3,16 +3,16 @@
 exports[`[Component: LandingPage] should render correctly 1`] = `
 <DocumentFragment>
   <h1
-    class="base-components__BaseElement-sc-150tvch-0 sc-ckVGcZ fZTLHX typography___styledElement-sc-186l0ce-0 hmbiuS"
+    class="base-components__BaseElement-sc-150tvch-0 sc-jKJlTe kaiMDg typography___styledElement-sc-186l0ce-0 hmbiuS"
   >
     pages.landing.title
   </h1>
   <div
-    class="sc-kGXeez eynIpZ"
+    class="sc-kpOJdX gNYMhr"
     style="background-color: rgb(251, 239, 239);"
   >
     <div
-      class="sc-kpOJdX rjhJz"
+      class="sc-dxgOiQ iXUGkK"
     >
       <div
         class="styled__Container-sc-1bf1p22-0 fRWwDM"
@@ -38,7 +38,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="sc-dxgOiQ ljBzWp"
+      class="sc-ckVGcZ gcUxmH"
     >
       <h5
         class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 fREkql"
@@ -46,15 +46,15 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
     </div>
   </div>
   <div
-    class="sc-jKJlTe fLwXpA styled-sc-140lqfg-0 hKAvLp"
+    class="sc-eNQAEJ gwllH styled-sc-140lqfg-0 hKAvLp"
   >
     <h2
-      class="base-components__BaseElement-sc-150tvch-0 sc-kEYyzF bYCXGr typography___styledElement-sc-186l0ce-0 iswQsi"
+      class="base-components__BaseElement-sc-150tvch-0 sc-kkGfuU bXaZhB typography___styledElement-sc-186l0ce-0 iswQsi"
     >
       pages.landing.primary-address.label
     </h2>
     <div
-      class="sc-eNQAEJ hGAEGh styled-cgoahb-0 fFoLXC"
+      class="sc-hMqMXs eWZRIv styled-cgoahb-0 fFoLXC"
     >
       <div
         class="sc-ifAKCX jmlQG styled-tbp4qh-0 hbPPrO"
@@ -110,6 +110,11 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               class="base-components__BaseElement-sc-150tvch-0 town sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               LONDON
+            </p>
+            <p
+              class="base-components__BaseElement-sc-150tvch-0 postcode sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              EC1R 5AR
             </p>
             <p
               class="base-components__BaseElement-sc-150tvch-0 telephone-number sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
@@ -200,6 +205,11 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               LONDON
             </p>
             <p
+              class="base-components__BaseElement-sc-150tvch-0 postcode sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              EC1R 5AR
+            </p>
+            <p
               class="base-components__BaseElement-sc-150tvch-0 telephone-number-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.day: 07345234636
@@ -246,30 +256,30 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
     </div>
   </div>
   <div
-    class="sc-jKJlTe eggBET styled-sc-140lqfg-0 hKAvLp"
+    class="sc-eNQAEJ BfbWv styled-sc-140lqfg-0 hKAvLp"
   >
     <h2
-      class="base-components__BaseElement-sc-150tvch-0 sc-kEYyzF bYCXGr typography___styledElement-sc-186l0ce-0 iswQsi"
+      class="base-components__BaseElement-sc-150tvch-0 sc-kkGfuU bXaZhB typography___styledElement-sc-186l0ce-0 iswQsi"
     >
       pages.landing.other-addresses.label
     </h2>
     <div
-      class="other-address sc-hMqMXs eJeMEC styled-cgoahb-0 fFoLXC"
+      class="other-address sc-kEYyzF hwdaVg styled-cgoahb-0 fFoLXC"
     >
       <div
-        class="styled-tbp4qh-0 fsXMrV"
+        class="sc-kAzzGY jLybqU styled-tbp4qh-0 fsXMrV"
       >
         <div
-          class="sc-kAzzGY frIysL"
+          class="sc-chPdSV hKvliw"
         >
           <span
-            class="sc-kkGfuU cjqfGD styled__IconButtonContainerWithText-sc-1r4nugl-2 eDfFjL"
+            class="sc-iAyFgw lgOpYz styled__IconButtonContainerWithText-sc-1r4nugl-2 eDfFjL"
           >
             <a
               href="/mock/math/add-delivery-address"
             >
               <div
-                class="sc-hSdWYo jYuCVO"
+                class="sc-eHgmQL jEHXYw"
               >
                 <span
                   class="styled__IconButtonSpanWithText-sc-1r4nugl-1 ilogHV"
@@ -279,7 +289,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                     class="beans-link__text styled__TextSpan-sc-1r4nugl-3 fXsDiB"
                   >
                     <h4
-                      class="base-components__BaseElement-sc-150tvch-0 sc-iAyFgw jviHqQ typography___styledElement-sc-186l0ce-0 ixZPNc"
+                      class="base-components__BaseElement-sc-150tvch-0 sc-hSdWYo cBTGqf typography___styledElement-sc-186l0ce-0 ixZPNc"
                     >
                       Add delivery address
                     </h4>
@@ -315,10 +325,10 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="styled-tbp4qh-0 fsXMrV"
+        class="sc-kAzzGY jLybqU styled-tbp4qh-0 fsXMrV"
       >
         <div
-          class="sc-kAzzGY gHktkG"
+          class="sc-chPdSV csNRJh"
         >
           <div
             class="sc-bdVaJa fOmtxQ"
@@ -349,6 +359,11 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               LONDON
             </p>
             <p
+              class="base-components__BaseElement-sc-150tvch-0 postcode sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
+            >
+              N1 0AE
+            </p>
+            <p
               class="base-components__BaseElement-sc-150tvch-0 telephone-number-0 sc-bwzfXH dihBbR typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.telephone.day: 07427708482
@@ -360,7 +375,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
             </p>
           </div>
           <div
-            class="sc-chPdSV gqRtJR"
+            class="sc-kgoBCf fsWbQS"
           >
             <span
               class="edit-address-link-grocery styled__StandaloneContainer-sc-1xizymv-2 TEXwR"
@@ -380,7 +395,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               </a>
             </span>
             <div
-              class="sc-kgoBCf hJlppJ"
+              class="sc-kGXeez gFYsIb"
             />
             <form
               action="/mock/math/"

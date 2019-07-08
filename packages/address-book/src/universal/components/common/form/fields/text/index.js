@@ -33,7 +33,6 @@ const Text = memo(
     onChange,
     onBlur,
     tooltip,
-    autoFocus,
   }) => {
     const [open, setOpen] = useState(false);
     const [isMounted, setMount] = useState(false);
@@ -54,7 +53,6 @@ const Text = memo(
 
     const input = (
       <Input
-        autoFocus={autoFocus}
         hidden={hidden}
         type="text"
         name={name}
@@ -135,7 +133,6 @@ Text.propTypes = {
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   tooltip: PropTypes.string,
-  autoFocus: PropTypes.bool,
 };
 
 Tooltip.propTypes = {

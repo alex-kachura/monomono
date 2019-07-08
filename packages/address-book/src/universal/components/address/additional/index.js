@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Column } from '@beans/grid';
 import EditButton from '../buttons/edit';
 import DeleteButton from '../buttons/delete';
-import { AdditionalPanelStyled, SeparatingLine, AdditionalButtons } from './styled';
+import { AdditionalPanelStyled, SeparatingLine, AdditionalButtons, ColumnStyled } from './styled';
 
 export function AdditionalPanel({ address, panelButton, children }) {
   return (
-    <Column size={24} sm={8}>
+    <ColumnStyled size={24} sm={8}>
       <AdditionalPanelStyled panelButton={!!panelButton}>
         {children}
         {!panelButton && (
@@ -22,7 +21,7 @@ export function AdditionalPanel({ address, panelButton, children }) {
           </AdditionalButtons>
         )}
       </AdditionalPanelStyled>
-    </Column>
+    </ColumnStyled>
   );
 }
 

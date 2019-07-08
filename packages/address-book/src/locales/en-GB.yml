@@ -109,11 +109,11 @@ pages:
       changed-alternate: 'Good news. Your Tesco address book has been updated'
       changed-default: 'Good news. Your Tesco address book has been updated'
       clubcard-updated: "We've successfully updated your Clubcard."
-      combine-addresses: '<br />We can combine your main grocery address and Clubcard into the same address.<br />Give us a call on 12345678902 if you would like to do this.'
+      combine-addresses: '<br />We can combine your main Grocery address and Clubcard into the same address.<br />Give us a call on 12345678902 if you would like to do this.'
       deleted: 'Address successfully deleted.'
       multiple-addresses: "We've noticed you have multiple addresses"
-      update-clubcard-account: 'Your Clubcard and groceries delivery address are not the same. Would you like to <a href="%{baseHostSecure}/edit-clubcard-address?id=%{id}" data-tracking="clubcard account" target="_blank" role="link" aria-label="link opens the edit clubcard address page">edit</a> your Clubcard?'
-      update-primary-delivery-account: 'Your Clubcard and groceries delivery address are not the same. Would you like to <a href="%{baseHostSecure}/edit-delivery-address?id=%{id}" data-tracking="primary delivery account" role="link" aria-label="link opens the edit primary delivery address page">edit</a> this?'
+      update-clubcard-account: 'Your Clubcard and groceries delivery address are not the same. Would you like to <a href="%{baseHostSecure}/edit-clubcard-address?id=%{id}" data-tracking="clubcard account" target="_blank" role="link" aria-label="link opens the edit clubcard address page">edit</a> your Clubcard address?'
+      update-primary-delivery-account: 'Your Clubcard and groceries delivery address are not the same. Would you like to <a href="%{baseHostSecure}/edit-delivery-address?id=%{id}" data-tracking="primary delivery account" role="link" aria-label="link opens the edit primary delivery address page">edit</a> your Grocery delivery address?'
       updated: 'Delivery address successfully updated.'
     delete:
       confirmation-message: 'Are you sure you want to delete this address?'
@@ -126,8 +126,8 @@ pages:
         grocery: 'Online Grocery Shopping'
         grocery-default: 'Default'
       additional:
-        clubcard: 'This is where you recieve Clubcard vouchers and letters from Tesco.'
-        grocery: 'This is the default delivery address for you online Grocery shopping.'
+        clubcard: 'This is where you receive Clubcard vouchers and letters from Tesco.'
+        grocery: 'This is the default delivery address for your online Grocery shopping.'
     other-addresses:
       label: 'Other addresses'
     telephone:

@@ -34,15 +34,6 @@ test(`Landing Page Has Correct URL`, async (t) => {
   await t.expect(getLocation()).contains(addressBookAddedUrl);
 });
 
-test.page(addDeliveryAddressUrl)(`Check postcode field is focused`, async (t) => {
-  await t
-    .useRole(loginPage.logIn)
-    .expect(landingPage.signOutButton.exists)
-    .ok();
-
-  await t.expect(addAddressPage.postcodeField.focused).ok();
-});
-
 test.page(addDeliveryAddressUrl)(`Select Address From Dropdown`, async (t) => {
   await t
     .useRole(loginPage.logIn)

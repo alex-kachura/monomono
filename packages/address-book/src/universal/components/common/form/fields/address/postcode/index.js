@@ -24,7 +24,6 @@ const Postcode = memo(
     onBlur,
     loading,
     domRef,
-    autoFocus,
   }) => {
     const { getLocalePhrase } = useAppConfig();
     const localeError = error ? getLocalePhrase(error) : undefined;
@@ -39,7 +38,6 @@ const Postcode = memo(
         className={className}
       >
         <Input
-          autoFocus={autoFocus}
           domRef={domRef}
           hidden={hidden}
           type="text"
@@ -91,7 +89,6 @@ Postcode.propTypes = {
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   loading: PropTypes.bool.isRequired,
-  autoFocus: PropTypes.bool,
 };
 
 export default memo(WrapPostcode);
