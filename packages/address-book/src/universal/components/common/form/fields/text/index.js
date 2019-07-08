@@ -66,7 +66,7 @@ const Text = memo(
 
     const formGroup = (
       <FormGroupStyled
-        helpLinkText={tooltip && "What's this?"}
+        helpLinkText={tooltip && getLocalePhrase('help-link-default')}
         helpLinkProps={{
           domRef: helpLinkRef,
         }}
@@ -96,7 +96,7 @@ const Text = memo(
               position="top"
               boundingRef={boundingRef}
               triggerRefs={helpLinkRef}
-              tooltipWidth={660}
+              tooltipWidth={480}
               tooltip={getLocalePhrase(tooltip)}
             />
           )}

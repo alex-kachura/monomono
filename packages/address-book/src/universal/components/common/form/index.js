@@ -5,7 +5,7 @@ import Text from './fields/text';
 import Tel from './fields/tel';
 import Panel from '../panel';
 import Banner from '../banner';
-import { PageTitleStyled } from '../styled-components';
+import PageTitleStyled from '../page-title';
 import { Formik, useAppConfig } from '@oneaccount/react-foundations';
 import { connect } from 'formik';
 import { useForm, useFields } from './helpers';

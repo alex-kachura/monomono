@@ -46,6 +46,7 @@
     "@beans/masthead": "^14.18.0",
     "@beans/notification": "^14.17.0",
     "@beans/primary-navigation": "^14.17.0",
+    "@beans/selectors": "^14.20.4",
     "@beans/tesco-modern": "^14.13.5",
     "@beans/theme": "^14.17.0",
     "@beans/tooltip": "^14.17.0",

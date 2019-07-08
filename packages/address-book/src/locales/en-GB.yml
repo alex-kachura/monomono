@@ -90,6 +90,7 @@ header:
     link3: 'Help'
     link4: 'Feedback'
 help: 'Help'
+help-link-default: "What's this?"
 
 # P
 pages:
@@ -159,7 +160,7 @@ pages:
         label: 'Address nickname'
         placeholder: 'e.g. London home'
         error: 'Please enter a Address nickname'
-        tooltip: 'Help me'
+        tooltip: 'Address nicknames allow you to quickly recognise different delivery addresses, e.g. Home, Mum, Uni'
   clubcard-address:
     edit:
       title: 'Edit Clubcard Address'

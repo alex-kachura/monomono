@@ -19,7 +19,7 @@ exports[`NotFound component should render correctly 1`] = `
       pages.not-found.paragraphs.1
     </p>
     <a
-      class="sc-bwzfXH fGCCLo styled__TextButtonLink-ipdqot-0 drVknR"
+      class="sc-bdVaJa kaUEvY styled__TextButtonLink-ipdqot-0 drVknR"
       href="/mock-path"
     >
       <span

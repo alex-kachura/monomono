@@ -3,7 +3,7 @@
 exports[`[Component: Tel] [State: Default] should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdVaJa cZgcHL styled__Container-sc-1bf1p22-0 hTDNaU"
+    class="sc-bdVaJa jzpMvO styled__Container-sc-1bf1p22-0 hTDNaU"
   >
     <label
       class="styled__StyledLabel-sc-28yvb4-0 bPkari"
@@ -32,7 +32,7 @@ exports[`[Component: Tel] [State: Default] should render correctly 1`] = `
 exports[`[Component: Tel] [State: Error] should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdVaJa cZgcHL styled__Container-sc-1bf1p22-0 hTDNaU"
+    class="sc-bdVaJa jzpMvO styled__Container-sc-1bf1p22-0 hTDNaU"
   >
     <label
       class="styled__StyledLabel-sc-28yvb4-0 BlFly"
@@ -68,7 +68,7 @@ exports[`[Component: Tel] [State: Error] should render correctly 1`] = `
 exports[`[Component: Tel] [State: Initial Value] should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdVaJa cZgcHL styled__Container-sc-1bf1p22-0 hTDNaU"
+    class="sc-bdVaJa jzpMvO styled__Container-sc-1bf1p22-0 hTDNaU"
   >
     <label
       class="styled__StyledLabel-sc-28yvb4-0 bPkari"

@@ -3,7 +3,7 @@
 exports[`[Component: Form] [State: Default] should render correctly 1`] = `
 <DocumentFragment>
   <h1
-    class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs krCBJg typography___styledElement-sc-186l0ce-0 hmbiuS"
+    class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs KMYtd typography___styledElement-sc-186l0ce-0 hmbiuS"
   >
     pages.delivery-address.title
   </h1>
@@ -84,7 +84,7 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
           </span>
         </button>
         <div
-          class="address-field sc-bdVaJa cZgcHL styled__Container-sc-1bf1p22-0 hTDNaU"
+          class="address-field sc-bdVaJa jzpMvO styled__Container-sc-1bf1p22-0 hTDNaU"
         >
           <label
             class="styled__StyledLabel-sc-28yvb4-0 bPkari"
@@ -108,7 +108,7 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
           </div>
         </div>
         <div
-          class="address-field sc-bdVaJa cZgcHL styled__Container-sc-1bf1p22-0 hTDNaU"
+          class="address-field sc-bdVaJa jzpMvO styled__Container-sc-1bf1p22-0 hTDNaU"
         >
           <label
             class="styled__StyledLabel-sc-28yvb4-0 bPkari"
@@ -136,7 +136,7 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
           </div>
         </div>
         <div
-          class="address-field sc-bdVaJa cZgcHL styled__Container-sc-1bf1p22-0 hTDNaU"
+          class="address-field sc-bdVaJa jzpMvO styled__Container-sc-1bf1p22-0 hTDNaU"
         >
           <label
             class="styled__StyledLabel-sc-28yvb4-0 bPkari"
@@ -164,7 +164,7 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
           </div>
         </div>
         <div
-          class="address-field sc-bdVaJa cZgcHL styled__Container-sc-1bf1p22-0 hTDNaU"
+          class="address-field sc-bdVaJa jzpMvO styled__Container-sc-1bf1p22-0 hTDNaU"
         >
           <label
             class="styled__StyledLabel-sc-28yvb4-0 bPkari"
@@ -189,7 +189,7 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-bdVaJa cZgcHL styled__Container-sc-1bf1p22-0 hTDNaU"
+        class="sc-bdVaJa jzpMvO styled__Container-sc-1bf1p22-0 hTDNaU"
       >
         <label
           class="styled__StyledLabel-sc-28yvb4-0 bPkari"
@@ -219,7 +219,7 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
       />
       <button
         aria-disabled="false"
-        class="styled__BaseButton-sc-3mnirm-0 sc-iwsKbI coJpLO styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+        class="styled__BaseButton-sc-3mnirm-0 sc-dnqmqq fIOvhp styled__PrimaryButton-sc-3mnirm-2 giYBMC"
         role="button"
         type="submit"
       >

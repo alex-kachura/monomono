@@ -5,7 +5,14 @@ import Button from '@beans/button';
 
 export const FormGroupStyled = memo(
   styled(FormGroup)`
-    margin: 0 0 24px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 0 24px;
+
+    div {
+      flex-basis: 100%;
+    }
   `,
 );
 

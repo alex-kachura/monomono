@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '../common/styled-components';
+import LinkStyled from '../common/link';
 import DocumentTitle from 'react-document-title';
 import { PageTitle, BodyText } from '@beans/typography';
 import { useAppConfig } from '@oneaccount/react-foundations';
@@ -16,9 +16,9 @@ export function NotFoundPage() {
         <PageTitle margin>{getLocalePhrase(`${LOCALE_ROOT}.heading`)}</PageTitle>
         <BodyText margin>{getLocalePhrase(`${LOCALE_ROOT}.paragraphs.0`)}</BodyText>
         <BodyText margin>{getLocalePhrase(`${LOCALE_ROOT}.paragraphs.1`)}</BodyText>
-        <Link variant="textButton" href={tescoHomepage}>
+        <LinkStyled variant="textButton" href={tescoHomepage}>
           {getLocalePhrase(`${LOCALE_ROOT}.home`)}
-        </Link>
+        </LinkStyled>
       </div>
     </DocumentTitle>
   );
