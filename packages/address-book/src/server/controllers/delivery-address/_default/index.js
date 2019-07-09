@@ -135,4 +135,8 @@ export async function updateAddress({ data, addressIndex, accessToken, context, 
       meta,
     );
   }
+
+  return {
+    tags,
+  };
 }

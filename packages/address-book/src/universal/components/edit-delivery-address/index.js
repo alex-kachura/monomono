@@ -19,8 +19,8 @@ const EditDeliveryAddressPage = ({
 }) => {
   const { getLocalePhrase, rootPath } = useAppConfig();
 
-  const handleSubmit = useCallback(() => {
-    history.replace(`${rootPath}?action=updated`);
+  const handleSubmit = useCallback(({ bannerAction }) => {
+    history.replace(`${rootPath}?action=${bannerAction}`);
   }, []);
 
   const handleErrors = useCallback(() => {

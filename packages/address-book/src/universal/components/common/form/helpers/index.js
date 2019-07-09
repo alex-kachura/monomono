@@ -36,7 +36,7 @@ export function useForm(url, onSubmit, initialBanner = {}) {
       setSubmitting(false);
 
       if (payloadBanner.type !== 'error' && !hasErrors) {
-        onSubmit();
+        onSubmit(payload);
       }
     });
   }, []);

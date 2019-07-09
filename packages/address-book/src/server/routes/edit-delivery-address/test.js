@@ -307,6 +307,7 @@ describe('[Route: /edit-delivery-address]', () => {
         const res = responseFactory({ responseType });
 
         const payload = payloadFactory(req, {
+          bannerAction: 'updated',
           values,
         });
 

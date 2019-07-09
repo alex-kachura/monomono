@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Grid, Row } from '@beans/grid';
-import { PageTitle, SectionTitle } from '@beans/typography';
+import { PageTitle, SectionTitle, BodyText } from '@beans/typography';
 import { media } from '@beans/foundation';
 
 export const LandingPageTitle = styled(PageTitle)`
@@ -65,4 +65,9 @@ export const LandingSectionTitle = styled(SectionTitle)`
   ${media.belowTablet`
     font-size: 20px!important;
   `}
+`;
+
+export const SubTitle = styled(BodyText)`
+  margin-left: -12px !important;
+  margin-right: -12px !important;
 `;

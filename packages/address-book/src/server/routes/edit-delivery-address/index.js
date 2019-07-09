@@ -115,6 +115,7 @@ export async function postEditDeliveryAddressPage(req, res, next) {
   const { _csrf, ...data } = req.body; // eslint-disable-line no-unused-vars
   const outcome = 'successful';
   const name = 'delivery-address:edit:post';
+  let tags = [];
 
   const payload = {
     breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
@@ -140,13 +141,15 @@ export async function postEditDeliveryAddressPage(req, res, next) {
   }
 
   try {
-    await deliveryAddressController.updateAddress({
+    const result = await deliveryAddressController.updateAddress({
       accessToken,
       addressIndex: id,
       data: values,
       context: req,
       tracer: req.sessionId,
     });
+
+    tags = result.tags;
   } catch (error) {
     if (error instanceof AddressServiceError) {
       return handleAddressServiceError({ name, action, error, payload, req, res, next });
@@ -159,10 +162,21 @@ export async function postEditDeliveryAddressPage(req, res, next) {
 
   logOutcome(name, outcome, req);
 
+  let bannerAction = 'updated';
+
+  if (tags.includes('primaryDelivery')) {
+    bannerAction = 'changed-default';
+  }
+
   return res.format({
-    html: () => res.redirect(`/account/address-book/${req.lang}?action=updated`),
+    html: () => res.redirect(`/account/address-book/${req.lang}?action=${bannerAction}`),
     json: () => {
-      res.send({ payload });
+      res.send({
+        payload: {
+          ...payload,
+          bannerAction,
+        },
+      });
     },
   });
 }

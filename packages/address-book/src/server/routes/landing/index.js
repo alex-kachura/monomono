@@ -33,8 +33,8 @@ function addressEqualComparison(addr1, addr2) {
 
   if (
     addr1.addressLines.length !== addr2.addressLines.length ||
-    emptyOrEqualCheck(addr1.postTown, addr2.postTown) ||
-    emptyOrEqualCheck(addr1.postcode, addr2.postcode)
+    !emptyOrEqualCheck(addr1.postTown, addr2.postTown) ||
+    !emptyOrEqualCheck(addr1.postcode, addr2.postcode)
   ) {
     return false;
   }

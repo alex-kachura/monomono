@@ -263,6 +263,11 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
     >
       pages.landing.other-addresses.label
     </h2>
+    <p
+      class="base-components__BaseElement-sc-150tvch-0 sc-iAyFgw hubgQp typography___styledElement-sc-186l0ce-0 gxVCAq"
+    >
+      pages.landing.other-addresses.sub-label
+    </p>
     <div
       class="other-address sc-kEYyzF hwdaVg styled-cgoahb-0 fFoLXC"
     >
@@ -273,13 +278,13 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
           class="sc-chPdSV hKvliw"
         >
           <span
-            class="sc-iAyFgw lgOpYz styled__IconButtonContainerWithText-sc-1r4nugl-2 eDfFjL"
+            class="sc-hSdWYo dhsYtq styled__IconButtonContainerWithText-sc-1r4nugl-2 eDfFjL"
           >
             <a
               href="/mock/math/add-delivery-address"
             >
               <div
-                class="sc-eHgmQL jEHXYw"
+                class="sc-cvbbAY gkqdlC"
               >
                 <span
                   class="styled__IconButtonSpanWithText-sc-1r4nugl-1 ilogHV"
@@ -289,7 +294,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                     class="beans-link__text styled__TextSpan-sc-1r4nugl-3 fXsDiB"
                   >
                     <h4
-                      class="base-components__BaseElement-sc-150tvch-0 sc-hSdWYo cBTGqf typography___styledElement-sc-186l0ce-0 ixZPNc"
+                      class="base-components__BaseElement-sc-150tvch-0 sc-eHgmQL eCjgBV typography___styledElement-sc-186l0ce-0 ixZPNc"
                     >
                       Add delivery address
                     </h4>

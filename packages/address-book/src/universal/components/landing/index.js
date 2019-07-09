@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
-
 import { useAppConfig, connectPage } from '@oneaccount/react-foundations';
 import PrimaryAddress from '../address/primary';
 import { AdditionalPanel } from '../address/additional';
@@ -14,6 +13,7 @@ import {
   AddressRow,
   OtherAddressesRow,
   LandingSectionTitle,
+  SubTitle,
 } from './styled';
 
 import AddAddress from '../address/buttons/add';
@@ -41,6 +41,7 @@ export function LandingPage(props) {
         <LandingSectionTitle>
           {getLocalePhrase('pages.landing.other-addresses.label')}
         </LandingSectionTitle>
+        <SubTitle>{getLocalePhrase('pages.landing.other-addresses.sub-label')}</SubTitle>
         <OtherAddressesRow className="other-address">
           <AdditionalPanel panelButton>
             <AddAddress rootPath={rootPath} />
