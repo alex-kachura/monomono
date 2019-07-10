@@ -54,7 +54,6 @@ try {
           // Build the new images
           withCredentials([string(credentialsId: 'nexus-npm-token', variable: 'NPM_AUTH_TOKEN'),]) {
             sh "docker build -f ./Dockerfile.prod -t address-book:${appTag} --build-arg NPM_AUTH_TOKEN=${env.NPM_AUTH_TOKEN} ."
-            sh "docker build -f ./Dockerfile.test -t address-book:test-${commitSha} --build-arg NPM_AUTH_TOKEN=${env.NPM_AUTH_TOKEN} ."
           }
 					sh "docker build -f ./Dockerfile.nginx -t address-book:${nginxTag} --add-host=app:127.0.0.1 ."
 

@@ -34,8 +34,10 @@ RUN ./bin/npmrc
 # helps to be explicit here. In production we would prune the dev dependencies
 # after the build but in development we use some of them to enhance developer
 # experience.
+RUN npm install
+
 WORKDIR /home/node/test/integration
 
 RUN npm install
 
-CMD ["npm", "start"]
+RUN npm run integration:ppe

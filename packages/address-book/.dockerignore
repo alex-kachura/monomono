@@ -14,11 +14,5 @@
 !src
 !test/jest.framework.setup.js
 !test/jest.config.js
-!test/integration/.babelrc
-!test/integration/.npmrc
-!test/integration/config
-!test/integration/jest.init.js
-!test/integration/specs
-!test/integration/package.json
-!test/integration/package-lock.json
+!test/integration
 !webpack.config.js
