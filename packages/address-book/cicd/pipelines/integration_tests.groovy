@@ -11,7 +11,6 @@ def jobName = "${env.JOB_NAME}-${env.BUILD_NUMBER}"
 def commitSha
 
 try {
-	setGitHubPullRequestStatus state: 'PENDING', context: 'address-book_integration_tests', message: "Job #${env.BUILD_NUMBER} started"
   podTemplate(
 		label: label,
 		serviceAccount: 'jenkins',
@@ -62,8 +61,6 @@ try {
   notifyOnSlack("danger", "[<$BUILD_URL|$JOB_NAME #$BUILD_NUMBER>]: 🔥 Job failed! 🔥\n${e.getMessage()}")
 	println('Failure' + e.getMessage())
 	currentBuild.result = 'FAILURE'
-} finally {
-  setGitHubPullRequestStatus state: currentBuild.result, context: 'address-book_integration_tests', message: "Job #${env.BUILD_NUMBER} finished: ${currentBuild.result}"
 }
 
 def notifyOnSlack(toneColor, message) {
