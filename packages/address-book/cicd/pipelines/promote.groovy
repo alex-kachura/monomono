@@ -53,8 +53,8 @@ try {
           // Pull images
           // sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:latest"
           // sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-latest"
-          // sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:app-${commitSha}"
-          // sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-${commitSha}"
+          sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:app-${commitSha}"
+          sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-${commitSha}"
 
           // Retag old latest to previous
 					// sh "docker tag 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:latest 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:previous"
