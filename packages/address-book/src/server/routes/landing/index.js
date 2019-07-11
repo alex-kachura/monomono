@@ -39,23 +39,17 @@ function addressEqualComparison(addr1, addr2) {
     return false;
   }
 
-  let isEqual = false;
-
-  addr1.addressLines.forEach(({ lineNumber, value }) => {
+  const isEqual = addr1.addressLines.find(({ lineNumber, value }) => {
     const foundLine = addr2.addressLines.filter((addr) => addr.lineNumber === lineNumber);
 
-    if (!foundLine || foundLine.length === 0) {
-      return isEqual;
+    if (!foundLine || foundLine.length === 0 || !emptyOrEqualCheck(value, foundLine[0].value)) {
+      return true;
     }
 
-    if (emptyOrEqualCheck(value, foundLine[0].value)) {
-      isEqual = true;
-    }
-
-    return isEqual;
+    return false;
   });
 
-  return isEqual;
+  return isEqual === undefined;
 }
 
 function getBannerProps(req, groceryAddr, clubcardAddr) {
