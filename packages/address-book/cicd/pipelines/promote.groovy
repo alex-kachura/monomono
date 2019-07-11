@@ -51,16 +51,16 @@ try {
 			stage('Build address book docker image and push it to ECR') {
 				container('docker') {
           // Pull images
-          sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:latest"
-          sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-latest"
+          // sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:latest"
+          // sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-latest"
           sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:app-${commitSha}"
           sh "docker pull 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-${commitSha}"
 
           // Retag old latest to previous
-					sh "docker tag 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:latest 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:previous"
-					sh "docker tag 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-latest 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-previous"
-					sh "docker push 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:previous"
-					sh "docker push 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-previous"
+					// sh "docker tag 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:latest 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:previous"
+					// sh "docker tag 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-latest 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-previous"
+					// sh "docker push 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:previous"
+					// sh "docker push 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:nginx-previous"
 
           // Tag new latest
 					sh "docker tag 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:app-${commitSha} 914904879356.dkr.ecr.eu-west-1.amazonaws.com/oneaccount/address-book:latest"
