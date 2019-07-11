@@ -72,11 +72,11 @@ module.exports = {
         segments: [
           {
             name: 'disabled',
-            weighting: 100,
+            weighting: 0,
           },
           {
             name: 'enabled',
-            weighting: 0,
+            weighting: 100,
           },
         ],
         cookieOptions: {
