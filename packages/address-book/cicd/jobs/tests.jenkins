@@ -24,6 +24,6 @@ pipelineJob('address-book_tests') {
 		}
 	}
   triggers {
-    upstream(upstreamProjects: 'address-book_nonprod_deploy', threshold: hudson.model.Result.SUCCESS)
+    upstream('address-book_nonprod_deploy', 'SUCCESS')
   }
 }
