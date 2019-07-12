@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
-pipelineJob('address-book_integration_tests') {
+pipelineJob('address-book_tests') {
 	definition {
-		displayName('[address-book] Integration tests')
+		displayName('[address-book] Integration and E2E tests')
 		logRotator {
 			numToKeep(10)
 			daysToKeep(30)
@@ -20,10 +20,10 @@ pipelineJob('address-book_integration_tests') {
 					branch('master')
 				}
 			}
-			scriptPath('cicd/pipelines/integration_tests.groovy')
+			scriptPath('cicd/pipelines/tests.groovy')
 		}
 	}
   triggers {
-    scm('* * * * *')
+    upstream(upstreamProjects: 'address-book_nonprod_deploy', threshold: hudson.model.Result.SUCCESS)
   }
 }
