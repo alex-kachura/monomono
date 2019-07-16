@@ -19,7 +19,7 @@ export const LandingSection = styled(Grid)`
     props.inverseBackground
       ? `
     position: relative;
-    padding-top: 11px;
+    padding-top: 20px;
     padding-bottom: 24px;
 
     &::before {
@@ -59,7 +59,7 @@ export const OtherAddressesRow = styled(Row)`
 `;
 
 export const LandingSectionTitle = styled(SectionTitle)`
-  margin-left: -12px !important;
+  margin-left: -8px !important;
   margin-right: -12px !important;
 
   ${media.belowTablet`
@@ -68,6 +68,8 @@ export const LandingSectionTitle = styled(SectionTitle)`
 `;
 
 export const SubTitle = styled(BodyText)`
-  margin-left: -12px !important;
+  margin-left: -8px !important;
   margin-right: -12px !important;
+  margin-top: 4px !important;
+  font-size: 20px !important;
 `;

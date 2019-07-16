@@ -113,7 +113,7 @@ pages:
       combine-addresses: '<br />We can combine your main Grocery address and Clubcard into the same address.<br />Give us a call on 12345678902 if you would like to do this.'
       deleted: 'Address successfully deleted.'
       multiple-addresses: "We've noticed you have multiple addresses"
-      update-clubcard-account: 'Your Clubcard and groceries delivery address are not the same. Would you like to <a href="%{baseHostSecure}/edit-clubcard-address?id=%{id}" data-tracking="clubcard account" target="_blank" role="link" aria-label="link opens the edit clubcard address page">edit your Clubcard address?</a>'
+      update-clubcard-account: 'Your Clubcard and groceries delivery address are not the same. Would you like to <a href="%{baseHostSecure}/edit-clubcard-address?id=%{id}" data-tracking="clubcard account" role="link" aria-label="link opens the edit clubcard address page">edit your Clubcard address?</a>'
       update-primary-delivery-account: 'Your groceries delivery address and Clubcard address are not the same. Would you like to <a href="%{baseHostSecure}/edit-delivery-address?id=%{id}" data-tracking="primary delivery account" role="link" aria-label="link opens the edit primary delivery address page">edit your groceries delivery address?</a>'
       updated: 'Good news. Your Tesco address book has been updated.'
     delete:

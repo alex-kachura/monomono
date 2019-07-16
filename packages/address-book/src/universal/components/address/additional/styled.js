@@ -11,7 +11,7 @@ export const AdditionalPanelStyled = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 21px;
+  margin-top: 20px;
   background-color: #ffffff;
   overflow: hidden;
   min-height: 300px;

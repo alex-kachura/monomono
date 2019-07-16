@@ -49,7 +49,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
     class="sc-eNQAEJ gwllH styled-sc-140lqfg-0 hKAvLp"
   >
     <h2
-      class="base-components__BaseElement-sc-150tvch-0 sc-kkGfuU bXaZhB typography___styledElement-sc-186l0ce-0 iswQsi"
+      class="base-components__BaseElement-sc-150tvch-0 sc-kkGfuU bZEveT typography___styledElement-sc-186l0ce-0 iswQsi"
     >
       pages.landing.primary-address.label
     </h2>
@@ -256,15 +256,15 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
     </div>
   </div>
   <div
-    class="sc-eNQAEJ BfbWv styled-sc-140lqfg-0 hKAvLp"
+    class="sc-eNQAEJ RhZmx styled-sc-140lqfg-0 hKAvLp"
   >
     <h2
-      class="base-components__BaseElement-sc-150tvch-0 sc-kkGfuU bXaZhB typography___styledElement-sc-186l0ce-0 iswQsi"
+      class="base-components__BaseElement-sc-150tvch-0 sc-kkGfuU bZEveT typography___styledElement-sc-186l0ce-0 iswQsi"
     >
       pages.landing.other-addresses.label
     </h2>
     <p
-      class="base-components__BaseElement-sc-150tvch-0 sc-iAyFgw hubgQp typography___styledElement-sc-186l0ce-0 gxVCAq"
+      class="base-components__BaseElement-sc-150tvch-0 sc-iAyFgw IEbue typography___styledElement-sc-186l0ce-0 gxVCAq"
     >
       pages.landing.other-addresses.sub-label
     </p>
@@ -275,7 +275,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
         class="sc-kAzzGY jLybqU styled-tbp4qh-0 fsXMrV"
       >
         <div
-          class="sc-chPdSV hKvliw"
+          class="sc-chPdSV eEdLch"
         >
           <span
             class="sc-hSdWYo dhsYtq styled__IconButtonContainerWithText-sc-1r4nugl-2 eDfFjL"
@@ -333,7 +333,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
         class="sc-kAzzGY jLybqU styled-tbp4qh-0 fsXMrV"
       >
         <div
-          class="sc-chPdSV csNRJh"
+          class="sc-chPdSV bXcHcM"
         >
           <div
             class="sc-bdVaJa fOmtxQ"
