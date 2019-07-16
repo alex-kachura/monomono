@@ -23,8 +23,10 @@ export const ConfirmationSheet = styled.div`
 `;
 
 export const WrapTextSubHeading = styled(SubHeading)`
-  word-wrap: break-word;
-  padding: 12px 0 !important;
+  && {
+    word-wrap: break-word;
+    padding: 12px 0;
+  }
 `;
 
 export const EllipsisBodyText = styled(BodyText)`

@@ -4,42 +4,46 @@ import { SubHeading } from '@beans/typography';
 import { media } from '@beans/foundation';
 
 export const AddAddressLink = styled(Link)`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex: 1;
-  a {
+  && {
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex: 1;
-    padding: 12px;
-  }
-
-  ${media.belowTablet`
 
     a {
-      justify-content: flex-start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 12px;
     }
 
-    .beans-link__text {
-      margin-left: 12px!important;
-    }
-  `}
+    ${media.belowTablet`
+      a {
+        justify-content: flex-start;
+      }
+  
+      .beans-link__text {
+        margin-left: 12px;
+      }
+    `}
+  }
 `;
 
 export const LinkSubHeading = styled(SubHeading)`
-  color: #00539f !important;
-  margin-top: 12px !important;
-  white-space: normal !important;
+  && {
+    color: #00539f;
+    margin-top: 12px;
+    white-space: normal;
 
-  ${media.aboveTablet`
-    text-align: center;
-  `}
+    ${media.aboveTablet`
+      text-align: center;
+    `}
 
-  ${media.belowTablet`
-      margin-top: 0!important;
-  `}
+    ${media.belowTablet`
+      margin-top: 0;
+    `}
+  }
 `;
 
 export const AddLinkInner = styled.div`

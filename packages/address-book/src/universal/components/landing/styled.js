@@ -4,14 +4,16 @@ import { PageTitle, SectionTitle, BodyText } from '@beans/typography';
 import { media } from '@beans/foundation';
 
 export const LandingPageTitle = styled(PageTitle)`
-  ${media.mobileOnly`
-    display: none;
-  `}
+  && {
+    ${media.mobileOnly`
+      display: none;
+    `}
 
-  ${media.belowTablet`
-    font-size: 24px!important;
-    margin-top: 28px!important;
-  `}
+    ${media.belowTablet`
+      font-size: 24px;
+      margin-top: 28px;
+    `}
+  }
 `;
 
 export const LandingSection = styled(Grid)`
@@ -59,17 +61,21 @@ export const OtherAddressesRow = styled(Row)`
 `;
 
 export const LandingSectionTitle = styled(SectionTitle)`
-  margin-left: -8px !important;
-  margin-right: -12px !important;
+  && {
+    margin-left: -8px;
+    margin-right: -12px;
 
-  ${media.belowTablet`
-    font-size: 20px!important;
-  `}
+    ${media.belowTablet`
+      font-size: 20px;
+    `}
+  }
 `;
 
 export const SubTitle = styled(BodyText)`
-  margin-left: -8px !important;
-  margin-right: -12px !important;
-  margin-top: 4px !important;
-  font-size: 20px !important;
+  && {
+    margin-left: -8px;
+    margin-right: -12px;
+    margin-top: 4px;
+    font-size: 20px;
+  }
 `;

@@ -39,8 +39,10 @@ export const AddressFooter = styled.div`
 `;
 
 export const FooterLabel = styled(BodyText)`
-  padding-top: 12px !important;
-  width: 100%;
+  && {
+    padding-top: 12px;
+    width: 100%;
+  }
 `;
 
 export const AddressHeaderText = styled.div`
@@ -52,6 +54,8 @@ export const HeaderSignpost = styled(Signpost)`
 `;
 
 export const HeaderBodyText = styled(BodyText)`
-  display: inline-block;
-  line-height: 1 !important;
+  && {
+    display: inline-block;
+    line-height: 1;
+  }
 `;

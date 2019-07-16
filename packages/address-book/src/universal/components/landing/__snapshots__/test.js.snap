@@ -3,7 +3,7 @@
 exports[`[Component: LandingPage] should render correctly 1`] = `
 <DocumentFragment>
   <h1
-    class="base-components__BaseElement-sc-150tvch-0 sc-jKJlTe kaiMDg typography___styledElement-sc-186l0ce-0 hmbiuS"
+    class="base-components__BaseElement-sc-150tvch-0 sc-jKJlTe ftTIkx typography___styledElement-sc-186l0ce-0 hmbiuS"
   >
     pages.landing.title
   </h1>
@@ -49,7 +49,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
     class="sc-eNQAEJ gwllH styled-sc-140lqfg-0 hKAvLp"
   >
     <h2
-      class="base-components__BaseElement-sc-150tvch-0 sc-kkGfuU bZEveT typography___styledElement-sc-186l0ce-0 iswQsi"
+      class="base-components__BaseElement-sc-150tvch-0 sc-kkGfuU bWIdFG typography___styledElement-sc-186l0ce-0 iswQsi"
     >
       pages.landing.primary-address.label
     </h2>
@@ -143,7 +143,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               </a>
             </span>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs dRDBok typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs fSqFUG typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.primary-address.additional.clubcard
             </p>
@@ -246,7 +246,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               </a>
             </span>
             <p
-              class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs dRDBok typography___styledElement-sc-186l0ce-0 gxVCAq"
+              class="base-components__BaseElement-sc-150tvch-0 sc-htoDjs fSqFUG typography___styledElement-sc-186l0ce-0 gxVCAq"
             >
               pages.landing.primary-address.additional.grocery
             </p>
@@ -259,12 +259,12 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
     class="sc-eNQAEJ RhZmx styled-sc-140lqfg-0 hKAvLp"
   >
     <h2
-      class="base-components__BaseElement-sc-150tvch-0 sc-kkGfuU bZEveT typography___styledElement-sc-186l0ce-0 iswQsi"
+      class="base-components__BaseElement-sc-150tvch-0 sc-kkGfuU bWIdFG typography___styledElement-sc-186l0ce-0 iswQsi"
     >
       pages.landing.other-addresses.label
     </h2>
     <p
-      class="base-components__BaseElement-sc-150tvch-0 sc-iAyFgw IEbue typography___styledElement-sc-186l0ce-0 gxVCAq"
+      class="base-components__BaseElement-sc-150tvch-0 sc-iAyFgw hcSZcc typography___styledElement-sc-186l0ce-0 gxVCAq"
     >
       pages.landing.other-addresses.sub-label
     </p>
@@ -278,7 +278,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
           class="sc-chPdSV eEdLch"
         >
           <span
-            class="sc-hSdWYo dhsYtq styled__IconButtonContainerWithText-sc-1r4nugl-2 eDfFjL"
+            class="sc-hSdWYo csQtmC styled__IconButtonContainerWithText-sc-1r4nugl-2 eDfFjL"
           >
             <a
               href="/mock/math/add-delivery-address"
@@ -294,7 +294,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                     class="beans-link__text styled__TextSpan-sc-1r4nugl-3 fXsDiB"
                   >
                     <h4
-                      class="base-components__BaseElement-sc-150tvch-0 sc-eHgmQL eCjgBV typography___styledElement-sc-186l0ce-0 ixZPNc"
+                      class="base-components__BaseElement-sc-150tvch-0 sc-eHgmQL hSOyeS typography___styledElement-sc-186l0ce-0 ixZPNc"
                     >
                       Add delivery address
                     </h4>
@@ -438,7 +438,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               style="transform: translate3d(0, 100%, 0); opacity: 0;"
             >
               <h4
-                class="base-components__BaseElement-sc-150tvch-0 sc-VigVT eyiuaP typography___styledElement-sc-186l0ce-0 ixZPNc"
+                class="base-components__BaseElement-sc-150tvch-0 sc-VigVT dMuRMJ typography___styledElement-sc-186l0ce-0 ixZPNc"
               >
                 pages.landing.delete.confirmation-message
               </h4>
