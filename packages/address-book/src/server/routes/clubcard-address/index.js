@@ -10,6 +10,7 @@ import {
   handleContactServiceError,
   handleError,
   handleValidationErrors,
+  handleMissingIdError,
   ErrorCodes,
 } from '../../utils/error-handlers';
 
@@ -107,7 +108,7 @@ export async function postClubcardAddressPage(req, res, next) {
   const action = 'update-address';
 
   if (!id) {
-    return handleError({
+    return handleMissingIdError({
       name,
       error: new Error(ErrorCodes.CONTACT_ADDRESS_ID_REQUIRED),
       req,

@@ -170,7 +170,7 @@ export function handleValidationErrors({ name, errors, payload, req, res, next }
   };
 
   if (Object.keys(errors).length === 0) {
-    logOutcome(name, 'error', req);
+    logOutcome(name, 'validation-errors-empty', req);
 
     return handleError({
       name,
@@ -184,4 +184,16 @@ export function handleValidationErrors({ name, errors, payload, req, res, next }
   logOutcome(name, 'validation-errors', req);
 
   return handleResponse({ res, data, next });
+}
+
+export function handleMissingIdError({ name, error, req, res, next }) {
+  logOutcome(name, 'missing-id-error', req);
+
+  return handleError({
+    name,
+    error,
+    req,
+    res,
+    next,
+  });
 }
