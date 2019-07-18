@@ -10,6 +10,7 @@ const postcodeProps = {
   name: 'postcode',
   label: 'Postcode',
   placeholder: 'e.g. EC1R 2NT',
+  errorMessage: 'Error on field',
   required: true,
   handleFindAddress: jest.fn(),
 };

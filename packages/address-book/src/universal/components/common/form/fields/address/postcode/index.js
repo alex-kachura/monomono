@@ -19,6 +19,7 @@ const Postcode = memo(
     handleFindAddress,
     name,
     error,
+    errorMessage,
     value,
     onChange,
     onBlur,
@@ -26,7 +27,7 @@ const Postcode = memo(
     domRef,
   }) => {
     const { getLocalePhrase } = useAppConfig();
-    const localeError = error ? getLocalePhrase(error) : undefined;
+    const localeError = error ? getLocalePhrase(errorMessage) : undefined;
 
     return (
       <FormGroupStyled
@@ -85,7 +86,8 @@ Postcode.propTypes = {
   domRef: PropTypes.object,
   name: PropTypes.string.isRequired,
   value: PropTypes.any,
-  error: PropTypes.string,
+  error: PropTypes.any,
+  errorMessage: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   loading: PropTypes.bool.isRequired,

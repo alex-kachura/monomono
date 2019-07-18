@@ -29,6 +29,7 @@ const Text = memo(
     required,
     name,
     error,
+    errorMessage,
     value,
     onChange,
     onBlur,
@@ -37,7 +38,7 @@ const Text = memo(
     const [open, setOpen] = useState(false);
     const [isMounted, setMount] = useState(false);
     const { getLocalePhrase } = useAppConfig();
-    const localeError = error ? getLocalePhrase(error) : undefined;
+    const localeError = error ? getLocalePhrase(errorMessage) : undefined;
     const helpLinkRef = useRef();
     const boundingRef = useRef();
 
@@ -129,7 +130,8 @@ Text.propTypes = {
   placeholder: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.any,
-  error: PropTypes.string,
+  error: PropTypes.any,
+  errorMessage: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   tooltip: PropTypes.string,

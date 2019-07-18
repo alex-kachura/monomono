@@ -194,6 +194,7 @@ module.exports = {
           placeholder: 'address.fields.postcode.placeholder',
           valuePath: 'postcode',
           required: true,
+          errorMessage: 'address.fields.postcode.error',
         },
         {
           id: 'address-line1',
@@ -204,6 +205,7 @@ module.exports = {
           placeholder: 'address.fields.address-line1.placeholder',
           valuePath: '1',
           required: true,
+          errorMessage: 'address.fields.address-line1.error',
         },
         {
           id: 'address-line2',
@@ -214,6 +216,7 @@ module.exports = {
           placeholder: 'address.fields.address-line2.placeholder',
           valuePath: '2',
           required: false,
+          errorMessage: 'address.fields.address-line2.error',
         },
         {
           id: 'address-line3',
@@ -224,6 +227,7 @@ module.exports = {
           placeholder: 'address.fields.address-line3.placeholder',
           valuePath: '3',
           required: false,
+          errorMessage: 'address.fields.address-line3.error',
         },
         {
           id: 'town',
@@ -234,6 +238,7 @@ module.exports = {
           placeholder: 'address.fields.town.placeholder',
           valuePath: 'postTown',
           required: true,
+          errorMessage: 'address.fields.town.error',
         },
         {
           id: 'day-number',
@@ -242,6 +247,7 @@ module.exports = {
           label: 'pages.delivery-address.fields.day-number.label',
           placeholder: 'pages.delivery-address.fields.day-number.placeholder',
           required: true,
+          errorMessage: 'pages.delivery-address.fields.day-number.error',
         },
         {
           id: 'evening-number',
@@ -250,6 +256,7 @@ module.exports = {
           label: 'pages.delivery-address.fields.evening-number.label',
           placeholder: 'pages.delivery-address.fields.evening-number.placeholder',
           required: true,
+          errorMessage: 'pages.delivery-address.fields.evening-number.error',
         },
         {
           id: 'mobile-number',
@@ -258,6 +265,7 @@ module.exports = {
           label: 'pages.delivery-address.fields.mobile-number.label',
           placeholder: 'pages.delivery-address.fields.mobile-number.placeholder',
           required: false,
+          errorMessage: 'pages.delivery-address.fields.mobile-number.error',
         },
         {
           id: 'address-label',
@@ -267,6 +275,7 @@ module.exports = {
           placeholder: 'pages.delivery-address.fields.address-nickname.placeholder',
           tooltip: 'pages.delivery-address.fields.address-nickname.tooltip',
           required: true,
+          errorMessage: 'pages.delivery-address.fields.address-nickname.error',
         },
       ],
       schema: {
@@ -275,71 +284,51 @@ module.exports = {
         properties: {
           'address-id': {
             type: 'string',
-            errorMessage: 'address.fields.address-id.error',
           },
           postcode: {
             type: 'string',
             maxLength: 9,
             pattern: '^\\s*[A-Za-z]{1,2}[0-9][0-9A-Za-z]?\\s?[0-9][A-Za-z]{2}\\s*$',
-            errorMessage: 'address.fields.postcode.error',
           },
           'address-line1': {
             maxLength: 30,
             type: 'string',
-            errorMessage: 'address.fields.address-line1.error',
           },
           'address-line2': {
             maxLength: 30,
             type: 'string',
-            errorMessage: 'address.fields.address-line2.error',
           },
           'address-line3': {
             maxLength: 30,
             type: 'string',
-            errorMessage: 'address.fields.address-line3.error',
           },
           town: {
             type: 'string',
-            errorMessage: 'address.fields.town.error',
           },
           day: {
             type: 'string',
             maxLength: 20,
             pattern:
               '^(((0044\\(0\\)|\\+44\\(0\\)|00440|\\(\\+44\\)|\\(0044\\)|\\+44|0044|440|0)[1235789]((\\d{1}\\s?\\d{4}\\s?\\d{4})|(\\d{3}\\s\\d{3}\\s\\d{3})|(\\d{2}\\s?\\d{3}\\s?\\d{4})|(\\d{2}\\s\\d{4}\\s\\d{4})|(\\d{2}\\s\\d{6})|(\\d{3}\\s\\d{5})|(\\d{3}\\s\\d{6})|(\\d{4}\\s\\d{5})|(\\d{4}\\s\\d{4})|(\\d{8})))|((0044\\(0\\)7|\\+44\\(0\\)|004407|\\(\\+44\\)7|\\(0044\\)7|\\+447|00447|4407|07)((\\d{1}\\s?\\d{4}\\s?\\d{4})|(\\d{2}\\s?\\d{3}\\s?\\d{4})|(\\d{3}\\s\\d{3}\\s\\d{3})|(\\s?\\d{3}\\s?\\d{6})|(\\d{4}\\s?\\d{5}))))$', // eslint-disable-line max-len
-            errorMessage: 'pages.delivery-address.fields.day-number.error',
           },
           evening: {
             type: 'string',
             maxLength: 20,
             pattern:
               '^(((0044\\(0\\)|\\+44\\(0\\)|00440|\\(\\+44\\)|\\(0044\\)|\\+44|0044|440|0)[1235789]((\\d{1}\\s?\\d{4}\\s?\\d{4})|(\\d{3}\\s\\d{3}\\s\\d{3})|(\\d{2}\\s?\\d{3}\\s?\\d{4})|(\\d{2}\\s\\d{4}\\s\\d{4})|(\\d{2}\\s\\d{6})|(\\d{3}\\s\\d{5})|(\\d{3}\\s\\d{6})|(\\d{4}\\s\\d{5})|(\\d{4}\\s\\d{4})|(\\d{8})))|((0044\\(0\\)7|\\+44\\(0\\)|004407|\\(\\+44\\)7|\\(0044\\)7|\\+447|00447|4407|07)((\\d{1}\\s?\\d{4}\\s?\\d{4})|(\\d{2}\\s?\\d{3}\\s?\\d{4})|(\\d{3}\\s\\d{3}\\s\\d{3})|(\\s?\\d{3}\\s?\\d{6})|(\\d{4}\\s?\\d{5}))))$', // eslint-disable-line max-len
-            errorMessage: 'pages.delivery-address.fields.evening-number.error',
           },
           mobile: {
             type: 'string',
             maxLength: 20,
             pattern:
               '^(((0044\\(0\\)|\\+44\\(0\\)|00440|\\(\\+44\\)|\\(0044\\)|\\+44|0044|440|0)[1235789]((\\d{1}\\s?\\d{4}\\s?\\d{4})|(\\d{3}\\s\\d{3}\\s\\d{3})|(\\d{2}\\s?\\d{3}\\s?\\d{4})|(\\d{2}\\s\\d{4}\\s\\d{4})|(\\d{2}\\s\\d{6})|(\\d{3}\\s\\d{5})|(\\d{3}\\s\\d{6})|(\\d{4}\\s\\d{5})|(\\d{4}\\s\\d{4})|(\\d{8})))|((0044\\(0\\)7|\\+44\\(0\\)|004407|\\(\\+44\\)7|\\(0044\\)7|\\+447|00447|4407|07)((\\d{1}\\s?\\d{4}\\s?\\d{4})|(\\d{2}\\s?\\d{3}\\s?\\d{4})|(\\d{3}\\s\\d{3}\\s\\d{3})|(\\s?\\d{3}\\s?\\d{6})|(\\d{4}\\s?\\d{5}))))$', // eslint-disable-line max-len
-            errorMessage: 'pages.delivery-address.fields.mobile-number.error',
           },
           'address-label': {
             type: 'string',
             maxLength: 30,
-            errorMessage: 'pages.delivery-address.fields.address-nickname.error',
           },
         },
         additionalProperties: false,
-        errorMessage: {
-          required: {
-            postcode: 'address.fields.postcode.error',
-            'address-line1': 'address.fields.address-line1.error',
-            town: 'address.fields.town.error',
-            day: 'pages.delivery-address.fields.day-number.error',
-            evening: 'pages.delivery-address.fields.evening-number.error',
-            'address-label': 'pages.delivery-address.fields.address-nickname.error',
-          },
-        },
       },
     },
     'clubcard-address': {
@@ -364,6 +353,7 @@ module.exports = {
           placeholder: 'address.fields.postcode.placeholder',
           valuePath: 'postcode',
           required: true,
+          errorMessage: 'address.fields.postcode.error',
         },
         {
           id: 'address-line1',
@@ -373,7 +363,7 @@ module.exports = {
           label: 'address.fields.address-line1.label',
           placeholder: 'address.fields.address-line1.placeholder',
           valuePath: '1',
-          required: true,
+          errorMessage: 'address.fields.address-line1.error',
         },
         {
           id: 'address-line2',
@@ -384,6 +374,7 @@ module.exports = {
           placeholder: 'address.fields.address-line2.placeholder',
           valuePath: '2',
           required: false,
+          errorMessage: 'address.fields.address-line2.error',
         },
         {
           id: 'address-line3',
@@ -394,6 +385,7 @@ module.exports = {
           placeholder: 'address.fields.address-line3.placeholder',
           valuePath: '3',
           required: false,
+          errorMessage: 'address.fields.address-line3.error',
         },
         {
           id: 'town',
@@ -404,6 +396,7 @@ module.exports = {
           placeholder: 'address.fields.town.placeholder',
           valuePath: 'postTown',
           required: true,
+          errorMessage: 'address.fields.town.error',
         },
         {
           id: 'phone-number',
@@ -412,6 +405,7 @@ module.exports = {
           label: 'pages.clubcard-address.fields.phone-number.label',
           placeholder: 'pages.clubcard-address.fields.phone-number.placeholder',
           required: true,
+          errorMessage: 'pages.clubcard-address.fields.phone-number.error',
         },
       ],
       schema: {
@@ -420,50 +414,35 @@ module.exports = {
         properties: {
           'address-id': {
             type: 'string',
-            errorMessage: 'address.fields.address-id.error',
           },
           postcode: {
             type: 'string',
             maxLength: 9,
             pattern: '^\\s*[A-Za-z]{1,2}[0-9][0-9A-Za-z]?\\s?[0-9][A-Za-z]{2}\\s*$',
-            errorMessage: 'address.fields.postcode.error',
           },
           'address-line1': {
             type: 'string',
             maxLength: 30,
-            errorMessage: 'address.fields.address-line1.error',
           },
           'address-line2': {
             type: 'string',
             maxLength: 30,
-            errorMessage: 'address.fields.address-line2.error',
           },
           'address-line3': {
             type: 'string',
             maxLength: 30,
-            errorMessage: 'address.fields.address-line3.error',
           },
           town: {
             type: 'string',
-            errorMessage: 'address.fields.town.error',
           },
           phone: {
             type: 'string',
             pattern:
               '^(((0044\\(0\\)|\\+44\\(0\\)|00440|\\(\\+44\\)|\\(0044\\)|\\+44|0044|440|0)[1235789]((\\d{1}\\s?\\d{4}\\s?\\d{4})|(\\d{3}\\s\\d{3}\\s\\d{3})|(\\d{2}\\s?\\d{3}\\s?\\d{4})|(\\d{2}\\s\\d{4}\\s\\d{4})|(\\d{2}\\s\\d{6})|(\\d{3}\\s\\d{5})|(\\d{3}\\s\\d{6})|(\\d{4}\\s\\d{5})|(\\d{4}\\s\\d{4})|(\\d{8})))|((0044\\(0\\)7|\\+44\\(0\\)|004407|\\(\\+44\\)7|\\(0044\\)7|\\+447|00447|4407|07)((\\d{1}\\s?\\d{4}\\s?\\d{4})|(\\d{2}\\s?\\d{3}\\s?\\d{4})|(\\d{3}\\s\\d{3}\\s\\d{3})|(\\s?\\d{3}\\s?\\d{6})|(\\d{4}\\s?\\d{5}))))$', // eslint-disable-line max-len
             maxLength: 20,
-            errorMessage: 'pages.clubcard-address.fields.phone-number.error',
           },
         },
         additionalProperties: false,
-        errorMessage: {
-          required: {
-            postcode: 'address.fields.postcode.error',
-            'address-line1': 'address.fields.address-line1.error',
-            town: 'address.fields.town.error',
-            phone: 'pages.clubcard-address.fields.phone-number.error',
-          },
-        },
       },
     },
   },

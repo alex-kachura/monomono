@@ -13,6 +13,7 @@ import {
   AddressHeaderText,
   Column,
 } from './styled';
+import { Analytics } from '../../../../utils/analytics';
 
 export default function PrimaryAddress({ isClubcard, details }) {
   const { getLocalePhrase } = useAppConfig();
@@ -30,6 +31,10 @@ export default function PrimaryAddress({ isClubcard, details }) {
     `pages.landing.primary-address.additional.${isClubcard ? 'clubcard' : 'grocery'}`,
   );
 
+  const tracking = isClubcard
+    ? Analytics.Landing.Events.EDIT_CLUBCARD_ADDRESS
+    : Analytics.Landing.Events.EDIT_GROCERY_ADDRESS;
+
   const elementId = `edit-address${isClubcard ? '-clubcard' : '-grocery'}`;
 
   return (
@@ -43,7 +48,11 @@ export default function PrimaryAddress({ isClubcard, details }) {
         <AddressFooter>
           {details.addressIndex && (
             <React.Fragment>
-              <EditButton itemId={details.addressIndex} isMCA={isClubcard} />
+              <EditButton
+                itemId={details.addressIndex}
+                isMCA={isClubcard}
+                data-tracking={tracking}
+              />
               <FooterLabel>{additionalText}</FooterLabel>
             </React.Fragment>
           )}

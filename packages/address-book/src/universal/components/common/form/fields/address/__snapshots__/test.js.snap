@@ -152,6 +152,7 @@ exports[`[Component: Address] [State: Default] should render correctly 1`] = `
     <button
       aria-disabled="false"
       class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+      data-tracking="enter manual address"
       role="button"
       type="button"
     >
@@ -216,6 +217,7 @@ exports[`[Component: Address] [State: Initial Values] should render correctly 1`
     <button
       aria-disabled="false"
       class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+      data-tracking="enter manual address"
       role="button"
       type="button"
     >
@@ -280,6 +282,7 @@ exports[`[Component: Address] [State: Initial Values] should render correctly 2`
     <button
       aria-disabled="false"
       class="styled__BaseButton-sc-3mnirm-0 manual-link styled__LinkButton-sc-3mnirm-13 gyNqJj"
+      data-tracking="enter manual address"
       role="button"
       type="button"
     >

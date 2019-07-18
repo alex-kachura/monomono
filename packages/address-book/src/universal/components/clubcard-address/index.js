@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 import Form from '../common/form';
 import { connectPage, useAppConfig } from '@oneaccount/react-foundations';
+import { trackEvent, Analytics, errorsToPayload, PAYLOAD_TYPES } from '../../../utils/analytics';
 
 const ClubcardAddressPage = ({
   history,
@@ -20,14 +21,24 @@ const ClubcardAddressPage = ({
   const { getLocalePhrase, rootPath } = useAppConfig();
 
   const handleSubmit = useCallback(() => {
+    trackEvent(Analytics.EditClubcardAddress.DirectCallRules.SUCCESS);
     history.replace(`${rootPath}?action=clubcard-updated`);
   }, []);
 
-  const handleErrors = useCallback(() => {
-    /**
-     * Do analytics stuff
-     */
-  }, []);
+  const handleErrors = useCallback(
+    (errors) => {
+      trackEvent(
+        Analytics.EditClubcardAddress.DirectCallRules.VALIDATION_ERRORS,
+        PAYLOAD_TYPES.VALIDATION_ERRORS,
+        errorsToPayload(errors, fields),
+      );
+    },
+    [fields],
+  );
+
+  const handleFailure = useCallback(() => {
+    trackEvent(Analytics.EditClubcardAddress.DirectCallRules.FAILURE);
+  });
 
   return (
     <DocumentTitle title={getLocalePhrase('pages.clubcard-address.edit.title')}>
@@ -42,6 +53,7 @@ const ClubcardAddressPage = ({
         submitText={getLocalePhrase('pages.clubcard-address.edit.submit-button')}
         onSubmit={handleSubmit}
         onErrors={handleErrors}
+        onFailure={handleFailure}
       />
     </DocumentTitle>
   );

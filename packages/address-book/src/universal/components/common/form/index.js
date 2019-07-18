@@ -9,9 +9,10 @@ import PageTitleStyled from '../page-title';
 import { Formik, useAppConfig } from '@oneaccount/react-foundations';
 import { connect } from 'formik';
 import { useForm, useFields } from './helpers';
+import { Analytics } from './analytics';
 import { ButtonStyled } from './styled';
 
-const Form = memo(({ fields, native, onError, formik, submitText = 'Submit' }) => {
+const Form = memo(({ fields, native, onError, formik, onErrors, submitText = 'Submit' }) => {
   const { formRef, handleSubmit, handleNativeSubmit, isSubmitting, errors } = formik;
   const { getLocalePhrase, csrf } = useAppConfig();
   const { addressFields, augmentedFields } = useFields(fields, errors, onError);
@@ -53,6 +54,7 @@ const Form = memo(({ fields, native, onError, formik, submitText = 'Submit' }) =
       method="POST"
       onSubmit={native ? handleNativeSubmit : handleSubmit}
     >
+      <Analytics onErrors={onErrors} />
       {content}
       <input type="hidden" name="_csrf" value={csrf} />
       <ButtonStyled disabled={isSubmitting} type="submit">
@@ -72,10 +74,17 @@ function FormWrapper({
   schema,
   url,
   onSubmit,
+  onFailure,
   onErrors,
   ...rest
 }) {
-  const { handleSubmit, banner, handleError } = useForm(url, onSubmit, initialBanner);
+  const { handleSubmit, banner, handleError } = useForm({
+    url,
+    onSubmit,
+    onFailure,
+    onErrors,
+    initialBanner,
+  });
 
   return (
     <React.Fragment>
@@ -87,9 +96,8 @@ function FormWrapper({
           initialErrors={initialErrors}
           validationJSONSchema={schema}
           onSubmit={handleSubmit}
-          onErrors={onErrors}
         >
-          <ConnectedForm onError={handleError} {...rest} />
+          <ConnectedForm onError={handleError} onErrors={onErrors} {...rest} />
         </Formik>
       </Panel>
     </React.Fragment>
@@ -106,6 +114,7 @@ Form.propTypes = {
   formik: PropTypes.object,
   onError: PropTypes.func,
   native: PropTypes.bool,
+  onErrors: PropTypes.func.isRequired,
   submitText: PropTypes.string,
 };
 
@@ -117,7 +126,8 @@ FormWrapper.propTypes = {
   schema: PropTypes.object.isRequired,
   url: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
-  onErrors: PropTypes.func,
+  onFailure: PropTypes.func.isRequired,
+  onErrors: PropTypes.func.isRequired,
 };
 
 export default memo(FormWrapper);

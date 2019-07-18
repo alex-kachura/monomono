@@ -112,7 +112,21 @@ describe('[Route: /add-delivery-address]', () => {
             body,
             errorPayload: {
               errors: {
-                'address-line1': 'address.fields.address-line1.error',
+                'address-line1': [
+                  {
+                    error: {
+                      code: 'Invalid address.',
+                      name: 'AddressServiceError',
+                      violations: [
+                        {
+                          lineNumber: 1,
+                        },
+                      ],
+                    },
+                    keyword: 'required',
+                    type: 'server',
+                  },
+                ],
               },
             },
             errorCode: 'INVALID_ADDRESS',
@@ -130,7 +144,16 @@ describe('[Route: /add-delivery-address]', () => {
             body,
             errorPayload: {
               errors: {
-                postcode: 'address.fields.postcode.error',
+                postcode: [
+                  {
+                    error: {
+                      code: 'Postcode not found.',
+                      name: 'AddressServiceError',
+                    },
+                    keyword: 'not-found',
+                    type: 'server',
+                  },
+                ],
               },
             },
             outcome: 'validation-errors',
@@ -194,12 +217,84 @@ describe('[Route: /add-delivery-address]', () => {
             },
             errorPayload: {
               errors: {
-                'address-label': 'pages.delivery-address.fields.address-nickname.error',
-                'address-line1': 'address.fields.address-line1.error',
-                day: 'pages.delivery-address.fields.day-number.error',
-                evening: 'pages.delivery-address.fields.evening-number.error',
-                postcode: 'address.fields.postcode.error',
-                town: 'address.fields.town.error',
+                postcode: [
+                  {
+                    type: 'ajv',
+                    keyword: 'required',
+                    error: {
+                      keyword: 'required',
+                      dataPath: '',
+                      schemaPath: '#/required',
+                      params: { missingProperty: 'postcode' },
+                      message: "should have required property 'postcode'",
+                    },
+                  },
+                ],
+                'address-line1': [
+                  {
+                    type: 'ajv',
+                    keyword: 'required',
+                    error: {
+                      keyword: 'required',
+                      dataPath: '',
+                      schemaPath: '#/required',
+                      params: { missingProperty: 'address-line1' },
+                      message: "should have required property 'address-line1'",
+                    },
+                  },
+                ],
+                town: [
+                  {
+                    type: 'ajv',
+                    keyword: 'required',
+                    error: {
+                      keyword: 'required',
+                      dataPath: '',
+                      schemaPath: '#/required',
+                      params: { missingProperty: 'town' },
+                      message: "should have required property 'town'",
+                    },
+                  },
+                ],
+                day: [
+                  {
+                    type: 'ajv',
+                    keyword: 'required',
+                    error: {
+                      keyword: 'required',
+                      dataPath: '',
+                      schemaPath: '#/required',
+                      params: { missingProperty: 'day' },
+                      message: "should have required property 'day'",
+                    },
+                  },
+                ],
+                evening: [
+                  {
+                    type: 'ajv',
+                    keyword: 'required',
+                    error: {
+                      keyword: 'required',
+                      dataPath: '',
+                      schemaPath: '#/required',
+                      params: { missingProperty: 'evening' },
+                      message: "should have required property 'evening'",
+                    },
+                  },
+                ],
+                'address-label': [
+                  {
+                    type: 'ajv',
+                    keyword: 'required',
+                    error: {
+                      keyword: 'required',
+                      dataPath: '',
+                      schemaPath: '#/required',
+                      params: { missingProperty: 'address-label' },
+                      message: "should have required property 'address-label'",
+                    },
+                  },
+                ],
               },
             },
             outcome: 'validation-errors',

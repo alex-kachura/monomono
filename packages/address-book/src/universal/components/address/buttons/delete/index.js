@@ -16,12 +16,9 @@ export default function DeleteButton({ itemId, label, firstLine }) {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const deleteUrl = `${rootPath}/`;
 
-  const didToggleShowConfirmation = useCallback(
-    () => {
-      setShowConfirmation(!showConfirmation);
-    },
-    [showConfirmation],
-  );
+  const didToggleShowConfirmation = useCallback(() => {
+    setShowConfirmation(!showConfirmation);
+  }, [showConfirmation]);
 
   function handleFormSubmit(e) {
     e.stopPropagation();
@@ -57,8 +54,8 @@ export default function DeleteButton({ itemId, label, firstLine }) {
           {getLocalePhrase('pages.landing.delete.confirmation-message')}
         </WrapTextSubHeading>
         <Content>
-          <BoldWrapBodyText className='nickname'>{label}</BoldWrapBodyText>
-          <EllipsisBodyText className='address-line-0'>{firstLine}</EllipsisBodyText>
+          <BoldWrapBodyText className="nickname">{label}</BoldWrapBodyText>
+          <EllipsisBodyText className="address-line-0">{firstLine}</EllipsisBodyText>
         </Content>
         <form action={deleteUrl} method="POST">
           <input type="hidden" name="contact-address-id" value={itemId} />

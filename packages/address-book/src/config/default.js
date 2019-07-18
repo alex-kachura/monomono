@@ -113,7 +113,7 @@ module.exports = {
     frameSrc: ['*.amazonaws.com'],
   },
   thirdParties: {
-    active: false,
+    active: true,
     dataLayer: {
       /* eslint-disable camelcase */
       cont_grp: 'address-book',

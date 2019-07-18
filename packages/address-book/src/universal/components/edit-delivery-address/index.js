@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 import Form from '../common/form';
 import { connectPage, useAppConfig } from '@oneaccount/react-foundations';
+import { trackEvent, Analytics, errorsToPayload, PAYLOAD_TYPES } from '../../../utils/analytics';
 
 const EditDeliveryAddressPage = ({
   history,
@@ -18,16 +19,26 @@ const EditDeliveryAddressPage = ({
   },
 }) => {
   const { getLocalePhrase, rootPath } = useAppConfig();
+  const handleSubmit = useCallback(() => {
+    trackEvent(Analytics.EditDeliveryAddress.DirectCallRules.SUCCESS);
+    history.replace(`${rootPath}?action=updated`);
 
-  const handleSubmit = useCallback(({ bannerAction }) => {
-    history.replace(`${rootPath}?action=${bannerAction}`);
   }, []);
 
-  const handleErrors = useCallback(() => {
-    /**
-     * Do analytics stuff
-     */
-  }, []);
+  const handleErrors = useCallback(
+    (errors) => {
+      trackEvent(
+        Analytics.EditDeliveryAddress.DirectCallRules.VALIDATION_ERRORS,
+        PAYLOAD_TYPES.VALIDATION_ERRORS,
+        errorsToPayload(errors, fields),
+      );
+    },
+    [fields],
+  );
+
+  const handleFailure = useCallback(() => {
+    trackEvent(Analytics.EditDeliveryAddress.DirectCallRules.FAILURE);
+  });
 
   return (
     <DocumentTitle title={getLocalePhrase('pages.delivery-address.edit.title')}>
@@ -42,6 +53,7 @@ const EditDeliveryAddressPage = ({
         submitText={getLocalePhrase('pages.delivery-address.edit.submit-button')}
         onSubmit={handleSubmit}
         onErrors={handleErrors}
+        onFailure={handleFailure}
       />
     </DocumentTitle>
   );

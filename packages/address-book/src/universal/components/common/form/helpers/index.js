@@ -2,7 +2,7 @@ import { useState, useCallback, useMemo } from 'react';
 import ReactDOM from 'react-dom';
 import { useAppConfig } from '@oneaccount/react-foundations';
 
-export function useForm(url, onSubmit, initialBanner = {}) {
+export function useForm({ url, onSubmit, onFailure, initialBanner = {} }) {
   const { fetch, getLocalePhrase } = useAppConfig();
 
   const [banner, setBanner] = useState(() => ({
@@ -35,8 +35,10 @@ export function useForm(url, onSubmit, initialBanner = {}) {
 
       setSubmitting(false);
 
-      if (payloadBanner.type !== 'error' && !hasErrors) {
-        onSubmit(payload);
+      if (payloadBanner.type === 'error') {
+        onFailure(payloadBanner);
+      } else if (!hasErrors) {
+        onSubmit();
       }
     });
   }, []);

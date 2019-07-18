@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AddAddressLink, LinkSubHeading, AddLinkInner } from './styled';
 import { Link } from 'react-router-dom';
+import { Analytics } from '../../../../../utils/analytics';
 
 function AddBtnAltLink({ children, href }) {
   return (
-    <Link to={href}>
+    <Link data-tracking={Analytics.Landing.Events.ADD_DELIVERY_ADDRESS} to={href}>
       <AddLinkInner>{children}</AddLinkInner>
     </Link>
   );

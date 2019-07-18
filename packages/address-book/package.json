@@ -53,7 +53,7 @@
     "@beans/typography": "^14.15.0",
     "@oneaccount/auth-utils": "0.1.0",
     "@oneaccount/node-logger-whitelists": "^1.4.2",
-    "@oneaccount/react-foundations": "^0.22.0",
+    "@oneaccount/react-foundations": "^0.24.0",
     "@web-foundations/express-identity-validate": "^1.0.0",
     "@web-foundations/express-locale-middleware": "^1.0.4",
     "@web-foundations/express-traceid": "^0.2.0",

@@ -90,6 +90,8 @@ function renderForm() {
               initialValues={{}}
               url={'/url'}
               onSubmit={jest.fn()}
+              onFailure={jest.fn()}
+              onErrors={jest.fn()}
               title={'pages.delivery-address.title'}
               fields={fields}
               csrf="super-secure-token"

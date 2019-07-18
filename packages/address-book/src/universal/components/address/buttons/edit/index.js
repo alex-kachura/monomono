@@ -4,8 +4,13 @@ import PropTypes from 'prop-types';
 import Link from '@beans/link';
 import { useAppConfig } from '@oneaccount/react-foundations';
 import AltLink from '../../../common/alt-link';
+import { Analytics } from '../../../../../utils/analytics';
 
-export default function EditButton({ itemId, isMCA }) {
+export default function EditButton({
+  itemId,
+  isMCA,
+  'data-tracking': dataTracking = Analytics.Landing.Events.EDIT_DELIVERY_ADDRESS,
+}) {
   const { rootPath, getLocalePhrase } = useAppConfig();
 
   const editLink = isMCA
@@ -21,6 +26,7 @@ export default function EditButton({ itemId, isMCA }) {
       variant="standalone"
       href={editLink}
       altLink={AltLink}
+      data-tracking={dataTracking}
     >
       {getLocalePhrase('pages.landing.edit-btn')}
     </Link>
@@ -28,6 +34,7 @@ export default function EditButton({ itemId, isMCA }) {
 }
 
 EditButton.propTypes = {
+  'data-tracking': PropTypes.string,
   itemId: PropTypes.string.isRequired,
   isMCA: PropTypes.bool,
 };

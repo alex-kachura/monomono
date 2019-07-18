@@ -7,30 +7,9 @@ import Button from '@beans/button';
 import Text from '../text';
 import Postcode from './postcode';
 import { useAddress } from './helpers';
-import { useAppConfig, LocalePhrase } from '@oneaccount/react-foundations';
+import { useAppConfig } from '@oneaccount/react-foundations';
 import { GlobalStyle } from './styled';
-
-function AddressDropdown({ addresses, className, handleSelect, handleAddressManually }) {
-  const { getLocalePhrase } = useAppConfig();
-
-  return (
-    <React.Fragment>
-      {addresses && (
-        <Dropdown className={className} onChange={handleSelect}>
-          <option value={-1}>{getLocalePhrase('address.select-address')}</option>
-          {addresses.map(({ id, addressLines }) => (
-            <option key={id} value={id}>
-              {addressLines.map(({ value }) => value).join(', ')}
-            </option>
-          ))}
-        </Dropdown>
-      )}
-      <Button onClick={handleAddressManually} variant="link">
-        <LocalePhrase id={'address.address-manually'} />
-      </Button>
-    </React.Fragment>
-  );
-}
+import { Analytics } from '../../../../../../utils/analytics';
 
 function Address({ formik, fields, onError }) {
   const [isMounted, setMounted] = useState(false);
@@ -99,6 +78,7 @@ function Address({ formik, fields, onError }) {
           className={'manual-link'}
           onClick={handleAddressManually}
           variant="link"
+          data-tracking={Analytics.Address.Events.MANUAL_ADDRESS}
         >
           {getLocalePhrase('address.address-manually')}
         </Button>,
@@ -134,13 +114,6 @@ Address.propTypes = {
     }),
   ).isRequired,
   onError: PropTypes.func,
-};
-
-AddressDropdown.propTypes = {
-  addresses: PropTypes.array,
-  className: PropTypes.string,
-  handleSelect: PropTypes.func.isRequired,
-  handleAddressManually: PropTypes.func.isRequired,
 };
 
 export default connect(memo(Address));

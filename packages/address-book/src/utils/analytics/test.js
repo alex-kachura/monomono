@@ -1,5 +1,5 @@
 import {
-  getAnalyticsPayload,
+  errorsToPayload,
   clearAnalyticsPayload,
   trackEvent,
   updateDataLayer,
@@ -7,76 +7,15 @@ import {
 } from './';
 
 describe('Analytics utilities', () => {
-  describe('#getAnalyticsPayload', () => {
+  describe('#errorsToPayload', () => {
     // field IDs mapped to how analytics would want the properties named
     // when sent to them
-    const fieldMapping = {
-      'empty-field': 'emptyField',
-      'invalid-field': 'invalidField',
-      'no-match-field': 'noMatchField',
-    };
-
-    const emptyField = [
-      {
-        name: 'emptyField',
-        id: 'empty-field',
-        hasBlurred: false,
-        isValid: false,
-        value: '',
-        constraints: [
-          {
-            type: 'mandatory',
-            text: 'Please enter your current password',
-            validator: true,
-            isValid: false,
-          },
-          {
-            type: 'regex',
-            text: 'Please ensure this matches field whatever',
-            validator: true,
-            isValid: false,
-          },
-        ],
-      },
-    ];
-
-    const invalidField = [
-      {
-        name: 'invalidField',
-        id: 'invalid-field',
-        hasBlurred: false,
-        isValid: false,
-        value: 'NO LOWERCASE LETTERS',
-        constraints: [
-          {
-            type: 'mandatory',
-            text: 'Please enter a value',
-            validator: true,
-            isValid: true,
-          },
-          {
-            type: 'regex',
-            text: '1 x lowercase letter',
-            validationRegex: '[a-z]+',
-            isValid: false,
-          },
-        ],
-      },
-    ];
 
     it('should return the correct payload for an empty', () => {
-      const payload = getAnalyticsPayload(emptyField, fieldMapping);
+      const payload = errorsToPayload({ name: [{ keyword: 'required' }] });
 
       expect(payload).toEqual({
-        'empty-field': 'empty',
-      });
-    });
-
-    it('should return the correct payload for an invalid field', () => {
-      const payload = getAnalyticsPayload(invalidField, fieldMapping);
-
-      expect(payload).toEqual({
-        'invalid-field': 'invalid',
+        name: 'empty',
       });
     });
   });

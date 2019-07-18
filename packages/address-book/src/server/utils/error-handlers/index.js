@@ -31,7 +31,17 @@ export function handleAddressServiceError({ name, action, error, payload = {}, r
   switch (error.message) {
     case AddressServiceError.Codes.INVALID_ADDRESS:
       error.violations.forEach(({ lineNumber }) => {
-        errors[`address-line${lineNumber}`] = `address.fields.address-line${lineNumber}.error`;
+        errors[`address-line${lineNumber}`] = [
+          {
+            type: 'server',
+            keyword: 'required',
+            error: {
+              name: 'AddressServiceError',
+              code: AddressServiceError.Codes.INVALID_ADDRESS,
+              violations: error.violations,
+            },
+          },
+        ];
         log.warn(
           `address-service:${action}:INVALID_ADDRESS - Invalid address line ${lineNumber} entered`,
           error,
@@ -41,7 +51,16 @@ export function handleAddressServiceError({ name, action, error, payload = {}, r
       outcome = 'validation-errors';
       break;
     case AddressServiceError.Codes.POSTCODE_NOT_FOUND:
-      errors.postcode = 'address.fields.postcode.error';
+      errors.postcode = [
+        {
+          type: 'server',
+          keyword: 'not-found',
+          error: {
+            name: 'AddressServiceError',
+            code: AddressServiceError.Codes.POSTCODE_NOT_FOUND,
+          },
+        },
+      ];
       log.warn(`address-service:${action}:POSTCODE_NOT_FOUND - Post code not found`, error, req);
       outcome = 'validation-errors';
       break;
@@ -88,7 +107,16 @@ export function handleContactServiceError({ name, action, error, payload = {}, r
 
     outcome = 'validation-errors';
     errors = error.violations.reduce((result, phoneError) => {
-      result[phoneError[0]] = NumberTypeErrors[phoneError[0]];
+      result[phoneError[0]] = [
+        {
+          type: 'server',
+          keyword: 'pattern',
+          error: {
+            name: 'ContactServiceError',
+            code: ErrorCodes.PHONE_NUMBERS_NOT_VALID,
+          },
+        },
+      ];
 
       return result;
     }, {});

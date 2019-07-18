@@ -129,10 +129,12 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               class="edit-address-link-clubcard styled__StandaloneContainer-sc-1xizymv-2 TEXwR"
             >
               <a
+                data-tracking="edit clubcard address:addressbook"
                 href="/mock/math/edit-clubcard-address?id=NGC_0"
               >
                 <span
                   class="styled__StandaloneSpan-sc-1xizymv-1 kqERAn"
+                  data-tracking="edit clubcard address:addressbook"
                 >
                   <span
                     class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
@@ -232,10 +234,12 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               class="edit-address-link-grocery styled__StandaloneContainer-sc-1xizymv-2 TEXwR"
             >
               <a
+                data-tracking="edit default grocery shopping address:addressbook"
                 href="/mock/math/edit-delivery-address?id=GHS_11225523"
               >
                 <span
                   class="styled__StandaloneSpan-sc-1xizymv-1 kqERAn"
+                  data-tracking="edit default grocery shopping address:addressbook"
                 >
                   <span
                     class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
@@ -281,6 +285,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
             class="sc-hSdWYo csQtmC styled__IconButtonContainerWithText-sc-1r4nugl-2 eDfFjL"
           >
             <a
+              data-tracking="add delivery address:addressbook"
               href="/mock/math/add-delivery-address"
             >
               <div
@@ -386,10 +391,12 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               class="edit-address-link-grocery styled__StandaloneContainer-sc-1xizymv-2 TEXwR"
             >
               <a
+                data-tracking="edit delivery address:addressbook"
                 href="/mock/math/edit-delivery-address?id=GHS_11214795"
               >
                 <span
                   class="styled__StandaloneSpan-sc-1xizymv-1 kqERAn"
+                  data-tracking="edit delivery address:addressbook"
                 >
                   <span
                     class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"

@@ -16,6 +16,7 @@ const Tel = memo(
     hidden,
     required,
     name,
+    errorMessage,
     value,
     error,
     onChange,
@@ -23,7 +24,7 @@ const Tel = memo(
     autoFocus,
   }) => {
     const { getLocalePhrase } = useAppConfig();
-    const localeError = error ? getLocalePhrase(error) : undefined;
+    const localeError = error ? getLocalePhrase(errorMessage) : undefined;
 
     return (
       <FormGroupStyled
@@ -70,7 +71,8 @@ Tel.propTypes = {
   hidden: PropTypes.bool,
   name: PropTypes.string.isRequired,
   value: PropTypes.any,
-  error: PropTypes.string,
+  error: PropTypes.any,
+  errorMessage: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,

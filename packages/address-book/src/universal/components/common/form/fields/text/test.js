@@ -10,6 +10,7 @@ const props = {
   name: 'test',
   label: 'Test',
   placeholder: 'Test',
+  errorMessage: 'Error on field',
   required: true,
 };
 

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import DocumentTitle from 'react-document-title';
 import Form from '../common/form';
 import { connectPage, useAppConfig } from '@oneaccount/react-foundations';
+import { trackEvent, Analytics, errorsToPayload, PAYLOAD_TYPES } from '../../../utils/analytics';
 
 const AddDeliveryAddressPage = ({
   initialData: {
@@ -21,13 +22,23 @@ const AddDeliveryAddressPage = ({
 
   const handleSubmit = useCallback(() => {
     history.replace(`${rootPath}?action=added`);
+    trackEvent(Analytics.AddDeliveryAddress.DirectCallRules.SUCCESS);
   }, []);
 
-  const handleErrors = useCallback(() => {
-    /**
-     * Do analytics stuff
-     */
-  }, []);
+  const handleErrors = useCallback(
+    (errors) => {
+      trackEvent(
+        Analytics.AddDeliveryAddress.DirectCallRules.VALIDATION_ERRORS,
+        PAYLOAD_TYPES.VALIDATION_ERRORS,
+        errorsToPayload(errors, fields),
+      );
+    },
+    [fields],
+  );
+
+  const handleFailure = useCallback(() => {
+    trackEvent(Analytics.AddDeliveryAddress.DirectCallRules.FAILURE);
+  });
 
   return (
     <DocumentTitle title={getLocalePhrase('pages.delivery-address.add.title')}>
@@ -41,6 +52,7 @@ const AddDeliveryAddressPage = ({
         fields={fields}
         submitText={getLocalePhrase('pages.delivery-address.add.submit-button')}
         onSubmit={handleSubmit}
+        onFailure={handleFailure}
         onErrors={handleErrors}
       />
     </DocumentTitle>
