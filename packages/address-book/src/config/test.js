@@ -1,5 +1,1 @@
-module.exports = {
-  baseHost: {
-    gb: 'http://address-book',
-  },
-};
+module.exports = require('./default');
