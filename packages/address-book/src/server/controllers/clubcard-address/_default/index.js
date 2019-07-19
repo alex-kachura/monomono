@@ -83,18 +83,20 @@ export async function updateAddress({ data, addressIndex, accessToken, context, 
   }
 
   await Promise.all(
-    modifiedPhoneNumbers.map(({ telephoneNumberIndex, value }) =>
-      contactService.updatePhoneNumber(
-        telephoneNumberIndex,
-        {
-          value,
-        },
-        {
-          tracer,
-          context,
-        },
+    modifiedPhoneNumbers
+      .filter(({ telephoneNumberIndex }) => Boolean(telephoneNumberIndex))
+      .map(({ telephoneNumberIndex, value }) =>
+        contactService.updatePhoneNumber(
+          telephoneNumberIndex,
+          {
+            value,
+          },
+          {
+            tracer,
+            context,
+          },
+        ),
       ),
-    ),
   );
 
   if (addressUuid !== addressId) {
