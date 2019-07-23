@@ -16,28 +16,36 @@ const EditDeliveryAddressPage = ({
     fields,
     errors: initialErrors,
     schema,
+    tags,
   },
 }) => {
   const { getLocalePhrase, rootPath } = useAppConfig();
   const handleSubmit = useCallback(() => {
-    trackEvent(Analytics.EditDeliveryAddress.DirectCallRules.SUCCESS);
-    history.replace(`${rootPath}?action=updated`);
+    const eventName = tags.includes('primaryDelivery')
+      ? Analytics.EditGroceryAddress.DirectCallRules.SUCCESS
+      : Analytics.EditDeliveryAddress.DirectCallRules.SUCCESS;
 
+    trackEvent(eventName);
+    history.replace(`${rootPath}?action=updated`);
   }, []);
 
   const handleErrors = useCallback(
     (errors) => {
-      trackEvent(
-        Analytics.EditDeliveryAddress.DirectCallRules.VALIDATION_ERRORS,
-        PAYLOAD_TYPES.VALIDATION_ERRORS,
-        errorsToPayload(errors, fields),
-      );
+      const eventName = tags.includes('primaryDelivery')
+        ? Analytics.EditGroceryAddress.DirectCallRules.VALIDATION_ERRORS
+        : Analytics.EditDeliveryAddress.DirectCallRules.VALIDATION_ERRORS;
+
+      trackEvent(eventName, PAYLOAD_TYPES.VALIDATION_ERRORS, errorsToPayload(errors, fields));
     },
     [fields],
   );
 
   const handleFailure = useCallback(() => {
-    trackEvent(Analytics.EditDeliveryAddress.DirectCallRules.FAILURE);
+    const eventName = tags.includes('primaryDelivery')
+      ? Analytics.EditGroceryAddress.DirectCallRules.FAILURE
+      : Analytics.EditDeliveryAddress.DirectCallRules.FAILURE;
+
+    trackEvent(eventName);
   });
 
   return (
@@ -69,6 +77,7 @@ EditDeliveryAddressPage.propTypes = {
     values: PropTypes.object,
     errors: PropTypes.object,
     schema: PropTypes.object,
+    tags: PropTypes.array,
   }),
 };
 

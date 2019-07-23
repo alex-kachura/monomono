@@ -57,8 +57,10 @@ export const useAddress = (formik, fields, onError) => {
   });
 
   useEffect(() => {
-    setAddresses(data);
-    trackEvent(Analytics.Address.DirectCallRules.ADDRESS_LOOKUP_SUCCESS);
+    if (data) {
+      setAddresses(data);
+      trackEvent(Analytics.Address.DirectCallRules.ADDRESS_LOOKUP_SUCCESS);
+    }
   }, [data]);
 
   useEffect(() => {
@@ -74,7 +76,9 @@ export const useAddress = (formik, fields, onError) => {
       onError(error);
     }
 
-    trackEvent(Analytics.Address.DirectCallRules.ADDRESS_LOOKUP_FAILURE);
+    if (error) {
+      trackEvent(Analytics.Address.DirectCallRules.ADDRESS_LOOKUP_FAILURE);
+    }
   }, [error]);
 
   return {

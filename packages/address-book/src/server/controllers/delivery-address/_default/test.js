@@ -77,6 +77,7 @@ const defaultData = {
   postcode: 'EC1R 5AR',
   town: 'mock-town',
   'address-label': 'home',
+  tags: ['delivery'],
 };
 
 getSingleAddress.mockResolvedValue(contactAddress);

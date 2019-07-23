@@ -10,6 +10,7 @@ import {
   WrapTextSubHeading,
   BoldWrapBodyText,
 } from './styled';
+import { Analytics } from '../../../../../utils/analytics';
 
 export default function DeleteButton({ itemId, label, firstLine }) {
   const { rootPath, getLocalePhrase, csrf } = useAppConfig();
@@ -59,7 +60,12 @@ export default function DeleteButton({ itemId, label, firstLine }) {
         </Content>
         <form action={deleteUrl} method="POST">
           <input type="hidden" name="contact-address-id" value={itemId} />
-          <ButtonStyled className="delete-address-confirm" variant="primary" type="submit">
+          <ButtonStyled
+            data-tracking={Analytics.Landing.Events.DELETE_DELIVERY_ADDRESS}
+            className="delete-address-confirm"
+            variant="primary"
+            type="submit"
+          >
             {getLocalePhrase('pages.landing.delete.confirm')}
           </ButtonStyled>
           <input type="hidden" name="_csrf" value={csrf} />

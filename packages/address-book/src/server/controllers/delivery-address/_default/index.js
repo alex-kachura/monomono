@@ -30,6 +30,7 @@ export async function getAddress({ accessToken, addressId, context, tracer }) {
   });
 
   return {
+    tags,
     'address-label': label,
     ...mapAddressToFormValues(address),
     ...mapPhoneNumbersToFormValues(telephoneNumbers),

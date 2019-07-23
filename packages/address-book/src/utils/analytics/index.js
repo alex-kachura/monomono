@@ -2,9 +2,15 @@
 
 export const PAYLOAD_TYPES = {
   VALIDATION_ERRORS: 'validation_errors',
+  PAGE_NAME: 'page_name',
 };
 
 export const Analytics = {
+  Location: {
+    DirectCallRules: {
+      LOCATION_CHANGE: 'addressbook_location_change',
+    },
+  },
   Address: {
     Events: {
       MANUAL_ADDRESS: 'enter manual address',
@@ -44,7 +50,7 @@ export const Analytics = {
   EditDeliveryAddress: {
     Events: {},
     DirectCallRules: {
-      SUCCESS: 'addressbook_changed-default_success',
+      SUCCESS: 'addressbook_changed-alternate_success',
       VALIDATION_ERRORS: 'addressbook_changed-alternate_validation_errors',
       FAILURE: 'addressbook_changed-alternate_failure',
     },

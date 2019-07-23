@@ -50,7 +50,7 @@ export async function getEditDeliveryAddressPage(req, res, next) {
   const { fields, schema } = config[req.region].pages['delivery-address'];
   const { accessToken } = req.getClaims();
   const deliveryAddressController = controllerFactory('deliveryAddress.default', req.region);
-  let address = {};
+  let result = {};
   const action = 'get-address';
   const name = 'delivery-address:edit:get';
   const outcome = 'successful';
@@ -67,7 +67,7 @@ export async function getEditDeliveryAddressPage(req, res, next) {
   }
 
   try {
-    address = await deliveryAddressController.getAddress({
+    result = await deliveryAddressController.getAddress({
       accessToken,
       addressId: id,
       tracer: req.sessionId,
@@ -83,12 +83,15 @@ export async function getEditDeliveryAddressPage(req, res, next) {
     return handleError({ name, action, error, req, res, next });
   }
 
+  const { tags, ...address } = result;
+
   const payload = {
     breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
     banner: {},
     values: {
       ...address,
     },
+    tags,
     errors: {},
     fields,
     schema,

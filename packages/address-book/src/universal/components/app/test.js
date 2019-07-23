@@ -11,6 +11,9 @@ describe('App component', () => {
     const mockRoute = {
       routes: [],
     };
+    const mockLocation = {
+      pathname: '/address-book',
+    };
 
     const { asFragment } = render(
       <BrowserRouter>
@@ -58,7 +61,7 @@ describe('App component', () => {
           }}
         >
           <DefaultThemeProvider>
-            <App route={mockRoute} />
+            <App route={mockRoute} location={mockLocation} />
           </DefaultThemeProvider>
         </AppProvider>
       </BrowserRouter>,

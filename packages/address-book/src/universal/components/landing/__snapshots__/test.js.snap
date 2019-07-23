@@ -475,6 +475,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
                 <button
                   aria-disabled="false"
                   class="styled__BaseButton-sc-3mnirm-0 delete-address-confirm sc-jzJRlG cyAuDu styled__PrimaryButton-sc-3mnirm-2 giYBMC"
+                  data-tracking="delete delivery address:addressbook"
                   role="button"
                   type="submit"
                 >
