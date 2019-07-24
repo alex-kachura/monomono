@@ -45,11 +45,14 @@ const EditDeliveryAddressPage = ({
       ? Analytics.EditGroceryAddress.DirectCallRules.FAILURE
       : Analytics.EditDeliveryAddress.DirectCallRules.FAILURE;
 
-    trackEvent(eventName);
+    trackEvent(eventName, PAYLOAD_TYPES.VALIDATION_ERRORS, {
+      errors: 'server error',
+    });
   });
 
   return (
-    <DocumentTitle title={getLocalePhrase('pages.delivery-address.edit.title')}>
+    <React.Fragment>
+      <DocumentTitle title={getLocalePhrase('pages.delivery-address.edit.title')} />
       <Form
         url={`${location.pathname}${location.search}`}
         title={getLocalePhrase('pages.delivery-address.edit.title')}
@@ -63,7 +66,7 @@ const EditDeliveryAddressPage = ({
         onErrors={handleErrors}
         onFailure={handleFailure}
       />
-    </DocumentTitle>
+    </React.Fragment>
   );
 };
 

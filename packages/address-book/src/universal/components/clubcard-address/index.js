@@ -37,11 +37,18 @@ const ClubcardAddressPage = ({
   );
 
   const handleFailure = useCallback(() => {
-    trackEvent(Analytics.EditClubcardAddress.DirectCallRules.FAILURE);
+    trackEvent(
+      Analytics.EditClubcardAddress.DirectCallRules.FAILURE,
+      PAYLOAD_TYPES.VALIDATION_ERRORS,
+      {
+        errors: 'server error',
+      },
+    );
   });
 
   return (
-    <DocumentTitle title={getLocalePhrase('pages.clubcard-address.edit.title')}>
+    <React.Fragment>
+      <DocumentTitle title={getLocalePhrase('pages.clubcard-address.edit.title')} />
       <Form
         url={`${location.pathname}${location.search}`}
         title={getLocalePhrase('pages.clubcard-address.edit.title')}
@@ -55,7 +62,7 @@ const ClubcardAddressPage = ({
         onErrors={handleErrors}
         onFailure={handleFailure}
       />
-    </DocumentTitle>
+    </React.Fragment>
   );
 };
 

@@ -37,11 +37,18 @@ const AddDeliveryAddressPage = ({
   );
 
   const handleFailure = useCallback(() => {
-    trackEvent(Analytics.AddDeliveryAddress.DirectCallRules.FAILURE);
+    trackEvent(
+      Analytics.AddDeliveryAddress.DirectCallRules.FAILURE,
+      PAYLOAD_TYPES.VALIDATION_ERRORS,
+      {
+        errors: 'server error',
+      },
+    );
   });
 
   return (
-    <DocumentTitle title={getLocalePhrase('pages.delivery-address.add.title')}>
+    <React.Fragment>
+      <DocumentTitle title={getLocalePhrase('pages.delivery-address.add.title')} />
       <Form
         url={`${location.pathname}${location.search}`}
         title={getLocalePhrase('pages.delivery-address.add.title')}
@@ -55,7 +62,7 @@ const AddDeliveryAddressPage = ({
         onFailure={handleFailure}
         onErrors={handleErrors}
       />
-    </DocumentTitle>
+    </React.Fragment>
   );
 };
 
