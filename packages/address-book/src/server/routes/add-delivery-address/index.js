@@ -13,15 +13,15 @@ import {
   handleError,
 } from '../../utils/error-handlers';
 
-export function getBreadcrumb(lang, getLocalePhrase) {
+export function getBreadcrumb(req, getLocalePhrase) {
   return [
     {
       text: getLocalePhrase('pages.account.title'),
-      href: `/${config.basePath}/${lang}/manage`,
+      href: config[req.region].externalApps.myAccount,
     },
     {
       text: getLocalePhrase('pages.landing.title'),
-      href: `/${config.basePath}/${config.appPath}/${lang}`,
+      href: `/${config.basePath}/${config.appPath}/${req.lang}`,
       useAltLink: true,
     },
     {
@@ -42,7 +42,7 @@ export function getAddDeliveryAddressPage(req, res, next) {
   const { fields, schema } = config[req.region].pages['delivery-address'];
 
   const payload = {
-    breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
+    breadcrumb: getBreadcrumb(req, getLocalePhrase),
     banner: {},
     values: {
       postcode: '',
@@ -86,7 +86,7 @@ export async function postAddDeliveryAddressPage(req, res, next) {
   const name = 'delivery-address:add:post';
 
   const payload = {
-    breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
+    breadcrumb: getBreadcrumb(req, getLocalePhrase),
     banner: {},
     values: data,
     errors: {},

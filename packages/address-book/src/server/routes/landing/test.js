@@ -1,9 +1,65 @@
 import { getAddresses } from '../../controllers/address';
 import { logOutcome } from '../../logger';
-import { getLandingPage } from '.';
+import { getLandingPage, getBreadcrumb } from '.';
+import { getLocalePhrase } from '../../utils/i18n';
 import { requestFactory, responseFactory, next, send } from '../../utils/test-helpers';
 
 jest.mock('../../controllers/address');
+
+const payloadFactory = (req, extra) => {
+  return {
+    payload: {
+      addresses: {
+        'other-addresses': [],
+        'primary-addresses': {
+          clubcard: {
+            addressLines: [
+              {
+                label: 'Lever building',
+                lineNumber: 1,
+              },
+            ],
+            label: 'HOME',
+            postTown: 'London',
+            postcode: 'EC1R 5AR',
+            tags: ['primaryLoyalty'],
+            telephoneNumbers: [
+              {
+                label: 'Day',
+                value: '07429049112',
+              },
+            ],
+          },
+          grocery: {
+            addressLines: [
+              {
+                label: 'Lever building',
+                lineNumber: 1,
+              },
+            ],
+            label: 'HOME',
+            postTown: 'London',
+            postcode: 'EC1R 5AR',
+            tags: ['primaryDelivery'],
+            telephoneNumbers: [
+              {
+                label: 'Day',
+                value: '07429049112',
+              },
+            ],
+          },
+        },
+      },
+      breadcrumb: getBreadcrumb(req, getLocalePhrase),
+      banner: {
+        bannerType: '',
+        description: '',
+        title: '',
+      },
+      ...extra,
+    },
+  };
+};
 
 const mockAddresses = [
   {
@@ -57,6 +113,7 @@ describe('[Route: /]', () => {
         });
 
         const res = responseFactory();
+        const payload = payloadFactory(req);
 
         beforeAll(async () => {
           await getLandingPage(req, res, next);
@@ -67,7 +124,7 @@ describe('[Route: /]', () => {
         });
 
         it('should set the correct response data', () => {
-          expect(res.data).toMatchSnapshot();
+          expect(res.data).toEqual(payload);
         });
 
         it('should call next correctly', () => {
@@ -89,6 +146,7 @@ describe('[Route: /]', () => {
         });
 
         const res = responseFactory({ responseType: 'json' });
+        const payload = payloadFactory(req);
 
         beforeAll(async () => {
           await getLandingPage(req, res, next);
@@ -99,7 +157,7 @@ describe('[Route: /]', () => {
         });
 
         it('should set the correct response data', () => {
-          expect(send.mock.calls).toMatchSnapshot();
+          expect(send).toHaveBeenCalledWith(payload);
         });
 
         afterAll(() => {

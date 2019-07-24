@@ -29,7 +29,7 @@ const payloadFactory = (req, extra) => {
   const defaultValues = testAddress;
 
   return {
-    breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
+    breadcrumb: getBreadcrumb(req, getLocalePhrase),
     fields,
     schema,
     values: defaultValues,

@@ -130,6 +130,19 @@ export function formatAddressesForUse(addresses) {
   return formattedAddresses;
 }
 
+export function getBreadcrumb(req, getLocalePhrase) {
+  return [
+    {
+      text: getLocalePhrase('pages.account.title'),
+      href: config[req.region].externalApps.myAccount,
+    },
+    {
+      current: true,
+      text: getLocalePhrase('pages.landing.title'),
+    },
+  ];
+}
+
 export async function getLandingPage(req, res, next) {
   const isOldAddressBook = /disabled/.test(get(req, 'cookies.myaccount_segment_singleAddressBook'));
 
@@ -158,16 +171,7 @@ export async function getLandingPage(req, res, next) {
 
   const payload = {
     addresses,
-    breadcrumb: [
-      {
-        text: getLocalePhrase('pages.account.title'),
-        href: `/${config.basePath}/${req.lang}/manage`,
-      },
-      {
-        current: true,
-        text: getLocalePhrase('pages.landing.title'),
-      },
-    ],
+    breadcrumb: getBreadcrumb(req, getLocalePhrase),
     banner: bannerProps,
   };
 

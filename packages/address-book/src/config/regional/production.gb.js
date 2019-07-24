@@ -6,6 +6,7 @@ module.exports = {
     logout: 'https://secure.tesco.com/account/en-GB/logout',
     register: 'https://secure.tesco.com/account/en-GB/register',
     verify: 'https://www.tesco.com/account/login/en-GB/verify',
+    myAccount: 'https://secure.tesco.com/account/en-GB/manage',
     accountAddressBook: 'https://secure.tesco.com/account/en-GB/manage/address-book',
     accountAddressBookAddAddress:
       'https://secure.tesco.com/account/en-GB/manage/address-book/add-address',

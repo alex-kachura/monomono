@@ -1,7 +1,21 @@
+import config from 'config';
 import { getAddresses, deleteAddress } from '../../controllers/address';
 import { logOutcome } from '../../logger';
 import { formatAddressesForUse } from '../landing';
 import { getPhraseFactory } from '../../utils/i18n';
+
+export function getBreadcrumb(req, getLocalePhrase) {
+  return [
+    {
+      text: getLocalePhrase('pages.account.title'),
+      href: config[req.region].externalApps.myAccount,
+    },
+    {
+      current: true,
+      text: getLocalePhrase('pages.landing.title'),
+    },
+  ];
+}
 
 export async function postDeleteAddressRoute(req, res, next) {
   const contactAddressId = req.body['contact-address-id'];
@@ -26,11 +40,7 @@ export async function postDeleteAddressRoute(req, res, next) {
 
     const payload = {
       addresses,
-      breadcrumb: [
-        {
-          text: getLocalePhrase('pages.landing.title'),
-        },
-      ],
+      breadcrumb: getBreadcrumb(req, getLocalePhrase),
       banner: {
         bannerType: 'success',
         title: getLocalePhrase('pages.landing.banner-messages.deleted'),

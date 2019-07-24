@@ -27,7 +27,7 @@ const payloadFactory = (req, extra) => {
   };
 
   return {
-    breadcrumb: getBreadcrumb(req.lang, getLocalePhrase),
+    breadcrumb: getBreadcrumb(req, getLocalePhrase),
     fields,
     schema,
     values: defaultValues,
