@@ -51,41 +51,48 @@ module.exports = {
     tracer: {
       name: 'atrc',
       options: {
+        domain: '.tesco.com',
         secure: false,
         maxAge: 31536000000,
       },
     },
     CSRF: {
       name: '_csrf',
+      domain: '.tesco.com',
       httpOnly: true,
       secure: false,
     },
     UUID: {
       name: 'UUID',
+      domain: '.tesco.com',
       expires: '0',
       httpOnly: false,
       secure: false,
     },
     userAccessToken: {
       name: 'OAuth.AccessToken',
+      domain: '.tesco.com',
       expires: '3600000',
       httpOnly: true,
       secure: false,
     },
     userRefreshToken: {
       name: 'OAuth.RefreshToken',
+      domain: '.tesco.com',
       expires: '86400000',
       httpOnly: true,
       secure: false,
     },
     OAuthTokensExpiryTime: {
       name: 'OAuth.TokensExpiryTime',
+      domain: '.tesco.com',
       expires: '86400000',
       httpOnly: true,
       secure: false,
     },
     consumerid: {
       name: 'consumerid',
+      domain: '.tesco.com',
       httpOnly: true,
       secure: false,
     },
