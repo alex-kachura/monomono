@@ -7,15 +7,12 @@ const DEFAULT_LOCATION = 'baseHost';
 const mockedConfig = {
   get: (key) => {
     switch (key) {
-    case 'referrerDomainWhitelist':
-      return [
-        '^https://example.com',
-        '^allowedScheme://',
-      ];
-    case 'sensitiveDataUrlInjectionWhiteList':
-      return ['allowedScheme://'];
-    default:
-      return key;
+      case 'referrerDomainWhitelist':
+        return ['^https://example.com', '^allowedScheme://'];
+      case 'sensitiveDataUrlInjectionWhiteList':
+        return ['allowedScheme://'];
+      default:
+        return key;
     }
   },
 };
@@ -25,8 +22,11 @@ const mockedExpress = {
 
 describe('Onward location middleware', () => {
   let middleware;
+
   let mockReq;
+
   let mockRes;
+
   let mockNext;
 
   beforeEach(() => {
@@ -70,7 +70,9 @@ describe('Onward location middleware', () => {
 
   it('should add a "completeJourney" method to the response object', () => {
     middleware(mockReq, mockRes, mockNext);
-    expect(mockedExpress.response).to.have.property('completeJourney').that.is.a('function');
+    expect(mockedExpress.response)
+      .to.have.property('completeJourney')
+      .that.is.a('function');
   });
 
   context('request has a "from" parameter', () => {
@@ -193,7 +195,8 @@ describe('Onward location middleware', () => {
 
     context('cookie has a whitelisted injection-allowed value', () => {
       beforeEach(() => {
-        mockReq.cookies[COOKIE_NAME] = 'allowedScheme://example.com?a=INJECT_ACCESS_TOKEN_HERE&r=INJECT_REFRESH_TOKEN_HERE&c=INJECT_CC_NUMBER_HERE';
+        mockReq.cookies[COOKIE_NAME] =
+          'allowedScheme://example.com?a=INJECT_ACCESS_TOKEN_HERE&r=INJECT_REFRESH_TOKEN_HERE&c=INJECT_CC_NUMBER_HERE';
         mockRes.data.clubcard = '1234567890';
       });
 

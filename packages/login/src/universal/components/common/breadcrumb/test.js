@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
+import { render, cleanup } from '@testing-library/react';
 import { Root } from '@oneaccount/react-foundations';
 import { DefaultThemeProvider } from '@beans/theme';
 import Breadcrumb from '.';
@@ -17,14 +17,14 @@ function renderBreadcrumb(breadcrumb) {
               tescoHomepage: 'mock-url',
             },
           },
-        }
+        },
       }}
       errorFallback={<div>Error Please refresh the page</div>}
     >
       <DefaultThemeProvider>
         <Breadcrumb />
       </DefaultThemeProvider>
-    </Root>
+    </Root>,
   );
 }
 

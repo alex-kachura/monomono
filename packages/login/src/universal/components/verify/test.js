@@ -1,6 +1,6 @@
 import React from 'react';
 import VerifyPage from '.';
-import { render, cleanup } from 'react-testing-library';
+import { render, cleanup } from '@testing-library/react';
 import { Root } from '@oneaccount/react-foundations';
 import { DefaultThemeProvider } from '@beans/theme';
 

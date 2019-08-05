@@ -1,5 +1,6 @@
 describe('Claims middleware', () => {
   let mockExpress;
+
   let mockReq;
   const mockConfig = {
     cookie: {

@@ -1,7 +1,10 @@
 describe('Verify controller', () => {
   let controller;
+
   let result;
+
   let mockHandshake;
+
   let mockElevateToken;
   const mockAccessToken = 'mock-token';
   const mockContext = 'mock-context';
@@ -17,7 +20,9 @@ describe('Verify controller', () => {
       ACCOUNT_LOCKED_ONE_HOUR: 'ACCOUNT_LOCKED_ONE_HOUR',
     },
   };
+
   let mockLogError;
+
   let mockLogWarn;
 
   beforeEach(() => {
@@ -52,11 +57,11 @@ describe('Verify controller', () => {
       beforeEach(async () => {
         mockHandshake.mockReturnValue(
           Promise.resolve({
-            'access_token': mockNewToken,
-            'refresh_token': mockNewRefresh,
-            'expires_in': mockExpiresIn,
+            access_token: mockNewToken, // eslint-disable-line camelcase
+            refresh_token: mockNewRefresh, // eslint-disable-line camelcase
+            expires_in: mockExpiresIn, // eslint-disable-line camelcase
             Claims: mockClaims,
-          })
+          }),
         );
 
         controller = require('.');
@@ -74,7 +79,7 @@ describe('Verify controller', () => {
           accessToken: mockAccessToken,
           context: mockContext,
           tracer: mockTracer,
-        })
+        });
       });
 
       it('should return new tokens', () => {
@@ -97,7 +102,7 @@ describe('Verify controller', () => {
               fields: mockFields,
             },
             state: mockStateToken,
-          })
+          }),
         );
 
         controller = require('.');
@@ -136,13 +141,15 @@ describe('Verify controller', () => {
 
       it('should log error', () => {
         expect(mockLogError).toHaveBeenCalledWith(
-          'error doing level 16 handshake', mockError, mockContext
+          'error doing level 16 handshake',
+          mockError,
+          mockContext,
         );
       });
 
       it('should return error object', () => {
         expect(result).toEqual({
-          error: mockError
+          error: mockError,
         });
       });
     });
@@ -152,7 +159,7 @@ describe('Verify controller', () => {
         mockHandshake.mockReturnValue(
           Promise.resolve({
             something: 'else',
-          })
+          }),
         );
 
         controller = require('.');
@@ -166,7 +173,7 @@ describe('Verify controller', () => {
 
       it('should return error object', () => {
         expect(result).toEqual({
-          error: new Error('Expected response from Identity')
+          error: new Error('Expected response from Identity'),
         });
       });
     });
@@ -177,11 +184,11 @@ describe('Verify controller', () => {
       beforeEach(async () => {
         mockElevateToken.mockReturnValue(
           Promise.resolve({
-            'access_token': mockNewToken,
-            'refresh_token': mockNewRefresh,
-            'expires_in': mockExpiresIn,
+            access_token: mockNewToken, // eslint-disable-line camelcase
+            refresh_token: mockNewRefresh, // eslint-disable-line camelcase
+            expires_in: mockExpiresIn, // eslint-disable-line camelcase
             Claims: mockClaims,
-          })
+          }),
         );
 
         controller = require('.');
@@ -200,7 +207,7 @@ describe('Verify controller', () => {
           clubcardFields: mockFields,
           context: mockContext,
           tracer: mockTracer,
-        })
+        });
       });
 
       it('should return new tokens', () => {
@@ -223,7 +230,7 @@ describe('Verify controller', () => {
               fields: mockFields,
             },
             state: mockStateToken,
-          })
+          }),
         );
 
         controller = require('.');
@@ -247,9 +254,7 @@ describe('Verify controller', () => {
     });
 
     describe('account locked error', () => {
-      const mockError = new Error(
-        MockServiceError.Codes.ACCOUNT_LOCKED_ONE_HOUR
-      );
+      const mockError = new Error(MockServiceError.Codes.ACCOUNT_LOCKED_ONE_HOUR);
 
       beforeEach(async () => {
         mockElevateToken.mockReturnValue(Promise.reject(mockError));
@@ -265,7 +270,9 @@ describe('Verify controller', () => {
 
       it('should log warning', () => {
         expect(mockLogWarn).toHaveBeenCalledWith(
-          'max tries reached, account locked', mockError, mockContext
+          'max tries reached, account locked',
+          mockError,
+          mockContext,
         );
       });
 
@@ -293,7 +300,9 @@ describe('Verify controller', () => {
 
       it('should log error', () => {
         expect(mockLogError).toHaveBeenCalledWith(
-          'error elevating user token', mockError, mockContext
+          'error elevating user token',
+          mockError,
+          mockContext,
         );
       });
 

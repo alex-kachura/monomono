@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { DefaultThemeProvider } from '@beans/theme';
 import { AppProvider } from '@oneaccount/react-foundations';
@@ -60,7 +60,7 @@ describe('App component', () => {
             <App route={mockRoute} />
           </DefaultThemeProvider>
         </AppProvider>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     const fragment = asFragment();
 

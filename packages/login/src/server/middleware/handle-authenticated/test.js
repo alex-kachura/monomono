@@ -3,8 +3,11 @@ import handleAuthenticated from './';
 
 describe('#handleAuthenticated', () => {
   let req;
+
   let res;
+
   let next;
+
   let mockRedirect;
 
   beforeEach(() => {
@@ -34,7 +37,7 @@ describe('#handleAuthenticated', () => {
         handleAuthenticated(req, res, next);
 
         expect(mockRedirect).toHaveBeenCalledWith(
-          `${config[req.region].externalApps.login}?from=https%3A%2F%2Fmock-hostname%2Fmock-base-url%2Fmock-url`
+          `${config[req.region].externalApps.login}?from=https%3A%2F%2Fmock-hostname%2Fmock-base-url%2Fmock-url`,
         );
       });
     });

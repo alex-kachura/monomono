@@ -3,19 +3,19 @@
 exports[`[Component: Banner] should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bxivhb bozGCo"
+    class="sc-bdVaJa eHfjRQ"
   >
     <div
       aria-live="polite"
-      class="base-components__RootElement-sc-150tvch-1 notification-banner styled__RootContainer-kcflkd-0 blNllx"
+      class="notification-banner styled__Container-sc-1bf1p22-0 lmQQYD"
       role="status"
     >
       <div
-        class="base-components__RootElement-sc-150tvch-1 styled__PositionedIcon-kcflkd-1 cxpFfg styled__IconContainer-sc-1nulmu6-0 eZnuZo"
+        class="styled__PositionedIcon-kcflkd-0 ktuKJx styled__Container-sc-1bf1p22-0 fRWwDM"
       >
         <svg
           aria-hidden="true"
-          class="styled__StyledSVG-sc-1nulmu6-1 flhEYZ"
+          class="styled__StyledSVG-sc-1nulmu6-0 fnQPMZ"
           color="currentColor"
           height="21"
           preserveAspectRatio="xMinYMax meet"
@@ -33,15 +33,15 @@ exports[`[Component: Banner] should render correctly 1`] = `
         </svg>
       </div>
       <div
-        class="base-components__BaseElement-sc-150tvch-0 FTmRK"
+        class="base-components__BaseElement-sc-150tvch-0 edjZlZ"
       >
         <p
-          class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 bBDtsg"
+          class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 cvZwhD"
         >
           Banner title
         </p>
         <p
-          class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 kSJIks"
+          class="base-components__BaseElement-sc-150tvch-0 typography___styledElement-sc-186l0ce-0 gxVCAq"
         >
           Banner text
         </p>

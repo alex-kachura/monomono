@@ -1,22 +1,39 @@
 // Utility methods for analytics tracking of form field validation errors
 
-// Tracking codes sent to Adobe
-const errorCodes = {
-  EMPTY: 'empty',
-  INVALD: 'invalid',
+export const PAYLOAD_TYPES = {
+  VALIDATION_ERRORS: 'validation_errors',
+  PAGE_NAME: 'page_name',
 };
 
-export function getAnalyticsPayload(fields) {
-  // The created payload will only apply to invalid fields
-  const filteredFields = fields.filter((field) => !field.isValid);
+export const Analytics = {
+  Verify: {
+    Events: {
+      ORDER_NEW_CC: 'order a new one',
+      PHONE_NUMBER1: 'phone number 1',
+      PHONE_NUMBER2: 'phone number 2',
+    },
+    DirectCallRules: {
+      VALIDATION_ERRORS: 'validation-errors',
+    },
+  },
+};
 
-  const payload = filteredFields.reduce((result, current) => {
-    result[current.id] = current.value === '' ? errorCodes.EMPTY : errorCodes.INVALD;
+// Tracking codes sent to Adobe
+const ErrorCodes = {
+  required: 'empty',
+  type: 'invalid',
+  pattern: 'invalid',
+  maxLength: 'maxlength',
+};
+
+export function errorsToPayload(errors, fields = []) {
+  return Object.keys(errors).reduce((result, property) => {
+    const { id } = fields.find(({ name }) => name === property) || {};
+
+    result[id || property] = errors[property].map(({ keyword }) => ErrorCodes[keyword])[0];
 
     return result;
   }, {});
-
-  return payload;
 }
 
 export function clearAnalyticsPayload(prop) {
@@ -43,6 +60,8 @@ export function trackEvent(event, prop, payload) {
     return;
   }
 
+  clearAnalyticsPayload(PAYLOAD_TYPES.VALIDATION_ERRORS);
+
   // Add validation errors to object expected by Adobe Analytics, if any
   if (prop && payload) {
     updateDataLayer(prop, payload);
@@ -55,7 +74,7 @@ export function trackEvent(event, prop, payload) {
 // Get the page name used by Adobe Analytics to track page visits.
 // Derived from URL structure: /<basePath>/<appPath>/<locale>/<page>
 export function getPageName(url, extra = '') {
-  const [,,appPath,,page] = url.split('/');
+  const [, , appPath, , page] = url.split('/');
 
   return `${appPath}:${page || 'landing'} ${extra}`.trim();
 }

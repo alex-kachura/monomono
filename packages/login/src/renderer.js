@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
 import { Root } from '@oneaccount/react-foundations';
+import { bold, regular, italic as regularItalic } from '@beans/tesco-modern';
 import { StaticRouter } from 'react-router';
 import { Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
@@ -9,9 +10,12 @@ import { DefaultThemeProvider } from '@beans/theme';
 import Spinner from './universal/components/common/spinner';
 
 const globalStyles = {
-  fonts: {
-    fileFormats: ['eot', 'woff2', 'woff', 'ttf', 'svg'],
-    filePath: '/account/login/fonts',
+  tescoModern: {
+    inlineFontData: {
+      bold,
+      regular,
+      regularItalic,
+    },
     styleNames: ['bold', 'regular', 'regularItalic'],
   },
   normalize: true,

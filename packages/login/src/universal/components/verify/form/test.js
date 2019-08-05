@@ -1,11 +1,13 @@
 import React from 'react';
 import VerifyForm from '.';
-import { render, cleanup, fireEvent } from 'react-testing-library';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import { toMatchDiffSnapshot } from 'snapshot-diff';
 import { AppProvider, Formik } from '@oneaccount/react-foundations';
 import { DefaultThemeProvider } from '@beans/theme';
 
 expect.extend({ toMatchDiffSnapshot });
+
+function noop() {} // eslint-disable-line
 
 describe('VerifyForm component', () => {
   afterEach(cleanup);
@@ -17,7 +19,7 @@ describe('VerifyForm component', () => {
       id: 'digit11',
       label: '11th',
     },
-      {
+    {
       type: 'text',
       name: 'digit12',
       id: 'digit12',
@@ -28,7 +30,7 @@ describe('VerifyForm component', () => {
       name: 'digit13',
       id: 'digit13',
       label: '13th',
-    }
+    },
   ];
 
   const mockStateToken = 'mock-state-token';
@@ -98,10 +100,11 @@ describe('VerifyForm component', () => {
               stateToken={mockStateToken}
               csrf={mockCsrf}
               getLocalePhrase={(key) => key} // eslint-disable-line
+              onErrors={noop}
             />
           </Formik>
         </DefaultThemeProvider>
-      </AppProvider>
+      </AppProvider>,
     );
   }
 
@@ -131,9 +134,13 @@ describe('VerifyForm component', () => {
 
   describe('form keyboard interaction', () => {
     let form;
+
     let input1;
+
     let input2;
+
     let input3;
+
     let button;
 
     beforeEach(() => {

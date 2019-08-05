@@ -4,20 +4,20 @@ import { connect } from 'formik';
 import FormGroup from '@beans/form-group';
 import { useAppConfig } from '@oneaccount/react-foundations';
 import { InputGroupStyled, InputStyled, LabelStyled, formGroupStyles } from './styled';
-import { useFieldLogic, getNumberProps, getFormErrorMsg } from './helpers';
+import { useFieldLogic, getNumberProps } from './helpers';
 
 export function ClubcardDigits({ fields, submitRef, formik }) {
   const { getLocalePhrase } = useAppConfig();
   const { handleChange, handleKeyDown } = useFieldLogic(fields, formik, submitRef);
-  const errorMsg = getFormErrorMsg(formik);
+  const errorMsg = Boolean(formik.errors && Object.keys(formik.errors).length > 0);
 
   return (
     <FormGroup
       id="clubcard-form-group"
       required
       labelText={getLocalePhrase('pages.verify.digits-prompt')}
-      error={!!errorMsg}
-      errorMessage={errorMsg}
+      error={errorMsg}
+      errorMessage={getLocalePhrase('pages.verify.error-msg')}
       labelProps={{ emphasized: false }}
       fieldset
       styles={formGroupStyles}

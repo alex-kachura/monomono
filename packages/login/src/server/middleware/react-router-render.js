@@ -10,6 +10,22 @@ import { renderServer } from '../../renderer';
 import routesFactory from '../../universal/routes';
 import { getDictionary, getPhraseFactory } from '../utils/i18n';
 
+function getValidationPayload(payload) {
+  if (payload.accountLocked) {
+    return {
+      error: 'account locked error',
+    };
+  }
+
+  if (payload.banner && payload.banner.type === 'error') {
+    return {
+      error: 'incorrect digits entered',
+    };
+  }
+
+  return {};
+}
+
 export default function reactRouterRenderMiddlewareFactory() {
   return function reactRouterRenderMiddleware(req, res) {
     const { lang } = req;
@@ -76,6 +92,7 @@ export default function reactRouterRenderMiddlewareFactory() {
           cont_grp: thirdParties.dataLayer.cont_grp,
           cont_channel: thirdParties.dataLayer.cont_channel,
           cont_server_env: thirdParties.dataLayer.cont_server_env,
+          validation_errors: getValidationPayload(res.data.payload || {}),
           /* eslint-enable camelcase */
         }),
         headerScript: thirdParties.headerScript,

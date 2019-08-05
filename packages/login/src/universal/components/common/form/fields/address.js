@@ -41,6 +41,7 @@ const useFetch = (url, { autoLoad = true, ...opts } = {}) => {
   const load = useCallback(async (newUrl, newOpts = opts) => {
     try {
       setLoading(true);
+
       const response = await fetch(newUrl || url, {
         ...newOpts,
         headers: {

@@ -2,7 +2,9 @@ describe('[Utility: Identity service]', () => {
   const mockReq = {
     sessionId: '1234',
   };
+
   let MockedIdentity;
+
   let identityService;
 
   beforeEach(() => {

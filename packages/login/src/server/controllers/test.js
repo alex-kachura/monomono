@@ -1,6 +1,8 @@
 describe('Controller factory', () => {
   let factory;
+
   let mockHandshake;
+
   let mockController;
 
   beforeEach(() => {
@@ -21,7 +23,7 @@ describe('Controller factory', () => {
   describe('provide invalid name and invalid region', () => {
     it('should throw error', () => {
       expect(() => factory('blah', 'blah')).toThrow(
-        /No regional or default contoller blah found for blah/
+        /No regional or default contoller blah found for blah/,
       );
     });
   });
@@ -29,7 +31,7 @@ describe('Controller factory', () => {
   describe('provide invalid name and valid region', () => {
     it('should throw error', () => {
       expect(() => factory('blah', 'PL')).toThrow(
-        /No regional or default contoller blah found for PL/
+        /No regional or default contoller blah found for PL/,
       );
     });
   });

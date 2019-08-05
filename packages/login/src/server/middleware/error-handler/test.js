@@ -13,6 +13,7 @@ const mockRes = {
 
 describe('Error handling middleware', () => {
   let errorHandler;
+
   let logErrorSpy;
 
   beforeEach(() => {

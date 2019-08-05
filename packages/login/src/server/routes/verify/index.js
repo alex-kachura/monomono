@@ -1,9 +1,9 @@
 import config from 'config';
-import { convertAJVErrorsToFormik } from '@oneaccount/react-foundations';
+import { validate } from '@oneaccount/react-foundations';
 import { logOutcome } from '../../logger';
 import controllerFactory from '../../controllers';
 import { getPhraseFactory } from '../../utils/i18n';
-import { mapPayloadToFields, mapValuesToPayload, setAuthCookies, ajv } from './utils';
+import { mapPayloadToFields, mapValuesToPayload, setAuthCookies } from './utils';
 
 export async function getVerifyPage(req, res, next) {
   const verifyController = controllerFactory('verify', req.region);
@@ -55,10 +55,7 @@ export async function getVerifyPage(req, res, next) {
       },
       errors: {},
       fields: fieldsToRender,
-      schema: {
-        ...schema,
-        required: fieldsToRender.map((field) => field.name),
-      },
+      schema,
       stateToken: challenge.stateToken,
       backlink: res.data.backlink || {},
     },
@@ -69,8 +66,6 @@ export async function getVerifyPage(req, res, next) {
 
 // Validate all fields against a JSON schema
 function doFormValidation(reqBody, schema) {
-  const validator = ajv.compile(schema);
-
   const postedValues = {};
 
   // Remove state and csrf tokens from posted values
@@ -80,21 +75,15 @@ function doFormValidation(reqBody, schema) {
     }
   });
 
-  return {
-    isValid: validator(postedValues),
-    postedValues,
-    validator,
-  };
+  return validate(schema, postedValues);
 }
 
 // Prepares the payload and reloads the page with error messages
-function getInvalidFormPayload({ req, res, postedValues, validator, schema }) {
-  const errors = convertAJVErrorsToFormik(validator.errors, schema);
-
+function getInvalidFormPayload({ req, res, values, errors, schema }) {
   // Convert posted values into payload that Identity can understand
-  const identityFields = Object.keys(postedValues).map((key) => ({
+  const identityFields = Object.keys(values).map((key) => ({
     id: key,
-    value: postedValues[key],
+    value: values[key],
   }));
 
   // Get field objects needed by the UI to render for requested clubcard digits
@@ -102,17 +91,14 @@ function getInvalidFormPayload({ req, res, postedValues, validator, schema }) {
 
   return {
     values: {
-      digit11: postedValues.digit11,
-      digit12: postedValues.digit12,
-      digit13: postedValues.digit13,
-      digit14: postedValues.digit14,
+      digit11: values.digit11,
+      digit12: values.digit12,
+      digit13: values.digit13,
+      digit14: values.digit14,
     },
     errors,
     fields: fieldsToRender,
-    schema: {
-      ...schema,
-      required: fieldsToRender.map((field) => field.name),
-    },
+    schema,
     stateToken: req.body.state,
     backlink: res.data.backlink || {},
   };
@@ -121,8 +107,11 @@ function getInvalidFormPayload({ req, res, postedValues, validator, schema }) {
 // Get payload for user entered incorrect values or max tries exceeded (account locked).
 function getElevationFailurePayload({ req, res, challenge, accountLocked, schema }) {
   let stateToken;
+
   let bannerTitle;
+
   let bannerText;
+
   let fieldsToRender = [];
   const getLocalePhrase = getPhraseFactory(req.lang);
 
@@ -170,13 +159,13 @@ export async function postVerifyPage(req, res, next) {
   const { schema } = config[req.region];
 
   // Validate the posted fields against the schema
-  const { postedValues, isValid, validator } = doFormValidation(req.body, schema);
+  const { values, isValid, errors } = doFormValidation(req.body, schema);
 
   // If the form is invalid, e.g. user enters a non-numeric character
   if (!isValid) {
     logOutcome('verify:post', 'invalid-form-posted', req);
 
-    const payload = getInvalidFormPayload({ req, res, postedValues, validator, schema });
+    const payload = getInvalidFormPayload({ req, res, values, errors, schema });
 
     res.data = { ...res.data, payload };
 

@@ -13,13 +13,12 @@ export function OrderClubcard() {
       <Heading as="h2" margin>
         {getLocalePhrase('pages.verify.order-clubcard.heading')}
       </Heading>
-      <BodyText margin>
-        {getLocalePhrase('pages.verify.order-clubcard.copy')}
-      </BodyText>
+      <BodyText margin>{getLocalePhrase('pages.verify.order-clubcard.copy')}</BodyText>
       <LinkStyled
         buttonVariant="secondary"
         href={orderClubcardUrl}
         variant="textButton"
+        data-tracking="order a new one"
       >
         {getLocalePhrase('pages.verify.order-clubcard.button')}
       </LinkStyled>

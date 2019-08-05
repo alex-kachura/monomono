@@ -18,7 +18,9 @@ Reflect.defineProperty(express.response, 'completeJourney', {
     const res = this;
     const req = this.req;
     const requestStateValue = res.data.onwardLocation;
+
     let shouldClearCookie;
+
     let onwardLocation;
 
     if (requestStateValue) {
@@ -33,6 +35,7 @@ Reflect.defineProperty(express.response, 'completeJourney', {
     // the URL.
     if (query) {
       const parsedURL = url.parse(onwardLocation);
+
       let parsedQueryString = qs.parse(parsedURL.query);
 
       parsedQueryString = Object.assign({}, parsedQueryString, query);

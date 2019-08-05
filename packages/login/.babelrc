@@ -1,26 +1,24 @@
 {
   "env": {
     "test": {
-      "plugins": [
-        "istanbul"
-      ],
+      "plugins": ["@babel/plugin-proposal-class-properties"],
       "presets": [
         [
-          "env",
+          "@babel/env",
           {
             "targets": {
               "node": "current"
             }
           }
         ],
-        "react",
-        "stage-0"
+        "@babel/react"
       ]
     },
     "browser": {
+      "plugins": ["@babel/plugin-proposal-class-properties"],
       "presets": [
         [
-          "env",
+          "@babel/env",
           {
             "targets": {
               "browsers": [
@@ -29,22 +27,21 @@
             }
           }
         ],
-        "react",
-        "stage-0"
+        "@babel/react"
       ]
     },
     "node": {
+      "plugins": ["@babel/plugin-proposal-class-properties"],
       "presets": [
         [
-          "env",
+          "@babel/env",
           {
             "targets": {
               "node": "current"
             }
           }
         ],
-        "react",
-        "stage-0"
+        "@babel/react"
       ]
     }
   }

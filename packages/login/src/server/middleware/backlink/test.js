@@ -1,9 +1,14 @@
 describe('Backlink middleware', () => {
   let middleware;
+
   let mockReq;
+
   let mockRes;
+
   let mockNext;
+
   let mockConfig;
+
   let getBacklinkLabel;
 
   beforeEach(() => {

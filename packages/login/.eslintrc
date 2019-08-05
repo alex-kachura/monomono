@@ -1,5 +1,12 @@
 {
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
   "extends": [
     "@web-foundations/eslint-config-base",
     "@web-foundations/eslint-config-react",
@@ -8,6 +15,7 @@
   ],
   "plugins": ["prettier"],
   "globals": {
+    "Promise": true,
     "describe": false,
     "context": false,
     "it": false,
@@ -24,7 +32,9 @@
     "afterAll": false,
     "beforeAll": false,
     "contexts": false,
-    "Region": false
+    "Region": false,
+    "User": false,
+    "jar": false
   },
   "env": {
     "es6": true,
@@ -33,6 +43,13 @@
     "jest": true
   },
   "rules": {
+    "newline-after-var": "off",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": ["const", "let"], "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": ["const", "let"] },
+      { "blankLine": "any", "prev": ["const", "let"], "next": ["const", "let"] }
+    ],
     "react/jsx-space-before-closing": 0,
     "react/jsx-wrap-multilines": 0
   },

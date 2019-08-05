@@ -173,32 +173,26 @@ module.exports = {
       digit11: {
         type: 'integer',
         maxLength: 1,
-        errorMessage: 'Please enter the requested digit',
       },
       digit12: {
         type: 'integer',
         maxLength: 1,
-        errorMessage: 'Please enter the requested digit',
       },
       digit13: {
         type: 'integer',
         maxLength: 1,
-        errorMessage: 'Please enter the requested digit',
       },
       digit14: {
         type: 'integer',
         maxLength: 1,
-        errorMessage: 'Please enter the requested digit',
       },
     },
     additionalProperties: false,
-    errorMessage: {
-      required: {
-        digit11: 'Please enter the requested digit',
-        digit12: 'Please enter the requested digit',
-        digit13: 'Please enter the requested digit',
-        digit14: 'Please enter the requested digit',
-      },
-    },
+    oneOf: [
+      { required: ['digit11', 'digit12', 'digit13'] },
+      { required: ['digit11', 'digit12', 'digit14'] },
+      { required: ['digit11', 'digit13', 'digit14'] },
+      { required: ['digit12', 'digit13', 'digit14'] },
+    ],
   },
 };

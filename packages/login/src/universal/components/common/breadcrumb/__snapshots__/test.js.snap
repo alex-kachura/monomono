@@ -3,29 +3,29 @@
 exports[`Breadcrumb component has breadcrumb should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="base-components__RootElement-sc-150tvch-1 sc-bxivhb QJfxr"
+    class="base-components__RootElement-sc-150tvch-1 sc-bdVaJa hAQeYx"
   >
     <nav
       aria-label="breadcrumb"
-      class="base-components__RootElement-sc-150tvch-1 styled__NavContainer-sc-1fzx5su-0 icyACH"
+      class="styled__Container-sc-1bf1p22-0 bNAurv"
     >
       <ol
-        class="base-components__BaseList-sc-150tvch-3 styled__OrderedList-sc-1fzx5su-2 bfBxih"
+        class="base-components__BaseList-sc-150tvch-2 styled__OrderedList-sc-1fzx5su-1 pkVUs"
       >
         <li
-          class="styled__ListItem-sc-1fzx5su-3 kDICdn"
+          class="styled__ListItem-sc-1fzx5su-2 hclgpr"
         >
           <div
-            class="styled__Item-sc-1fzx5su-4 epQOWE"
+            class="styled__Item-sc-1fzx5su-3 fMNMlJ"
           >
             <a
               aria-label="home"
-              class="styled__IconLink-sc-117kvua-0 kZAYfa"
+              class="styled__IconLink-sc-117kvua-0 llODtM"
               href="mock-url"
             >
               <svg
                 aria-hidden="true"
-                class="styled__StyledSVG-sc-1nulmu6-1 flhEYZ"
+                class="styled__Container-sc-1bf1p22-0 gJOjrx"
                 color="currentColor"
                 height="22"
                 preserveAspectRatio="xMinYMax meet"
@@ -43,14 +43,14 @@ exports[`Breadcrumb component has breadcrumb should render correctly 1`] = `
           </div>
         </li>
         <li
-          class="styled__ListItem-sc-1fzx5su-3 kDICdn"
+          class="styled__ListItem-sc-1fzx5su-2 hclgpr"
         >
           <div
-            class="styled__Item-sc-1fzx5su-4 epQOWE"
+            class="styled__Item-sc-1fzx5su-3 fMNMlJ"
           >
             <svg
               aria-hidden="true"
-              class="styled__Separator-sc-1fzx5su-5 kaoddq styled__StyledSVG-sc-1nulmu6-1 flhEYZ"
+              class="styled__Separator-sc-1fzx5su-4 iQJALb styled__Container-sc-1bf1p22-0 gJOjrx"
               color="currentColor"
               height="20"
               preserveAspectRatio="xMinYMax meet"
@@ -66,11 +66,11 @@ exports[`Breadcrumb component has breadcrumb should render correctly 1`] = `
               />
             </svg>
             <a
-              class="styled__StandaloneLink-sc-1xizymv-0 Eargh"
+              class="styled__StandaloneLink-sc-1xizymv-0 fRhty"
               href="mock-url"
             >
               <span
-                class="beans-link__text styled__TextSpan-sc-1xizymv-3 cXNAEo"
+                class="beans-link__text styled__TextSpan-sc-1xizymv-3 hWdmzc"
               >
                 mock-text
               </span>

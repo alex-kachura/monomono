@@ -5,80 +5,83 @@ exports[`VerifyForm component has initial errors should render error state of fo
 - First value
 + Second value
 
-@@ -12,11 +12,11 @@
+@@ -9,11 +9,11 @@
+      >
+        <fieldset
+          class=\\"styled__Container-sc-1bf1p22-0 jFOpLc\\"
         >
-          <div
-            class=\\"base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-wt4ift-3 iYRfeQ\\"
+          <legend
+-           class=\\"base-components__BaseElement-sc-150tvch-0 styled__Legend-wt4ift-0 xwasL\\"
++           class=\\"base-components__BaseElement-sc-150tvch-0 styled__Legend-wt4ift-0 gLazki\\"
           >
-            <legend
--             class=\\"base-components__BaseElement-sc-150tvch-0 styled__Legend-wt4ift-2 isVbKl\\"
-+             class=\\"base-components__BaseElement-sc-150tvch-0 styled__Legend-wt4ift-2 gsqUaM\\"
-            >
-              pages.verify.digits-prompt 
-            </legend>
-          </div>
+            pages.verify.digits-prompt 
+          </legend>
           <div
-@@ -25,18 +25,18 @@
+            class=\\"base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 igWuBa\\"
+@@ -21,19 +21,19 @@
             <div
-              class=\\"sc-EHOje kdKQiq\\"
+              class=\\"sc-htpNat isJOwP\\"
               name=\\"clubcard-form-group\\"
             >
               <label
--               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
-+               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 felILI\\"
+-               class=\\"sc-bwzfXH dNQPHk styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++               class=\\"sc-bwzfXH dNQPHk styled__StyledLabel-sc-28yvb4-0 felILI\\"
                 for=\\"digit11\\"
               >
                 11th
               </label>
               <input
+                aria-disabled=\\"false\\"
 -               aria-label=\\"11th clubcard number pages.verify.aria-label.empty-field\\"
--               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
+-               class=\\"sc-bdVaJa rktwZ styled__Container-sc-1bf1p22-0 eZwXEO\\"
 +               aria-label=\\"11th clubcard number pages.verify.aria-label.error-field\\"
-+               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
++               class=\\"sc-bdVaJa rktwZ styled__Container-sc-1bf1p22-0 hIxSdw\\"
                 id=\\"digit11\\"
                 maxlength=\\"1\\"
                 name=\\"digit11\\"
                 required=\\"\\"
                 type=\\"text\\"
-@@ -46,18 +46,18 @@
+@@ -43,19 +43,19 @@
             <div
-              class=\\"sc-EHOje kdKQiq\\"
+              class=\\"sc-htpNat isJOwP\\"
               name=\\"clubcard-form-group\\"
             >
               <label
--               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
-+               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 felILI\\"
+-               class=\\"sc-bwzfXH dNQPHk styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++               class=\\"sc-bwzfXH dNQPHk styled__StyledLabel-sc-28yvb4-0 felILI\\"
                 for=\\"digit12\\"
               >
                 12th
               </label>
               <input
+                aria-disabled=\\"false\\"
 -               aria-label=\\"12th clubcard number pages.verify.aria-label.empty-field\\"
--               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
+-               class=\\"sc-bdVaJa rktwZ styled__Container-sc-1bf1p22-0 eZwXEO\\"
 +               aria-label=\\"12th clubcard number pages.verify.aria-label.error-field\\"
-+               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
++               class=\\"sc-bdVaJa rktwZ styled__Container-sc-1bf1p22-0 hIxSdw\\"
                 id=\\"digit12\\"
                 maxlength=\\"1\\"
                 name=\\"digit12\\"
                 required=\\"\\"
                 type=\\"text\\"
-@@ -67,27 +67,32 @@
+@@ -65,28 +65,34 @@
             <div
-              class=\\"sc-EHOje kdKQiq\\"
+              class=\\"sc-htpNat isJOwP\\"
               name=\\"clubcard-form-group\\"
             >
               <label
--               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
-+               class=\\"sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 felILI\\"
+-               class=\\"sc-bwzfXH dNQPHk styled__StyledLabel-sc-28yvb4-0 gToxYy\\"
++               class=\\"sc-bwzfXH dNQPHk styled__StyledLabel-sc-28yvb4-0 felILI\\"
                 for=\\"digit13\\"
               >
                 13th
               </label>
               <input
+                aria-disabled=\\"false\\"
 -               aria-label=\\"13th clubcard number pages.verify.aria-label.empty-field\\"
--               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp\\"
+-               class=\\"sc-bdVaJa rktwZ styled__Container-sc-1bf1p22-0 eZwXEO\\"
 +               aria-label=\\"13th clubcard number pages.verify.aria-label.error-field\\"
-+               class=\\"base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 iRrnCT\\"
++               class=\\"sc-bdVaJa rktwZ styled__Container-sc-1bf1p22-0 hIxSdw\\"
                 id=\\"digit13\\"
                 maxlength=\\"1\\"
                 name=\\"digit13\\"
@@ -89,9 +92,10 @@ exports[`VerifyForm component has initial errors should render error state of fo
             </div>
           </div>
 +         <p
-+           class=\\"base-components__BaseElement-sc-150tvch-0 beans-form-group__error-message typography___styledElement-sc-186l0ce-0 hFMOIf\\"
++           class=\\"base-components__BaseElement-sc-150tvch-0 beans-form-group__message beans-form-group__error-message styled__Message-wt4ift-3 jcJuKh typography___styledElement-sc-186l0ce-0 dmJyuB\\"
++           id=\\"clubcard-form-group-error\\"
 +         >
-+           server side error message
++           pages.verify.error-msg
 +         </p>
         </fieldset>
         <input
@@ -103,7 +107,7 @@ exports[`VerifyForm component has initial errors should render error state of fo
 exports[`VerifyForm component no initial errors should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-iwsKbI igoYVT"
+    class="sc-gzVnrw eTZzoF"
   >
     <form
       autocomplete="off"
@@ -111,33 +115,30 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
       novalidate=""
     >
       <fieldset
-        class="base-components__RootElement-sc-150tvch-1 styled__FormGroupContainer-wt4ift-1 dImxlC"
+        class="styled__Container-sc-1bf1p22-0 jFOpLc"
       >
-        <div
-          class="base-components__BaseElement-sc-150tvch-0 styled__LinkContainer-wt4ift-3 iYRfeQ"
+        <legend
+          class="base-components__BaseElement-sc-150tvch-0 styled__Legend-wt4ift-0 xwasL"
         >
-          <legend
-            class="base-components__BaseElement-sc-150tvch-0 styled__Legend-wt4ift-2 isVbKl"
-          >
-            pages.verify.digits-prompt 
-          </legend>
-        </div>
+          pages.verify.digits-prompt 
+        </legend>
         <div
-          class="beans-form-group__children"
+          class="base-components__BaseElement-sc-150tvch-0 beans-form-group__children styled__FormGroupChildren-wt4ift-2 igWuBa"
         >
           <div
-            class="sc-EHOje kdKQiq"
+            class="sc-htpNat isJOwP"
             name="clubcard-form-group"
           >
             <label
-              class="sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy"
+              class="sc-bwzfXH dNQPHk styled__StyledLabel-sc-28yvb4-0 gToxYy"
               for="digit11"
             >
               11th
             </label>
             <input
+              aria-disabled="false"
               aria-label="11th clubcard number pages.verify.aria-label.empty-field"
-              class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
+              class="sc-bdVaJa rktwZ styled__Container-sc-1bf1p22-0 eZwXEO"
               id="digit11"
               maxlength="1"
               name="digit11"
@@ -147,18 +148,19 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
             />
           </div>
           <div
-            class="sc-EHOje kdKQiq"
+            class="sc-htpNat isJOwP"
             name="clubcard-form-group"
           >
             <label
-              class="sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy"
+              class="sc-bwzfXH dNQPHk styled__StyledLabel-sc-28yvb4-0 gToxYy"
               for="digit12"
             >
               12th
             </label>
             <input
+              aria-disabled="false"
               aria-label="12th clubcard number pages.verify.aria-label.empty-field"
-              class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
+              class="sc-bdVaJa rktwZ styled__Container-sc-1bf1p22-0 eZwXEO"
               id="digit12"
               maxlength="1"
               name="digit12"
@@ -168,18 +170,19 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
             />
           </div>
           <div
-            class="sc-EHOje kdKQiq"
+            class="sc-htpNat isJOwP"
             name="clubcard-form-group"
           >
             <label
-              class="sc-ifAKCX ceiQhl styled__StyledLabel-sc-28yvb4-0 gToxYy"
+              class="sc-bwzfXH dNQPHk styled__StyledLabel-sc-28yvb4-0 gToxYy"
               for="digit13"
             >
               13th
             </label>
             <input
+              aria-disabled="false"
               aria-label="13th clubcard number pages.verify.aria-label.empty-field"
-              class="base-components__BaseInput-sc-150tvch-2 sc-bxivhb dznvxk styled-ep7354-0 eyeGHp"
+              class="sc-bdVaJa rktwZ styled__Container-sc-1bf1p22-0 eZwXEO"
               id="digit13"
               maxlength="1"
               name="digit13"
@@ -202,15 +205,15 @@ exports[`VerifyForm component no initial errors should render correctly 1`] = `
       />
       <button
         aria-disabled="false"
-        class="styled__BaseButton-sc-3mnirm-0 sc-dnqmqq cDuauq styled__PrimaryButton-sc-3mnirm-2 evotEg"
+        class="styled__BaseButton-sc-3mnirm-0 sc-bZQynM kDxjQk styled__PrimaryButton-sc-3mnirm-2 hnSASM"
         role="button"
         type="submit"
       >
         <span
-          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 lnNmDn"
+          class="base-components__BaseElement-sc-150tvch-0 styled__InnerContainer-sc-3mnirm-1 fUwmia"
         >
           <span
-            class="base-components__BaseElement-sc-150tvch-0 styled__BaseSpan-sc-3mnirm-4 beans-button__text styled__PrimarySpan-sc-3mnirm-5 hrUcvf"
+            class="base-components__BaseElement-sc-150tvch-0 beans-button__text styled__TextSpan-sc-3mnirm-4 bXeiMr"
           >
             pages.verify.buttons.submit
           </span>

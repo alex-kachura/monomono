@@ -18,7 +18,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              forceEnv: 'browser',
+              envName: 'browser',
             },
           },
         ],
@@ -93,7 +93,7 @@ module.exports = {
       {
         from: path.join(__dirname, 'src/public/500.html'),
         to: path.join(__dirname, 'dist/public'),
-      }
+      },
     ]),
   ],
 };

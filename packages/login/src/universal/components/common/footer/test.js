@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from 'react-testing-library';
+import { render, fireEvent } from '@testing-library/react';
 import { DefaultThemeProvider } from '@beans/theme';
 import { AppProvider } from '@oneaccount/react-foundations';
 import Footer from '.';
@@ -34,13 +34,13 @@ function renderFooter() {
             ],
           },
         },
-        region:'GB',
+        region: 'GB',
       }}
     >
       <DefaultThemeProvider>
         <Footer />
       </DefaultThemeProvider>
-    </AppProvider>
+    </AppProvider>,
   );
 }
 
