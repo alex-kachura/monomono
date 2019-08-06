@@ -42,7 +42,6 @@ export function ClubcardDigits({ fields, submitRef, formik }) {
             name={name}
             id={id}
             value={formik.values[name]}
-            onBlur={formik.handleBlur}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
             maxLength="1"

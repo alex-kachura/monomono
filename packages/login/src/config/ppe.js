@@ -6,12 +6,7 @@ module.exports = {
       hostname: 'www-ppe.tesco.com',
       region: 'GB',
       languages: ['en-GB'],
-    },
-    {
-      hostname: 'www-ppe.tesco.pl',
-      region: 'PL',
-      languages: ['pl-PL'],
-    },
+    }
   ],
   log: {
     encryptionDisabled: false,
