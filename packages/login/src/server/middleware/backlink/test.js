@@ -1,3 +1,5 @@
+import config from 'config';
+
 describe('Backlink middleware', () => {
   let middleware;
 
@@ -7,9 +9,7 @@ describe('Backlink middleware', () => {
 
   let mockNext;
 
-  let mockConfig;
-
-  let getBacklinkLabel;
+  let getBacklink;
 
   beforeEach(() => {
     mockReq = {};
@@ -20,14 +20,8 @@ describe('Backlink middleware', () => {
       },
     };
 
-    mockConfig = {
-      get: (configValue) =>
-        configValue === 'languages.default' ? 'en-GB' : { en: [{ label: 'Address Book' }] },
-    };
-
-    jest.doMock('config', () => mockConfig);
     middleware = require('./').default;
-    getBacklinkLabel = require('./').getBacklinkLabel;
+    getBacklink = require('./').getBacklink;
     mockNext = jest.fn();
   });
 
@@ -42,10 +36,7 @@ describe('Backlink middleware', () => {
   describe('valid backlink', () => {
     beforeEach(() => {
       mockReq = {
-        get: () => 'https://www.tesco.com/groceries',
-        locale: {
-          language: 'en',
-        },
+        region: 'GB',
       };
     });
 
@@ -53,8 +44,8 @@ describe('Backlink middleware', () => {
       middleware(mockReq, mockRes, mockNext);
 
       expect(mockRes.data.backlink).toEqual({
-        link: 'https://www-local.tesco.com/account/address-book/en-GB/',
-        label: 'Address Book',
+        link: 'https://www-local.tesco.com/account/address-book/en-GB',
+        label: 'back-to.address-book',
       });
     });
   });
@@ -62,20 +53,19 @@ describe('Backlink middleware', () => {
   describe('"getBacklinkLabel()"', () => {
     beforeEach(() => {
       mockReq = {
-        get: () => 'www.tesco.com/groceries',
-        locale: {
-          language: 'en',
-        },
+        region: 'GB',
       };
     });
 
     it('should set the default label if no sanitised backlink', () => {
-      const backUrls = { en: [{ url: 'tesco.com/wine', label: 'back-to.wine' }] };
-      const backlink = false;
-      const language = 'en';
-      const result = getBacklinkLabel(backUrls, backlink, language);
+      const backUrls = config.GB.backToWhitelist;
+      const defaultBackLink = {
+        label: 'back-to.default',
+        link: config.GB.externalApps.tescoHomepage,
+      };
+      const result = getBacklink(backUrls, '', defaultBackLink);
 
-      expect(result).toEqual('back-to.default');
+      expect(result).toEqual({ label: 'back-to.default', link: 'https://www-local.tesco.com' });
     });
   });
 });

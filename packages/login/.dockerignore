@@ -1,4 +1,5 @@
 *
+!__mocks__
 !bin
 !conf
 !.babelrc

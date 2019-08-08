@@ -7,6 +7,36 @@ module.exports = {
     register: 'https://secure.tesco.com/account/en-GB/register',
     myaccount: 'https://secure.tesco.com/account/en-GB/manage',
   },
+  backToWhitelist: [
+    {
+      url: 'https://www.tesco.com/account/address-book/en-GB',
+      label: 'back-to.address-book',
+    },
+    {
+      url: 'https://www.tesco.com/account/personal-details/en-GB',
+      label: 'back-to.personal-details',
+    },
+    {
+      url: 'https://www.tesco.com/groceries',
+      label: 'back-to.groceries',
+    },
+    {
+      url: 'https://www.realfood.tesco.com',
+      label: 'back-to.real-food',
+    },
+    {
+      url: 'https://secure.tesco.com/clubcard/myaccount/home/home',
+      label: 'back-to.mca',
+    },
+    {
+      url: 'https://secure.tesco.com/clubcard',
+      label: 'back-to.clubcard',
+    },
+    {
+      url: 'https://www.tesco.com/deliverysaver',
+      label: 'back-to.delivery-saver',
+    },
+  ],
   supportLinks: [
     {
       href: 'https://www.tesco.com/',

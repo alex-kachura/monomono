@@ -1,68 +1,29 @@
-import url from 'url';
 import config from 'config';
 
-const backToWhitelist = config.get('backToWhitelist');
-
-function sanitiseBacklink(backlink) {
-  let sanitisedBacklink;
-
+function isValidBacklink(backUrls, backlink) {
   if (backlink) {
-    // Parse url in case there is port number
-    let decodedbacklink;
+    const decodedBackLink = decodeURIComponent(backlink);
 
-    try {
-      decodedbacklink = decodeURIComponent(backlink);
-    } catch (err) {
-      decodedbacklink = backlink;
-    }
-
-    const parsed = url.parse(decodedbacklink);
-
-    if (parsed.protocol && parsed.hostname && parsed.path) {
-      const path = parsed.path;
-
-      if (path.indexOf('account/address-book') > -1) {
-        const addressBookPath = path.substring(0, path.indexOf('edit-clubcard-address'));
-
-        sanitisedBacklink = `${parsed.protocol}//${parsed.hostname}${addressBookPath}`;
-      } else {
-        sanitisedBacklink = `${parsed.protocol}//${parsed.hostname}${path}`;
-      }
-    }
-  }
-
-  return sanitisedBacklink;
-}
-
-function isValidBacklink(backUrls, backlink, language) {
-  if (backlink) {
-    const sanitisedBacklink = sanitiseBacklink(backlink);
-
-    if (sanitisedBacklink) {
-      const urls = backUrls[language] || backUrls.en;
-
-      return urls.some((back) => new RegExp(back.url, 'i').test(sanitisedBacklink));
-    }
+    return backUrls.some((back) => new RegExp(back.url, 'i').test(decodedBackLink));
   }
 
   return false;
 }
 
-export function getBacklinkLabel(backUrls, backlink, language) {
+export function getBacklink(backUrls, backlink, defaultBackLink) {
   if (backlink) {
-    const sanitisedBacklink = sanitiseBacklink(backlink.split('?')[0]);
+    const decodedBackLink = decodeURIComponent(backlink);
+    const item = backUrls.find((back) => new RegExp(back.url, 'i').test(decodedBackLink));
 
-    if (sanitisedBacklink) {
-      const urls = backUrls[language] || backUrls.en;
-      const active = urls.filter((back) => new RegExp(back.url, 'i').test(sanitisedBacklink));
-
-      if (active) {
-        return active[0].label;
-      }
+    if (item) {
+      return {
+        label: item.label,
+        link: item.url,
+      };
     }
   }
 
-  return 'back-to.default';
+  return defaultBackLink;
 }
 
 export default function backlinkMiddleware(req, res, next) {
@@ -71,16 +32,19 @@ export default function backlinkMiddleware(req, res, next) {
   // that is the change password page component which displays a link rather
   // than navigation breadcrumbs when the backlink is Tesco Direct.
   const backlink = res.data && res.data.onwardLocation;
+  const backToWhitelist = config[req.region].backToWhitelist;
+  const defaultBackLink = {
+    label: 'back-to.default',
+    link: config[req.region].externalApps.tescoHomepage,
+  };
 
   // Validate backlink with the list of supported accepted urls
   // `backlink` is used to preserve original backlink of the user journey
   // It is passed only if the backlink is one from supported back links
   // and then further carried forward in url query parameters as `backlink`
   // It is used to work out `Back to` link on the page.
-
-  if (isValidBacklink(backToWhitelist, backlink, req.lang)) {
-    const label = getBacklinkLabel(backToWhitelist, backlink, req.lang);
-    const link = sanitiseBacklink(backlink);
+  if (isValidBacklink(backToWhitelist, backlink, req.region)) {
+    const { link, label } = getBacklink(backToWhitelist, backlink, defaultBackLink);
 
     res.data = {
       ...res.data,
@@ -88,6 +52,11 @@ export default function backlinkMiddleware(req, res, next) {
         link,
         label,
       },
+    };
+  } else {
+    res.data = {
+      ...res.data,
+      backlink: defaultBackLink,
     };
   }
 

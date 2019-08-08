@@ -8,6 +8,7 @@ app:
 # B
 back-to:
   address-book: 'Address Book'
+  personal-details: 'Personal Details'
   groceries: 'Tesco groceries'
   clubcard: 'Tesco Clubcard'
   delivery-saver: 'Delivery Saver'

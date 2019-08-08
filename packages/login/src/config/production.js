@@ -16,34 +16,6 @@ module.exports = {
   log: {
     encryptionDisabled: false,
   },
-  backToWhitelist: {
-    en: [
-      {
-        url: 'https://www.tesco.com/account/address-book/en-GB',
-        label: 'back-to.address-book',
-      },
-      {
-        url: 'https://www.tesco.com/groceries',
-        label: 'back-to.groceries',
-      },
-      {
-        url: 'https://www.realfood.tesco.com',
-        label: 'back-to.real-food',
-      },
-      {
-        url: 'https://secure.tesco.com/clubcard/myaccount/home/home',
-        label: 'back-to.mca',
-      },
-      {
-        url: 'https://secure.tesco.com/clubcard',
-        label: 'back-to.clubcard',
-      },
-      {
-        url: 'https://www.tesco.com/deliverysaver',
-        label: 'back-to.delivery-saver',
-      },
-    ],
-  },
   services: {
     clientId: 'trn:tesco:cid:ea61a462-e6e3-4410-beb9-37abff5ded54',
     identity: {
