@@ -41,7 +41,7 @@ describe.each(contexts())('Landing Page (/)', (context) => {
       expect($('h5').text()).toContain(clubcardAddressTitle);
     });
 
-    it('should contain Online Grocery Shopping address', () => {
+    it('should contain Delivery Address', () => {
       const groceryAddressTitle = context.getLocalePhrase(
         context.lang,
         'pages.landing.primary-address.header.grocery',

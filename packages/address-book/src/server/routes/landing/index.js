@@ -73,7 +73,7 @@ function getBannerProps(req, groceryAddr, clubcardAddr) {
         case 'changed-default':
           if (clubcardAddr && clubcardAddr.addressIndex) {
             banner.description = getLocalePhrase(
-              'pages.landing.banner-messages.update-clubcard-account',
+              'pages.landing.banner-messages.update-clubcard-address',
               {
                 baseHostSecure: `/${config.basePath}/${config.appPath}/${req.lang}`,
                 id: clubcardAddr.addressIndex,
@@ -84,7 +84,7 @@ function getBannerProps(req, groceryAddr, clubcardAddr) {
         case 'clubcard-updated':
           if (groceryAddr && groceryAddr.addressIndex) {
             banner.description = getLocalePhrase(
-              'pages.landing.banner-messages.update-primary-delivery-account',
+              'pages.landing.banner-messages.update-default-delivery-address',
               {
                 baseHostSecure: `/${config.basePath}/${config.appPath}/${req.lang}`,
                 id: groceryAddr.addressIndex,
