@@ -1,3 +1,6 @@
+/**
+ * This module will run before each test suite
+ */
 import 'jest-dom/extend-expect';
 
 jest.mock('@web-foundations/service-contact');

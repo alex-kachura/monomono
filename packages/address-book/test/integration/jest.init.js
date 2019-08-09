@@ -1,5 +1,5 @@
 /**
- * This module will run once before all tests
+ * This module will run once before all test suites
  */
 import config from 'config';
 import { getFormData } from '@oneaccount/test-common';
