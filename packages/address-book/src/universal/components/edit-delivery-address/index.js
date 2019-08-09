@@ -26,7 +26,14 @@ const EditDeliveryAddressPage = ({
       : Analytics.EditDeliveryAddress.DirectCallRules.SUCCESS;
 
     trackEvent(eventName);
-    history.replace(`${rootPath}?action=updated`);
+
+    let action = 'updated';
+
+    if (tags.includes('primaryDelivery')) {
+      action = 'changed-default';
+    }
+
+    history.replace(`${rootPath}?action=${action}`);
   }, []);
 
   const handleErrors = useCallback(
