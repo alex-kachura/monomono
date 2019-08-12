@@ -7,6 +7,7 @@ import getContactClient, {
   validatePhoneNumbers,
 } from '../../../services/contact';
 import getAddressClient, {
+  convertToAddress,
   mapAddressToFormValues,
   extractAddressLines,
 } from '../../../services/address';
@@ -17,17 +18,23 @@ export async function getAddress({ accessToken, addressId, context, tracer }) {
   const addressService = getAddressClient(serviceToken);
   const contactAddress = await contactService.getSingleAddress(addressId, { tracer, context });
   const { addresses, telephoneNumbers } = contactAddress;
-  const { addressUuid, tags } = addresses[0];
+  const { addressUuid, tags, isCompleteAddress, legacyAddress } = addresses[0];
 
   if (!tags.includes('primaryLoyalty')) {
     throw new Error(ErrorCodes.NOT_CLUBCARD_ADDRESS);
   }
 
-  const address = await addressService.getAddress({
-    addressId: addressUuid,
-    context,
-    tracer,
-  });
+  let address;
+
+  if (isCompleteAddress) {
+    address = await addressService.getAddress({
+      addressId: addressUuid,
+      context,
+      tracer,
+    });
+  } else {
+    address = convertToAddress(legacyAddress);
+  }
 
   const result = {
     ...mapAddressToFormValues(address),

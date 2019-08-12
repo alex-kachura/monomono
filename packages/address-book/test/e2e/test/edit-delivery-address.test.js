@@ -10,7 +10,7 @@ const loginPage = new LoginPage();
 const editAddressPage = new EditDeliveryAddressPage();
 const registrationPage = new RegistrationPage();
 const editDeliveryAddressUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}/edit-delivery-address`;
-const editDeliveryAddressUpdatedUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}?action=updated`;
+const editDeliveryAddressUpdatedUrl = `${config.env.baseUrl}${config.env.basePath}${config.env.language}?action=changed-default`;
 
 fixture`Address Book - Edit Delivery Address` // eslint-disable-line no-undef
   .page(loginPage.addressUrl)

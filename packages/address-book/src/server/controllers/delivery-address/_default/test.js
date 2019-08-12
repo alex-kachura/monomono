@@ -37,6 +37,7 @@ const contactAddress = {
   telephoneNumbers,
   addresses: [
     {
+      isCompleteAddress: true,
       label: 'home',
       addressUuid,
       tags: ['delivery'],
@@ -60,8 +61,28 @@ const nonDeliveryAddress = {
   ...contactAddress,
   addresses: [
     {
+      isCompleteAddress: true,
       addressUuid,
       tags: [],
+    },
+  ],
+};
+
+const nonCompleteContactAddress = {
+  telephoneNumbers,
+  addresses: [
+    {
+      label: 'home',
+      legacyAddress: {
+        addressLines: [
+          {
+            lineNumber: 0,
+            value: 'line-1',
+          },
+        ],
+      },
+      tags: ['delivery'],
+      isCompleteAddress: false,
     },
   ],
 };
@@ -86,26 +107,45 @@ mockGetAddress.mockResolvedValue(address);
 describe('[Controller - Delivery-Address]', () => {
   describe('[getAddress]', () => {
     describe('[Success]', () => {
-      let result;
+      describe.each(['CompleteAddress', 'NonCompleteAddress'])('[%s]', (type) => {
+        let result;
+        let returnedData = defaultData;
 
-      beforeAll(async () => {
-        result = await getAddress({ addressId: addressUuid, accessToken, tracer, context });
-      });
+        beforeAll(async () => {
+          if (type === 'NonCompleteAddress') {
+            getSingleAddress.mockResolvedValueOnce(nonCompleteContactAddress);
+            returnedData = {
+              ...returnedData,
+              'address-id': '',
+              postcode: '',
+              town: '',
+            };
+          }
 
-      it('should call `getSingleAddress` correctly', async () => {
-        expect(getSingleAddress).toHaveBeenCalledWith(addressUuid, { tracer, context });
-      });
+          result = await getAddress({ addressId: addressUuid, accessToken, tracer, context });
+        });
 
-      it('should call `getAddress` correctly', async () => {
-        expect(mockGetAddress).toHaveBeenCalledWith({ addressId: addressUuid, context, tracer });
-      });
+        it('should call `getSingleAddress` correctly', async () => {
+          expect(getSingleAddress).toHaveBeenCalledWith(addressUuid, { tracer, context });
+        });
 
-      it('should return address', async () => {
-        expect(result).toEqual(defaultData);
-      });
+        if (type === 'CompleteAddress') {
+          it('should call `getAddress` correctly', async () => {
+            expect(mockGetAddress).toHaveBeenCalledWith({
+              addressId: addressUuid,
+              context,
+              tracer,
+            });
+          });
+        }
 
-      afterAll(() => {
-        jest.clearAllMocks();
+        it('should return address', async () => {
+          expect(result).toEqual(returnedData);
+        });
+
+        afterAll(() => {
+          jest.clearAllMocks();
+        });
       });
     });
 
@@ -165,48 +205,54 @@ describe('[Controller - Delivery-Address]', () => {
 
   describe('[updateAddress]', () => {
     describe('[Success]', () => {
-      beforeAll(async () => {
-        await updateAddress({
-          data: {
-            ...defaultData,
-            'address-id': newAddressUuid,
-            mobile: '07429049113',
-          },
-          addressIndex: addressId,
-          accessToken,
-          tracer,
-          context,
-        });
-      });
+      describe.each(['CompleteAddress', 'NonCompleteAddress'])('[%s]', (type) => {
+        beforeAll(async () => {
+          if (type === 'NonCompleteAddress') {
+            getSingleAddress.mockResolvedValueOnce(nonCompleteContactAddress);
+          }
 
-      it('should call `getSingleAddress` correctly', () => {
-        expect(getSingleAddress).toHaveBeenCalledWith(addressId, { tracer, context });
-      });
-
-      it('should call `updatePhoneNumber` correctly', () => {
-        expect(updatePhoneNumber).toHaveBeenCalledWith(
-          'telephone_number_index_mobile',
-          { value: '07429049113' },
-          { tracer, context },
-        );
-      });
-
-      it('should call `updateAddress` correctly', () => {
-        expect(mockUpdateAddress).toHaveBeenCalledWith(
-          addressId,
-          {
-            addressUuid: newAddressUuid,
-            label: 'home',
-          },
-          {
+          await updateAddress({
+            data: {
+              ...defaultData,
+              'address-id': newAddressUuid,
+              mobile: '07429049113',
+            },
+            addressIndex: addressId,
+            accessToken,
             tracer,
             context,
-          },
-        );
-      });
+          });
+        });
 
-      afterAll(() => {
-        jest.clearAllMocks();
+        it('should call `getSingleAddress` correctly', () => {
+          expect(getSingleAddress).toHaveBeenCalledWith(addressId, { tracer, context });
+        });
+
+        it('should call `updatePhoneNumber` correctly', () => {
+          expect(updatePhoneNumber).toHaveBeenCalledWith(
+            'telephone_number_index_mobile',
+            { value: '07429049113' },
+            { tracer, context },
+          );
+        });
+
+        it('should call `updateAddress` correctly', () => {
+          expect(mockUpdateAddress).toHaveBeenCalledWith(
+            addressId,
+            {
+              addressUuid: newAddressUuid,
+              label: 'home',
+            },
+            {
+              tracer,
+              context,
+            },
+          );
+        });
+
+        afterAll(() => {
+          jest.clearAllMocks();
+        });
       });
     });
 

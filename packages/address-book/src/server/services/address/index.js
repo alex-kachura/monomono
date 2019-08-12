@@ -19,7 +19,7 @@ export function extractAddressLines(data) {
 }
 
 export function mapAddressToFormValues(address) {
-  const { id, postTown, postcode, addressLines } = address;
+  const { id = '', postTown = '', postcode = '', addressLines } = address;
 
   const result = {
     postcode,
@@ -35,6 +35,18 @@ export function mapAddressToFormValues(address) {
   });
 
   return result;
+}
+
+export function convertToAddress(legacyAddress) {
+  return {
+    ...legacyAddress,
+    addressLines: legacyAddress.addressLines.map(({ lineNumber, value }) => {
+      return {
+        value,
+        lineNumber: lineNumber + 1,
+      };
+    }),
+  };
 }
 
 export default function getAddressClient(accessToken) {
