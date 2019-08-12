@@ -10,6 +10,7 @@ const Input = memo(BaseInput);
 const Tel = memo(
   ({
     id,
+    type,
     label,
     className,
     placeholder,
@@ -38,7 +39,7 @@ const Tel = memo(
         <Input
           autoFocus={autoFocus}
           hidden={hidden}
-          type="text"
+          type={type}
           name={name}
           placeholder={placeholder}
           id={id}
@@ -65,6 +66,7 @@ WrapTel.propTypes = {
 
 Tel.propTypes = {
   id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   className: PropTypes.string,
   required: PropTypes.bool,

@@ -208,7 +208,7 @@ exports[`[Component: Form] [State: Default] should render correctly 1`] = `
             name="phone"
             placeholder="pages.clubcard-address.fields.phone-number.placeholder"
             required=""
-            type="text"
+            type="tel"
             value=""
           />
         </div>

@@ -2,6 +2,16 @@ import { useState, useCallback, useMemo } from 'react';
 import ReactDOM from 'react-dom';
 import { useAppConfig } from '@oneaccount/react-foundations';
 
+export function getNumberProps(inputType) {
+  return inputType === 'number'
+    ? {
+        min: '0',
+        inputMode: 'numeric',
+        pattern: '[0-9]*',
+      }
+    : {};
+}
+
 export function useForm({ url, onSubmit, onFailure, initialBanner = {} }) {
   const { fetch, getLocalePhrase } = useAppConfig();
 

@@ -364,6 +364,7 @@ module.exports = {
           label: 'address.fields.address-line1.label',
           placeholder: 'address.fields.address-line1.placeholder',
           valuePath: '1',
+          required: true,
           errorMessage: 'address.fields.address-line1.error',
         },
         {
