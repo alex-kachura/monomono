@@ -1,4 +1,4 @@
-FROM node:8.9
+FROM node:10.16
 
 ARG NPM_AUTH_TOKEN
 ARG NODE_ENV=development
@@ -8,7 +8,7 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global \
     NPM_AUTH_TOKEN=${NPM_AUTH_TOKEN} \
     NODE_ENV=${NODE_ENV} \
     NPMRC_PATH=/home/node/.npmrc \
-    NPM_VERSION=5.5
+    NPM_VERSION=6.9
 
 WORKDIR /home/node/
 

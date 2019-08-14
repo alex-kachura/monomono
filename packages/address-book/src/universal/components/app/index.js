@@ -1,4 +1,5 @@
-import React, { memo, useEffect, useRef } from 'react';
+import 'url-search-params-polyfill';
+import React, { memo, useEffect, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { renderRoutes } from 'react-router-config';
 import Footer from '../common/footer';
@@ -24,17 +25,25 @@ function App(props) {
     isMountedRef.current = true;
   }, [props.location.pathname]);
 
+  const inline = useMemo(() => {
+    const params = new URLSearchParams(props.location.search.substring(1));
+
+    return params.has('consumer');
+  }, [props.location.search]);
+
   return (
     <React.Fragment>
       <ScrollToTop />
-      <Header />
-      <Grid fixed="lg">
-        <Row>
-          <Column size={24}>
-            <Breadcrumb />
-          </Column>
-        </Row>
-      </Grid>
+      {!inline && <Header />}
+      {!inline && (
+        <Grid fixed="lg">
+          <Row>
+            <Column size={24}>
+              <Breadcrumb />
+            </Column>
+          </Row>
+        </Grid>
+      )}
       <GridStyled fixed="lg">
         <Row>
           <Column size={24} xl={20} centered>
@@ -42,7 +51,7 @@ function App(props) {
           </Column>
         </Row>
       </GridStyled>
-      <Footer />
+      {!inline && <Footer />}
     </React.Fragment>
   );
 }
@@ -51,6 +60,7 @@ App.propTypes = {
   route: PropTypes.object,
   location: PropTypes.shape({
     pathname: PropTypes.string,
+    search: PropTypes.string,
   }).isRequired,
 };
 

@@ -1,4 +1,4 @@
-FROM node:8.9 AS build
+FROM node:10.16 AS build
 
 ARG NPM_AUTH_TOKEN
 
@@ -6,7 +6,7 @@ ENV NPM_CONFIG_PREFIX=/root/.npm-global \
     NPM_CONFIG_LOGLEVEL=warn \
     NPM_AUTH_TOKEN=${NPM_AUTH_TOKEN} \
     NPMRC_PATH=./.npmrc \
-    NPM_VERSION=5.5 \
+    NPM_VERSION=6.9 \
     NODE_ENV=production
 
 WORKDIR /root/app
@@ -37,7 +37,7 @@ RUN npm run build:prod
 
 RUN npm prune --production
 
-FROM node:8.9 as run
+FROM node:10.16 as run
 
 ENV NODE_ENV=production
 

@@ -13,6 +13,7 @@ describe('App component', () => {
     };
     const mockLocation = {
       pathname: '/address-book',
+      search: '',
     };
 
     const { asFragment } = render(

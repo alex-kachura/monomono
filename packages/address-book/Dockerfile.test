@@ -1,4 +1,4 @@
-FROM node:8.9
+FROM node:10.16
 
 ARG NPM_AUTH_TOKEN
 ARG NODE_ENV=development
@@ -12,7 +12,7 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global \
     NODE_CONFIG_ENV=${NODE_CONFIG_ENV} \
     BASE_URL=${BASE_URL} \
     NPMRC_PATH=/home/node/.npmrc \
-    NPM_VERSION=5.5
+    NPM_VERSION=6.9
 
 # Install Google Chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
