@@ -45,6 +45,7 @@ export default function DeleteButton({ itemId, label, firstLine }) {
           variant="link"
           type="submit"
           onClick={didToggleShowConfirmation}
+          data-tracking={Analytics.Landing.Events.TOGGLE_DELETE_DELIVERY_ADDRESS}
         >
           {getLocalePhrase('pages.landing.delete-btn')}
         </Button>
@@ -74,6 +75,7 @@ export default function DeleteButton({ itemId, label, firstLine }) {
           className="delete-address-cancel"
           variant="secondary"
           onClick={didToggleShowConfirmation}
+          data-tracking={Analytics.Landing.Events.KEEP_DELIVERY_ADDRESS}
         >
           {getLocalePhrase('pages.landing.delete.cancel')}
         </Button>

@@ -421,6 +421,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               <button
                 aria-disabled="false"
                 class="styled__BaseButton-sc-3mnirm-0 delete-address styled__LinkButton-sc-3mnirm-13 gyNqJj"
+                data-tracking="delete alternative delivery address:addressbook"
                 role="button"
                 type="submit"
               >
@@ -498,6 +499,7 @@ exports[`[Component: LandingPage] should render correctly 1`] = `
               <button
                 aria-disabled="false"
                 class="styled__BaseButton-sc-3mnirm-0 delete-address-cancel styled__SecondaryButton-sc-3mnirm-3 bzFQfg"
+                data-tracking="keep alternative delivery address:addressbook"
                 role="button"
                 type="button"
               >

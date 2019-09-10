@@ -25,6 +25,8 @@ export const Analytics = {
     Events: {
       ADD_DELIVERY_ADDRESS: 'add delivery address:addressbook',
       DELETE_DELIVERY_ADDRESS: 'delete delivery address:addressbook',
+      TOGGLE_DELETE_DELIVERY_ADDRESS: 'delete alternative delivery address:addressbook',
+      KEEP_DELIVERY_ADDRESS: 'keep alternative delivery address:addressbook',
       EDIT_DELIVERY_ADDRESS: 'edit delivery address:addressbook',
       EDIT_CLUBCARD_ADDRESS: 'edit clubcard address:addressbook',
       EDIT_GROCERY_ADDRESS: 'edit default grocery shopping address:addressbook',
