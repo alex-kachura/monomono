@@ -12,6 +12,10 @@ export default function getIdentityClient(noCache) {
     return identity;
   }
 
+  const tescoPrefix = config.get('services.tescoPrefix');
+  const clientId = config.get('services.clientId');
+  const clientSecret = config.get('services.clientSecret');
+
   identity = new IdentityService({
     env: {
       host: config.get('services.identity.host'),
@@ -19,8 +23,8 @@ export default function getIdentityClient(noCache) {
       protocol: config.get('services.identity.protocol'),
     },
     timeout: config.get('services.identity.timeout'),
-    clientId: config.get('services.clientId'),
-    fullyQualifiedClientId: config.get('services.fullyQualifiedClientId'),
+    clientId: `${tescoPrefix}:${clientId}`,
+    fullyQualifiedClientId: `${tescoPrefix}:${clientId}:${clientSecret}`,
     akamaiAuthToken: config.get('services.akamaiAuthToken'),
   });
 
