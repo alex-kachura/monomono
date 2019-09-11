@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "description": "The login Node/React app",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "pretty-quick --staged && eslint . --fix",
+    "lint:prod": "eslint .",
     "start": "bin/start",
     "start:dev": "NODE_ENV=development BABEL_ENV=node NODE_CONFIG_DIR=./src/config babel-watch ./src/index.js",
     "start:prod": "NODE_ENV=production NODE_CONFIG_DIR=./dist/config node ./dist/index.js",
@@ -58,6 +59,7 @@
     "@web-foundations/logger": "^1.4.0",
     "@web-foundations/service-identity": "^3.21.0",
     "accept-language": "^3.0.18",
+    "acorn": "7.0.0",
     "aes256": "^1.0.4",
     "ajv-errors": "^1.0.1",
     "babel-eslint": "^10.0.2",
@@ -177,13 +179,13 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run lint && npm test"
+      "pre-push": "npm run lint:prod && npm test"
     }
   },
   "lint-staged": {
     "*.{js,jsx,json}": [
-      "pretty-quick --staged",
-      "eslint src/ --fix",
+      "prettier --write",
+      "eslint --fix",
       "git add"
     ],
     "*.{png,jpeg,jpg,gif,svg}": [
