@@ -78,10 +78,6 @@ try {
 			stage('Deploy login') {
 				sh "wget -q http://dex-file-server.auth.svc.cluster.local:8080/bin/linux/dex-client"
         sh "chmod +x dex-client"
-        sh "./dex-client pod" +
-					" --cluster-name eu-west-1a-prod" +
-					" --cluster-name eu-west-1b-prod" +
-					" --cluster-name eu-west-1c-prod"
 
 				withEnv(["KUBECONFIG=kubeconfig"]) {
 					container('hyperaurora') {
@@ -130,6 +126,13 @@ def deployToEnvironment(zone, branch, buildJob, buildTimestamp, deployJob, deplo
     case 'c':
       dc = 'AWS3'
       break
+  }
+
+  try {
+    sh "./dex-client pod --cluster-name eu-west-1${zone}-prod"
+  } catch (e) {
+    notifyOnSlack("danger", "[<$BUILD_URL|$JOB_NAME #$BUILD_NUMBER>]: 😱 Could not connect to cluster eu-west-1${zone}-prod! 😱\n${e.getMessage()}")
+    return
   }
 
   // Prepare env-specific configuration
