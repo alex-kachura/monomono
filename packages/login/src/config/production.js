@@ -17,7 +17,7 @@ module.exports = {
     encryptionDisabled: false,
   },
   services: {
-    clientId: 'trn:tesco:cid:ea61a462-e6e3-4410-beb9-37abff5ded54',
+    clientId: 'ea61a462-e6e3-4410-beb9-37abff5ded54',
     identity: {
       host: 'api.tesco.com',
     },

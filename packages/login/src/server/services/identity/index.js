@@ -2,6 +2,10 @@ import IdentityService from '@web-foundations/service-identity';
 import config from 'config';
 import log from '../../logger';
 
+const tescoPrefix = config.get('services.tescoPrefix');
+const clientId = config.get('services.clientId');
+const clientSecret = config.get('services.clientSecret');
+
 // Create an Identity service client that can be used throughout the app. This
 // is possible because the service client does not require any user or request
 // specific data unlike most of the service clients. By creating one instance at
@@ -14,8 +18,8 @@ const identity = new IdentityService({
     protocol: config.get('services.identity.protocol'),
   },
   timeout: config.get('services.identity.timeout'),
-  clientId: config.get('services.clientId'),
-  fullyQualifiedClientId: config.get('services.fullyQualifiedClientId'),
+  clientId: `${tescoPrefix}:${clientId}`,
+  fullyQualifiedClientId: `${tescoPrefix}:${clientId}:${clientSecret}`,
   akamaiAuthToken: config.get('services.akamaiAuthToken'),
 });
 
