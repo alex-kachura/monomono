@@ -21,7 +21,7 @@
     "node": "8.9.4"
   },
   "dependencies": {
-    "@oneaccount/test-common": "~2.4.6",
+    "@oneaccount/test-common": "~3.0.3",
     "babel-jest": "^24.8.0",
     "cheerio": "~1.0.0-rc.2",
     "jest": "^24.8.0",
