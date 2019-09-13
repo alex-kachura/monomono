@@ -2,7 +2,7 @@
   "name": "@void-guardian/preferences",
   "version": "1.0.0-alpha.1",
   "description": "> TODO: description",
-  "author": "Oleksii Kachura <oleksii.kachura@tesco.com>",
+  "author": "Oleksii Kachura <alex.kachura@gmail.com>",
   "homepage": "",
   "license": "ISC",
   "main": "lib/preferences.js",
@@ -16,5 +16,6 @@
   "scripts": {
     "tsc": "tsc",
     "test": "echo \"Error: run tests from root\" && exit 1"
-  }
+  },
+  "gitHead": "0a334924ed1d088572259e59d5331224957d0b3a"
 }
