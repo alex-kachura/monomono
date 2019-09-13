@@ -6,6 +6,7 @@
   "homepage": "",
   "license": "ISC",
   "main": "lib/preferences.js",
+  "typings": "lib/preferences.d.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
