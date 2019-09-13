@@ -20,7 +20,7 @@
     "node": "8.9.4"
   },
   "dependencies": {
-    "@oneaccount/test-common": "3.0.2",
+    "@oneaccount/test-common": "~3.0.3",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@web-foundations/eslint-config-base": "^1.1.3",
