@@ -2,7 +2,7 @@ import IdentityService from '@web-foundations/service-identity';
 import config from 'config';
 import log from '../../logger';
 
-const tescoPrefix = config.get('services.tescoPrefix');
+const tescoPrefixCid = config.get('services.tescoPrefixCid');
 const clientId = config.get('services.clientId');
 const clientSecret = config.get('services.clientSecret');
 
@@ -18,8 +18,8 @@ const identity = new IdentityService({
     protocol: config.get('services.identity.protocol'),
   },
   timeout: config.get('services.identity.timeout'),
-  clientId: `${tescoPrefix}:${clientId}`,
-  fullyQualifiedClientId: `${tescoPrefix}:${clientId}:${clientSecret}`,
+  clientId: `${tescoPrefixCid}:${clientId}`,
+  fullyQualifiedClientId: `${tescoPrefixCid}:${clientId}:${clientSecret}`,
   akamaiAuthToken: config.get('services.akamaiAuthToken'),
 });
 
