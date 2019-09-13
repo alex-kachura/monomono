@@ -132,14 +132,14 @@ export async function validatePhoneNumbers(contactService, phoneNumbers, { trace
 }
 
 export default function getContactClient(accessToken) {
-  const tescoPrefix = config.get('services.tescoPrefix');
+  const tescoPrefixCid = config.get('services.tescoPrefixCid');
   const clientId = config.get('services.clientId');
 
   const contact = new ContactService({
     accessToken,
     akamaiAuthToken: config.get('services.akamaiAuthToken'),
     timeout: config.get('services.contact.timeout'),
-    clientId: `${tescoPrefix}:${clientId}`,
+    clientId: `${tescoPrefixCid}:${clientId}`,
     env: {
       protocol: config.get('services.contact.protocol'),
       host: config.get('services.contact.host'),

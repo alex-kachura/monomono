@@ -50,7 +50,7 @@ export function convertToAddress(legacyAddress) {
 }
 
 export default function getAddressClient(accessToken) {
-  const tescoPrefix = config.get('services.tescoPrefix');
+  const tescoPrefixCid = config.get('services.tescoPrefixCid');
   const clientId = config.get('services.clientId');
 
   const address = new AddressService({
@@ -61,7 +61,7 @@ export default function getAddressClient(accessToken) {
       protocol: config.get('services.address.protocol'),
     },
     timeout: config.get('services.address.timeout'),
-    clientId: `${tescoPrefix}:${clientId}`,
+    clientId: `${tescoPrefixCid}:${clientId}`,
     akamaiAuthToken: config.get('services.akamaiAuthToken'),
   });
 
